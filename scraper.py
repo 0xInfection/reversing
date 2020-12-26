@@ -56,7 +56,12 @@ def processContent(source: str):
             lnk = html.unescape(img.get('data-delayed-url'))
         ntag = soup.new_tag('img', src=downloadImage(lnk))
         img.replaceWith(ntag)
-    return soup.__str__()
+    texts = ['''For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial''', '''UNDER NO CONDITIONS ARE YOU TO EVER USE THIS EDUCATION TO CAUSE HARM TO ANY SYSTEM OF ANY KIND AS I AM NOT RESPONSIBLE! THIS IS FOR LEARNING PURPOSES ONLY!''', '''<div class="slate-resizable-image-embed slate-image-embed__resize-left">''']
+    toput = soup.__str__()
+    for i in texts:
+        if i in toput:
+            toput = toput.replace(i, '')
+    return toput
 
 def grabContent(pgsrc: str, fname: str):
     '''
@@ -65,7 +70,7 @@ def grabContent(pgsrc: str, fname: str):
     rex = r"<section class=\"article-body\" data-redirect-url=.+?>(<p>.*)</section><div class=(?:\"ugc-post-bar\"><h3 class=\"ugc-post-bar__published_by|\"author-info author-info__container)"
     patt = re.compile(rex, re.DOTALL | re.MULTILINE)
     content = processContent(re.search(patt, pgsrc).group(1))
-    content = '<h1>{}</h1>{}'.format(fname, content)
+    content = '<h2>{}</h2>{}'.format(fname, content)
     print('\n\n'+content+'\n\n')
     dirname = 'pages/{}'.format(processfName(fname))
     toadd = '* [{}]({})'.format(fname, dirname)

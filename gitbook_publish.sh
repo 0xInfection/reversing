@@ -1,3 +1,6 @@
+# run the python scraper script
+#python3 scraper.py
+
 # install the plugins and build the static site
 gitbook install && gitbook build
 
