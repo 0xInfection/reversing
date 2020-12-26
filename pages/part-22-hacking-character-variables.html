@@ -2321,19 +2321,19 @@
                                 <h1 id="part-22-&#x2013;-hacking-character-variables">Part 22 &#x2013; Hacking Character Variables</h1>
 <p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
 <p>Let&#x2019;s review our code.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/35517762.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520232430320.jpg"></div>
 
 <p>Let&#x2019;s hack!</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/439384672.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520194771044.jpg"></div>
 
 <p>We again see the direct value of <strong>0x6e</strong> moved into <strong>r3</strong> at <strong>main+12</strong> which is our &#x2018;<strong>n</strong>&#x2019;.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/985016002.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520195499705.jpg"></div>
 
 <p>After stepping into 4 times and verify the value in <strong>r3</strong> which we clearly see as &#x2018;<strong>n</strong>&#x2019;.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/652109383.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520233196032.jpg"></div>
 
 <p>Let&#x2019;s hack the value in <strong>r3</strong> to a &#x2018;<strong>y</strong>&#x2019; and then reexamine the value in <strong>r3</strong>.&#xA0;We can now clearly see it has been changed to &#x2018;<strong>y</strong>&#x2019;.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/930082037.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520232999022.jpg"></div>
 
 <p>As we continue we successfully see our hack worked!&#xA0;We see the value of &#x2018;<strong>y</strong>&#x2019; printing to the standard output.</p>
 <p>Next week we will dive into Boolean Variables.</p>
@@ -2380,7 +2380,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 22 – Hacking Character Variables","level":"1.88","depth":1,"next":{"title":"Part 23 – Boolean Variables","level":"1.89","depth":1,"path":"pages/part-23-boolean-variables.md","ref":"pages/part-23-boolean-variables.md","articles":[]},"previous":{"title":"Part 21 – Debugging Character Variables","level":"1.87","depth":1,"path":"pages/part-21-debugging-character-variables.md","ref":"pages/part-21-debugging-character-variables.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-22-hacking-character-variables.md","mtime":"2020-12-26T17:20:02.929Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T17:31:56.629Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 22 – Hacking Character Variables","level":"1.88","depth":1,"next":{"title":"Part 23 – Boolean Variables","level":"1.89","depth":1,"path":"pages/part-23-boolean-variables.md","ref":"pages/part-23-boolean-variables.md","articles":[]},"previous":{"title":"Part 21 – Debugging Character Variables","level":"1.87","depth":1,"path":"pages/part-21-debugging-character-variables.md","ref":"pages/part-21-debugging-character-variables.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-22-hacking-character-variables.md","mtime":"2020-12-26T18:02:02.678Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T18:27:29.965Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

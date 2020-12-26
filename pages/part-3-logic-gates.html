@@ -2324,17 +2324,17 @@
 <p>Why would we need to even talk about number systems?&#xA0;Why is it relevant to our series here?&#xA0;The answer is simple.&#xA0;In addition to everything going down to 1 and 0, the instructions and memory in addition to the processor registers all utilize another number system called hexadecimal.&#xA0;</p>
 <p>Let&#x2019;s discuss binary!&#xA0;At the core of the microprocessor are a series of binary numbers which are either +5V (on or 1) or 0V (off or 0). Each 0 or 1 represents a bit of information within the microprocessor. A combination of 8 bits results in a single byte.</p>
 <p>Before we dive into binary, let&apos;s examine the familiar decimal. If we take the number 2017, we would understand this to be two thousand and seventeen.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/580445930.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1536316029655.jpg"></div>
 
 <p>Let&#x2019;s take a look at the binary system and the basics of how it operates.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/410036691.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1536316062694.jpg"></div>
 
 <p>If we were to convert a binary number into decimal, we would very simply do the following. Let&apos;s take a binary number of 0101 1101 and as you can see it is 93 decimal.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/301595120.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1536316087192.jpg"></div>
 
 <p>Adding the values in the value column gives us 0 + 64 + 0 + 16 + 8 + 4 + 0 + 1 = 93 decimal.</p>
 <p>If we were to convert a decimal number into binary, we would check to see if a subtraction is possible relative to the highest order bit and if so, a 1 would be placed into the binary column to which the remainder would be carried into the next row. Let&#x2019;s consider the example of the decimal value of 120 which is 0111 1000 binary.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/533269600.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1536316117407.jpg"></div>
 
 <p>1)Can 128 fit inside of 120: No, therefore 0.</p>
 <p>2)Can 64 fit inside of 120: Yes, therefore 1, then 120 &#x2013; 64 = 56.</p>
@@ -2345,22 +2345,22 @@
 <p>7)Can 2 fit inside of 0: No, therefore 0.</p>
 <p>8)Can 1 fit inside of 0: No, therefore 0.</p>
 <p>When we want to convert binary to hex we simply work with the following table.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/369497991.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1536316179552.jpg"></div>
 
 <p>Let&apos;s convert a binary number such as 0101 1111 to hex. To do this we very simply look at the table and compare each nibble which is a combination of 4 bits. Keep in mind, 8 bits is equal to a byte and 2 nibbles are equal to a byte.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/301942177.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1536316203991.jpg"></div>
 
 <p>Therefore 0101 1111 binary = 0x5f hex. The 0x notation denotes hex.</p>
 <p>To go from hex to binary it&#x2019;s very simple as you have to simply do the opposite such as:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/562134623.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1536316238835.jpg"></div>
 
 <p>It is important to understand that each hex digit is a nibble in length therefore two hex digits are a byte in length.</p>
 <p>To convert from hex to decimal we do the following:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/439270044.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1536316267782.jpg"></div>
 
 <p>Therefore we can see that 80 + 15 = 95 which is 0x5f hex.</p>
 <p>Finally to convert from decimal to hex. Let&apos;s take the number 850 decimal which is 352 hex.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/358324522.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1536316294127.jpg"></div>
 
 <p>&#x201C;Why the hell would I waste my time learning all this crap when the computer does all this for me!&#x201D;</p>
 <p>As I mentioned above, it is vital you have a good understanding of these two additional number systems if you are truly to grasp and master reverse engineering at its core.&#xA0;There are some amazing tools that help the RE process however the better understanding that you have of these will help you as you grow.</p>
@@ -2411,7 +2411,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 3 - Logic Gates","level":"1.118","depth":1,"next":{"title":"Part 4 - Number Systems","level":"1.119","depth":1,"path":"pages/part-4-number-systems.md","ref":"pages/part-4-number-systems.md","articles":[]},"previous":{"title":"Part 2 - Transistors","level":"1.117","depth":1,"path":"pages/part-2-transistors.md","ref":"pages/part-2-transistors.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-3-logic-gates.md","mtime":"2020-12-26T17:23:32.744Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T17:31:56.629Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 3 - Logic Gates","level":"1.118","depth":1,"next":{"title":"Part 4 - Number Systems","level":"1.119","depth":1,"path":"pages/part-4-number-systems.md","ref":"pages/part-4-number-systems.md","articles":[]},"previous":{"title":"Part 2 - Transistors","level":"1.117","depth":1,"path":"pages/part-2-transistors.md","ref":"pages/part-2-transistors.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-3-logic-gates.md","mtime":"2020-12-26T18:02:39.614Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T18:27:29.965Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

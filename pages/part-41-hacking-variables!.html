@@ -2321,25 +2321,25 @@
                                 <h1 id="part-41---hacking-variables">Part 41 - Hacking Variables!</h1>
 <p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
 <p>Let&apos;s take a look at some branching logic:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/285010930.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1566729104643.jpg"></div>
 
 <p>As we can plainly see we init an int to 1 and if the variable is equal to 1 the first if statement prints a response to standard output.</p>
 <p>Let&apos;s compile:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/87926323.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1566729192665.jpg"></div>
 
 <p>Let&apos;s run:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/993421003.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1566729212374.jpg"></div>
 
 <p>As we can logically see the first branch is taken. Let&apos;s take it into Radare and look around at the assembly:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/957002226.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1566729291450.jpg"></div>
 
 <p>We can see the branching logic with the aqua colored arrows. At <strong>0x0000114a</strong> we see our first branch being loaded into <strong>rdi</strong>. Take note at <strong>0x00001148</strong> we see a <strong>jne 0x1158</strong>. At <strong>0x00001158</strong> we see our second branch being loaded into <strong>rdi</strong>.</p>
 <p>The <strong>jne</strong> means jump if not equal. This means if what is being compared in <strong>0x00001144</strong> is not equal to 1 (we see <strong>1</strong> being compared to what is in <strong>local_4h</strong> which we know is pseudo code for what is actually in <strong>rbp-0x4</strong>. This should make sense as I went over this in detail last week if you are confused please revisit our last lesson.</p>
 <p>To hack we simply make the <strong>jne</strong> statement to <strong>je</strong> which is jump if equal which we know the <strong>cmp</strong> or comparison is equal so it will now branch to &quot;<strong>A is NOT 1!</strong>&quot;.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/65599425.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1566729757650.jpg"></div>
 
 <p>When we exit Radare we can see we have hacked the binary successfully:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/442337637.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1566729786175.jpg"></div>
 
 <p>Stay tuned!</p>
 
@@ -2385,7 +2385,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 41 - Hacking Variables!","level":"1.156","depth":1,"next":{"title":"Part 42 - Hacking Branches!","level":"1.157","depth":1,"path":"pages/part-42-hacking-branches!.md","ref":"pages/part-42-hacking-branches!.md","articles":[]},"previous":{"title":"Part 40 - Hacking Hello World!","level":"1.155","depth":1,"path":"pages/part-40-hacking-hello-world!.md","ref":"pages/part-40-hacking-hello-world!.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-41-hacking-variables!.md","mtime":"2020-12-26T17:28:26.754Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T17:31:56.629Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 41 - Hacking Variables!","level":"1.156","depth":1,"next":{"title":"Part 42 - Hacking Branches!","level":"1.157","depth":1,"path":"pages/part-42-hacking-branches!.md","ref":"pages/part-42-hacking-branches!.md","articles":[]},"previous":{"title":"Part 40 - Hacking Hello World!","level":"1.155","depth":1,"path":"pages/part-40-hacking-hello-world!.md","ref":"pages/part-40-hacking-hello-world!.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-41-hacking-variables!.md","mtime":"2020-12-26T18:03:13.438Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T18:27:29.965Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

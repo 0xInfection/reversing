@@ -2321,10 +2321,10 @@
                                 <h1 id="part-15---debugging-hello-world">Part 15 - Debugging Hello World</h1>
 <p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
 <p>Let&#x2019;s review our code from last week.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/731245180.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="../imgs/1520191246374.jpg"></div>
 
 <p>Let&#x2019;s debug!&#xA0;Let&#x2019;s fire up GDB which is the GNU Debugger to which we will break down the C++ binary and step through it line-by-line in ARM Assembly.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/528279652.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520232284963.jpg"></div>
 
 <p>This is the ARM disassembly that we are seeing.&#xA0;No matter what language you program in, it ultimately will go down to this level.&#xA0;</p>
 <p>This might be a bit scary to you if you did not take my prior course on ARM Assembly.&#xA0;If you need to do a refresher, please link back to that series.</p>
@@ -2333,20 +2333,20 @@
 <p>I will focus SOLELY on this method rather than using a nice graphical debugger like IDA or the like so that you are able to manipulate at a very low-level.</p>
 <p>We start with loading the link register into <strong>r11 </strong>and adding <strong>4</strong> to the stack pointer and then adding it to <strong>r11</strong>.&#xA0;This is simply a routine which will allow the binary to preserve the link register and setting up space on the stack.</p>
 <p>We notice memory address <strong>0x10750</strong> being loaded from memory to the register <strong>r1</strong>.&#xA0;Let&#x2019;s do a string examination and see what is located at that address.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/524456114.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520233136878.jpg"></div>
 
 <p>Voila!&#xA0;We see our string. <strong>&#x201C;Hello World!&#x201D;</strong> located at that memory address.&#xA0;</p>
 <p>Let&#x2019;s set a breakpoint at <strong>main+16.</strong></p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/629890070.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520202291983.jpg"></div>
 
 <p>Let&#x2019;s take a look at our register values.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/358383140.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520193660539.jpg"></div>
 
 <p>Let&#x2019;s now take a look at what is inside the <strong>r1</strong> register and then step through the binary.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/382708202.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520235567544.jpg"></div>
 
 <p>We see the <strong>&#x201C;Hello World!&#x201D;</strong> string now residing inside of <strong>r1</strong> which resides at memory address <strong>0x10848</strong>.&#xA0;Finally let&#x2019;s continue through the binary.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/985046959.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520190662835.jpg"></div>
 
 <p>Understanding assembly and step-by-step debugging allows you to have complete and ultimate control over any binary!&#xA0;More complex binaries can cause you hours, days or weeks to truly Reverse Engineer however the techniques are the same just more time consuming.</p>
 <p>Reverse Engineering is the most sophisticated form of analysis in advanced Computer Engineering.&#xA0;There are many tools that a professional Reverse Engineer uses however each of those tools have a usage and purpose however this technique is the most sophisticated and comprehensive.</p>
@@ -2394,7 +2394,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 15 - Debugging Hello World","level":"1.81","depth":1,"next":{"title":"Part 16 - Hacking Hello World","level":"1.82","depth":1,"path":"pages/part-16-hacking-hello-world.md","ref":"pages/part-16-hacking-hello-world.md","articles":[]},"previous":{"title":"Part 14 - Hello World","level":"1.80","depth":1,"path":"pages/part-14-hello-world.md","ref":"pages/part-14-hello-world.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-15-debugging-hello-world.md","mtime":"2020-12-26T17:19:26.800Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T17:31:56.629Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 15 - Debugging Hello World","level":"1.81","depth":1,"next":{"title":"Part 16 - Hacking Hello World","level":"1.82","depth":1,"path":"pages/part-16-hacking-hello-world.md","ref":"pages/part-16-hacking-hello-world.md","articles":[]},"previous":{"title":"Part 14 - Hello World","level":"1.80","depth":1,"path":"pages/part-14-hello-world.md","ref":"pages/part-14-hello-world.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-15-debugging-hello-world.md","mtime":"2020-12-26T18:01:54.634Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T18:27:29.965Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

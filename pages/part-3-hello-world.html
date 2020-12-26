@@ -2322,7 +2322,7 @@
 <p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. <a href="https://github.com/mytechnotalent/hacking\_c-\_arm64" target="_blank">https://github.com/mytechnotalent/hacking\_c-\_arm64</a></p>
 <p>Today we are going to debug our first program utilizing our dev build of Radare2.</p>
 <p>If this is your first time working with Assembly I would encourage you check out this series as it may better prepare you for the upcoming lessons.</p>
-<iframe allowfullscreen="true" class="center lazy-loaded" frameborder="0" height="294" src="https://www.linkedin.com/embeds/publishingEmbed.html?articleId=7574498398602237511" title="mytechnotalent/Reverse-Engineering-Tutorial" width="744"></iframe>
+<iframe allowfullscreen="true" class="center lazy-load" data-delayed-url="https://www.linkedin.com/embeds/publishingEmbed.html?articleId=7574498398602237511" frameborder="0" height="294" src="about:blank" title="mytechnotalent/Reverse-Engineering-Tutorial" width="744"></iframe>
 
 <p>To begin let&apos;s open up our binary in Radare2.</p>
 <pre spellcheck="false">radare2 ./0x01_asm_64_helloworld
@@ -2344,7 +2344,7 @@
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/767397257.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1606325530734.jpg"></div>
 
 <p>You can right click and <strong>Open image in new tab </strong>to get an expanded view.</p>
 <p>Remember there is a difference between an executable on disk and what resides when it is mapped. When it is on disk it is referred to as unmapped. We will look at that at the end of the lesson. For now we are looking at a mapped version as you see it is an offset of the mapped code we will examine later.</p>
@@ -2367,7 +2367,7 @@ Hello World!
 <pre spellcheck="false">px @0x55629cab48
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/563534516.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1606325962588.jpg"></div>
 
 <p>We see our &quot;Hello World!&quot; string and we can again see that it exists starting at the mapped memory address of 0x55629cab48.</p>
 <p>We see that our machine code instructions are 16 bytes long or 64-bits long as we can see the first column start at <em>48</em> and end with <em>00</em>.</p>
@@ -2417,7 +2417,7 @@ y
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/75880496.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1606327203401.jpg"></div>
 
 <p>You can right click and <strong>Open image in new tab </strong>to get an expanded view.</p>
 <p>Notice that we have <em>&quot;Hello World!&quot;</em> this time at the unmapped memory address of <em>0xb48</em>. You notice that when you ran the binary the executable had an offset to this value but the LSB were <em>48</em> hex.</p>
@@ -2466,7 +2466,7 @@ y
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 3 - \"Hello World\"","level":"1.161","depth":1,"next":{"title":"Part 4 - Debugging \"Hello World\"","level":"1.162","depth":1,"path":"pages/part-4-debugging-hello-world.md","ref":"pages/part-4-debugging-hello-world.md","articles":[]},"previous":{"title":"Part 2 - Development Setup","level":"1.160","depth":1,"path":"pages/part-2-development-setup.md","ref":"pages/part-2-development-setup.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-3-hello-world.md","mtime":"2020-12-26T17:29:34.402Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T17:31:56.629Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 3 - \"Hello World\"","level":"1.161","depth":1,"next":{"title":"Part 4 - Debugging \"Hello World\"","level":"1.162","depth":1,"path":"pages/part-4-debugging-hello-world.md","ref":"pages/part-4-debugging-hello-world.md","articles":[]},"previous":{"title":"Part 2 - Development Setup","level":"1.160","depth":1,"path":"pages/part-2-development-setup.md","ref":"pages/part-2-development-setup.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-3-hello-world.md","mtime":"2020-12-26T18:03:22.918Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T18:27:29.965Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

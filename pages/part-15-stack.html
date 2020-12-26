@@ -2324,7 +2324,7 @@
 <p>When a program starts to execute a certain contiguous section of memory is set aside for the program called the stack.</p>
 <p>The stack pointer is a register that contains the top of the stack. The stack pointer contains the smallest address, lets say for example 0x00001000, such that any address smaller than 0x00001000 is considered garbage and any address greater than 0x00001000 is considered valid.</p>
 <p>The above address is random and is not an absolute where you will find the stack pointer from program to program as it will vary. Lets look at what the stack looks like from an abstract perspective:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/647906576.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520235829712.jpg"></div>
 
 <p>The above diagram is what I want you to keep clear in your mind as that is what is actually happening in memory. The next series of diagrams will show the opposite of what is shown above.</p>
 <p>You will see the stack growing upward in the below diagrams however in reality it is growing downward from higher memory to lower memory.</p>
@@ -2335,24 +2335,24 @@
 <p>You can pop one or more registers by copying the data from the stack to the registers, then to add a value to the stack pointer. This is usually done by adding four times the number of registers to be popped on the stack.</p>
 <p>Let us look at how the stack is used to implement functions. For each function call there is a section of the stack reserved for the function. This is called the stack frame.</p>
 <p>Let&#x2019;s look at the C program we created in tutorial 12 and examine what the main function looks like:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/882202621.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520622740099.jpg"></div>
 
 <p>We see two functions here. The first one is the unreachableFunction to which will never execute under normal circumstances and we also see the main function that will always be the first function to be called onto the stack.</p>
 <p>When we run this program, the stack will look like this:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/581582744.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520622738609.jpg"></div>
 
 <p>We can see the stack frame for int main(void) above.&#xA0;It is also referred to as the activation record.&#xA0;A stack frame exists whenever a function has started but yet to complete.&#xA0;For example, inside of the body of the int main(void) there is a call to int addMe(int a, int b) which takes two arguments a and b.&#xA0;There needs to be assembly language code in int main(void) to push the arguments for int addMe(int a, int b) onto the stack.&#xA0;Lets examine some code.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/360213992.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520231875596.jpg"></div>
 
 <p>When we compile and run this program we will see the value of 5 to be print out like this:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/11460120.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520622737902.jpg"></div>
 
 <p>Very simply, int main(void) calls int addMe(int a, int b) first and will get put on the stack like this:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/47678804.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520144504701.jpg"></div>
 
 <p>You can see that by placing the arguments on the stack, the stack frame for <strong>int main(void)</strong> has increased in size. We also reserved space for the return value which is computed by <strong>int addMe(int a, int b)</strong> and when the function returns, the return value in <strong>int main(void)</strong> gets restored and execution continues in <strong>int main(void)</strong> until it finishes.</p>
 <p>Once we get the instructions for <strong>int addMe(int a, int b)</strong>, the function may need local variables so the function needs to push some space on the stack which would look like:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1004512553.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520622739277.jpg"></div>
 
 <p><strong>int addMe(int a, int b)</strong> can access the arguments passed to it from <strong>int main(void)</strong> because the code in <strong>int main(void)</strong> places the arguments just as <strong>int addMe(int a, int b)</strong> expects it.&#xA0;</p>
 <p>FP is the frame pointer and points to the location where the stack pointer was just before <strong>int addMe(int a, int b)</strong> moved the stack pointer or SP for int <strong>addMe(int a, int b)</strong>&#x2019;s own local variables.</p>
@@ -2407,7 +2407,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 15: Stack","level":"1.16","depth":1,"next":{"title":"Part 16: Heap","level":"1.17","depth":1,"path":"pages/part-16-heap.md","ref":"pages/part-16-heap.md","articles":[]},"previous":{"title":"Part 14: Flags","level":"1.15","depth":1,"path":"pages/part-14-flags.md","ref":"pages/part-14-flags.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-15-stack.md","mtime":"2020-12-26T17:14:33.717Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T17:31:56.629Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 15: Stack","level":"1.16","depth":1,"next":{"title":"Part 16: Heap","level":"1.17","depth":1,"path":"pages/part-16-heap.md","ref":"pages/part-16-heap.md","articles":[]},"previous":{"title":"Part 14: Flags","level":"1.15","depth":1,"path":"pages/part-14-flags.md","ref":"pages/part-14-flags.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-15-stack.md","mtime":"2020-12-26T18:01:01.454Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T18:27:29.965Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

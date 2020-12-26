@@ -2342,39 +2342,39 @@ int main(void) {
 }
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1025267286.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1525429032559.jpg"></div>
 
 <p>Remember that we create a variable <strong>myNumber = 16</strong> to which we create another variable <strong>myNumberSize</strong> which holds the value of the size of <strong>myNumber</strong>.&#xA0;We see that when we execute our code it shows 4 therefore we see that the SizeOf operator indicates an integer is 4 bytes wide.</p>
 <p>Let&#x2019;s review last week&#x2019;s code as we start with debugging and breaking on main.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/955185035.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1525429072643.jpg"></div>
 
 <p>Let&#x2019;s break on <strong>main+20</strong> as we can see the value of <strong>4</strong> being moved into <strong>r3</strong>.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/247274341.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1525429109049.jpg"></div>
 
 <p>Let&#x2019;s examine what is going on at <strong>main+16</strong> as we can see that we are storing into the value of <strong>$r11-8</strong> that which exists in <strong>r3</strong> which in our case is <strong>16</strong>.&#xA0;This makes sense as when we examine our original code the value of <strong>myNumber</strong> was in fact <strong>16</strong>.&#xA0;We can see this here when we examine the value inside <strong>$r11-8</strong>.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/6902801.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1525429200465.jpg"></div>
 
 <p>As we can see above the value inside <strong>$r11-12</strong> is<strong> 4</strong> as that represents the value that <strong>SizeOf</strong> is returning as the integer <strong>16 </strong>is in fact 4 bytes wide.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/456896658.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1525429249458.jpg"></div>
 
 <p>Finally when we continue execution we in fact see the value <strong>4</strong> echoed to the terminal.</p>
 <p>Let&#x2019;s hack!</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/712676536.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1525429287002.jpg"></div>
 
 <p>We run and break on <strong>main+28</strong>.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/910094562.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1525429310244.jpg"></div>
 
 <p>We see the value in <strong>r3</strong> is <strong>4</strong> which is expected.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/842725825.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1525429336631.jpg"></div>
 
 <p>We break on <strong>main+36</strong>.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/949863196.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1525429367083.jpg"></div>
 
 <p>We see the value in <strong>r1</strong> is <strong>4</strong> which should make logical sense as the value was stored from <strong>r3</strong> into <strong>r11-12</strong> and then back to <strong>r1</strong>.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/778140573.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1525429391206.jpg"></div>
 
 <p>Let&#x2019;s hack the value in <strong>r1</strong>!</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/548410180.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1525429414806.jpg"></div>
 
 <p>Success!&#xA0;We have hacked the machine!</p>
 <p>Next week we will dive into the Pre-Increment Operator.</p>
@@ -2421,7 +2421,7 @@ int main(void) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 37 – Hacking SizeOf Operator","level":"1.103","depth":1,"next":{"title":"Part 38 – Pre-Increment Operator","level":"1.104","depth":1,"path":"pages/part-38-pre-increment-operator.md","ref":"pages/part-38-pre-increment-operator.md","articles":[]},"previous":{"title":"Part 36 – Debugging SizeOf Operator","level":"1.102","depth":1,"path":"pages/part-36-debugging-sizeof-operator.md","ref":"pages/part-36-debugging-sizeof-operator.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-37-hacking-sizeof-operator.md","mtime":"2020-12-26T17:22:03.010Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T17:31:56.629Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 37 – Hacking SizeOf Operator","level":"1.103","depth":1,"next":{"title":"Part 38 – Pre-Increment Operator","level":"1.104","depth":1,"path":"pages/part-38-pre-increment-operator.md","ref":"pages/part-38-pre-increment-operator.md","articles":[]},"previous":{"title":"Part 36 – Debugging SizeOf Operator","level":"1.102","depth":1,"path":"pages/part-36-debugging-sizeof-operator.md","ref":"pages/part-36-debugging-sizeof-operator.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-37-hacking-sizeof-operator.md","mtime":"2020-12-26T18:02:32.586Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T18:27:29.965Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

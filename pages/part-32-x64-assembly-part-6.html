@@ -2321,28 +2321,28 @@
                                 <h1 id="part-32---x64-assembly-part-6">Part 32 - x64 Assembly [Part 6]</h1>
 <p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
 <p>Let&apos;s again review our source code.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/41621063.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1553853169947.jpg"></div>
 
 <p>Let&apos;s compile...</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/907400096.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1553853185424.jpg"></div>
 
 <p>As we have seen before it produces our string.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/339734783.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1553853213341.jpg"></div>
 
 <p>We debug and see the string being moved into <strong>0x6000d8</strong> and then <strong>RSI</strong>.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/567247464.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1553853259407.jpg"></div>
 
 <p>Just to verify we can see the string at the aforementioned address. NOW FOR A BIT OF FUN :)...</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/13040962.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1553853296959.jpg"></div>
 
 <p>Here we demonstrate we have the power to simply hack and redefine the string in memory. We are simply setting a char byte length and setting a new string.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1046159265.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1553853373225.jpg"></div>
 
 <p>As we can see we have successfully altered the string in memory.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/82010944.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1553853413835.jpg"></div>
 
 <p>We continue and run through the binary and see that our hack continues through <strong>RSI</strong>.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/618209331.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1553853461475.jpg"></div>
 
 <p>Finally we see when we run the binary we have successfully hacked it&apos;s operation. This is a very simple example however shows the power of truly understanding assembly at this level. GUI debugger tools will also provide this functionality however I like to use the command line tools so that they could be used on every environment.</p>
 <p>The purpose of these tools is to UNDERSTAND how this is done and what to look for when you are professionally reversing in real-time. You need to understand how an attacker can alter memory and/or instructions. We need more professional RE&apos;s to help defend infrastructures throughout the world and hopefully these tutorials motivate you toward a career in such.</p>
@@ -2389,7 +2389,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 32 - x64 Assembly [Part 6]","level":"1.147","depth":1,"next":{"title":"Part 33 - x64 Assembly [Part 7]","level":"1.148","depth":1,"path":"pages/part-33-x64-assembly-part-7.md","ref":"pages/part-33-x64-assembly-part-7.md","articles":[]},"previous":{"title":"Part 31 - x64 Assembly [Part 5]","level":"1.146","depth":1,"path":"pages/part-31-x64-assembly-part-5.md","ref":"pages/part-31-x64-assembly-part-5.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-32-x64-assembly-part-6.md","mtime":"2020-12-26T17:27:10.922Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T17:31:56.629Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 32 - x64 Assembly [Part 6]","level":"1.147","depth":1,"next":{"title":"Part 33 - x64 Assembly [Part 7]","level":"1.148","depth":1,"path":"pages/part-33-x64-assembly-part-7.md","ref":"pages/part-33-x64-assembly-part-7.md","articles":[]},"previous":{"title":"Part 31 - x64 Assembly [Part 5]","level":"1.146","depth":1,"path":"pages/part-31-x64-assembly-part-5.md","ref":"pages/part-31-x64-assembly-part-5.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-32-x64-assembly-part-6.md","mtime":"2020-12-26T18:03:02.786Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T18:27:29.965Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

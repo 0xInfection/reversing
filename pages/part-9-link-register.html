@@ -2325,7 +2325,7 @@
 <p>The link register does not require the writes and reads of the memory containing the stack which can save a considerable percentage of execution time with repeated calls of small subroutines.</p>
 <p>When BL has executed, the return address which is the address of the next instruction to be executed, is loaded into the LR or R14.&#xA0;When the subroutine has finished, the LR is copied directly to the PC (Program Counter) or R15 and code execution continues where it was prior in the sequential code source.</p>
 <p>CODE TIME! Don&#x2019;t be discouraged if you don&#x2019;t understand everything in the code example here.&#xA0;It will become clear over the next few lessons.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/549198454.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520232099195.jpg"></div>
 
 <p>To compile:</p>
 <pre spellcheck="false">as -o lr_demo.o lr_demo.s
@@ -2334,11 +2334,11 @@ ld -o lr_demo lr_demo.o
 </pre>
 
 <p>The simple example I created here is pretty self-explanatory.&#xA0;We start and proceed to the <strong>no_return</strong> subroutine and proceed to the <strong>my_function</strong> subroutine then to the <strong>wrap_up</strong> subroutine and finally<strong> exit</strong>.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/230581194.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520190659000.jpg"></div>
 
 <p>It is necessary that we jump into GDB which is our debugger to see exactly what happens with each step:</p>
 <p>As you can see with every step inside the debugger it shows you exactly the progression from <strong>no_return </strong>to <strong>my_function</strong> skipping <strong>wrap_up</strong> until the program counter gets the address from the link register.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/738449637.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1520221355382.jpg"></div>
 
 <p>Here we see the progression from <strong>wrap_up</strong> to <strong>exit</strong>.</p>
 <p>This is a fundamental operation when we see next week how the stack operates as the LR is an essential part of this process.</p>
@@ -2386,7 +2386,7 @@ ld -o lr_demo lr_demo.o
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 9 - Link Register","level":"1.50","depth":1,"next":{"title":"Part 10 - Stack Pointer","level":"1.51","depth":1,"path":"pages/part-10-stack-pointer.md","ref":"pages/part-10-stack-pointer.md","articles":[]},"previous":{"title":"Part 8 - CPSR","level":"1.49","depth":1,"path":"pages/part-8-cpsr.md","ref":"pages/part-8-cpsr.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-9-link-register.md","mtime":"2020-12-26T17:18:51.538Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T17:31:56.629Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 9 - Link Register","level":"1.50","depth":1,"next":{"title":"Part 10 - Stack Pointer","level":"1.51","depth":1,"path":"pages/part-10-stack-pointer.md","ref":"pages/part-10-stack-pointer.md","articles":[]},"previous":{"title":"Part 8 - CPSR","level":"1.49","depth":1,"path":"pages/part-8-cpsr.md","ref":"pages/part-8-cpsr.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-9-link-register.md","mtime":"2020-12-26T18:01:46.750Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T18:27:29.965Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -2321,28 +2321,28 @@
                                 <h1 id="part-40---hacking-hello-world">Part 40 - Hacking Hello World!</h1>
 <p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
 <p>In C we have several data types to which we can create variables. I will use a few simple examples:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/20619751.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1566059490750.jpg"></div>
 
 <p>Let&apos;s compile and run:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/727641596.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1566059504696.jpg"></div>
 
 <p>Ok as we can see we have a character an integer and a double. These are some of the most basic data types in C to which we have created a series of variables as shown above.</p>
 <p>Let us load the binary into Radare:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/600048097.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1566059659639.jpg"></div>
 
 <p>Let&apos;s disassemble at main:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/924298458.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1566059725847.jpg"></div>
 
 <p>Ok very simply we see 3 variable declarations defined up at the top in reverse order as they are <strong>local_1h </strong>which is our <strong>char a,</strong> <strong>local_8h</strong> which is our <strong>int b</strong> and <strong>local_10h</strong> which is our <strong>double c</strong>. You can also see the <strong>rbp</strong> base pointer allocating space for these variables. This is nice pseudo code that the debugger shows you up top.</p>
 <p>Ok stay with me!</p>
 <p>Within memory at <strong>0x0000113d </strong>we see the instructions <strong>mov byte [local1_h], 0x61</strong> which is in our ascii table a lowercase &apos;<strong>a&apos;</strong>. We know that [local1_h] is not real code however what is going on under the hood is the fact that these variables are pushed onto the stack in reverse order as we can see above. Therefore, if we were to hack our code to something like <strong>mov byte [rbp-0x1], 0x62 </strong>what do you think might happen? Very simple, we know that in reality the code at the mapped memory address of <strong>0x0000113d</strong> what is really going on is <strong>mov byte [rbp-0x1], 0x61</strong>. Quite simply what we have just done is hack our value of &apos;<strong>a</strong>&apos; to &apos;<strong>b</strong>&apos;. This should hopefully make sense to you.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/926150443.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1566060689050.jpg"></div>
 
 <p>Now let us re-examine our binary:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/820088005.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1566060755864.jpg"></div>
 
 <p>As we can clearly see at memory address <strong>0x0000113d </strong>we in fact see &apos;<strong>b</strong>&apos;. We have successfully hacked this portion.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/34841493.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1566060872094.jpg"></div>
 
 <p>We exit out of Radare and re-run the binary and we can see we have successfully hacked the value.</p>
 <p>HOMEWORK TIME! I want you to with this knowledge now hack the <strong>int</strong> and the <strong>double</strong>. I want you to put your results in the comment sections below. It is VERY important that you type all of this out and actually explore the exercises so I am looking forward to seeing your hacks in the comments!</p>
@@ -2389,7 +2389,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 40 - Hacking Hello World!","level":"1.155","depth":1,"next":{"title":"Part 41 - Hacking Variables!","level":"1.156","depth":1,"path":"pages/part-41-hacking-variables!.md","ref":"pages/part-41-hacking-variables!.md","articles":[]},"previous":{"title":"Part 39 - Why C?","level":"1.154","depth":1,"path":"pages/part-39-why-c.md","ref":"pages/part-39-why-c.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-40-hacking-hello-world!.md","mtime":"2020-12-26T17:28:18.814Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T17:31:56.629Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 40 - Hacking Hello World!","level":"1.155","depth":1,"next":{"title":"Part 41 - Hacking Variables!","level":"1.156","depth":1,"path":"pages/part-41-hacking-variables!.md","ref":"pages/part-41-hacking-variables!.md","articles":[]},"previous":{"title":"Part 39 - Why C?","level":"1.154","depth":1,"path":"pages/part-39-why-c.md","ref":"pages/part-39-why-c.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-40-hacking-hello-world!.md","mtime":"2020-12-26T18:03:11.498Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T18:27:29.965Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

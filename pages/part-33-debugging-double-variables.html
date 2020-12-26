@@ -2336,25 +2336,25 @@
 }
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/878455338.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1523008391034.jpg"></div>
 
 <p>Let&#x2019;s debug!</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/15415963.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1523008417137.jpg"></div>
 
 <p>Let&#x2019;s set a breakpoint at <strong>main+24</strong> and continue.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1000964362.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1523008442868.jpg"></div>
 
 <p>We see the <strong>strd r2, [r11, #-12]</strong> and we have to fully understand that this means we are storing the value at the offset of <strong>-12</strong> from register <strong>r11</strong> into <strong>r2</strong>.&#xA0;Let&#x2019;s now examine what exactly resides there.&#xA0;&#xA0;</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/205782342.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1523008470513.jpg"></div>
 
 <p>Voila!&#xA0;We see <strong>1337.77</strong> at that offset location or specifically stored into <strong>0x7efff230</strong> in memory.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/100562532.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1523008491495.jpg"></div>
 
 <p>Let&#x2019;s step into twice which executes the <strong>vldr d0, [r11, #-12]</strong> as we understand that <strong>1337.77</strong> will now be loaded into the double precision math co-processor <strong>d0 </strong>register.&#xA0;Let&#x2019;s now print the value at that location below.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/928544376.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1523008515533.jpg"></div>
 
 <p>Finally let&#x2019;s continue and watch the value echo to the terminal.&#xA0;This completes our <strong>cout</strong> c++ function.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/297544609.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1523008538297.jpg"></div>
 
 <p>Next week we will dive into Hacking Double Variables.</p>
 
@@ -2400,7 +2400,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 33 – Debugging Double Variables","level":"1.99","depth":1,"next":{"title":"Part 34 – Hacking Double Variables","level":"1.100","depth":1,"path":"pages/part-34-hacking-double-variables.md","ref":"pages/part-34-hacking-double-variables.md","articles":[]},"previous":{"title":"Part 32 – Double Variables","level":"1.98","depth":1,"path":"pages/part-32-double-variables.md","ref":"pages/part-32-double-variables.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-33-debugging-double-variables.md","mtime":"2020-12-26T17:21:23.212Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T17:31:56.629Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 33 – Debugging Double Variables","level":"1.99","depth":1,"next":{"title":"Part 34 – Hacking Double Variables","level":"1.100","depth":1,"path":"pages/part-34-hacking-double-variables.md","ref":"pages/part-34-hacking-double-variables.md","articles":[]},"previous":{"title":"Part 32 – Double Variables","level":"1.98","depth":1,"path":"pages/part-32-double-variables.md","ref":"pages/part-32-double-variables.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-33-debugging-double-variables.md","mtime":"2020-12-26T18:02:19.042Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T18:27:29.965Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

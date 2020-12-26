@@ -2322,55 +2322,55 @@
 <p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
 <p>We are at the end of the road. This is the final video in the x64 series. The final topic is that of pointers.</p>
 <p>What are pointers? Let us start with an example.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/16431636.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1567286671465.jpg"></div>
 
 <p>A pointer is nothing more than a memory address. When we compile we will clearly see where lottery_number lives in mapped memory (this is a running example unlike our unmapped Radare examples).</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/923950352.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1567286745307.jpg"></div>
 
 <p>Let&apos;s add a true pointer to the example:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/892764827.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1567287725406.jpg"></div>
 
 <p>We see the same value:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/312212885.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1567287787090.jpg"></div>
 
 <p>Let us experiment more:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/785318564.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1567288396508.jpg"></div>
 
 <p>We see the pointer address point to a new address:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1053424278.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1567288456995.jpg"></div>
 
 <p>Remember pointers are memory addresses of other variables. Let&apos;s look at it another way:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1068677524.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1567289354121.jpg"></div>
 
 <p>Let us compile:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/10023769.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1567289368216.jpg"></div>
 
 <p>We deference by doing the following:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/216349780.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1567289646596.jpg"></div>
 
 <p>Then we compile:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/671223758.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1567289657671.jpg"></div>
 
 <p>We can see the deference pointer is equal to 777.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/728271779.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1567290644015.jpg"></div>
 
 <p>We can see the example with an array:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/50236451.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1567290665083.jpg"></div>
 
 <p>Let&apos;s debug:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/533409779.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1567290786481.jpg"></div>
 
 <p>Then we disassemble:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/553431309.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1567290800965.jpg"></div>
 
 <p>Let&apos;s hack!</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1011601340.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1567292294462.jpg"></div>
 
 <p>Let&apos;s re-examine the binary:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/319998128.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1567292311387.jpg"></div>
 
 <p>We can see we hacked the value of 3 with 6.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/268640298.jpg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1567292376880.jpg"></div>
 
 <p>We can see we have made the successful hack.</p>
 <p>I hope over the years through the literal hundreds of x86, ARM and x64 tutorials you have a basic knowledge of how to do GOOD to protect critical infrastructures from malicious hands by understanding how the enemy works. Go and do GOOD work!</p>
@@ -2417,7 +2417,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 42 - Hacking Branches!","level":"1.157","depth":1,"next":{"title":"Part 43 - Hacking Pointers!","level":"1.158","depth":1,"path":"pages/part-43-hacking-pointers!.md","ref":"pages/part-43-hacking-pointers!.md","articles":[]},"previous":{"title":"Part 41 - Hacking Variables!","level":"1.156","depth":1,"path":"pages/part-41-hacking-variables!.md","ref":"pages/part-41-hacking-variables!.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-42-hacking-branches!.md","mtime":"2020-12-26T17:28:50.848Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T17:31:56.629Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 42 - Hacking Branches!","level":"1.157","depth":1,"next":{"title":"Part 43 - Hacking Pointers!","level":"1.158","depth":1,"path":"pages/part-43-hacking-pointers!.md","ref":"pages/part-43-hacking-pointers!.md","articles":[]},"previous":{"title":"Part 41 - Hacking Variables!","level":"1.156","depth":1,"path":"pages/part-41-hacking-variables!.md","ref":"pages/part-41-hacking-variables!.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-42-hacking-branches!.md","mtime":"2020-12-26T18:03:18.942Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T18:27:29.965Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
