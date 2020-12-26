@@ -45,8 +45,12 @@ def grabContent(pgsrc: str, fname: str):
     content = processContent(re.search(patt, pgsrc).group(1))
     content = '<h1>{}</h1>{}'.format(fname, content)
     print('\n\n'+content+'\n\n')
-    with open('pages/{}'.format(processfName(fname)), 'w+') as wf:
+    dirname = 'pages/{}'.format(processfName(fname))
+    toadd = '* [{}]({})'.format(fname, dirname)
+    with open(dirname, 'w+') as wf:
         wf.write(content)
+    with open('SUMMARY.md', 'a') as wf:
+        wf.write(toadd+'\n')
 
 def grabLinks(source: str):
     '''

@@ -1,0 +1,2414 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Part 15 - Debugging ADD · Reverse Engineering</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="part-16-hacking-add.html" />
+    
+    
+    <link rel="prev" href="part-14-add.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../README.md">
+            
+                <span>
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="part-1-goals.html">
+            
+                <a href="part-1-goals.html">
+            
+                    
+                    Part 1: Goals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="part-2-techniques.html">
+            
+                <a href="part-2-techniques.html">
+            
+                    
+                    Part 2: Techniques
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="part-3-types-of-malware.html">
+            
+                <a href="part-3-types-of-malware.html">
+            
+                    
+                    Part 3: Types Of Malware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="part-4-x86-assembly-intro.html">
+            
+                <a href="part-4-x86-assembly-intro.html">
+            
+                    
+                    Part 4: x86 Assembly Intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="part-5-binary-number-system.html">
+            
+                <a href="part-5-binary-number-system.html">
+            
+                    
+                    Part 5: Binary Number System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="part-6-hexadecimal-number-system.html">
+            
+                <a href="part-6-hexadecimal-number-system.html">
+            
+                    
+                    Part 6: Hexadecimal Number System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="part-7-transistors-and-memory.html">
+            
+                <a href="part-7-transistors-and-memory.html">
+            
+                    
+                    Part 7: Transistors And Memory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="part-8-bytes-words-double-words-etc.html">
+            
+                <a href="part-8-bytes-words-double-words-etc.html">
+            
+                    
+                    Part 8 - Bytes, Words, Double Words, etc...
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="part-9-x86-basic-architecture.html">
+            
+                <a href="part-9-x86-basic-architecture.html">
+            
+                    
+                    Part 9: x86 Basic Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="part-10-general-purpose-registers.html">
+            
+                <a href="part-10-general-purpose-registers.html">
+            
+                    
+                    Part 10: General-purpose Registers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="part-11-segment-registers.html">
+            
+                <a href="part-11-segment-registers.html">
+            
+                    
+                    Part 11: Segment Registers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="part-12-instruction-pointer-register.html">
+            
+                <a href="part-12-instruction-pointer-register.html">
+            
+                    
+                    Part 12: Instruction Pointer Register
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="part-13-control-registers.html">
+            
+                <a href="part-13-control-registers.html">
+            
+                    
+                    Part 13: Control Registers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="part-14-flags.html">
+            
+                <a href="part-14-flags.html">
+            
+                    
+                    Part 14: Flags
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="part-15-stack.html">
+            
+                <a href="part-15-stack.html">
+            
+                    
+                    Part 15: Stack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="part-16-heap.html">
+            
+                <a href="part-16-heap.html">
+            
+                    
+                    Part 16: Heap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="part-17-how-to-install-linux.html">
+            
+                <a href="part-17-how-to-install-linux.html">
+            
+                    
+                    Part 17 – How To Install Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="part-18-vim-text-editor.html">
+            
+                <a href="part-18-vim-text-editor.html">
+            
+                    
+                    Part 18 - vim Text Editor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="part-19-why-learn-assembly.html">
+            
+                <a href="part-19-why-learn-assembly.html">
+            
+                    
+                    Part 19 - Why Learn Assembly
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="part-20-instruction-code-handling.html">
+            
+                <a href="part-20-instruction-code-handling.html">
+            
+                    
+                    Part 20 - Instruction Code Handling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="part-21-how-to-compile-a-program.html">
+            
+                <a href="part-21-how-to-compile-a-program.html">
+            
+                    
+                    Part 21 - How To Compile A Program
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="part-22-asm-program-1-moving-immediate-data.html">
+            
+                <a href="part-22-asm-program-1-moving-immediate-data.html">
+            
+                    
+                    Part 22 - ASM Program 1 [Moving Immediate Data]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="part-23-asm-debugging-1-moving-immediate-data.html">
+            
+                <a href="part-23-asm-debugging-1-moving-immediate-data.html">
+            
+                    
+                    Part 23 - ASM Debugging 1 [Moving Immediate Data]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="part-24-asm-hacking-1-moving-immediate-data.html">
+            
+                <a href="part-24-asm-hacking-1-moving-immediate-data.html">
+            
+                    
+                    Part 24 - ASM Hacking 1 [Moving Immediate Data]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="part-25-asm-program-2-moving-data-between-registers.html">
+            
+                <a href="part-25-asm-program-2-moving-data-between-registers.html">
+            
+                    
+                    Part 25 - ASM Program 2 [Moving Data Between Registers]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="part-26-asm-debugging-2-moving-data-between-registers.html">
+            
+                <a href="part-26-asm-debugging-2-moving-data-between-registers.html">
+            
+                    
+                    Part 26 - ASM Debugging 2 [Moving Data Between Registers]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="part-27-asm-hacking-2-moving-data-between-registers.html">
+            
+                <a href="part-27-asm-hacking-2-moving-data-between-registers.html">
+            
+                    
+                    Part 27 - ASM Hacking 2 [Moving Data Between Registers]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="part-28-asm-program-3-moving-data-between-memory-and-registers.html">
+            
+                <a href="part-28-asm-program-3-moving-data-between-memory-and-registers.html">
+            
+                    
+                    Part 28 - ASM Program 3 [Moving Data Between Memory And Registers]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="part-29-asm-debugging-3-moving-data-between-memory-and-registers.html">
+            
+                <a href="part-29-asm-debugging-3-moving-data-between-memory-and-registers.html">
+            
+                    
+                    Part 29 - ASM Debugging 3 [Moving Data Between Memory And Registers]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="part-30-asm-hacking-3-moving-data-between-memory-and-registers.html">
+            
+                <a href="part-30-asm-hacking-3-moving-data-between-memory-and-registers.html">
+            
+                    
+                    Part 30 - ASM Hacking 3 [Moving Data Between Memory And Registers]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="part-31-asm-program-4-moving-data-between-registers-and-memory.html">
+            
+                <a href="part-31-asm-program-4-moving-data-between-registers-and-memory.html">
+            
+                    
+                    Part 31 - ASM Program 4 [Moving Data Between Registers And Memory]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="part-32-asm-debugging-4-moving-data-between-registers-and-memory.html">
+            
+                <a href="part-32-asm-debugging-4-moving-data-between-registers-and-memory.html">
+            
+                    
+                    Part 32 - ASM Debugging 4 [Moving Data Between Registers And Memory]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="part-33-asm-hacking-4-moving-data-between-registers-and-memory.html">
+            
+                <a href="part-33-asm-hacking-4-moving-data-between-registers-and-memory.html">
+            
+                    
+                    Part 33 - ASM Hacking 4 [Moving Data Between Registers And Memory]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.36" data-path="part-34-asm-program-5-indirect-addressing-with-registers.html">
+            
+                <a href="part-34-asm-program-5-indirect-addressing-with-registers.html">
+            
+                    
+                    Part 34 - ASM Program 5 [Indirect Addressing With Registers]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.37" data-path="part-35-asm-debugging-5-indirect-addressing-with-registers.html">
+            
+                <a href="part-35-asm-debugging-5-indirect-addressing-with-registers.html">
+            
+                    
+                    Part 35 - ASM Debugging 5 [Indirect Addressing With Registers]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.38" data-path="part-36-asm-hacking-5-indirect-addressing-with-registers.html">
+            
+                <a href="part-36-asm-hacking-5-indirect-addressing-with-registers.html">
+            
+                    
+                    Part 36 - ASM Hacking 5 [Indirect Addressing With Registers]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.39" data-path="part-37-asm-program-6-cmov-instructions.html">
+            
+                <a href="part-37-asm-program-6-cmov-instructions.html">
+            
+                    
+                    Part 37 - ASM Program 6 [CMOV Instructions]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.40" data-path="part-38-asm-debugging-6-cmov-instructions.html">
+            
+                <a href="part-38-asm-debugging-6-cmov-instructions.html">
+            
+                    
+                    Part 38 - ASM Debugging 6 [CMOV Instructions]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.41" data-path="part-39-asm-hacking-6-cmov-instructions.html">
+            
+                <a href="part-39-asm-hacking-6-cmov-instructions.html">
+            
+                    
+                    Part 39 - ASM Hacking 6 [CMOV Instructions]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42" data-path="part-40-conclusion.html">
+            
+                <a href="part-40-conclusion.html">
+            
+                    
+                    Part 40 - Conclusion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.43" data-path="part-1-the-meaning-of-life.html">
+            
+                <a href="part-1-the-meaning-of-life.html">
+            
+                    
+                    Part 1 – The Meaning Of Life
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.44" data-path="part-2-number-systems.html">
+            
+                <a href="part-2-number-systems.html">
+            
+                    
+                    Part 2 - Number Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.45" data-path="part-3-binary-addition.html">
+            
+                <a href="part-3-binary-addition.html">
+            
+                    
+                    Part 3 - Binary Addition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.46" data-path="part-4-binary-subtraction.html">
+            
+                <a href="part-4-binary-subtraction.html">
+            
+                    
+                    Part 4 - Binary Subtraction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.47" data-path="part-5-word-lengths.html">
+            
+                <a href="part-5-word-lengths.html">
+            
+                    
+                    Part 5 - Word Lengths
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.48" data-path="part-6-registers.html">
+            
+                <a href="part-6-registers.html">
+            
+                    
+                    Part 6 - Registers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49" data-path="part-7-program-counter.html">
+            
+                <a href="part-7-program-counter.html">
+            
+                    
+                    Part 7 - Program Counter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.50" data-path="part-8-cpsr.html">
+            
+                <a href="part-8-cpsr.html">
+            
+                    
+                    Part 8 - CPSR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.51" data-path="part-9-link-register.html">
+            
+                <a href="part-9-link-register.html">
+            
+                    
+                    Part 9 - Link Register
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.52" data-path="part-10-stack-pointer.html">
+            
+                <a href="part-10-stack-pointer.html">
+            
+                    
+                    Part 10 - Stack Pointer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.53" data-path="part-11-arm-firmware-boot-procedures.html">
+            
+                <a href="part-11-arm-firmware-boot-procedures.html">
+            
+                    
+                    Part 11 - ARM Firmware Boot Procedures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.54" data-path="part-12-von-neumann-architecture.html">
+            
+                <a href="part-12-von-neumann-architecture.html">
+            
+                    
+                    Part 12 - Von Neumann Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.55" data-path="part-13-instruction-pipeline.html">
+            
+                <a href="part-13-instruction-pipeline.html">
+            
+                    
+                    Part 13 - Instruction Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.56" data-path="part-14-add.html">
+            
+                <a href="part-14-add.html">
+            
+                    
+                    Part 14 - ADD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.57" data-path="part-15-debugging-add.html">
+            
+                <a href="part-15-debugging-add.html">
+            
+                    
+                    Part 15 - Debugging ADD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.58" data-path="part-16-hacking-add.html">
+            
+                <a href="part-16-hacking-add.html">
+            
+                    
+                    Part 16 - Hacking ADD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.59" data-path="part-17-adds.html">
+            
+                <a href="part-17-adds.html">
+            
+                    
+                    Part 17 - ADDS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.60" data-path="part-18-debugging-adds.html">
+            
+                <a href="part-18-debugging-adds.html">
+            
+                    
+                    Part 18 – Debugging ADDS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.61" data-path="part-19-hacking-adds.html">
+            
+                <a href="part-19-hacking-adds.html">
+            
+                    
+                    Part 19 – Hacking ADDS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.62" data-path="part-20-adc.html">
+            
+                <a href="part-20-adc.html">
+            
+                    
+                    Part 20 – ADC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.63" data-path="part-21-debugging-adc.html">
+            
+                <a href="part-21-debugging-adc.html">
+            
+                    
+                    Part 21 – Debugging ADC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.64" data-path="part-22-hacking-adc.html">
+            
+                <a href="part-22-hacking-adc.html">
+            
+                    
+                    Part 22 – Hacking ADC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.65" data-path="part-23-sub.html">
+            
+                <a href="part-23-sub.html">
+            
+                    
+                    Part 23 – SUB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.66" data-path="part-24-debugging-sub.html">
+            
+                <a href="part-24-debugging-sub.html">
+            
+                    
+                    Part 24 – Debugging SUB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.67" data-path="part-25-hacking-sub.html">
+            
+                <a href="part-25-hacking-sub.html">
+            
+                    
+                    Part 25 – Hacking SUB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.68" data-path="part-1-the-meaning-of-life-part-2.html">
+            
+                <a href="part-1-the-meaning-of-life-part-2.html">
+            
+                    
+                    Part 1 – The Meaning Of Life Part 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.69" data-path="part-2-number-systems.html">
+            
+                <a href="part-2-number-systems.html">
+            
+                    
+                    Part 2 – Number Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.70" data-path="part-3-binary-addition.html">
+            
+                <a href="part-3-binary-addition.html">
+            
+                    
+                    Part 3 – Binary Addition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.71" data-path="part-4-binary-subtraction.html">
+            
+                <a href="part-4-binary-subtraction.html">
+            
+                    
+                    Part 4 – Binary Subtraction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.72" data-path="part-5-word-lengths.html">
+            
+                <a href="part-5-word-lengths.html">
+            
+                    
+                    Part 5 – Word Lengths
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.73" data-path="part-6-registers.html">
+            
+                <a href="part-6-registers.html">
+            
+                    
+                    Part 6 – Registers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.74" data-path="part-7-program-counter.html">
+            
+                <a href="part-7-program-counter.html">
+            
+                    
+                    Part 7 – Program Counter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.75" data-path="part-8-cpsr.html">
+            
+                <a href="part-8-cpsr.html">
+            
+                    
+                    Part 8 - CPSR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.76" data-path="part-9-link-register.html">
+            
+                <a href="part-9-link-register.html">
+            
+                    
+                    Part 9 - Link Register
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.77" data-path="part-10-stack-pointer.html">
+            
+                <a href="part-10-stack-pointer.html">
+            
+                    
+                    Part 10 - Stack Pointer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.78" data-path="part-11-firmware-boot-procedures.html">
+            
+                <a href="part-11-firmware-boot-procedures.html">
+            
+                    
+                    Part 11 - Firmware Boot Procedures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.79" data-path="part-12-von-neumann-architecture.html">
+            
+                <a href="part-12-von-neumann-architecture.html">
+            
+                    
+                    Part 12 - Von Neumann Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.80" data-path="part-13-instruction-pipeline.html">
+            
+                <a href="part-13-instruction-pipeline.html">
+            
+                    
+                    Part 13 - Instruction Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.81" data-path="part-14-hello-world.html">
+            
+                <a href="part-14-hello-world.html">
+            
+                    
+                    Part 14 - Hello World
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.82" data-path="part-15-debugging-hello-world.html">
+            
+                <a href="part-15-debugging-hello-world.html">
+            
+                    
+                    Part 15 - Debugging Hello World
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.83" data-path="part-16-hacking-hello-world.html">
+            
+                <a href="part-16-hacking-hello-world.html">
+            
+                    
+                    Part 16 - Hacking Hello World
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.84" data-path="part-17-constants.html">
+            
+                <a href="part-17-constants.html">
+            
+                    
+                    Part 17 - Constants
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.85" data-path="part-18-debugging-constants.html">
+            
+                <a href="part-18-debugging-constants.html">
+            
+                    
+                    Part 18 – Debugging Constants
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.86" data-path="part-19-hacking-constants.html">
+            
+                <a href="part-19-hacking-constants.html">
+            
+                    
+                    Part 19 – Hacking Constants
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.87" data-path="part-20-character-variables.html">
+            
+                <a href="part-20-character-variables.html">
+            
+                    
+                    Part 20 – Character Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.88" data-path="part-21-debugging-character-variables.html">
+            
+                <a href="part-21-debugging-character-variables.html">
+            
+                    
+                    Part 21 – Debugging Character Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.89" data-path="part-22-hacking-character-variables.html">
+            
+                <a href="part-22-hacking-character-variables.html">
+            
+                    
+                    Part 22 – Hacking Character Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.90" data-path="part-23-boolean-variables.html">
+            
+                <a href="part-23-boolean-variables.html">
+            
+                    
+                    Part 23 – Boolean Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.91" data-path="part-24-debugging-boolean-variables.html">
+            
+                <a href="part-24-debugging-boolean-variables.html">
+            
+                    
+                    Part 24 – Debugging Boolean Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.92" data-path="part-25-hacking-boolean-variables.html">
+            
+                <a href="part-25-hacking-boolean-variables.html">
+            
+                    
+                    Part 25 – Hacking Boolean Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.93" data-path="part-26-integer-variables.html">
+            
+                <a href="part-26-integer-variables.html">
+            
+                    
+                    Part 26 – Integer Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.94" data-path="part-27-debugging-integer-variables.html">
+            
+                <a href="part-27-debugging-integer-variables.html">
+            
+                    
+                    Part 27 – Debugging Integer Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.95" data-path="part-28-hacking-integer-variables.html">
+            
+                <a href="part-28-hacking-integer-variables.html">
+            
+                    
+                    Part 28 – Hacking Integer Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.96" data-path="part-29-float-variables.html">
+            
+                <a href="part-29-float-variables.html">
+            
+                    
+                    Part 29 – Float Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.97" data-path="part-30-debugging-float-variables.html">
+            
+                <a href="part-30-debugging-float-variables.html">
+            
+                    
+                    Part 30 – Debugging Float Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.98" data-path="part-31-hacking-float-variables.html">
+            
+                <a href="part-31-hacking-float-variables.html">
+            
+                    
+                    Part 31 – Hacking Float Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.99" data-path="part-32-double-variables.html">
+            
+                <a href="part-32-double-variables.html">
+            
+                    
+                    Part 32 – Double Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.100" data-path="part-33-debugging-double-variables.html">
+            
+                <a href="part-33-debugging-double-variables.html">
+            
+                    
+                    Part 33 – Debugging Double Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.101" data-path="part-34-hacking-double-variables.html">
+            
+                <a href="part-34-hacking-double-variables.html">
+            
+                    
+                    Part 34 – Hacking Double Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.102" data-path="part-35-sizeof-operator.html">
+            
+                <a href="part-35-sizeof-operator.html">
+            
+                    
+                    Part 35 – SizeOf Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.103" data-path="part-36-debugging-sizeof-operator.html">
+            
+                <a href="part-36-debugging-sizeof-operator.html">
+            
+                    
+                    Part 36 – Debugging SizeOf Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.104" data-path="part-37-hacking-sizeof-operator.html">
+            
+                <a href="part-37-hacking-sizeof-operator.html">
+            
+                    
+                    Part 37 – Hacking SizeOf Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.105" data-path="part-38-pre-increment-operator.html">
+            
+                <a href="part-38-pre-increment-operator.html">
+            
+                    
+                    Part 38 – Pre-Increment Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.106" data-path="part-39-debugging-pre-increment-operator.html">
+            
+                <a href="part-39-debugging-pre-increment-operator.html">
+            
+                    
+                    Part 39 – Debugging Pre-Increment Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.107" data-path="part-40-hacking-pre-increment-operator.html">
+            
+                <a href="part-40-hacking-pre-increment-operator.html">
+            
+                    
+                    Part 40 – Hacking Pre-Increment Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.108" data-path="part-41-post-increment-operator.html">
+            
+                <a href="part-41-post-increment-operator.html">
+            
+                    
+                    Part 41 – Post-Increment Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.109" data-path="part-42-debugging-post-increment-operator.html">
+            
+                <a href="part-42-debugging-post-increment-operator.html">
+            
+                    
+                    Part 42 – Debugging Post-Increment Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.110" data-path="part-43-hacking-post-increment-operator.html">
+            
+                <a href="part-43-hacking-post-increment-operator.html">
+            
+                    
+                    Part 43 – Hacking Post-Increment Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.111" data-path="part-44-pre-decrement-operator.html">
+            
+                <a href="part-44-pre-decrement-operator.html">
+            
+                    
+                    Part 44 – Pre-Decrement Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.112" data-path="part-45-debugging-pre-decrement-operator.html">
+            
+                <a href="part-45-debugging-pre-decrement-operator.html">
+            
+                    
+                    Part 45 – Debugging Pre-Decrement Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.113" data-path="part-46-hacking-pre-decrement-operator.html">
+            
+                <a href="part-46-hacking-pre-decrement-operator.html">
+            
+                    
+                    Part 46 – Hacking Pre-Decrement Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.114" data-path="part-47-post-decrement-operator.html">
+            
+                <a href="part-47-post-decrement-operator.html">
+            
+                    
+                    Part 47 – Post-Decrement Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.115" data-path="part-48-debugging-post-decrement-operator.html">
+            
+                <a href="part-48-debugging-post-decrement-operator.html">
+            
+                    
+                    Part 48 – Debugging Post-Decrement Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.116" data-path="part-49-hacking-post-decrement-operator.html">
+            
+                <a href="part-49-hacking-post-decrement-operator.html">
+            
+                    
+                    Part 49 – Hacking Post-Decrement Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.117" data-path="part-1-the-cyber-revolution.html">
+            
+                <a href="part-1-the-cyber-revolution.html">
+            
+                    
+                    Part 1 – The Cyber Revolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.118" data-path="part-2-transistors.html">
+            
+                <a href="part-2-transistors.html">
+            
+                    
+                    Part 2 - Transistors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.119" data-path="part-3-logic-gates.html">
+            
+                <a href="part-3-logic-gates.html">
+            
+                    
+                    Part 3 - Logic Gates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.120" data-path="part-4-number-systems.html">
+            
+                <a href="part-4-number-systems.html">
+            
+                    
+                    Part 4 - Number Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.121" data-path="part-5-binary-addition.html">
+            
+                <a href="part-5-binary-addition.html">
+            
+                    
+                    Part 5 - Binary Addition
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.122" data-path="part-6-binary-subtraction.html">
+            
+                <a href="part-6-binary-subtraction.html">
+            
+                    
+                    Part 6 - Binary Subtraction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.123" data-path="part-7-word-lengths.html">
+            
+                <a href="part-7-word-lengths.html">
+            
+                    
+                    Part 7 - Word Lengths
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.124" data-path="part-8-general-architecture.html">
+            
+                <a href="part-8-general-architecture.html">
+            
+                    
+                    Part 8 - General Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.125" data-path="part-9-calling-conventions.html">
+            
+                <a href="part-9-calling-conventions.html">
+            
+                    
+                    Part 9 - Calling Conventions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.126" data-path="part-10-boolean-instructions.html">
+            
+                <a href="part-10-boolean-instructions.html">
+            
+                    
+                    Part 10 - Boolean Instructions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.127" data-path="part-11-pointers.html">
+            
+                <a href="part-11-pointers.html">
+            
+                    
+                    Part 11 - Pointers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.128" data-path="part-12-load-effective-address.html">
+            
+                <a href="part-12-load-effective-address.html">
+            
+                    
+                    Part 12 - Load Effective Address
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.129" data-path="part-13-the-data-segment.html">
+            
+                <a href="part-13-the-data-segment.html">
+            
+                    
+                    Part 13 - The Data Segment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.130" data-path="part-14-shl-instruction.html">
+            
+                <a href="part-14-shl-instruction.html">
+            
+                    
+                    Part 14 - SHL Instruction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.131" data-path="part-15-shr-instruction.html">
+            
+                <a href="part-15-shr-instruction.html">
+            
+                    
+                    Part 15 - SHR Instruction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.132" data-path="part-16-rol-instruction.html">
+            
+                <a href="part-16-rol-instruction.html">
+            
+                    
+                    Part 16 - ROL Instruction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.133" data-path="part-17-ror-instruction.html">
+            
+                <a href="part-17-ror-instruction.html">
+            
+                    
+                    Part 17 - ROR Instruction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.134" data-path="part-18-boot-sector-basics-part-1.html">
+            
+                <a href="part-18-boot-sector-basics-part-1.html">
+            
+                    
+                    Part 18 - Boot Sector Basics [Part 1]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.135" data-path="part-19-boot-sector-basics-part-2.html">
+            
+                <a href="part-19-boot-sector-basics-part-2.html">
+            
+                    
+                    Part 19 - Boot Sector Basics [Part 2]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.136" data-path="part-20-boot-sector-basics-part-3.html">
+            
+                <a href="part-20-boot-sector-basics-part-3.html">
+            
+                    
+                    Part 20 - Boot Sector Basics [Part 3]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.137" data-path="part-21-boot-sector-basics-part-4.html">
+            
+                <a href="part-21-boot-sector-basics-part-4.html">
+            
+                    
+                    Part 21 - Boot Sector Basics [Part 4]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.138" data-path="part-22-boot-sector-basics-part-5.html">
+            
+                <a href="part-22-boot-sector-basics-part-5.html">
+            
+                    
+                    Part 22 - Boot Sector Basics [Part 5]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.139" data-path="part-23-boot-sector-basics-part-6.html">
+            
+                <a href="part-23-boot-sector-basics-part-6.html">
+            
+                    
+                    Part 23 - Boot Sector Basics [Part 6]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.140" data-path="part-24-boot-sector-basics-part-7.html">
+            
+                <a href="part-24-boot-sector-basics-part-7.html">
+            
+                    
+                    Part 24 - Boot Sector Basics [Part 7]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.141" data-path="part-25-boot-sector-basics-part-8.html">
+            
+                <a href="part-25-boot-sector-basics-part-8.html">
+            
+                    
+                    Part 25 - Boot Sector Basics [Part 8]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.142" data-path="part-26-boot-sector-basics-part-9.html">
+            
+                <a href="part-26-boot-sector-basics-part-9.html">
+            
+                    
+                    Part 26 - Boot Sector Basics [Part 9]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.143" data-path="part-27-x64-assembly-part-1.html">
+            
+                <a href="part-27-x64-assembly-part-1.html">
+            
+                    
+                    Part 27 - x64 Assembly [Part 1]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.144" data-path="part-28-x64-assembly-part-2.html">
+            
+                <a href="part-28-x64-assembly-part-2.html">
+            
+                    
+                    Part 28 - x64 Assembly [Part 2]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.145" data-path="part-29-x64-assembly-part-3.html">
+            
+                <a href="part-29-x64-assembly-part-3.html">
+            
+                    
+                    Part 29 - x64 Assembly [Part 3]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.146" data-path="part-30-x64-assembly-part-4.html">
+            
+                <a href="part-30-x64-assembly-part-4.html">
+            
+                    
+                    Part 30 - x64 Assembly [Part 4]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.147" data-path="part-31-x64-assembly-part-5.html">
+            
+                <a href="part-31-x64-assembly-part-5.html">
+            
+                    
+                    Part 31 - x64 Assembly [Part 5]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.148" data-path="part-32-x64-assembly-part-6.html">
+            
+                <a href="part-32-x64-assembly-part-6.html">
+            
+                    
+                    Part 32 - x64 Assembly [Part 6]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.149" data-path="part-33-x64-assembly-part-7.html">
+            
+                <a href="part-33-x64-assembly-part-7.html">
+            
+                    
+                    Part 33 - x64 Assembly [Part 7]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.150" data-path="part-34-x64-c++-1-code-part-1.html">
+            
+                <a href="part-34-x64-c++-1-code-part-1.html">
+            
+                    
+                    Part 34 - x64 C++ 1 Code [Part 1]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.151" data-path="part-35-x64-c++-2-debug-part-2.html">
+            
+                <a href="part-35-x64-c++-2-debug-part-2.html">
+            
+                    
+                    Part 35 - x64 C++ 2 Debug [Part 2]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.152" data-path="part-36-x64-c++-3-hacking-part-3.html">
+            
+                <a href="part-36-x64-c++-3-hacking-part-3.html">
+            
+                    
+                    Part 36 - x64 C++ 3 Hacking [Part 3]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.153" data-path="part-37-x64-c-&-genesis-of-life.md">
+            
+                <span>
+            
+                    
+                    Part 37 - x64 C & Genesis Of Life
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.154" data-path="part-38-x64-networking-basics.html">
+            
+                <a href="part-38-x64-networking-basics.html">
+            
+                    
+                    Part 38 - x64 Networking Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.155" data-path="part-39-why-c?.html">
+            
+                <a href="part-39-why-c?.html">
+            
+                    
+                    Part 39 - Why C?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.156" data-path="part-40-hacking-hello-world!.html">
+            
+                <a href="part-40-hacking-hello-world!.html">
+            
+                    
+                    Part 40 - Hacking Hello World!
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.157" data-path="part-41-hacking-variables!.html">
+            
+                <a href="part-41-hacking-variables!.html">
+            
+                    
+                    Part 41 - Hacking Variables!
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.158" data-path="part-42-hacking-branches!.html">
+            
+                <a href="part-42-hacking-branches!.html">
+            
+                    
+                    Part 42 - Hacking Branches!
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.159" data-path="part-43-hacking-pointers!.html">
+            
+                <a href="part-43-hacking-pointers!.html">
+            
+                    
+                    Part 43 - Hacking Pointers!
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.160" data-path="part-1-the-meaning-of-life.html">
+            
+                <a href="part-1-the-meaning-of-life.html">
+            
+                    
+                    Part 1 - The Meaning Of Life
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.161" data-path="part-2-development-setup.html">
+            
+                <a href="part-2-development-setup.html">
+            
+                    
+                    Part 2 - Development Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.162" data-path="part-3-"hello-world".html">
+            
+                <a href="part-3-"hello-world".html">
+            
+                    
+                    Part 3 - "Hello World"
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.163" data-path="part-4-debugging-"hello-world".html">
+            
+                <a href="part-4-debugging-"hello-world".html">
+            
+                    
+                    Part 4 - Debugging "Hello World"
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.164" data-path="part-5-hacking-"hello-world".html">
+            
+                <a href="part-5-hacking-"hello-world".html">
+            
+                    
+                    Part 5 - Hacking "Hello World"
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.165" data-path="part-6-basic-io.html">
+            
+                <a href="part-6-basic-io.html">
+            
+                    
+                    Part 6 - Basic I/O
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.166" data-path="part-7-debugging-basic-io.html">
+            
+                <a href="part-7-debugging-basic-io.html">
+            
+                    
+                    Part 7 - Debugging Basic I/O
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.167" data-path="part-8-hacking-basic-io.html">
+            
+                <a href="part-8-hacking-basic-io.html">
+            
+                    
+                    Part 8 - Hacking Basic I/O
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.168" data-path="part-9-character-primitive-datatype.html">
+            
+                <a href="part-9-character-primitive-datatype.html">
+            
+                    
+                    Part 9 - Character Primitive Datatype
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.169" data-path="part-10-debugging-character-primitive-datatype.html">
+            
+                <a href="part-10-debugging-character-primitive-datatype.html">
+            
+                    
+                    Part 10 - Debugging Character Primitive Datatype
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Part 15 - Debugging ADD</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p></p><h1 id="part-15---debugging-add">Part 15 - Debugging ADD</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>Let&#x2019;s review our ADD example below:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQF9O-8Swr_-Pg/article-inline_image-shrink_1000_1488/0/1520244359354?e=1614211200&amp;v=beta&amp;t=ttTU0waHFYp_T2OGOhEV_12bwRoeHjf_FZPPl0WelaA"></div><p>Again we see that we move decimal <strong>67</strong> into <strong>r1</strong> and decimal <strong>53</strong> into <strong>r2</strong>. We then <strong>add r1 </strong>and <strong>r2</strong> and put the result into <strong>r0</strong>.</p><p>Let&#x2019;s compile:</p><p><strong>as -o add.o add.s</strong></p><p><strong>ld -o add add.o</strong></p><p>Let&#x2019;s bring into GDB to debug:</p><p><strong>gdb -q add</strong></p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQH9HmVwu2Hd4Q/article-inline_image-shrink_1000_1488/0/1520594706178?e=1614211200&amp;v=beta&amp;t=CfJ3V42hb7GjCgEDb4OWRYbo2IbrKQ0NToN6AklxXOY"></div><p>We can see that when we b<strong> _start</strong>, break on start and <strong>r</strong>, run we see the disassembly. If you do an <strong>i r</strong> we see the info registers where we notice our <strong>cpsr</strong> is <strong>0x10</strong>.</p><p>As we step again and info registers:</p><div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGJvftQgl9WrA/article-inline_image-shrink_1000_1488/0/1520213487826?e=1614211200&amp;v=beta&amp;t=HsQEV_5frgVL7se6aevA5ASrL9SKDo7ZHIHsyuJ8dx8"></div><p>We notice <strong>0x43</strong> hex or <strong>67</strong> decimal into <strong>r1</strong>. We also notice that the flags are unchanged (<strong>cpsr 0x10</strong>).</p><p>Let&#x2019;s step again and info registers:</p><div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHbu3vhT_xhpg/article-inline_image-shrink_1000_1488/0/1520594706126?e=1614211200&amp;v=beta&amp;t=LDXpCrnNECNf3ZHzl2Rm51DgH3ihq69B_BOcpL9Ia2A"></div><p>We can see <strong>r0 </strong>now holds <strong>0x78</strong> hex or <strong>120</strong> decimal. We successfully saw the add instruction in place and we again notice that the flags register (<strong>cpsr</strong>) remains unchanged by this operation.</p><p>Next week we will dive into Hacking ADD.</p><p><br></p><p></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="part-14-add.html" class="navigation navigation-prev " aria-label="Previous page: Part 14 - ADD">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="part-16-hacking-add.html" class="navigation navigation-next " aria-label="Next page: Part 16 - Hacking ADD">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Part 15 - Debugging ADD","level":"1.57","depth":1,"next":{"title":"Part 16 - Hacking ADD","level":"1.58","depth":1,"path":"pages/part-16-hacking-add.md","ref":"pages/part-16-hacking-add.md","articles":[]},"previous":{"title":"Part 14 - ADD","level":"1.56","depth":1,"path":"pages/part-14-add.md","ref":"pages/part-14-add.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-15-debugging-add.md","mtime":"2020-12-26T10:17:14.983Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:24:54.262Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
