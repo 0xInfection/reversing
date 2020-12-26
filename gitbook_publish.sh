@@ -14,14 +14,9 @@ cp -R _book/* .
 git clean -fx node_modules
 git clean -fx _book
 
-# add all files
+# add all files and commit 'em
 git add .
-
-# commit
 git commit -a -m "Update docs"
 
-# push to the origin
-git push origin gh-pages
-
-# checkout to the master branch
-git checkout master
+# push
+git push
