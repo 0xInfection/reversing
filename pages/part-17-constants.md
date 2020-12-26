@@ -1,0 +1,12 @@
+<h1>Part 17 - Constants</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>So far we have created, debugged and hacked a simple string echo to the standard terminal. We will expand upon that example by adding a constant.</p><p>A constant in C++ is a value that will not change throughout program execution (unless hacked). It is used such that you have a declaration early in the code so that if your future program architecture ever changes you can redefine the constant in one place rather than having to update code all through your code base.</p><p>It is standard practice to code our constants in all CAPS so that when we see it referenced somewhere in the code we know that value is a constant.</p><p>We start with our second program in C++ which is our “Constant” program. Let’s dive in and break each line down step-by-step and see how this language works. We will call this <strong>example2.cpp</strong> and save it to our device.</p><pre spellcheck="false">#include &lt;iostream&gt;
+ 
+int main(void) {
+            cons tint YEAR = 2017;
+ 
+            std::cout &lt;&lt; YEAR &lt;&lt; std::endl;
+ 
+            return 0;
+}
+</pre><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFWPk7zWKpvdQ/article-inline_image-shrink_1000_1488/0/1520149852856?e=1614211200&amp;v=beta&amp;t=k0amEJgKGr2RxGiqYI2eF9AqugKWjf1lMWAXymTGiwU"/></div><p>To compile this we simply type:</p><pre spellcheck="false">g++ example2.cpp -o example2
+</pre><p>We simply then type:</p><pre spellcheck="false">./example2
+</pre><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEmqR8vsjj4Nw/article-inline_image-shrink_1000_1488/0/1520148263310?e=1614211200&amp;v=beta&amp;t=LrS0Os2om14rPWuDX1YPnWD17Wbjm93wNgIAYQ7x4UE"/></div><p>SUCCESS! We see “<strong>2017</strong>” printed to the standard output or terminal!</p><p>Let’s break it down:</p><p>We utilize the <strong>const </strong>keyword to indicate a constant to which we assign it the integer value of 2017.</p><p>We then utilize the <strong>cout </strong>function to print it to the standard output or terminal and add a new line with the <strong>endl</strong> function.</p><p>That’s it! Very simple.</p><p>Next week we will dive into Debugging Constants.</p>
