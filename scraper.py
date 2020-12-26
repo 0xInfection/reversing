@@ -1,4 +1,4 @@
-import re, html
+import re, html, markdownify
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
@@ -48,7 +48,7 @@ def grabContent(pgsrc: str, fname: str):
     dirname = 'pages/{}'.format(processfName(fname))
     toadd = '* [{}]({})'.format(fname, dirname)
     with open(dirname, 'w+') as wf:
-        wf.write(content)
+        wf.write(markdownify.markdownify(content))
     with open('SUMMARY.md', 'a') as wf:
         wf.write(toadd+'\n')
 

@@ -1022,3 +1022,27 @@ JavaScript error: https://static-exp1.licdn.com/sc/h/ec4mdgijccslffs14mpzdyffn, 
 JavaScript error: https://static-exp1.licdn.com/sc/h/ec4mdgijccslffs14mpzdyffn, line 1: Error: Could not lazy load JS with src https://static-exp1.licdn.com/sc/h/9x1ka0d4advijnuxgxnyns6ne
 JavaScript error: https://static-exp1.licdn.com/sc/h/ec4mdgijccslffs14mpzdyffn, line 1: Error: Could not lazy load JS with src https://static-exp1.licdn.com/sc/h/9x1ka0d4advijnuxgxnyns6ne
 1608977910189	Marionette	INFO	Stopped listening on port 35739
+1608978950463	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.BJljbOMfAk4P"
+*** You are running in headless mode.
+
+(firefox:21466): GLib-GObject-WARNING **: 16:05:50.801: invalid (NULL) pointer instance
+
+(firefox:21466): GLib-GObject-CRITICAL **: 16:05:50.801: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(/usr/lib/firefox/firefox:21523): GLib-GObject-WARNING **: 16:05:51.190: invalid (NULL) pointer instance
+
+(/usr/lib/firefox/firefox:21523): GLib-GObject-CRITICAL **: 16:05:51.190: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(/usr/lib/firefox/firefox:21545): GLib-GObject-WARNING **: 16:05:51.301: invalid (NULL) pointer instance
+
+(/usr/lib/firefox/firefox:21545): GLib-GObject-CRITICAL **: 16:05:51.301: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1608978952037	Marionette	INFO	Listening on port 43113
+1608978952082	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:21627): GLib-GObject-WARNING **: 16:05:52.168: invalid (NULL) pointer instance
+
+(/usr/lib/firefox/firefox:21627): GLib-GObject-CRITICAL **: 16:05:52.168: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.

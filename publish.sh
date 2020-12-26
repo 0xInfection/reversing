@@ -14,3 +14,6 @@ git clean -fx _book
 # add and commit
 git add .
 git commit -m 'updated gitbook'
+
+# push thing to github
+git push
