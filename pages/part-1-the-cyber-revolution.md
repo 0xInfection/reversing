@@ -4,7 +4,7 @@ For a complete table of contents of all the lessons please click below as it wil
 
 To understand modern computing we have to go down to the most basic level.&nbsp;Our journey starts with the transistor.&nbsp;
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/767368256.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1535107553506.jpg"/></div>
 
 A transistor is nothing more than a complex relay as it is a switch that can be open or closed by applying an electrical charge.&nbsp;This charge is made possible by the use of a control wire.&nbsp;The control wire is attached to a material that can conduct or resist electricity to which on the other end there are two electrodes attached to such a material.&nbsp;This is the concept of a semiconductor.&nbsp;The control wire attaches to a gate electrode where if you change the electrical charge of the gate the conductivity of the semiconductor material can be manipulated.&nbsp;Think of a simple kitchen faucet to which you can turn water on or off.&nbsp;The concept is quite similar.
 

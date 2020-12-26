@@ -21,7 +21,7 @@ int main(void) {
 }
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/659122276.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520149852856.jpg"/></div>
 
 To compile this we simply type:
 
@@ -33,7 +33,7 @@ We simply then type:
 <pre spellcheck="false">./example2
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/894625899.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520148263310.jpg"/></div>
 
 SUCCESS!&nbsp;We see “__2017__” printed to the standard output or terminal!
 

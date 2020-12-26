@@ -17,7 +17,7 @@ int main(void) {
 }
 </pre>
 
-<div class="slate-resizable-image-embed"><img src="imgs/908491229.jpg"/></div>
+<div class="slate-resizable-image-embed"><img src="/imgs/1520191083072.jpg"/></div>
 
 To compile this we simply type:
 
@@ -29,7 +29,7 @@ We simply then type:
 <pre spellcheck="false">./example1
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="imgs/571997121.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="/imgs/1520237920732.jpg"/></div>
 
   
 

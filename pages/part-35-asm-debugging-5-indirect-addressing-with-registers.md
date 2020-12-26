@@ -4,7 +4,7 @@ For a complete table of contents of all the lessons please click below as it wil
 
 In our fifth program we demonstrated how we can manipulate indirect addressing with registers.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/83089490.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520483251669.jpg"/></div>
 
 I want to start by addressing the question of why I use AT&amp;T syntax. In previous lessons I provided many ways to easily convert back and forth between AT&amp;T syntax and Intel syntax.
 
@@ -14,19 +14,19 @@ Let’s recap. We will use objdump to take a compiled binary such as the one abo
 
 __objdump -d -M intel indirect\_addressing\_with\_registers | grep \_start.: -A24 __
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/881004977.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520148750030.jpg"/></div>
 
 Now back to our regularly scheduled program.
 
 Let’s load the binary into GDB and break on \_start, step a few steps and examine 6 of the 11 values inside the constants label.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/855342426.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520145698959.jpg"/></div>
 
 We then move the memory address of the constants label into edi and move the immediate value of 25 decimal into the second index of our array. This is in essence a source code hack as we are changing the original value of 8 to 25.
 
 If you examine the source code you see line 18 where we load the value of 1 into edi. Keep in mind this is the second value as arrays are 0 based.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/669385473.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520241367735.jpg"/></div>
 
 You can see we changed the value of 8 decimal into 25 as explained.
 

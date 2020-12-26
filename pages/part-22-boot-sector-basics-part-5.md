@@ -4,15 +4,15 @@ For a complete table of contents of all the lessons please click below as it wil
 
 This week we will focus on how to use QEMU which is an emulator to boot our simple new OS.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/342066661.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1547804344026.jpg"/></div>
 
 Type the above to obtain qemu specifically for x86 systems.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/618678610.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1547804375264.jpg"/></div>
 
 Run the emulator with our binary.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/518504337.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1547804407713.jpg"/></div>
 
 You will see the following. Keep in mind it does nothing but an infinite loop jump which we discussed in detail in previous lessons. This however is the most basic x86 OS one can create.
 
@@ -20,6 +20,6 @@ It simply looks for the signature which we spoke of last week (if this does not 
 
 If you are interested there are different emulators for different architectures.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/689606556.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1547804592522.jpg"/></div>
 
 Next week we will discuss memory addressing so that we can set up a stack within our simple os.

@@ -19,11 +19,11 @@ int main(void) {
 }
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/768150832.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1529666614196.jpg"/></div>
 
 As we compile and run we see 15 echoed out to the terminal.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1034526941.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1529666685691.jpg"/></div>
 
 The value of __myNumber __was __16 __and when it is assigned with the pre-decrement operator we see that the new value is __15__ as it is assigned into __myNewNumber__.
 

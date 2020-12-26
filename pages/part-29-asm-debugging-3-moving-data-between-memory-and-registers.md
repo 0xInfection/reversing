@@ -4,19 +4,19 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let’s debug!&nbsp;
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/35273007.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520241537282.jpg"/></div>
 
 Specifically we will move the value of inside the constant integer of 10 decimal into ECX.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/828421197.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520590508110.jpg"/></div>
 
 We open GDB in quiet mode and break on \_start and run by following the commands above.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/877955899.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1520193652626.jpg"/></div>
 
 As we can see when we info registers the value of ECX is 0.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/83051031.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1520590507589.jpg"/></div>
 
 After we step into twice, we now see the value of ECX as 10 decimal of 0xa hex.
 

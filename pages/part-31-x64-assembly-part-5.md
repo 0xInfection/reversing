@@ -4,19 +4,19 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let's review our code.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/941463313.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1553248751760.jpg"/></div>
 
 Compile...
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/316538068.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1553248766003.jpg"/></div>
 
 Debug...
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/809970521.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1553248783477.jpg"/></div>
 
 Let's evaluate what is inside the memory address of 0x6000d8.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/213749516.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1553248844375.jpg"/></div>
 
 As we can see "__Hello World__" with the return character will then be moved into our __RSI__ register.
 

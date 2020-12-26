@@ -12,7 +12,7 @@ The lower 32 bits, 16 bits, and 8 bits of each register are directly addressable
 
 The table below breaks out each bytes distinction.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/941475181.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1538735142722.jpg"/></div>
 
 Operations that output to a 32-bit subregister are automatically zero-extended to the entire 64-bit register. Operations that output to 8-bit or 16-bit subregisters are _not_ zero-extended (this is compatible x86 behavior).
 

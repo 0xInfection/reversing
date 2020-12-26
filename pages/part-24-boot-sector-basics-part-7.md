@@ -6,7 +6,7 @@ Today we will put all the pieces together. We will create our custom OS that doe
 
 Let's examine our code:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/351871546.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1549024795636.jpg"/></div>
 
 The first thing we do is move to the programable area of the boot sector code at address 0x7c00. We then set the stack base and identify the area for our stack and set the base pointer into the stack pointer.
 
@@ -14,11 +14,11 @@ We then call our video mode function where we set a 640x200 greyscale console. W
 
 Lets compile and run:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/359978536.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1549025055903.jpg"/></div>
 
 We then see the qemu console:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/70004319.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1549025085922.jpg"/></div>
 
 As you can see I am only able to type numeric digits in our OS. Try it for yourself. Write the code and compile and run in the qemu editor. If you do not have qemu installed I show you in detail how to install it in the last two tutorials.
 

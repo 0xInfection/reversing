@@ -28,7 +28,7 @@ myNewNumber = ++myNumber;
 }
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/256417450.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1527247718232.jpg"/></div>
 
 To compile this we simply type:
 
@@ -36,7 +36,7 @@ g++ example9.cpp -o example9
 
 ./example9
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/394934103.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1527247743089.jpg"/></div>
 
   
 
@@ -50,31 +50,31 @@ When we pre-increment the value of the variable is incremented before assigning 
 
 Let’s debug.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/840799768.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1527247841094.jpg"/></div>
 
 We do our normal start in gdb and break on main.&nbsp;Take note at __main+24__ we are moving the value of __1__ into __r3__.&nbsp;We then see at __main+28__ we are storing that value at __r11-8__ to which we will set a breakpoint and continue.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/68887597.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1527247877140.jpg"/></div>
 
 As we evaluate the value in __r3__ at this stage we see __17__.&nbsp;Remember back in our original code that the value in the __myNumber__ variable was __16__.&nbsp;We can see that the pre-increment operator was successful to increment the value __1__ to give us __17__.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/644551892.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1527247908955.jpg"/></div>
 
 We see that when we continue through the code the value __17__ is successfully echoed to the terminal as expected.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/583591108.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1527247930003.jpg"/></div>
 
 Let’s re-run the program.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/762972966.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1527248017494.jpg"/></div>
 
 Let’s hack!&nbsp;Here were review the value in r3 which we know to be 17.&nbsp;Let’s hack it to something else.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/451418767.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1527248050749.jpg"/></div>
 
 Success!&nbsp;As we can see when we continue we now see the hacked value echoing to the terminal.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/667765303.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1527248118408.jpg"/></div>
 
 Next week we will dive into the Post-Increment Operator.
 

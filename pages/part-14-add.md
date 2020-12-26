@@ -6,7 +6,7 @@ In ARM Assembly, we have three instructions that handle addition, the first bein
 
 Let’s look at an example to illustrate:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/107763072.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520193949676.jpg"/></div>
 
 Here we see that we move decimal __67__ into __r1__ and decimal __53__ into __r2__. We then __add r1 __and __r2__ and put the result into __r0__.
 

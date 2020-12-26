@@ -4,19 +4,19 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let’s re-examine our code.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/435467730.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520236715844.jpg"/></div>
 
 Let’s debug.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/941966862.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520194325794.jpg"/></div>
 
 Let’s step 4 times and disassemble.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1019059715.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520190876822.jpg"/></div>
 
 Let’s examine what is now in __r3__.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/902551454.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520171350771.jpg"/></div>
 
 As we can clearly see the value in __isHacked__ is __0__ or __false__ which makes sense based on our c++ source code.
 

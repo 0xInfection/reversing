@@ -22,18 +22,18 @@ When we post-increment the value of the variable is incremented after assigning 
 
 Let's debug.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/366968694.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1528458112325.jpg"/></div>
 
 Let's break on __\*main+28 __and continue.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/733502771.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1528458131421.jpg"/></div>
 
 As we can see the value in __r3 __is 16 and the value in __r2 __is 17. We can see that as they are loaded from memory into the registers in __\*main+12__ directly by the __mov__ instruction and __\*main+24__ we add 1 into __r3__ and then put that value into __r2__.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/692636955.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1528458142344.jpg"/></div>
 
 As we continue we can see the __cout __c++ function called which echos out the values to the terminal (standard output) as expected.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/308625006.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1528458154804.jpg"/></div>
 
 Next week we will dive into Hacking Post-Increment Operator.

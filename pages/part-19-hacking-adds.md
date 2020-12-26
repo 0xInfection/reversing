@@ -4,13 +4,13 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let’s once again re-examine our code:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/214738590.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520215587042.jpg"/></div>
 
 We again __add__ __100__ decimal into __r1__, __4,294,967,295__ into __r2__. We then __add r1__ and __r2__ and place in __r0.__
 
 Lets debug:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/760044673.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520594576879.jpg"/></div>
 
 We again see __adds __which sets the flags in the CPSR. We have to remember when we debug in GDB, the value of the CPSR is in hex. In order to see what flags are set, we must convert the hex to binary. This will make sense as we start to debug and hack this example in the coming tutorials.
 
@@ -38,7 +38,7 @@ __Overflow Flag Set __
 
 Lets take a look if we step again:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/470298628.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520149286284.jpg"/></div>
 
 We see __4294967295 decimal__ or __0xffffffff __in __r2__. We know if we step again we will cause the CPSR to change from 0001 to 0010 which means:
 
@@ -54,11 +54,11 @@ __Overflow Flag NOT Set__
 
 This action sets the carry flag. However lets hack:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/19018468.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1520147275008.jpg"/></div>
 
 We hacked __r2__ and changed the value to __1 decimal __and__ 0x1 hex__. NOW we know before the__ CPSR __went to __0010__ last time however now that we hacked this, lets see what happens to the __CPSR__ when we step.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/542639961.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1520211562604.jpg"/></div>
 
 BAM! We hacked it and see__ r0 __is __101__ and therefore did NOT trigger the carry flag and kept the __CPSR__ at__ 0x10 hex __which means __0001 binary __which means:
 

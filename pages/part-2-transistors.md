@@ -6,25 +6,25 @@ In our last tutorial we spoke briefly about binary to which we represent as eith
 
 Let’s start with the __AND Gate __below.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/385508570.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1535712345568.jpg"/></div>
 
 In an AND Gate there are two binary values to which outputs 1 only if both binary values are 1.&nbsp;
 
 The __NOT Gate__ is represented below.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/137507684.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1535712373734.jpg"/></div>
 
 In a NOT Gate it simply takes a single binary value and negates it.
 
 The __OR Gate__ is represented below.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/465143996.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1535712396805.jpg"/></div>
 
 In an OR Gate only one of the inputs has to be 1 in order to output a 1.
 
 The __XOR Gate&nbsp;__ is represented below.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/731624853.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1535712436598.jpg"/></div>
 
 In an XOR Gate if both inputs are either 0 or 1 the output is 0.
 

@@ -14,7 +14,7 @@ Git Clone &amp; Build Radare2 Software
 VIM or Nano Text Editor Software
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/903918558.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1606060809296.jpg"/></div>
 
 <iframe allowfullscreen="true" class="center lazy-load" data-delayed-url="https://www.linkedin.com/embeds/publishingEmbed.html?articleId=7727169611615228100" frameborder="0" height="294" src="about:blank" title="Raspberry Pi 4 Model B - 2 GB RAM" width="744"></iframe>
 

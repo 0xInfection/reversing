@@ -8,15 +8,15 @@ We will use Kali Linux going forward with Radare 2. You can get VirtualBox and d
 
 Let's start with the C++ 1 code example:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/712486044.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1561023464535.jpg"/></div>
 
 Here we simply create a main function and use the C++ output stream library to output the text "Hello World" with a new line at the end to the terminal. Let's compile and link:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/581315919.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1561023530059.jpg"/></div>
 
 Let's run in the terminal:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1054078036.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1561023550876.jpg"/></div>
 
 As we can see "Hello World" successfully echoed to the terminal.
 

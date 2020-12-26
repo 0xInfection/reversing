@@ -21,19 +21,19 @@ We remember when we compile we get 15.
 
 Let's debug.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/756947067.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1530270075261.jpg"/></div>
 
 Let's break.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/154002148.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1530270088297.jpg"/></div>
 
 As we can see __r3 __holds 15. Keep in mind hacking this value may not be the final place it may be stored. Remember this for next week and re-examine the debug code above to see if you can figure it out.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1036215822.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1530270183626.jpg"/></div>
 
 As we can see __r1__ holds 15 as well. Keep in mind the above statement.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/735633383.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1530270209438.jpg"/></div>
 
 As we continue we see our __cout __function echoing 15 for both areas as expected.
 

@@ -1,4 +1,4 @@
-import re, html, html2markdown, requests, random, os
+import re, html, html2markdown, requests, random, os, shutil
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
@@ -38,10 +38,10 @@ def downloadImage(link: str):
     '''
     Downloads an image from a given URL
     '''
-    filename = 'imgs/{}.jpg'.format(random.getrandbits(30))
+    filename = 'imgs/{}.jpg'.format(link.split('?')[0].split('/')[-1])
     with open(filename, 'wb+') as imgf:
         imgf.write(requests.get(link, headers=fheaders).content)
-    return filename
+    return '/{}'.format(filename)
 
 def processContent(source: str):
     '''
@@ -94,10 +94,11 @@ if __name__ == '__main__':
         wf.write('# Summary\n\n')
     # create images dir
     if os.path.exists('imgs/'):
-        os.rmdir('imgs/')
+        shutil.rmtree('imgs/')
     os.makedirs('imgs/')
     # visit raw URL
     print("Visiting homepage...")
     driver.get(readmeurl)
     grabLinks(driver.page_source)
     driver.quit()
+

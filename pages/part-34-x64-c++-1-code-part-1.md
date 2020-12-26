@@ -4,15 +4,15 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let's review our code:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/894634522.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1561714810492.jpg"/></div>
 
 Compile:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/101308969.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1561714836259.jpg"/></div>
 
 Run:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/947862990.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1561714869555.jpg"/></div>
 
 For literally years I have been using GDB as the debugger of choice. The reason is that it is on every Linux based system which runs just about every IoT and Server in the world. In addition, there are versions for Windows.
 
@@ -20,7 +20,7 @@ I have struggled hard with this but have decided to introduce another terminal b
 
 Let's open up our binary for write mode and simply analyze the binary.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/627914190.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1561716186925.jpg"/></div>
 
 Ok, there is a lot going on here. Let's break it down. First, we open up Radare 2 in write mode by typing '__r2 -w ./1__' and then use the '__aaa__' command to analyze the binary. We then use '__s sym.main__' to seek to the main routine of the binary which is our entry point. We then do a '__pdf__' command to disassemble the binary.
 
@@ -32,7 +32,7 @@ We can clearly see the qword of '__Hello World\\n__' at memory address __0x2005_
 
 Let's examine __0x2005__ to verify that our string is at that location:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/607468712.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1561715552920.jpg"/></div>
 
 Next week we will hack the value and modify the binary. I highly encourage you all to install VirtualBox which is free and get the Kali Linux VirtualBox image and install Vim as well.
 

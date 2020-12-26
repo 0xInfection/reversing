@@ -21,14 +21,14 @@ We see our very simple C++ code above to which we are doing nothing more than as
 
 Let's debug.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1051627087.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1532085310684.jpg"/></div>
 
 It is clear that the value for the post-decrement operator gets loaded into __r1__ at __main+68 __so let's break at __main+72__.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/847591096.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1532085326445.jpg"/></div>
 
 We can clearly see that __r1 __does in fact hold the value of __15__ to which was decremented from our original value.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1019858816.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1532085443370.jpg"/></div>
 
 Next week we will dive into Hacking Post-Decrement Operator.

@@ -16,13 +16,13 @@ This week we will address the post-decrement operator. Let's examine our code.
 </pre>
 
 <div class="slate-resizable-image-embed slate-image-embed__resize-full-width">
-<img src="imgs/127884694.jpg"/>
+<img src="/imgs/1531481191370.jpg"/>
 </div>
 
  As we compile we see __16__ and __15__ printed out respectively.
 
 <div class="slate-resizable-image-embed slate-image-embed__resize-full-width">
-<img src="imgs/662323478.jpg"/>
+<img src="/imgs/1531481259797.jpg"/>
 </div>
 
 We see that in this scenario __myNewNumber__ does get decremented as __myNumber-- __takes the value of 16 and reduces it to 15.

@@ -24,7 +24,7 @@ View disassembly.
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/757058342.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607709949903.jpg"/></div>
 
 You can right click and&nbsp;__Open image in new tab&nbsp;__to get an expanded view.
 
@@ -41,17 +41,17 @@ We need to disable this input validation by changing that instruction to a _b.eq
 
 Let's look at that code block.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/986255921.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1607710722312.jpg"/></div>
 
 We see that it if it is true, meaning validation is correct and we have an integer between 0 and 100 we will follow the true green line to the next function which is as follows:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/796163016.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607710870812.jpg"/></div>
 
 You can right click and&nbsp;__Open image in new tab&nbsp;__to get an expanded view.
 
 If we fail the validation we will be sent to the false condition to obtain new input:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/621092655.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607710976917.jpg"/></div>
 
 Let's q to a terminal prompt.
 

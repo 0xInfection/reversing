@@ -4,22 +4,22 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let's continue with another example:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/36977460.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1550829629337.jpg"/></div>
 
 As we can see we are moving __0x10__ into __RAX__ and adding __0x05__ into __RAX__.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/559099400.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1550829671542.jpg"/></div>
 
 We compile and let's disassemble.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/915864110.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1550829696687.jpg"/></div>
 
 As you can see as expected we see our code in debug.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/238886684.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1550829787663.jpg"/></div>
 
 We step twice and then...
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/862842710.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1550829821644.jpg"/></div>
 
 We see __0x15 __or __21__ decimal moved into __RAX__. Take the time to carefully try these very simple examples as we go forward.

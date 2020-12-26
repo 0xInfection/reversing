@@ -6,7 +6,7 @@ Binary subtraction is nothing more than adding the negative value of the number 
 
 We represent a sign bit in binary to which bit 7 indicates the sign of number where 0 is positive and 1 is negative.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/665404863.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1537526862141.jpg"/></div>
 
 The above would represent -2.
 
@@ -14,19 +14,19 @@ We utilize the concept of twos compliment which inverts each bit and then finall
 
 Lets example binary 2.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/882585310.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1537526884698.jpg"/></div>
 
 Invert the bits.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/851632090.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1537526902723.jpg"/></div>
 
 Add 1.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/692914980.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1537526921447.jpg"/></div>
 
 Let’s examine a subtraction operation:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/414141340.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1537526940998.jpg"/></div>
 
 So what is the (1) you may ask, that is the overflow bit. In future tutorials we will examine what we refer to as the overflow flag and carry flag.
 

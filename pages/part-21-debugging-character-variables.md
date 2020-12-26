@@ -4,11 +4,11 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let’s review our code.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/800120431.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520147096734.jpg"/></div>
 
 Let’s debug!
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/395133169.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520229910793.jpg"/></div>
 
 Woah!&nbsp;This is confusing.&nbsp;I don’t see any clear memory addresses being loaded into a register to manipulate the data.&nbsp;
 
@@ -18,13 +18,13 @@ If you remember from last week each character translates down to an ASCII code i
 
 We do see __0x6e__ at __main+12__ which is the character ‘__n__’.&nbsp;&nbsp;
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/596897937.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520209360741.jpg"/></div>
 
 If we step into a few times we notice the value has been placed into __r3__.&nbsp;When we print the value in __r3__ we now see our ‘__n__’ character.
 
 Let’s continue.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/587021340.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520149197565.jpg"/></div>
 
 We now see the ‘__n__’ printed to the standard output as expected.
 

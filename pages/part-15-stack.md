@@ -10,7 +10,7 @@ The stack pointer is a register that contains the top of the stack. The stack po
 
 The above address is random and is not an absolute where you will find the stack pointer from program to program as it will vary. Lets look at what the stack looks like from an abstract perspective:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/647906576.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520235829712.jpg"/></div>
 
 The above diagram is what I want you to keep clear in your mind as that is what is actually happening in memory. The next series of diagrams will show the opposite of what is shown above.
 
@@ -30,31 +30,31 @@ Let us look at how the stack is used to implement functions. For each function c
 
 Let’s look at the C program we created in tutorial 12 and examine what the main function looks like:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/882202621.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520622740099.jpg"/></div>
 
 We see two functions here. The first one is the unreachableFunction to which will never execute under normal circumstances and we also see the main function that will always be the first function to be called onto the stack.
 
 When we run this program, the stack will look like this:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/581582744.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520622738609.jpg"/></div>
 
 We can see the stack frame for int main(void) above.&nbsp;It is also referred to as the activation record.&nbsp;A stack frame exists whenever a function has started but yet to complete.&nbsp;For example, inside of the body of the int main(void) there is a call to int addMe(int a, int b) which takes two arguments a and b.&nbsp;There needs to be assembly language code in int main(void) to push the arguments for int addMe(int a, int b) onto the stack.&nbsp;Lets examine some code.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/360213992.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520231875596.jpg"/></div>
 
 When we compile and run this program we will see the value of 5 to be print out like this:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/11460120.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520622737902.jpg"/></div>
 
 Very simply, int main(void) calls int addMe(int a, int b) first and will get put on the stack like this:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/47678804.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520144504701.jpg"/></div>
 
 You can see that by placing the arguments on the stack, the stack frame for __int main(void)__ has increased in size. We also reserved space for the return value which is computed by __int addMe(int a, int b)__ and when the function returns, the return value in __int main(void)__ gets restored and execution continues in __int main(void)__ until it finishes.
 
 Once we get the instructions for __int addMe(int a, int b)__, the function may need local variables so the function needs to push some space on the stack which would look like:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1004512553.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520622739277.jpg"/></div>
 
 __int addMe(int a, int b)__ can access the arguments passed to it from __int main(void)__ because the code in __int main(void)__ places the arguments just as __int addMe(int a, int b)__ expects it.&nbsp;
 

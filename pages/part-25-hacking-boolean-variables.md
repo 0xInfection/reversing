@@ -4,19 +4,19 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let’s re-examine our code.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/389804854.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520191957701.jpg"/></div>
 
 Let’s hack!
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/118734575.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520210981189.jpg"/></div>
 
 Let’s break at main, run and disas in addition to step into four times.&nbsp;
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/445922928.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520146846926.jpg"/></div>
 
 We see that __0__ or __FALSE__ is moved into __r3__ at main+12.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/54919757.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520218746699.jpg"/></div>
 
 Very simply we set __r3__ to __1__ or __TRUE__ and continue execution to which we notice that the Boolean variable __isHacked__ is now __TRUE__.
 

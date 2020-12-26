@@ -4,21 +4,21 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let's review our code:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/617638730.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1564757193950.jpg"/></div>
 
 Compile:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/910260596.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1564758303402.jpg"/></div>
 
 Run:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/102844945.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1564757239511.jpg"/></div>
 
 Let's remember this line above when we compare against our hacked binary.
 
 Let's open up our binary for write mode and simply analyze the binary.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/889694218.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1564757311281.jpg"/></div>
 
 Ok, there is a lot going on here. Let's break it down. First, we open up Radare 2 in write mode by typing '__r2 -w ./1__' and then use the '__aaa__' command to analyze the binary. We then use '__s sym.main__' to seek to the main routine of the binary which is our entry point. We then do a '__pdf__' command to disassemble the binary.
 
@@ -30,21 +30,21 @@ We can clearly see the qword of '__Hello World\\n__' at memory address&nbsp;__0x
 
 Let's examine&nbsp;__0x2005__&nbsp;to verify that our string is at that location:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/880857451.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1564757423920.jpg"/></div>
 
 NOW TIME FOR THE HACK!
 
 Let's hack the value to something like:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/505995021.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1564757454631.jpg"/></div>
 
 Now let's see what is now inside memory value @ __0x2005__!
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/531659481.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1564757528202.jpg"/></div>
 
 BOOM! As we can see we have hacked the value and when we quit Radare 2 it will write it and modify our binary as such.,
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/916278053.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1564757568026.jpg"/></div>
 
 As you can see we have hacked the binary! This is very basic but now you have an elementary level of understanding of Reverse Engineering a C++ binary.
 

@@ -12,7 +12,7 @@ Hexadecimal is similar to every other number system except in hexadecimal, each 
 
 Lets look at a simple table to see how hexadecimal compares to decimal.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="imgs/353543757.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="/imgs/1520241886257.jpg"/></div>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -80,7 +80,7 @@ Lets take another example of F5 hexadecimal. This would be as follows:
 
 Lets look at a binary to hexadecimal table:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="imgs/630386158.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="/imgs/1520145784508.jpg"/></div>
 
   
 
@@ -92,7 +92,7 @@ It is important to understand that every hexadecimal number is 4 bits long or ca
 
 Lets look at this another way. Lets work with some more hexadecimal numbers and convert them to decimal:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/866558489.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520236890634.jpg"/></div>
 
 To re-emphasize F1CD as a simple conversion:
 
@@ -108,23 +108,23 @@ F --- 15 x 4096 = 61,440
 
 Addition in hexadecimal works as follows. From this point forward all numbers in hexadecimal will have a 'h' next to the number:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="imgs/330698690.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="/imgs/1520242000178.jpg"/></div>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 Another example is as such:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="imgs/425675355.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="/imgs/1520243446596.jpg"/></div>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 A final add example is as such:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/768802762.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520523392895.jpg"/></div>
 
 We will now focus on subtraction:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/899124761.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520109978524.jpg"/></div>
 
 You are probably asking yourself why is this guy spending so much time going over so many different ways of learning this! The answer is that each of us learn a little different from the next. I wanted to show several representations of hexadecimal compared to decimal and binary to help put together the whole picture.
 

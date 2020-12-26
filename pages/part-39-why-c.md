@@ -4,25 +4,25 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Ok it is time we look at the most basic C program, debug it and hack it. If we are to have mastery we must create and destroy in a single-step so that we have mastery over the domain.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1005070656.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1565910335250.jpg"/></div>
 
 Let us fire up VIM and type out the following. We include our standard library and create a main function to which we use the library function of printf to echo a string of chars and since the type of main is int meaning integer we return 0.
 
 Let us compile and see what happens when we run:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/422914390.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1565910684168.jpg"/></div>
 
 As we see like we did in our C++ example we see '__Hello World!__' echoed successfully.
 
 Let's debug in Radare:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1073261759.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1566057508295.jpg"/></div>
 
 This is simple, we use __aaa__ to analyze the binary and seek to main with __s sym.main__.
 
 Let's look at the assembly and analyze:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/425942765.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1566057552155.jpg"/></div>
 
 Assembly! The definition of raw sexy!
 
@@ -38,19 +38,19 @@ I went over this in detail in the previous lessons on Assembly but let us review
 
 We know our string '__Hello World!__' lives at a pretty house in Arlington, VA at the address of __0x2004__ well ok, it's not Arlington, VA but it is in mapped memory (since we are not technically debugging we are messing with mapped code meaning the same values on disk).
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/714548496.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1565911732441.jpg"/></div>
 
 To confirm we see the value at __0x2004__ is '__Hello World!__' Let's hack that value to anything we want with the __w__ command and write directly to that mapped memory address.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/853878520.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1565911764019.jpg"/></div>
 
 Let us re-examine who NOW lives in our Arlington, VA house!
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/586038618.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1565911840111.jpg"/></div>
 
 Success! We hacked the value and when we exit our debugger we see:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1041460246.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1565911868600.jpg"/></div>
 
 We have successfully altered the binary.
 

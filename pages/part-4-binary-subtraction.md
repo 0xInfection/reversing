@@ -6,7 +6,7 @@ Binary subtraction is nothing more than adding the negative value of the number 
 
 We represent a sign bit in binary to which bit 7 indicates the sign of number where 0 is positive and 1 is negative.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/60223712.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520215170654.jpg"/></div>
 
 The above would represent -2.
 
@@ -20,11 +20,11 @@ Invert the bits.
 
 __11111101__
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/633337508.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520247605526.jpg"/></div>
 
 Let’s examine a subtraction operation:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/774070821.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520212177447.jpg"/></div>
 
 So what is the (1) you may ask, that is the overflow bit. In future tutorials we will examine what we refer to as the overflow flag and carry flag.
 

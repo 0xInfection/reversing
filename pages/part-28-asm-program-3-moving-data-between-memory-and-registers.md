@@ -4,7 +4,7 @@ For a complete table of contents of all the lessons please click below as it wil
 
 In our third program we will demonstrate how we can move data between memory and registers.&nbsp;
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/816037631.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520175192505.jpg"/></div>
 
 Specifically we will move the value of inside the constant integer of 10 decimal into ECX.
 

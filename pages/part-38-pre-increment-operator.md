@@ -27,7 +27,7 @@ int main(void) {
 }
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/671736424.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1526036616866.jpg"/></div>
 
 To compile this we simply type:
 
@@ -35,7 +35,7 @@ g++ example9.cpp -o example9
 
 ./example9
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/155174217.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1526036640627.jpg"/></div>
 
 We see 17 printed to the screen.
 

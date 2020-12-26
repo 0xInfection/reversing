@@ -8,17 +8,17 @@ Please keep in mind when you add the S suffix on the end of each such as SUBS, S
 
 Let’s re-examine our example of SUB:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/152621857.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520108821352.jpg"/></div>
 
 We simply take __67 decimal__ and move into __r1__ and __53 decimal__ and move into __r2__ and subtract r1 – r2 and put the result in __r0__.
 
 Let’s hack.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/858535832.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520481500035.jpg"/></div>
 
 As we can see the registers are clear. Lets step through and see what the value of __r0__ becomes when we do a little hacking.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/595482741.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520195082047.jpg"/></div>
 
 As you can see above __r0__ now has __decimal__ __17__ which works as expected as we hacked the value of __r2__ to __decimal 50__ instead of __decimal 53__.
 

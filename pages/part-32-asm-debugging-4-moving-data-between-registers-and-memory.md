@@ -4,11 +4,11 @@ For a complete table of contents of all the lessons please click below as it wil
 
 In our fourth program we will demonstrate how we can move data between registers and memory.&nbsp;
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/1063135101.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1520642123733.jpg"/></div>
 
 Specifically we will move the immediate value of 777 decimal into EAX. We then move that value stored in EAX into the constant value in memory which initially had the value of 10 decimal at runtime. Keep in mind we could have called the value anything however I called it constant as it was set up as a constant in the .data section.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/390388847.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1520642123169.jpg"/></div>
 
 As you can see above we go into GDB and clearly see that the value of constant has been replaced with 777 decimal where in the code it was clearly set at 10 decimal in line 6 of the code at the beginning of this tutorial.
 

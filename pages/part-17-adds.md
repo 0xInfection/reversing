@@ -6,7 +6,7 @@ ADDS is the same as ADD except it sets the flags accordingly in the CPSR.
 
 Let’s look at an example to illustrate:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/537393655.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520241718373.jpg"/></div>
 
 We __add__ __100__ decimal into __r1__, __4,294,967,295__ into __r2__. We then __add r1__ and __r2__ and place in __r0.__
 

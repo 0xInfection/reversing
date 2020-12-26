@@ -10,21 +10,21 @@ Let’s discuss binary!&nbsp;At the core of the microprocessor are a series of b
 
 Before we dive into binary, let's examine the familiar decimal. If we take the number 2017, we would understand this to be two thousand and seventeen.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/580445930.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1536316029655.jpg"/></div>
 
 Let’s take a look at the binary system and the basics of how it operates.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/410036691.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1536316062694.jpg"/></div>
 
 If we were to convert a binary number into decimal, we would very simply do the following. Let's take a binary number of 0101 1101 and as you can see it is 93 decimal.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/301595120.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1536316087192.jpg"/></div>
 
 Adding the values in the value column gives us 0 + 64 + 0 + 16 + 8 + 4 + 0 + 1 = 93 decimal.
 
 If we were to convert a decimal number into binary, we would check to see if a subtraction is possible relative to the highest order bit and if so, a 1 would be placed into the binary column to which the remainder would be carried into the next row. Let’s consider the example of the decimal value of 120 which is 0111 1000 binary.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/533269600.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1536316117407.jpg"/></div>
 
 1)Can 128 fit inside of 120: No, therefore 0.
 
@@ -44,29 +44,29 @@ If we were to convert a decimal number into binary, we would check to see if a s
 
 When we want to convert binary to hex we simply work with the following table.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/369497991.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1536316179552.jpg"/></div>
 
 Let's convert a binary number such as 0101 1111 to hex. To do this we very simply look at the table and compare each nibble which is a combination of 4 bits. Keep in mind, 8 bits is equal to a byte and 2 nibbles are equal to a byte.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/301942177.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1536316203991.jpg"/></div>
 
 Therefore 0101 1111 binary = 0x5f hex. The 0x notation denotes hex.
 
 To go from hex to binary it’s very simple as you have to simply do the opposite such as:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/562134623.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1536316238835.jpg"/></div>
 
 It is important to understand that each hex digit is a nibble in length therefore two hex digits are a byte in length.
 
 To convert from hex to decimal we do the following:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/439270044.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1536316267782.jpg"/></div>
 
 Therefore we can see that 80 + 15 = 95 which is 0x5f hex.
 
 Finally to convert from decimal to hex. Let's take the number 850 decimal which is 352 hex.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/358324522.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1536316294127.jpg"/></div>
 
 “Why the hell would I waste my time learning all this crap when the computer does all this for me!”
 

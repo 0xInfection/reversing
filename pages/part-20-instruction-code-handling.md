@@ -14,21 +14,21 @@ Each and every instruction code must include an opcode that defines the basic fu
 
 Lets examine a simple C program called test.c to get started.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/414873454.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1520446165914.jpg"/></div>
 
 All we are doing is creating a main function of type integer to which it has a void parameter and returning 0. All this program does is simply exit the OS.
 
 Lets compile and run this program.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/781960153.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520147571659.jpg"/></div>
 
 Lets use the objdump tool to and find the main function within it.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/419646472.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520190277217.jpg"/></div>
 
 Here is a snippet of the results you would get by running the above command.&nbsp;Here are the contents of the main function.&nbsp;Keep in mind the below is in Intel syntax as we spoke about in the last tutorial.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/197068464.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1520446166055.jpg"/></div>
 
 On the far left we have the corresponding memory addresses. In the center we have the opcodes and finally on the right we have the corresponding assembly language in Intel syntax.
 

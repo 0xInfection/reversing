@@ -16,13 +16,13 @@ __sudo apt-get install nasm__
 
 NASM is the assembler we will use and we will focus on the intel syntax. First go into the terminal and fire up Vim and type the following:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1073148771.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1545386856569.jpg"/></div>
 
 Remember to type 'i' to insert and then 'esc' and 'wq' to go into command mode and save your file.
 
 The above line simply sets an infinite loop and does nothing more. The __loop __label is created to which we simply __jmp__ back to itself. This code in itself will compile however it will not run in an OS as it does not trigger what we refer to as the magic number to which BIOS looks to understand this is the end of your boot sector. We will cover more on that in future lectures.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/140949481.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1545387039903.jpg"/></div>
 
 We type the above command assuming you saved your file in vim as __bootsector.asm__. This will create a binary file to which we will examine the contents within a hex editor. A hex editor is an application that examines each byte of data that is compiled into a file. We will see that our assembly instructions above will ultimately get translated down to their raw opcode values. The processor only understands raw opcodes which are simply operation codes. Below is a link to a table identifying the opcodes. I saved you the effort of referencing the intel dataset as it is literally thousands of pages and several volumes:
 
@@ -30,7 +30,7 @@ __http://ref.x86asm.net/coder64.html__
 
 Let's use a hex editor like ghex and open up our bin file.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/698714848.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1545387311381.jpg"/></div>
 
 We see __EB FE__ which are hex bytes and each letter is a nibble (a nibble is 4 bits or half a byte). Both __EB FE__ make up two full bytes. Keep in mind the processor reads from disk in reverse byte order such that __FE __gets read first and then __EB__. This process is called little endian and is how the x64 processor works.
 

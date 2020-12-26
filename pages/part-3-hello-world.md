@@ -6,7 +6,7 @@ Today we are going to debug our first program utilizing our dev build of Radare2
 
 If this is your first time working with Assembly I would encourage you check out this series as it may better prepare you for the upcoming lessons.
 
-<iframe allowfullscreen="true" class="center lazy-loaded" frameborder="0" height="294" src="https://www.linkedin.com/embeds/publishingEmbed.html?articleId=7574498398602237511" title="mytechnotalent/Reverse-Engineering-Tutorial" width="744"></iframe>
+<iframe allowfullscreen="true" class="center lazy-load" data-delayed-url="https://www.linkedin.com/embeds/publishingEmbed.html?articleId=7574498398602237511" frameborder="0" height="294" src="about:blank" title="mytechnotalent/Reverse-Engineering-Tutorial" width="744"></iframe>
 
 To begin let's open up our binary in Radare2.
 
@@ -33,7 +33,7 @@ Let us take an initial examination by doing the following.
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/767397257.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1606325530734.jpg"/></div>
 
 You can right click and __Open image in new tab __to get an expanded view.
 
@@ -66,7 +66,7 @@ Let's also look at the hex view so we can see and better understand what is goin
 <pre spellcheck="false">px @0x55629cab48
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/563534516.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1606325962588.jpg"/></div>
 
 We see our "Hello World!" string and we can again see that it exists starting at the mapped memory address of 0x55629cab48.
 
@@ -130,7 +130,7 @@ Then view.
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/75880496.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1606327203401.jpg"/></div>
 
 You can right click and __Open image in new tab __to get an expanded view.
 

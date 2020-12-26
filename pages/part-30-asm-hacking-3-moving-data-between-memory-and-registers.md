@@ -4,25 +4,25 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let’s hack!&nbsp;
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/428760425.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520588657073.jpg"/></div>
 
 Specifically we will move the value of inside the constant integer of 10 decimal into ECX like before.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/344145918.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520171419386.jpg"/></div>
 
 We open GDB in quiet mode and break on \_start and run by following the commands above.&nbsp;
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/126758014.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1520145740732.jpg"/></div>
 
 As we can see when we info registers the value of ECX is 0. Let’s do a si and another si.&nbsp;
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/640642769.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520198737146.jpg"/></div>
 
 As you can see the value of ECX is 10 decimal or 0xa hex as it was in the prior lesson now lets hack that value to something else.
 
 Let’s __set $ecx = 1337 __and do an i r.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/864156066.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1520588657130.jpg"/></div>
 
 As you can clearly see we have hacked the value of ECX to 0x539 hex or 1337 decimal.
 

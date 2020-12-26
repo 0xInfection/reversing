@@ -19,11 +19,11 @@ int main(void) {
 
 Let's review last week's debug.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/819687212.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1532690049930.jpg"/></div>
 
 As we can see here the value in __r1__ at __main+68__ is __15__. Let's hack!
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/801357572.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1532690140517.jpg"/></div>
 
 Once again we have manipulated and changed program execution to our own bidding. With each of these bite-size lessons you continue to get a better grasp on the processor and how it interfaces with the binary.
 

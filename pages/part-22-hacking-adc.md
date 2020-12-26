@@ -6,19 +6,19 @@ To recap again, ADC is the same as ADD except it adds a 1 if the carry flag is s
 
 Let’s again review our code:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/270494261.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520144168134.jpg"/></div>
 
 We __add__ __100__ decimal into __r1__, __4,294,967,295__ into __r2__, __100__ decimal into __r3__ and __100__ decimal into __r4__. We then __add r1__ and __r2__ and place in __r0__ and then __add r3__ and __r4__ and place into __r5__.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/941656464.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520170920932.jpg"/></div>
 
 We run the program and step to where we move __4,294,967,295__ into __r2__. Let’s hack that value in __r2 __and change it to __100 decimal__.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/869324375.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1520230872538.jpg"/></div>
 
 Let’s step a few more times:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/931498122.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1520243287330.jpg"/></div>
 
 Ok so now we add __100 decimal__ and __100 decimal__ together in __r3__ and __r4__ and we get __200__ __decimal__ in __r5__! Do you remember last week when we had __201__? Let’s examine the CPSR below.
 

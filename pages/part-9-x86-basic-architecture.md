@@ -6,7 +6,7 @@ A computer application is simply a table of machine instructions stored in memor
 
 The basic architecture is made up of a CPU, memory and I/O devices which are input/output devices which are all connected by a system bus as detailed below.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/628012447.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520249055678.jpg"/></div>
 
 The CPU consists of 4 parts which are:
 
@@ -18,7 +18,7 @@ The CPU consists of 4 parts which are:
 
 4)Flags - Indicate events when execution occurs.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/46592485.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520178351635.jpg"/></div>
 
 We will discuss 32-bit x86 so therefore a 32-bit CPU first fetches a double word (4 bytes or 32-bits in length) from a specific address in memory and is read from memory and loaded into the CPU. At this point the CPU looks at the binary pattern of bits within the double word and begins executing the procedure that the fetched machine instruction directs it to do.
 

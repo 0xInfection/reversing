@@ -4,7 +4,7 @@ For a complete table of contents of all the lessons please click below as it wil
 
 In our fourth program we will demonstrate how we can move data between registers and memory.&nbsp;
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/809187309.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520625191381.jpg"/></div>
 
 Specifically we will move the immediate value of 777 decimal into EAX. We then move that value stored in EAX into the constant value in memory which initially had the value of 10 decimal at runtime. Keep in mind we could have called the value anything however I called it constant as it was set up as a constant in the .data section.
 

@@ -4,21 +4,21 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let’s hack the second program below:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/763542256.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520583727180.jpg"/></div>
 
 Lets fire up GDB and break on \_start, run the binary and disas:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/693357272.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520066773312.jpg"/></div>
 
 Now lets __si__ twice and __i r__:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/13883869.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520143945686.jpg"/></div>
 
 As we can see the value of __0x16__ or __22__ decimal did move into EDX successfully. This is what we did in the last lesson however here we are going to hack that value to something else.
 
 We can __set $edx = 0x19__ for example:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/460753547.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520583727155.jpg"/></div>
 
 As you can see we easily hacked the value of __EDX__ to __0x19__ or __25__ decimal.
 

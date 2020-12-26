@@ -16,7 +16,7 @@ No case translation performed.
 
 Here is a simple breakdown to illustrate:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/8739501.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1539336219028.jpg"/></div>
 
 If you have two parameters you are passing from a function, for example int __x__ and int __y__ and it is a QWORD, __x__ will go into __rcx__ and __y__ will go into__ rdx__.&nbsp;
 

@@ -6,11 +6,11 @@ Now that we have a working version of Linux, we need a text editor that we can w
 
 To begin, open your terminal and type:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/703651578.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1520640641644.jpg"/></div>
 
 This will open up the vi text editor.&nbsp;The first thing you need to type is the letter ‘i’ to set the editor to insert mode so you may begin typing.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="imgs/425100774.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="/imgs/1520640642321.jpg"/></div>
 
 &nbsp;&nbsp;
 
@@ -56,7 +56,7 @@ You will be consistently moving between command mode ‘__esc__’ and insert mo
 
 Now that we have vi configured, lets install vim which has some better functionality. Simply type:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/879562831.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520144566607.jpg"/></div>
 
 Once that is installed instead of using vi we will now use vim.
 

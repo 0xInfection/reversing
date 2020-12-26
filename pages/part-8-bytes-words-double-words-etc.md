@@ -8,13 +8,13 @@ A byte is 8 bits and is 2^8 power which is 256. The number of binary numbers 8 b
 
 Every byte of memory in a computer has its own unique address. Let's review the disassembled instructions for a simple hello world application in Linux by setting a breakpoint on the main function. We will use the GDB debugger:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/802993422.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1520519299095.jpg"/></div>
 
 Don't worry if this does not make sense yet. The point of utilizing this example is to give you a sneak peek into our first program that we will examine in addition to learning about memory in a computer.
 
 Below is an examination of the ESP register. Again, it is not critical that you understand what a register is or what ESP does. We simply want to see what a memory location looks like:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="imgs/255965944.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="/imgs/1520519298916.jpg"/></div>
 
 &nbsp;
 
