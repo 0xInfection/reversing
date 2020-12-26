@@ -50,7 +50,7 @@ If you need a refresher on the flag please review Part 14 on Flags in this serie
 
 The CMOV instructions rely on a mathematical instruction that sets the EFLAGS register to operate and therefore saves the programmer to use JMP statements after the compare statement. Lets examine some source code.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGkSjSgGw8FFQ/article-inline_image-shrink_1000_1488/0/1520240921769?e=1614211200&amp;v=beta&amp;t=1kxFDxftHwCJGpLytbxPKgxt_YuRzgSeGvrO7O_zenw"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/288585251.jpg"/></div>
 
 Ok lets begin with lines 21 and 22. This is nothing new that we have experienced as we are simply moving the array into ebx.
 

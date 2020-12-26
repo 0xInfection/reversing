@@ -4,13 +4,13 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let’s re-examine our code:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEp6bZuV-CIqA/article-inline_image-shrink_1000_1488/0/1520230639459?e=1614211200&amp;v=beta&amp;t=p-e2wCJx6Dp9IIHZUABhcXu3tYY1RVUUN0SN9HgG33M"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/242596009.jpg"/></div>
 
 We again __add__ __100__ decimal into __r1__, __4,294,967,295__ into __r2__. We then __add r1__ and __r2__ and place in __r0.__
 
 Lets debug:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHhMjLWYNsk-A/article-inline_image-shrink_1000_1488/0/1520149414710?e=1614211200&amp;v=beta&amp;t=JGkOkDQ5VJ5hkmKcJ9gYbAlh_MV-MiH4cMqqGBoRLzg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/341564800.jpg"/></div>
 
 We again see __adds __which sets the flags in the CPSR. We have to remember when we debug in GDB, the value of the CPSR is in hex. In order to see what flags are set, we must convert the hex to binary. This will make sense as we start to debug and hack this example in the coming tutorials.
 
@@ -40,11 +40,11 @@ There is nothing in code above which set the __Overflow Flag__ however in it’s
 
 Lets step through the program:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHOCMLh0ihJfQ/article-inline_image-shrink_1000_1488/0/1520609481159?e=1614211200&amp;v=beta&amp;t=mgPAVlG2EYL2CPnWAKfDLzdT-WDXzPUDPdjWQIgLu5c"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/322298656.jpg"/></div>
 
 We see __64 hex__ or __100 decimal __moved into __r1__ as expected. No change in the __CPSR__. Lets step some more.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQG_Qy-xMKNKTQ/article-inline_image-shrink_1000_1488/0/1520042941149?e=1614211200&amp;v=beta&amp;t=YDzRxFgnE36cG7ViruMt4qSzUDbBJrVc8g6o4NUhCPg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/1015312689.jpg"/></div>
 
 We see the addition that transpires above and notice the value in __r0 __is __99 decimal__ after __100 decimal__ and __4294967295 decimal__ were added together. How is that possible? The answer is simple, we overflowed the 32-bit register of __r0__ from this addition.
 

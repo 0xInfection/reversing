@@ -31,7 +31,7 @@ int main(void) {
 }
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQE9R8gHDJRDdg/article-inline_image-shrink_1000_1488/0/1520190636660?e=1614211200&amp;v=beta&amp;t=gnFIEDb1DHCjINYriZplt0m2q5jJRB6EWxQx1ubwCFQ"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/148526525.jpg"/></div>
 
 To compile this we simply type:
 
@@ -41,7 +41,7 @@ We simply then type:
 
 ./example3
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHkPA8-n4l81g/article-inline_image-shrink_1000_1488/0/1520211586776?e=1614211200&amp;v=beta&amp;t=sq5xYie1yPkJq4cdMzUGnPfN4_Lx5I6wmCkyJuaThRI"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/194534878.jpg"/></div>
 
 SUCCESS!&nbsp;We see “__n__” printed to the standard output or terminal!
 

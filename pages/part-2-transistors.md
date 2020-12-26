@@ -6,25 +6,25 @@ In our last tutorial we spoke briefly about binary to which we represent as eith
 
 Let’s start with the __AND Gate __below.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGxanFD1TKo6A/article-inline_image-shrink_1000_1488/0/1535712345568?e=1614211200&amp;v=beta&amp;t=vtlDrCAGPOMkbjNQB16aHl6f9ha94th2JRyMju7t40I"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/385508570.jpg"/></div>
 
 In an AND Gate there are two binary values to which outputs 1 only if both binary values are 1.&nbsp;
 
 The __NOT Gate__ is represented below.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGC25beH1I6gw/article-inline_image-shrink_1000_1488/0/1535712373734?e=1614211200&amp;v=beta&amp;t=Qc9q3hsPvuUUcKTvDEqY4-XpUAt0RRLzNhEEte-wR9E"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/137507684.jpg"/></div>
 
 In a NOT Gate it simply takes a single binary value and negates it.
 
 The __OR Gate__ is represented below.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGehjgP7eKqzQ/article-inline_image-shrink_1000_1488/0/1535712396805?e=1614211200&amp;v=beta&amp;t=3Y2cOwDJFQAUyt3znmfX-1_Kl14yrCmzlRBBwm-p0RE"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/465143996.jpg"/></div>
 
 In an OR Gate only one of the inputs has to be 1 in order to output a 1.
 
 The __XOR Gate&nbsp;__ is represented below.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHu56HGdZkoIw/article-inline_image-shrink_1000_1488/0/1535712436598?e=1614211200&amp;v=beta&amp;t=uusMriZ0MOruIC7sUA3itLH1TQ9Ifl-wdn0NGhs4RwA"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/731624853.jpg"/></div>
 
 In an XOR Gate if both inputs are either 0 or 1 the output is 0.
 

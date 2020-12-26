@@ -8,15 +8,15 @@ A 32-bit register can store 2^32 different values. The range of integer values t
 
 Keep in mind with 32-bit memory addresses you can directly access a maximum of 4 GB of byte-addressable memory.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEgOmunABZR9Q/article-inline_image-shrink_1000_1488/0/1520217390524?e=1614211200&amp;v=beta&amp;t=aUsuadmkyJCWWdW30FXeB7euTZWFGeswzPZRIGV41o0"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/814771608.jpg"/></div>
 
 Let’s debug!
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQH4lRxHfajGFQ/article-inline_image-shrink_1000_1488/0/1520233314454?e=1614211200&amp;v=beta&amp;t=TNO5iB2UO3mmrUWENN4_7Qjg3O5otY5vur-Tep5jOeE"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/541475591.jpg"/></div>
 
 We see at __main+12 __the address at __0x10730 __loading data into __r3__.&nbsp;Let’s take a closer look.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQH5Z2EDTfO95A/article-inline_image-shrink_1000_1488/0/1520192010424?e=1614211200&amp;v=beta&amp;t=hYNEzxqHHW2z_qv1YZXlmhI2Kr7AY7Kz_imkdZuVqTw"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/835887566.jpg"/></div>
 
 When we examine the data inside __0x10730__ we clearly see the integer __777__ present.&nbsp;When we continue we see __777 __echoed back to the terminal which makes sense as we utilized the __cout__ function within c++.\#linux \#arm \#asm \#cplusplus \#reverseengineering
 

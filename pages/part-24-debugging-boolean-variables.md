@@ -4,19 +4,19 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let’s re-examine our code.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFDvsepyGWEkA/article-inline_image-shrink_1000_1488/0/1520236715844?e=1614211200&amp;v=beta&amp;t=GbqOWOVILF8nqNE0nZhwtDtRasEHgYlBQsy1Rc9GOjc"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/435467730.jpg"/></div>
 
 Let’s debug.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGcWtIrh1tf8A/article-inline_image-shrink_1000_1488/0/1520194325794?e=1614211200&amp;v=beta&amp;t=DgtDcYsZuLIjOMp8Mw9EOAJCOE4YjzLPQPCnIlGKXMo"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/941966862.jpg"/></div>
 
 Let’s step 4 times and disassemble.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEkh7vJ2OzHtQ/article-inline_image-shrink_1000_1488/0/1520190876822?e=1614211200&amp;v=beta&amp;t=kCZemRGiNf3vxvo0NxrgcNxHgP5kRYRT1WcV1c16wjE"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1019059715.jpg"/></div>
 
 Let’s examine what is now in __r3__.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQH0R28tjbUz9A/article-inline_image-shrink_1000_1488/0/1520171350771?e=1614211200&amp;v=beta&amp;t=9XTVRTO0XkfPXMtX3sq2XLtTjVOo3r7w065AWY84HVE"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/902551454.jpg"/></div>
 
 As we can clearly see the value in __isHacked__ is __0__ or __false__ which makes sense based on our c++ source code.
 

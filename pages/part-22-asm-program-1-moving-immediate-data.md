@@ -28,7 +28,7 @@ Our first program will demonstrate how to move immediate data to a register and 
 
 Lets open VIM and create a program called __moving\_immediate\_data.s__ and type the following:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEeW1GXqR0JSQ/article-inline_image-shrink_1000_1488/0/1520242191439?e=1614211200&amp;v=beta&amp;t=Nf78DzA-Bk15ySDTPJp6ot0yJrRx-rkZsrPxzkMnbc0"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/882604475.jpg"/></div>
 
 To compile you type:
 
@@ -42,7 +42,7 @@ __./moving\_immediate\_data__
 
 I would like to show you what it would look like in Intel syntax as well. Before we examine this part you will need to type __sudo apt-get install nasm__ in a command prompt which will install the Netwide Assembler:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEAzn6RyoP3uw/article-inline_image-shrink_1000_1488/0/1520145572968?e=1614211200&amp;v=beta&amp;t=IK6A-7LiTlnSm5xnRYNlDDoSWgXgKBREuM1-m-3T-8g"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/44235971.jpg"/></div>
 
 To compile you type:
 
@@ -66,7 +66,7 @@ In Linux, there are two distinct areas of memory. At the very bottom of memory i
 
 At the very top of memory in any program execution we have the User Space which is made up of The Stack, The Heap and finally your code all of which can be illustrated in the below diagram:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFKe2NOGQG7vQ/article-inline_image-shrink_1000_1488/0/1520146256303?e=1614211200&amp;v=beta&amp;t=n0btpbjt79StCO3UIINYaHn9Erxiv8-BjsaiXWVVOBE"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/915922609.jpg"/></div>
 
 When we load the values as we demonstrated above and call INT 0x80, the very next instruction’s address in the User Space, ASM Code section which is your code, is placed into the Return Address area in The Stack. This is critical so that when INT 0x80 does its work, it can properly know what instruction is to be carried out next to ensure proper and sequential program execution.
 
@@ -90,7 +90,7 @@ __cat /usr/include/asm/unistd\_32.h__
 
 Below is a snapshot of just a few of them. As you can see the exit 1 represents the sys\_exit that we utilized in our above code.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHofXnXUg4F5Q/article-inline_image-shrink_1000_1488/0/1520194548094?e=1614211200&amp;v=beta&amp;t=wlBwU8neAYFQonoB001gOR5V_C_uPmqdKhwkZWKzISo"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/819147051.jpg"/></div>
 
 Starting with this lesson we will take a 3-step approach:
 

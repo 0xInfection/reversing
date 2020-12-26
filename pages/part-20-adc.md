@@ -6,7 +6,7 @@ ADC is the same as ADD except it adds a 1 if the carry flag is set. We need to p
 
 Let’s look at an example to illustrate:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEaZCw2691u5A/article-inline_image-shrink_1000_1488/0/1520238027219?e=1614211200&amp;v=beta&amp;t=a96_9zHSyvjCrHt8mp40-3wW3ZvP4NbYwhGIpLdRfII"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/342879597.jpg"/></div>
 
 We __add__ __100__ decimal into __r1__, __4,294,967,295__ into __r2__, __100__ decimal into __r3__ and __100__ decimal into __r4__. We then __add r1__ and __r2__ and place in __r0__ and then __add r3__ and __r4__ and place into __r5__.
 

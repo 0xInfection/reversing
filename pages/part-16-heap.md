@@ -4,7 +4,7 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Our next step in the Basic Malware Reverse Engineering section focuses on the heap.&nbsp;Keep in mind, the stack grows downward and the heap grows upward.&nbsp;It is very, very important that you understand this concept as we progress forward in our future tutorials.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQF4jBWf8Qvl2A/article-inline_image-shrink_1000_1488/0/1520241941781?e=1614211200&amp;v=beta&amp;t=DvqDyU296rSSGrgrGK8kZIkQbL9LgXQU5JmXqixec1k"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/25231571.jpg"/></div>
 
 The heap is the region of your computer's memory that is not managed automatically for you, and is not as tightly managed by the CPU. It is free-floating region of memory and is larger than the stack allocation of memory.
 

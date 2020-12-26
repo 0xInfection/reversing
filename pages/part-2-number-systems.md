@@ -6,21 +6,21 @@ At the core of the microprocessor are a series of binary numbers which are eithe
 
 Before we dive into binary, lets examine the familiar decimal. If we take the number 2017, we would understand this to be two thousand and seventeen.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEU7ru7ttX2ag/article-inline_image-shrink_1000_1488/0/1520147341286?e=1614211200&amp;v=beta&amp;t=8yOt6aPyY-E6yEhmi8-BW_RU0qmvKNkJTxIpFQeRPc4"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/715585937.jpg"/></div>
 
 Let’s take a look at the binary system and the basics of how it operates.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEMPQBlCbc_Mw/article-inline_image-shrink_1000_1488/0/1520216778060?e=1614211200&amp;v=beta&amp;t=ebvAdJhboaz51BYxp9kogmOMlGiHzQdfA2cXzOxGyFw"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/717306080.jpg"/></div>
 
 If we were to convert a binary number into decimal, we would very simply do the following. Lets take a binary number of 0101 1101 and as you can see it is 93 decimal.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHXVKZrb9J8cw/article-inline_image-shrink_1000_1488/0/1520212802125?e=1614211200&amp;v=beta&amp;t=BCST0vcIPBFlDr3ZFHA9WGDPv2Cnw5zT1RnMa8tBeiw"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/740439505.jpg"/></div>
 
 Adding the values in the value column gives us 0 + 64 + 0 + 16 + 8 + 4 + 0 + 1 = 93 decimal.
 
 If we were to convert a decimal number into binary, we would check to see if a subtraction is possible relative to the highest order bit and if so, a 1 would be placed into the binary column to which the remainder would be carried into the next row. Let’s consider the example of the decimal value of 120 which is 0111 1000 binary.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQE7WkjgKGu5Hw/article-inline_image-shrink_1000_1488/0/1520194446121?e=1614211200&amp;v=beta&amp;t=x9M3dGxkLX7AxU1aMgh30-vHpygTgXsG9EcllQOp26Y"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/55628169.jpg"/></div>
 
 1)Can 128 fit inside of 120: No, therefore 0.
 
@@ -40,7 +40,7 @@ If we were to convert a decimal number into binary, we would check to see if a s
 
 When we want to convert binary to hex we simply work with the following table.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEw7wdgVy3ebw/article-inline_image-shrink_1000_1488/0/1520211831076?e=1614211200&amp;v=beta&amp;t=EKWCPPE7crGlsGkLBnoUTgWjVjN92hAi5r-eKFyJRAQ"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/237169449.jpg"/></div>
 
 Lets convert a binary number such as 0101 1111 to hex. To do this we very simply look at the table and compare each nibble which is a combination of 4 bits. Keep in mind, 8 bits is equal to a byte and 2 nibbles are equal to a byte.
 
@@ -72,7 +72,7 @@ Therefore we can see that 80 + 15 = 95 which is 0x5f hex.
 
 Finally to convert from decimal to hex. Lets take the number 850 decimal which is 352 hex.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHL5bbolrOvLA/article-inline_image-shrink_1000_1488/0/1520238915130?e=1614211200&amp;v=beta&amp;t=JpO-9YgSB6Q5_egTM-HkYy7Z5Hiw4ofLIxkTmPzd8ho"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/785212454.jpg"/></div>
 
 We put the numbers together from bottom to the top and we get 352 hex.
 

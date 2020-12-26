@@ -4,11 +4,11 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let’s reexamine the source once more.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGxjCohdo_wHw/article-inline_image-shrink_1000_1488/0/1520173944761?e=1614211200&amp;v=beta&amp;t=yO2Bglu4EGsQ1eebdf1mo3IisLx46j4zeNk-CKP3IMc"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/809111934.jpg"/></div>
 
 Let’s once again load the binary into GDB and break on \_start.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQG3wQzNS21ddQ/article-inline_image-shrink_1000_1488/0/1520175535307?e=1614211200&amp;v=beta&amp;t=28NLpwwmTSg7gA3bsBNcUWY-0nrYbGXFN8KOzVfPT2Y"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/795553648.jpg"/></div>
 
 As we look above we see the command print \*0x804909e. We see that it yields a value of 5 decimal. The binary at runtime puts the values inside the constants label to a respective memory address.
 
@@ -18,7 +18,7 @@ If we were to continue to advance through the array we would move 4 bytes to the
 
 Let’s hack!
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQG2DBFXzOx_ag/article-inline_image-shrink_1000_1488/0/1520450492026?e=1614211200&amp;v=beta&amp;t=pz7-_v_QT_mgCR7X1FhO57hPga5ruRLPy3-Y1yAfsd0"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/846748360.jpg"/></div>
 
 After we broke on \_start and ran, we examined the array like we did in our prior lesson. Here we hack the value at 0x80490a2 to 66 decimal instead of 8 decimal and we can see that we successfully changed one element of the array.
 

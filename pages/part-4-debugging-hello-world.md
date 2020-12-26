@@ -24,7 +24,7 @@ View disassembly.
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQF_AB5hVPpF-g/article-inline_image-shrink_1500_2232/0/1606475269047?e=1614211200&amp;v=beta&amp;t=lNqLA2rqeTf2PQlaUw4d9ABGKMz6PG-lddmClxoAP_o"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/954108013.jpg"/></div>
 
 You can right click and&nbsp;__Open image in new tab&nbsp;__to get an expanded view.
 

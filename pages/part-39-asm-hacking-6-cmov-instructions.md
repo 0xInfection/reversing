@@ -4,11 +4,11 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let’s bring the binary into gdb.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHpJAkC7Xjz3w/article-inline_image-shrink_1000_1488/0/1520490808741?e=1614211200&amp;v=beta&amp;t=wx-5Jl_enE7pA4Kcux94a0QAvychylo5qepBaSMlOrk"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/431391544.jpg"/></div>
 
 Let’s now run the binary. We see that the smallest value is 7 which is expected. Our final bit of instruction in this tutorial will teach you how to jump to any part of the execution that you so choose.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEd0Mei_NhyJg/article-inline_image-shrink_1000_1488/0/1520241582923?e=1614211200&amp;v=beta&amp;t=IsOk8eXP2zPnug7FdiJvx6sIvQaa1e_QvvMEoFgejqk"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/430588229.jpg"/></div>
 
 We __set $eip = 0x080480dd__ which is the exit routine. We see now that it bypasses all of the code from the nop instruction when we broke on \_start. You now can use this command to jump anywhere inside of any binary within the debugger.
 

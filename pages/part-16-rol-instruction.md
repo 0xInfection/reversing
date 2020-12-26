@@ -4,7 +4,7 @@ For a complete table of contents of all the lessons please click below as it wil
 
 The ROR command stands for rotate right.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQH5hHizs-GqYA/article-inline_image-shrink_1000_1488/0/1544181149655?e=1614211200&amp;v=beta&amp;t=H8oyHs_Kybqzps5MYmlaMWOm_imPaoXQiCuhQir4phk"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1061481622.jpg"/></div>
 
 In our simple x64 example on an Ubuntu Linux machine above we see we&nbsp;mov 1&nbsp;into&nbsp;al&nbsp;and rotate right by 1 bit.
 
@@ -16,7 +16,7 @@ __nasm -f elf64 -o test.o test.asm__
 
 __ld -o test test.o__
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHiiu0Ea3MRQw/article-inline_image-shrink_1000_1488/0/1544181229818?e=1614211200&amp;v=beta&amp;t=fJXhy_12jFjUfcGlizmhSq4yZStXOpjOnPdL-uBmhxg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/405797394.jpg"/></div>
 
 We can see here in the debugger that&nbsp;al&nbsp;starts with&nbsp;1&nbsp;and when we rotate right it goes to&nbsp;__10000000b__.
 

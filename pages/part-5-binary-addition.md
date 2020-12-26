@@ -6,7 +6,7 @@ Binary subtraction is nothing more than adding the negative value of the number 
 
 We represent a sign bit in binary to which bit 7 indicates the sign of number where 0 is positive and 1 is negative.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHYLqgRKpbx0Q/article-inline_image-shrink_1000_1488/0/1537526862141?e=1614211200&amp;v=beta&amp;t=PixeXI4OpufCVGtA0NOWSsUTf7wYYqYQr02Ej7wCFzI"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/665404863.jpg"/></div>
 
 The above would represent -2.
 
@@ -14,19 +14,19 @@ We utilize the concept of twos compliment which inverts each bit and then finall
 
 Lets example binary 2.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGkaaiw3ZYLmg/article-inline_image-shrink_1000_1488/0/1537526884698?e=1614211200&amp;v=beta&amp;t=ijX-S-jI_HLjdQN0E1sXT0SAs_9xPvqTx6hV40yu2qU"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/882585310.jpg"/></div>
 
 Invert the bits.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGAorLG2cI6Sg/article-inline_image-shrink_1000_1488/0/1537526902723?e=1614211200&amp;v=beta&amp;t=O-m4H8FrMb18JjPplHrQrKCjV5evU49XUluFy64pstM"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/851632090.jpg"/></div>
 
 Add 1.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFl_K2NxMipMg/article-inline_image-shrink_1000_1488/0/1537526921447?e=1614211200&amp;v=beta&amp;t=X_cErri7uy7VIAfkWBNUnbzieeXjrqKOBvLiPWi2l_E"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/692914980.jpg"/></div>
 
 Let’s examine a subtraction operation:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFEKlyk02qWFw/article-inline_image-shrink_1000_1488/0/1537526940998?e=1614211200&amp;v=beta&amp;t=vMim5GYoEIbJuOnXgLkz3JjC6Sl69q9SumfNHlVrmNs"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/414141340.jpg"/></div>
 
 So what is the (1) you may ask, that is the overflow bit. In future tutorials we will examine what we refer to as the overflow flag and carry flag.
 

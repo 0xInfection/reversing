@@ -6,7 +6,7 @@ To recap, ADC is the same as ADD except it adds a 1 if the carry flag is set. We
 
 Let’s review our code:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGqrMhaSxpa8w/article-inline_image-shrink_1000_1488/0/1520042704437?e=1614211200&amp;v=beta&amp;t=HWKPFUtYhFCZR6JHoWIG2eFpdmL63gkNPI93j2cWO5g"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/809599778.jpg"/></div>
 
 We __add__ __100__ decimal into __r1__, __4,294,967,295__ into __r2__, __100__ decimal into __r3__ and __100__ decimal into __r4__. We then __add r1__ and __r2__ and place in __r0__ and then __add r3__ and __r4__ and place into __r5__.
 
@@ -14,7 +14,7 @@ We see __adds __which sets the flags in the CPSR. We have to once again remember
 
 Last week I raised a question where I wanted you to ask yourself what is going to happen when __r3(100 decimal)__ is added to __r4(100 decimal)__? What do you think the value of __r5__ will be with the above example of setting the flags with the adds result?
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEjUOaVR0DMCg/article-inline_image-shrink_1000_1488/0/1520150885116?e=1614211200&amp;v=beta&amp;t=jKk973_vnmPF1idTHJDeuv1lKl76UvTSXL1b-HDPXHo"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/922369743.jpg"/></div>
 
 Ok so we add __100 decimal__ and __100 decimal__ together in __r3__ and __r4__ and we get __201__ __decimal__ in __r5__! Is something broken? ADC is the same as ADD except it adds a 1 if the carry flag is set. Therefore we get the extra 1 in __r5__.
 

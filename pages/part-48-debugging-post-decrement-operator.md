@@ -19,11 +19,11 @@ int main(void) {
 
 Let's review last week's debug.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFp2Mxp62mXrQ/article-inline_image-shrink_1000_1488/0/1532690049930?e=1614211200&amp;v=beta&amp;t=3xBB4cevl7ZNN7dTopkNoNkkSog6H2HJ2hMfeOGmvqk"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/819687212.jpg"/></div>
 
 As we can see here the value in __r1__ at __main+68__ is __15__. Let's hack!
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGC6C5RsOJnLA/article-inline_image-shrink_1000_1488/0/1532690140517?e=1614211200&amp;v=beta&amp;t=VDasHoj8d-Rx6AND9IPFmspdHejexLq5nRMWE3RSe-w"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/801357572.jpg"/></div>
 
 Once again we have manipulated and changed program execution to our own bidding. With each of these bite-size lessons you continue to get a better grasp on the processor and how it interfaces with the binary.
 

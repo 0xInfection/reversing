@@ -4,11 +4,11 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let’s review our code.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEwrAfitQABaA/article-inline_image-shrink_1000_1488/0/1520147096734?e=1614211200&amp;v=beta&amp;t=PLWWGxXoFC0RAxvBuBw8aJHD0ktvxPU_8spsE7_bJTg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/800120431.jpg"/></div>
 
 Let’s debug!
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEGyoebeHOMpA/article-inline_image-shrink_1000_1488/0/1520229910793?e=1614211200&amp;v=beta&amp;t=Y8UQvvGzYkgp4R6EO2NgH6KoIsQar8gT8XsRmQogJCs"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/395133169.jpg"/></div>
 
 Woah!&nbsp;This is confusing.&nbsp;I don’t see any clear memory addresses being loaded into a register to manipulate the data.&nbsp;
 
@@ -18,13 +18,13 @@ If you remember from last week each character translates down to an ASCII code i
 
 We do see __0x6e__ at __main+12__ which is the character ‘__n__’.&nbsp;&nbsp;
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFryzFQJbq_Qw/article-inline_image-shrink_1000_1488/0/1520209360741?e=1614211200&amp;v=beta&amp;t=Dn3XCnbvk4YRseYCVMEMtwsLgMlBcRrC2Ep038hE58E"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/596897937.jpg"/></div>
 
 If we step into a few times we notice the value has been placed into __r3__.&nbsp;When we print the value in __r3__ we now see our ‘__n__’ character.
 
 Let’s continue.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHIFZeJB4ImeQ/article-inline_image-shrink_1000_1488/0/1520149197565?e=1614211200&amp;v=beta&amp;t=oQb7WzttGAwGV63Br_r-2DrByispecdqaQq1fbKZzQ0"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/587021340.jpg"/></div>
 
 We now see the ‘__n__’ printed to the standard output as expected.
 

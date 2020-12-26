@@ -4,12 +4,12 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Today we will code our simple, "hello world" program in x64 Assembly.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFMkwn5paSDNw/article-inline_image-shrink_1000_1488/0/1552041593157?e=1614211200&amp;v=beta&amp;t=_HoHUTu_6qEsHXoVbobu7Rau0w9wkIvIxRTm-azSsGQ"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/892118136.jpg"/></div>
 
 We simply create a string in the __.data __section and add a return character at the end of the statement. We then perform a simple write call which utilizes the OS's interrupt vector table to spit out our string in the standard output or terminal.
 
 We will compile and run below:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGC4oWCTtB_9g/article-inline_image-shrink_1000_1488/0/1552041719716?e=1614211200&amp;v=beta&amp;t=yaCT7EGAqOiVLeQ3YfSIJ-1BWpCKX0lXqdBlOUCOqHo"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/464836329.jpg"/></div>
 
 As we can see "__Hello World__!" has been echoed to the terminal. Next week we will debug this simple program in GDB.

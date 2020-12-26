@@ -4,21 +4,21 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let's review our code:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4D12AQGrgrQLGRgjew/article-inline_image-shrink_1000_1488/0/1564757193950?e=1614211200&amp;v=beta&amp;t=kVYVxxQETwgEJ6zWm9ViX2uICON0ZDuy5GhcTkZ1J6E"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/617638730.jpg"/></div>
 
 Compile:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4D12AQFpqdYdPykJbQ/article-inline_image-shrink_1000_1488/0/1564758303402?e=1614211200&amp;v=beta&amp;t=xFZg6K6urV0xy0IT897Vlh65G1joO8AyhgQQ8SoG4Qc"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/910260596.jpg"/></div>
 
 Run:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4D12AQFSP-goeevtuw/article-inline_image-shrink_1000_1488/0/1564757239511?e=1614211200&amp;v=beta&amp;t=zNvuVN4dmg0EK2XLiZ_wLG1iZvpNE77YI_BEfVzmDmg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/102844945.jpg"/></div>
 
 Let's remember this line above when we compare against our hacked binary.
 
 Let's open up our binary for write mode and simply analyze the binary.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4D12AQF6mr5D-4oIxw/article-inline_image-shrink_1000_1488/0/1564757311281?e=1614211200&amp;v=beta&amp;t=gPgvpS0TN7-TDqBF367QnrdmsoDhnWr4Bpu6pvWOzLA"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/889694218.jpg"/></div>
 
 Ok, there is a lot going on here. Let's break it down. First, we open up Radare 2 in write mode by typing '__r2 -w ./1__' and then use the '__aaa__' command to analyze the binary. We then use '__s sym.main__' to seek to the main routine of the binary which is our entry point. We then do a '__pdf__' command to disassemble the binary.
 
@@ -30,21 +30,21 @@ We can clearly see the qword of '__Hello World\\n__' at memory address&nbsp;__0x
 
 Let's examine&nbsp;__0x2005__&nbsp;to verify that our string is at that location:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4D12AQHkJWtDc7EmeA/article-inline_image-shrink_1000_1488/0/1564757423920?e=1614211200&amp;v=beta&amp;t=UQkfF7VPhlpeWnX_f8z5Tc7xbikQCdyj6uXN4RIqpN4"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/880857451.jpg"/></div>
 
 NOW TIME FOR THE HACK!
 
 Let's hack the value to something like:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4D12AQFMs_3AsySrOw/article-inline_image-shrink_1000_1488/0/1564757454631?e=1614211200&amp;v=beta&amp;t=F3QPVQF5yL5ghoL-upyMWAoYrkRbhIyQunaEydYI9Tw"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/505995021.jpg"/></div>
 
 Now let's see what is now inside memory value @ __0x2005__!
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4D12AQG0emToOChRsQ/article-inline_image-shrink_1000_1488/0/1564757528202?e=1614211200&amp;v=beta&amp;t=7-e4rvFQjki1BhF17VYzwjzJuqTiwvgwzANbxLHat90"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/531659481.jpg"/></div>
 
 BOOM! As we can see we have hacked the value and when we quit Radare 2 it will write it and modify our binary as such.,
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4D12AQEkfli50BnScQ/article-inline_image-shrink_1000_1488/0/1564757568026?e=1614211200&amp;v=beta&amp;t=bNldz3ZvmX-freL4QDoKFrD4N6Ob5MpSq-UY7tb71eU"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/916278053.jpg"/></div>
 
 As you can see we have hacked the binary! This is very basic but now you have an elementary level of understanding of Reverse Engineering a C++ binary.
 

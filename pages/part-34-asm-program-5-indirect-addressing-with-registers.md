@@ -4,7 +4,7 @@ For a complete table of contents of all the lessons please click below as it wil
 
 In our fifth program we will demonstrate how we can manipulate indirect addressing with registers.&nbsp;
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGYn0nmnkFssA/article-inline_image-shrink_1000_1488/0/1520086819422?e=1614211200&amp;v=beta&amp;t=tVmSb4Vm3WSQ5joKpX_O1ZV1J0IclHs1a1krWJJc0nM"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/330981251.jpg"/></div>
 
 We can place more than one value in memory as indicated above. In the past, our memory location contained one single value. In the above as you can see the value of constants contains 11 separate values.
 

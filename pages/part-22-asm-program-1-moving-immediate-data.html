@@ -2333,7 +2333,7 @@
 <p>A basic instruction has two parts of which the first one is the name of the instruction or the mnemonic which is executed and the second part is the operands or parameters of the command.</p>
 <p>Our first program will demonstrate how to move immediate data to a register and immediate data to memory.</p>
 <p>Lets open VIM and create a program called <strong>moving_immediate_data.s</strong> and type the following:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEeW1GXqR0JSQ/article-inline_image-shrink_1000_1488/0/1520242191439?e=1614211200&amp;v=beta&amp;t=Nf78DzA-Bk15ySDTPJp6ot0yJrRx-rkZsrPxzkMnbc0"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/882604475.jpg"></div>
 
 <p>To compile you type:</p>
 <p><strong>as &#x2013;32 -o moving_immediate_data.o moving_immediate_data.s</strong></p>
@@ -2341,7 +2341,7 @@
 <p>To run you type:</p>
 <p><strong>./moving_immediate_data</strong></p>
 <p>I would like to show you what it would look like in Intel syntax as well. Before we examine this part you will need to type <strong>sudo apt-get install nasm</strong> in a command prompt which will install the Netwide Assembler:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEAzn6RyoP3uw/article-inline_image-shrink_1000_1488/0/1520145572968?e=1614211200&amp;v=beta&amp;t=IK6A-7LiTlnSm5xnRYNlDDoSWgXgKBREuM1-m-3T-8g"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/44235971.jpg"></div>
 
 <p>To compile you type:</p>
 <p><strong>nasm -f elf32 moving_immediate_data.asm</strong></p>
@@ -2354,7 +2354,7 @@
 <p>Line 20 and 21 set up the software interrupt which we call on line 22 with the instruction int <strong>$0x80.</strong> Let&#x2019;s dive into this a little deeper.</p>
 <p>In Linux, there are two distinct areas of memory. At the very bottom of memory in any program execution we have the Kernel Space which is made up of the Dispatcher section and the Vector Table.</p>
 <p>At the very top of memory in any program execution we have the User Space which is made up of The Stack, The Heap and finally your code all of which can be illustrated in the below diagram:</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFKe2NOGQG7vQ/article-inline_image-shrink_1000_1488/0/1520146256303?e=1614211200&amp;v=beta&amp;t=n0btpbjt79StCO3UIINYaHn9Erxiv8-BjsaiXWVVOBE"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/915922609.jpg"></div>
 
 <p>When we load the values as we demonstrated above and call INT 0x80, the very next instruction&#x2019;s address in the User Space, ASM Code section which is your code, is placed into the Return Address area in The Stack. This is critical so that when INT 0x80 does its work, it can properly know what instruction is to be carried out next to ensure proper and sequential program execution.</p>
 <p>Keep in mind in modern versions of Linux, we are utilizing Protected Mode which means you do NOT have access to the Linux Kernel Space. Everything under the long line that runs in the middle of the diagram above represents the Linux Kernel Space.</p>
@@ -2367,7 +2367,7 @@
 <p>Take some time and look at the entire table of system calls by opening up a terminal and typing:</p>
 <p><strong>cat /usr/include/asm/unistd_32.h</strong></p>
 <p>Below is a snapshot of just a few of them. As you can see the exit 1 represents the sys_exit that we utilized in our above code.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHofXnXUg4F5Q/article-inline_image-shrink_1000_1488/0/1520194548094?e=1614211200&amp;v=beta&amp;t=wlBwU8neAYFQonoB001gOR5V_C_uPmqdKhwkZWKzISo"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/819147051.jpg"></div>
 
 <p>Starting with this lesson we will take a 3-step approach:</p>
 <p>1)<strong>Program</strong></p>
@@ -2420,7 +2420,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 22 - ASM Program 1 [Moving Immediate Data]","level":"1.23","depth":1,"next":{"title":"Part 23 - ASM Debugging 1 [Moving Immediate Data]","level":"1.24","depth":1,"path":"pages/part-23-asm-debugging-1-moving-immediate-data.md","ref":"pages/part-23-asm-debugging-1-moving-immediate-data.md","articles":[]},"previous":{"title":"Part 21 - How To Compile A Program","level":"1.22","depth":1,"path":"pages/part-21-how-to-compile-a-program.md","ref":"pages/part-21-how-to-compile-a-program.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-22-asm-program-1-moving-immediate-data.md","mtime":"2020-12-26T16:35:32.039Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T16:36:27.581Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 22 - ASM Program 1 [Moving Immediate Data]","level":"1.23","depth":1,"next":{"title":"Part 23 - ASM Debugging 1 [Moving Immediate Data]","level":"1.24","depth":1,"path":"pages/part-23-asm-debugging-1-moving-immediate-data.md","ref":"pages/part-23-asm-debugging-1-moving-immediate-data.md","articles":[]},"previous":{"title":"Part 21 - How To Compile A Program","level":"1.22","depth":1,"path":"pages/part-21-how-to-compile-a-program.md","ref":"pages/part-21-how-to-compile-a-program.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-22-asm-program-1-moving-immediate-data.md","mtime":"2020-12-26T17:15:39.956Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T17:31:56.629Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

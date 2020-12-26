@@ -22,18 +22,18 @@ When we post-increment the value of the variable is incremented after assigning 
 
 Let's debug.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFmaWzQRvrFTw/article-inline_image-shrink_1000_1488/0/1528458112325?e=1614211200&amp;v=beta&amp;t=r2hxg9B8WWQKywdrzvuZpmJuNpf6KnnK5WKq8NsRiQ0"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/366968694.jpg"/></div>
 
 Let's break on __\*main+28 __and continue.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQH3l-5lgllJ0g/article-inline_image-shrink_1000_1488/0/1528458131421?e=1614211200&amp;v=beta&amp;t=ZZMsTq9vtKenyWmtO1dUA0Z4wzYeKGz3vJTs_iSOGYw"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/733502771.jpg"/></div>
 
 As we can see the value in __r3 __is 16 and the value in __r2 __is 17. We can see that as they are loaded from memory into the registers in __\*main+12__ directly by the __mov__ instruction and __\*main+24__ we add 1 into __r3__ and then put that value into __r2__.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHn2yUOd579ug/article-inline_image-shrink_1000_1488/0/1528458142344?e=1614211200&amp;v=beta&amp;t=bHS8Hh0Jv2MwokxhtSabc4AzoSi2rvxwejJxKmox6TQ"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/692636955.jpg"/></div>
 
 As we continue we can see the __cout __c++ function called which echos out the values to the terminal (standard output) as expected.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQESA6aDc_cw5w/article-inline_image-shrink_1000_1488/0/1528458154804?e=1614211200&amp;v=beta&amp;t=T7apGoUur4voWNz_WCJMDled6BZ7BLdzb_jfY6Fi244"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/308625006.jpg"/></div>
 
 Next week we will dive into Hacking Post-Increment Operator.

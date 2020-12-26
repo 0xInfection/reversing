@@ -19,11 +19,11 @@ int main(void) {
 }
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQETIq-NCg8NXw/article-inline_image-shrink_1000_1488/0/1529666614196?e=1614211200&amp;v=beta&amp;t=Dkimz2B50UjF7KAufF_0jtR-Luh9gV1TM95fqNQQQZg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/768150832.jpg"/></div>
 
 As we compile and run we see 15 echoed out to the terminal.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQG3Dreh2ykF4g/article-inline_image-shrink_1000_1488/0/1529666685691?e=1614211200&amp;v=beta&amp;t=jjT-cdObaIBS0UJ3Y8Wtq3GeLXYAnvSv7QDUkVzISD0"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1034526941.jpg"/></div>
 
 The value of __myNumber __was __16 __and when it is assigned with the pre-decrement operator we see that the new value is __15__ as it is assigned into __myNewNumber__.
 

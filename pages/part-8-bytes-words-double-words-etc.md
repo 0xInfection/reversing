@@ -8,13 +8,13 @@ A byte is 8 bits and is 2^8 power which is 256. The number of binary numbers 8 b
 
 Every byte of memory in a computer has its own unique address. Let's review the disassembled instructions for a simple hello world application in Linux by setting a breakpoint on the main function. We will use the GDB debugger:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEtxb-uQHvhHA/article-inline_image-shrink_1000_1488/0/1520519299095?e=1614211200&amp;v=beta&amp;t=CCSKSGSPjA2lpdGfQRuLBuksK6UD3XzbSC36NGH1GM0"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/802993422.jpg"/></div>
 
 Don't worry if this does not make sense yet. The point of utilizing this example is to give you a sneak peek into our first program that we will examine in addition to learning about memory in a computer.
 
 Below is an examination of the ESP register. Again, it is not critical that you understand what a register is or what ESP does. We simply want to see what a memory location looks like:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFUUbNFu4mJaA/article-inline_image-shrink_1000_1488/0/1520519298916?e=1614211200&amp;v=beta&amp;t=1jWXiL2ZXvqcSKeSEi9lzy2u5OaYulpFdyXD1VUOhag"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="imgs/255965944.jpg"/></div>
 
 &nbsp;
 

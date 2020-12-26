@@ -21,14 +21,14 @@ We see our very simple C++ code above to which we are doing nothing more than as
 
 Let's debug.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4D12AQEYId8W-vF-fQ/article-inline_image-shrink_1000_1488/0/1532085310684?e=1614211200&amp;v=beta&amp;t=jmklFnNu31_R_KOjsRY6UBKv6BdlvY6hQRvOY9mWEEI"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1051627087.jpg"/></div>
 
 It is clear that the value for the post-decrement operator gets loaded into __r1__ at __main+68 __so let's break at __main+72__.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4D12AQFevnl8ABB7zw/article-inline_image-shrink_1000_1488/0/1532085326445?e=1614211200&amp;v=beta&amp;t=owEilGhGFI6Fj5OtWO0S6GNHaJ3_O2QOb_4MonVntHU"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/847591096.jpg"/></div>
 
 We can clearly see that __r1 __does in fact hold the value of __15__ to which was decremented from our original value.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4D12AQH4rl574XICeQ/article-inline_image-shrink_1000_1488/0/1532085443370?e=1614211200&amp;v=beta&amp;t=V9oIz7Tmi89hFMRqSn412_pM-YZwsczv-7G8iGfQY_A"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1019858816.jpg"/></div>
 
 Next week we will dive into Hacking Post-Decrement Operator.

@@ -17,7 +17,7 @@ int main(void) {
 }
 </pre>
 
-<div class="slate-resizable-image-embed"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEbStDvDoxw0Q/article-inline_image-shrink_1000_1488/0/1520191083072?e=1614211200&amp;v=beta&amp;t=gV2PzS_bhVM99-q6RQUx7j3ixkhrFDHNz-BhBWa_3B0"/></div>
+<div class="slate-resizable-image-embed"><img src="imgs/908491229.jpg"/></div>
 
 To compile this we simply type:
 
@@ -29,7 +29,7 @@ We simply then type:
 <pre spellcheck="false">./example1
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHx4gcyoVXPIQ/article-inline_image-shrink_1000_1488/0/1520237920732?e=1614211200&amp;v=beta&amp;t=UESFqR47aiRNtsp7EGKdHhPwJzmWOKhpDsOHhWV20mE"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="imgs/571997121.jpg"/></div>
 
   
 

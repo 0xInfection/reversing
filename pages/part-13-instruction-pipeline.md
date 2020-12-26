@@ -12,7 +12,7 @@ The processor works with three separate phases which are:
 
 When the processor processes instruction 1 we refer to it as being in the fetch phase.&nbsp;When the processor processes instruction 2, instruction 1 goes into the decode phase and instruction 2 goes into the fetch phase.&nbsp;When the processor processes instruction 3, instruction 2 goes into the decode stage and instruction 1 goes into the execute stage.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFTBw1u9zr2_Q/article-inline_image-shrink_1000_1488/0/1520148744958?e=1614211200&amp;v=beta&amp;t=4CLn6lQiCIMVYZFGy1Nj5_0ZDeXVP8EN_0PvIYOqYes"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1019837895.jpg"/></div>
 
 Keep in mind, if a branch instruction occurs, the pipeline might be flushed and start over again with a fresh set of cycles.
 

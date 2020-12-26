@@ -27,7 +27,7 @@ float main(void) {
 }
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQFUrIpYaQmEtw/article-inline_image-shrink_1000_1488/0/1520592872663?e=1614211200&amp;v=beta&amp;t=E50SPLEYjPMv8QgqKMnF2Fo6VXtmokHZvjejA5_U6aE"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/77349076.jpg"/></div>
 
 To compile this we simply type:
 

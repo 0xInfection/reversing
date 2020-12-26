@@ -2345,12 +2345,12 @@ myNewNumber = ++myNumber;
 }
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGGSCeZ81dxAg/article-inline_image-shrink_1000_1488/0/1527247718232?e=1614211200&amp;v=beta&amp;t=2wF8RoJBxFmwtLH-fBMuYSm1d2X92UyaiNHi9CB3aHM"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/256417450.jpg"></div>
 
 <p>To compile this we simply type:</p>
 <p>g++ example9.cpp -o example9</p>
 <p>./example9</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEzYFvA9id5BQ/article-inline_image-shrink_1000_1488/0/1527247743089?e=1614211200&amp;v=beta&amp;t=0NbA_rhF0jdSKRxiu4s5aoeYYlsJMM5gCnZ1pZzm63M"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/394934103.jpg"></div>
 
 
 
@@ -2359,25 +2359,25 @@ myNewNumber = ++myNumber;
 <p>We create a variable <strong>myNumber = 16</strong> to which we create another variable <strong>myNewNumber</strong> which pre-increments the value of <strong>myNumber</strong>.&#xA0;We see that when we execute our code it shows 17.</p>
 <p>When we pre-increment the value of the variable is incremented before assigning it to another variable.&#xA0;For example <strong>myNumber</strong> is <strong>16</strong> so it gets incremented before being assigned to <strong>myNewNumber</strong> so therefore we get <strong>17</strong>.</p>
 <p>Let&#x2019;s debug.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQH7rGJjXZNIWA/article-inline_image-shrink_1000_1488/0/1527247841094?e=1614211200&amp;v=beta&amp;t=ZRxKsK0YgKPhyLCFtq9u3YuvV4cpTYdHb2uZZbVyCHg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/840799768.jpg"></div>
 
 <p>We do our normal start in gdb and break on main.&#xA0;Take note at <strong>main+24</strong> we are moving the value of <strong>1</strong> into <strong>r3</strong>.&#xA0;We then see at <strong>main+28</strong> we are storing that value at <strong>r11-8</strong> to which we will set a breakpoint and continue.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQH0Ai26azwgrQ/article-inline_image-shrink_1000_1488/0/1527247877140?e=1614211200&amp;v=beta&amp;t=LWTuaPvvKNI9DHX3IiYi4OU1katWEhbUkyYGDgXQqrg"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/68887597.jpg"></div>
 
 <p>As we evaluate the value in <strong>r3</strong> at this stage we see <strong>17</strong>.&#xA0;Remember back in our original code that the value in the <strong>myNumber</strong> variable was <strong>16</strong>.&#xA0;We can see that the pre-increment operator was successful to increment the value <strong>1</strong> to give us <strong>17</strong>.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFnexmmu5b6NQ/article-inline_image-shrink_1000_1488/0/1527247908955?e=1614211200&amp;v=beta&amp;t=hKipNfOr10DqzyLW8Oq1IkQ1PCCif8frakHIYBGu7pY"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/644551892.jpg"></div>
 
 <p>We see that when we continue through the code the value <strong>17</strong> is successfully echoed to the terminal as expected.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFpJRBHqQkFlw/article-inline_image-shrink_1000_1488/0/1527247930003?e=1614211200&amp;v=beta&amp;t=t-95RqYL5RmC0vxOGxcnn-3c-W59XKFWopmZac5zExI"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/583591108.jpg"></div>
 
 <p>Let&#x2019;s re-run the program.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHKvBrXb9CAtQ/article-inline_image-shrink_1000_1488/0/1527248017494?e=1614211200&amp;v=beta&amp;t=8u-OX1q_6G_uPJCElmfOb1HUCNa6ttcFVRZJHVWgufE"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/762972966.jpg"></div>
 
 <p>Let&#x2019;s hack!&#xA0;Here were review the value in r3 which we know to be 17.&#xA0;Let&#x2019;s hack it to something else.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHbMkrTcwy82Q/article-inline_image-shrink_1000_1488/0/1527248050749?e=1614211200&amp;v=beta&amp;t=G567T344xQo-czKG9ylBy2r0vXz81IAN77BZ65CXqkk"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/451418767.jpg"></div>
 
 <p>Success!&#xA0;As we can see when we continue we now see the hacked value echoing to the terminal.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEwftN7tm5Ynw/article-inline_image-shrink_1000_1488/0/1527248118408?e=1614211200&amp;v=beta&amp;t=AYXFWvxFa5dFpGvqm1JEhtR1inZQxR-G8DvKorJsFw4"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/667765303.jpg"></div>
 
 <p>Next week we will dive into the Post-Increment Operator.</p>
 
@@ -2423,7 +2423,7 @@ myNewNumber = ++myNumber;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 40 – Hacking Pre-Increment Operator","level":"1.106","depth":1,"next":{"title":"Part 41 – Post-Increment Operator","level":"1.107","depth":1,"path":"pages/part-41-post-increment-operator.md","ref":"pages/part-41-post-increment-operator.md","articles":[]},"previous":{"title":"Part 39 – Debugging Pre-Increment Operator","level":"1.105","depth":1,"path":"pages/part-39-debugging-pre-increment-operator.md","ref":"pages/part-39-debugging-pre-increment-operator.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-40-hacking-pre-increment-operator.md","mtime":"2020-12-26T16:35:32.059Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T16:36:27.581Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 40 – Hacking Pre-Increment Operator","level":"1.106","depth":1,"next":{"title":"Part 41 – Post-Increment Operator","level":"1.107","depth":1,"path":"pages/part-41-post-increment-operator.md","ref":"pages/part-41-post-increment-operator.md","articles":[]},"previous":{"title":"Part 39 – Debugging Pre-Increment Operator","level":"1.105","depth":1,"path":"pages/part-39-debugging-pre-increment-operator.md","ref":"pages/part-39-debugging-pre-increment-operator.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-40-hacking-pre-increment-operator.md","mtime":"2020-12-26T17:22:33.124Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T17:31:56.629Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

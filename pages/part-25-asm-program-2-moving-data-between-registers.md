@@ -6,7 +6,7 @@ In our second program we will demonstrate how we can move data between registers
 
 Specifically we will move the value in EDX into EAX. We will initialize this program with a simple immediate value of 22 decimal which will go into EDX and ultimately into EAX.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHG6dgn8TBQIg/article-inline_image-shrink_1000_1488/0/1520145020169?e=1614211200&amp;v=beta&amp;t=93uHHQR6jrGPBZ-G9fPiUbNcgXThmyWer49rqkVyRAw"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/726065964.jpg"/></div>
 
 Keep in mind you can only move similar registers between each other. We know that EAX and EDX are 32-bit registers. We know that each of these registers can be accessed by their 16-bit values as ax and dx respectively. You can’t move a 32-bit value into a 16-bit value and vice-versa.
 

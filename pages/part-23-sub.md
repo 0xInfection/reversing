@@ -8,7 +8,7 @@ Please keep in mind when you add the S suffix on the end of each such as SUBS, S
 
 Let’s examine an example of SUB:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFLxtHOvvWnMg/article-inline_image-shrink_1000_1488/0/1520194165815?e=1614211200&amp;v=beta&amp;t=Zr15fm_tpPonaAtyILc2jeZvmcPlCDIfQarevVlMPIs"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/317214253.jpg"/></div>
 
 To compile:
 

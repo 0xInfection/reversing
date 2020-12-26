@@ -4,7 +4,7 @@ For a complete table of contents of all the lessons please click below as it wil
 
 The ROL command stands for rotate left.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFJxE3VYgBtbQ/article-inline_image-shrink_1000_1488/0/1543575772711?e=1614211200&amp;v=beta&amp;t=RwucupBjF93kga1f2ozQiDIQFdHp5CWl_Xfw1RqZQIc"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/87931927.jpg"/></div>
 
 In our simple x64 example on an Ubuntu Linux machine above we see we __mov 1__ into __al __and rotate left by 1 bit.
 
@@ -16,7 +16,7 @@ __nasm -f elf64 -o test.o test.asm__
 
 __ld -o test test.o__
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEXAKzCOvYqxA/article-inline_image-shrink_1000_1488/0/1543575972607?e=1614211200&amp;v=beta&amp;t=rrnFar_z1wGspPI59CEc4_9_NK-5ycSSsUxifZEZDOQ"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/354440389.jpg"/></div>
 
 We can see here in the debugger that __al __starts with __1__ and when we rotate left it goes to __10b__.
 

@@ -27,7 +27,7 @@ int main(void) {
 }
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFl1kw-26V6pg/article-inline_image-shrink_1000_1488/0/1526036616866?e=1614211200&amp;v=beta&amp;t=G-kQS1i6E1fNS_tOfvkLzQ_LmoInMxvdKVb63si3Vaw"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/671736424.jpg"/></div>
 
 To compile this we simply type:
 
@@ -35,7 +35,7 @@ g++ example9.cpp -o example9
 
 ./example9
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQE0hxqk9fJLyQ/article-inline_image-shrink_1000_1488/0/1526036640627?e=1614211200&amp;v=beta&amp;t=AOYJO94qJf8w-o9-ey2lS2OB5A4kboFsPTmz4YfzR4o"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/155174217.jpg"/></div>
 
 We see 17 printed to the screen.
 

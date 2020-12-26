@@ -29,7 +29,7 @@ int main(void) {
 }
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFFzKE2-NeJbw/article-inline_image-shrink_1000_1488/0/1520215369999?e=1614211200&amp;v=beta&amp;t=tcd0zfGK3F2vSd51-VRdfAowyhHj5wXJaxr7zh1tD0A"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/152979781.jpg"/></div>
 
 To compile this we simply type:
 
@@ -37,7 +37,7 @@ g++ example5.cpp -o example5
 
 ./example5
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFyKh1MJYpK9A/article-inline_image-shrink_1000_1488/0/1520195285687?e=1614211200&amp;v=beta&amp;t=6ZztORjcanzS5t2iEaY0ME83-6C6OK94tOAFd8QHHNc"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/80917983.jpg"/></div>
 
 SUCCESS!&nbsp;We see __777__ printed to the standard output or terminal!
 

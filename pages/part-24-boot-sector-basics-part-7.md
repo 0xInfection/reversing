@@ -6,7 +6,7 @@ Today we will put all the pieces together. We will create our custom OS that doe
 
 Let's examine our code:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQF4cbqqrjfdOQ/article-inline_image-shrink_1000_1488/0/1549024795636?e=1614211200&amp;v=beta&amp;t=1RPNBIaYdY95E0Coc7eLeWltLMwnsK1GgsGZ7cDK9QI"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/351871546.jpg"/></div>
 
 The first thing we do is move to the programable area of the boot sector code at address 0x7c00. We then set the stack base and identify the area for our stack and set the base pointer into the stack pointer.
 
@@ -14,11 +14,11 @@ We then call our video mode function where we set a 640x200 greyscale console. W
 
 Lets compile and run:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHYZz4oqEoL2w/article-inline_image-shrink_1000_1488/0/1549025055903?e=1614211200&amp;v=beta&amp;t=0hVlUbk6qfvQl9InFORsB19BqrnDAGuowzworxuTOBY"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/359978536.jpg"/></div>
 
 We then see the qemu console:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHKKY521PvTTg/article-inline_image-shrink_1000_1488/0/1549025085922?e=1614211200&amp;v=beta&amp;t=Dj2jd17BU4JdyiUqeFh1NuBSVZgVu6l8H-Bgf4d_2p0"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/70004319.jpg"/></div>
 
 As you can see I am only able to type numeric digits in our OS. Try it for yourself. Write the code and compile and run in the qemu editor. If you do not have qemu installed I show you in detail how to install it in the last two tutorials.
 

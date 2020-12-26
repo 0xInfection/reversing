@@ -8,15 +8,15 @@ We will use Kali Linux going forward with Radare 2. You can get VirtualBox and d
 
 Let's start with the C++ 1 code example:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEXsEDpEP9EBg/article-inline_image-shrink_1000_1488/0/1561023464535?e=1614211200&amp;v=beta&amp;t=fYt1wmOmu7qTJh0uvUYetHgQvM1LEPiZ9uRS480YyRs"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/712486044.jpg"/></div>
 
 Here we simply create a main function and use the C++ output stream library to output the text "Hello World" with a new line at the end to the terminal. Let's compile and link:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHCf5G4X338ug/article-inline_image-shrink_1000_1488/0/1561023530059?e=1614211200&amp;v=beta&amp;t=RqU_zhhpcvyMMXQFBIHcV5jpTFA5bX23SwfQHGPVJkw"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/581315919.jpg"/></div>
 
 Let's run in the terminal:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHGHdLKDhxgWw/article-inline_image-shrink_1000_1488/0/1561023550876?e=1614211200&amp;v=beta&amp;t=nfyYNYCiYOv43iqCeb8Olz0svUdOYqSc9Dd0Yhy_EGQ"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1054078036.jpg"/></div>
 
 As we can see "Hello World" successfully echoed to the terminal.
 

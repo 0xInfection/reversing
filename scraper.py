@@ -1,9 +1,23 @@
-import re, html, html2markdown
+import re, html, html2markdown, requests, random, os
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 
 readmeurl = 'https://raw.githubusercontent.com/mytechnotalent/Reverse-Engineering-Tutorial/master/README.md'
+
+# emulating a browser here
+fheaders = {
+    'User-Agent'        : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36',
+    'Accept'            : 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'Accept-Language'   : 'en-US,en;q=0.9',
+    'Accept-Encoding'   : 'gzip, deflate, br',
+    'Sec-Fetch-Mode'    : 'navigate',
+    'Sec-Fetch-Dest'    : 'document',
+    'Sec-Fetch-Site'    : 'none',
+    'Sec-Fetch-User'    : '?1',
+    'DNT'               : '1',
+    'Connection'        : 'close'
+}
 
 options = Options()
 options.headless = True
@@ -13,15 +27,21 @@ def processfName(filen: str):
     '''
     Processes file names to convert them to files
     '''
-    fm = filen.lower().replace(' ', '-')
-    fm = fm.replace('-–-', '-').replace('---', '-')
-    fm = fm.replace(':', '').replace('.',
-        '').replace(',', '').replace('[',
-        '').replace(']', '').replace('/',
-        '').replace('"', '').replace('?',
-        '').replace('&', '').replace('=', '')
+    fm = filen.lower().replace(' ', '-').replace('-–-', '-').replace(
+        '---', '-').replace(':', '').replace('.', '').replace(
+        ',', '').replace('[', '').replace(']', '').replace('/', ''
+        ).replace('"', '').replace('?', '').replace('&', '').replace('=', '')
     fm += '.md'
     return fm
+
+def downloadImage(link: str):
+    '''
+    Downloads an image from a given URL
+    '''
+    filename = 'imgs/{}.jpg'.format(random.getrandbits(30))
+    with open(filename, 'wb+') as imgf:
+        imgf.write(requests.get(link, headers=fheaders).content)
+    return filename
 
 def processContent(source: str):
     '''
@@ -34,7 +54,7 @@ def processContent(source: str):
             lnk = html.unescape(img.get('src'))
         else:
             lnk = html.unescape(img.get('data-delayed-url'))
-        ntag = soup.new_tag('img', src=lnk)
+        ntag = soup.new_tag('img', src=downloadImage(lnk))
         img.replaceWith(ntag)
     return soup.__str__()
 
@@ -69,11 +89,15 @@ def grabLinks(source: str):
             grabContent(driver.page_source, name.group(1))
 
 if __name__ == '__main__':
-    # visit raw URL
-    print("Visiting homepage...")
-    driver.get(readmeurl)
     # init summary.md
     with open("SUMMARY.md", 'w') as wf:
         wf.write('# Summary\n\n')
+    # create images dir
+    if os.path.exists('imgs/'):
+        os.rmdir('imgs/')
+    os.makedirs('imgs/')
+    # visit raw URL
+    print("Visiting homepage...")
+    driver.get(readmeurl)
     grabLinks(driver.page_source)
     driver.quit()

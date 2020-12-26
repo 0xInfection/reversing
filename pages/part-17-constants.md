@@ -21,7 +21,7 @@ int main(void) {
 }
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFWPk7zWKpvdQ/article-inline_image-shrink_1000_1488/0/1520149852856?e=1614211200&amp;v=beta&amp;t=k0amEJgKGr2RxGiqYI2eF9AqugKWjf1lMWAXymTGiwU"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/659122276.jpg"/></div>
 
 To compile this we simply type:
 
@@ -33,7 +33,7 @@ We simply then type:
 <pre spellcheck="false">./example2
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEmqR8vsjj4Nw/article-inline_image-shrink_1000_1488/0/1520148263310?e=1614211200&amp;v=beta&amp;t=LrS0Os2om14rPWuDX1YPnWD17Wbjm93wNgIAYQ7x4UE"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/894625899.jpg"/></div>
 
 SUCCESS!&nbsp;We see “__2017__” printed to the standard output or terminal!
 

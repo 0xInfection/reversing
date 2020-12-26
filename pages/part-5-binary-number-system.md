@@ -12,7 +12,7 @@ In decimal, base 10, say we have the number 15 which means (1 x 10) + (5 x 1) = 
 
 Binary works in a similar fashion however we are now referring to base 2. That same number in binary is 1111. To illustrate:&nbsp;
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHRFa-jfUPDAQ/article-inline_image-shrink_1000_1488/0/1520526607781?e=1614211200&amp;v=beta&amp;t=vrjVoHoGPhELCL3zw1ilUspnED2_5X2whvxM0pCMtRE"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/796470616.jpg"/></div>
 
 Binary numbers are important because using them instead of the decimal system simplifies the design of computers and related technologies. The simplest definition of the binary number system is a system of numbering that uses only two digits, as we mentioned above, to represent numbers necessary for a computer architecture&nbsp;rather than using the digits 1 through 9 plus 0 to represent such.
 

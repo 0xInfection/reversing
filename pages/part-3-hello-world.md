@@ -33,7 +33,7 @@ Let us take an initial examination by doing the following.
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGbmlq5BpJRvQ/article-inline_image-shrink_1500_2232/0/1606325530734?e=1614211200&amp;v=beta&amp;t=XlkybYoKX_nrr9rlLdtK042bxOc_mcjIiKFkUSKb3G4"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/767397257.jpg"/></div>
 
 You can right click and __Open image in new tab __to get an expanded view.
 
@@ -66,7 +66,7 @@ Let's also look at the hex view so we can see and better understand what is goin
 <pre spellcheck="false">px @0x55629cab48
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFpr4Sn53SDaQ/article-inline_image-shrink_1000_1488/0/1606325962588?e=1614211200&amp;v=beta&amp;t=lkVQRvc1_fUHdKH7BQ6xvIoyOVtd1HZuBOFS9NT-v-0"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/563534516.jpg"/></div>
 
 We see our "Hello World!" string and we can again see that it exists starting at the mapped memory address of 0x55629cab48.
 
@@ -130,7 +130,7 @@ Then view.
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFxOrN5kQQhuQ/article-inline_image-shrink_1500_2232/0/1606327203401?e=1614211200&amp;v=beta&amp;t=7ogFQ8LalKVuK3ZaYPun01rpyEmgW4wXLpy3kZpyOD0"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/75880496.jpg"/></div>
 
 You can right click and __Open image in new tab __to get an expanded view.
 

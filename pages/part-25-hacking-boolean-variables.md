@@ -4,19 +4,19 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let’s re-examine our code.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFIndUn7-o9yg/article-inline_image-shrink_1000_1488/0/1520191957701?e=1614211200&amp;v=beta&amp;t=DvOo7gsO8p_ocU17I1MJdL0W62XTqtwpApx7AU1cMUk"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/389804854.jpg"/></div>
 
 Let’s hack!
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGTxKen7pXnMw/article-inline_image-shrink_1000_1488/0/1520210981189?e=1614211200&amp;v=beta&amp;t=59HEIOHbGFMqXLcrYpqxjXuY7Jga11jKddm3Tvg7xws"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/118734575.jpg"/></div>
 
 Let’s break at main, run and disas in addition to step into four times.&nbsp;
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEC8ixMzf_Ing/article-inline_image-shrink_1000_1488/0/1520146846926?e=1614211200&amp;v=beta&amp;t=bRo2tyWWgvjt3lTPWuXZbwrwddupahrdudeO7iqPzY4"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/445922928.jpg"/></div>
 
 We see that __0__ or __FALSE__ is moved into __r3__ at main+12.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQE21jANiReMug/article-inline_image-shrink_1000_1488/0/1520218746699?e=1614211200&amp;v=beta&amp;t=81ALkP1rURtbfBk90bOavWoeNdqfeN14a05ZyypRh0g"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/54919757.jpg"/></div>
 
 Very simply we set __r3__ to __1__ or __TRUE__ and continue execution to which we notice that the Boolean variable __isHacked__ is now __TRUE__.
 

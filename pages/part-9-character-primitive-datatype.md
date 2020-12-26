@@ -29,7 +29,7 @@ Let us take an initial examination by doing the following.
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEwJmfQwzZC0w/article-inline_image-shrink_1500_2232/0/1608824475984?e=1614211200&amp;v=beta&amp;t=s84yCn_ILyB6H1GODseJ9xgBAD_iBEOV_ByuZQAPDRU"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/901696274.jpg"/></div>
 
 You can right click and&nbsp;__Open image in new tab&nbsp;__to get an expanded view.
 

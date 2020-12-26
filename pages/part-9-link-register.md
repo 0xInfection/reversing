@@ -12,7 +12,7 @@ When BL has executed, the return address which is the address of the next instru
 
 CODE TIME! Don’t be discouraged if you don’t understand everything in the code example here.&nbsp;It will become clear over the next few lessons.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGPWFIFoeU5FQ/article-inline_image-shrink_1000_1488/0/1520232099195?e=1614211200&amp;v=beta&amp;t=Id7F9An5RopHYQjnoEzWNEt7PMXMTeqJVUGDq35matM"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/549198454.jpg"/></div>
 
 To compile:
 
@@ -23,13 +23,13 @@ ld -o lr_demo lr_demo.o
 
 The simple example I created here is pretty self-explanatory.&nbsp;We start and proceed to the __no\_return__ subroutine and proceed to the __my\_function__ subroutine then to the __wrap\_up__ subroutine and finally__ exit__.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFRqZj9YmvYuQ/article-inline_image-shrink_1000_1488/0/1520190659000?e=1614211200&amp;v=beta&amp;t=1Z7wGnOAHP9LPGCUbIWdMoXg1n2guXqy379ChZV-jV0"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/230581194.jpg"/></div>
 
 It is necessary that we jump into GDB which is our debugger to see exactly what happens with each step:
 
 As you can see with every step inside the debugger it shows you exactly the progression from __no\_return __to __my\_function__ skipping __wrap\_up__ until the program counter gets the address from the link register.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHIvvLr67EmrA/article-inline_image-shrink_1000_1488/0/1520221355382?e=1614211200&amp;v=beta&amp;t=0X_ROhHivP864Y5ZGKFo7R_TTfkb19K421ftEeUx5Lc"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/738449637.jpg"/></div>
 
 Here we see the progression from __wrap\_up__ to __exit__.
 

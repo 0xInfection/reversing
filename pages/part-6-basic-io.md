@@ -29,11 +29,11 @@ Let us take an initial examination by doing the following.
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQG6NyVW13i3Zw/article-inline_image-shrink_1500_2232/0/1607682836896?e=1614211200&amp;v=beta&amp;t=g4y3txIMTWaLNYMA_MZ-mBvlhnoYFhPqxmR1I_6CoNo"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/150028198.jpg"/></div>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEAKlltNuR-iw/article-inline_image-shrink_1500_2232/0/1607683092302?e=1614211200&amp;v=beta&amp;t=DklG-bA9CW5781iIRbZX24oVwlv5WNPXFviN9SPdJR0"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/682196023.jpg"/></div>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHMBU4OCBknnw/article-inline_image-shrink_1500_2232/0/1607683246880?e=1614211200&amp;v=beta&amp;t=FzZ1T-PaK9NommACqes6otzMPkTu8eOVAuRimquZQoE"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/342373851.jpg"/></div>
 
 You can right click and&nbsp;__Open image in new tab&nbsp;__to get an expanded view.
 
@@ -48,11 +48,11 @@ ppppp
 
 We see the following:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGgOVss1prAyQ/article-inline_image-shrink_1500_2232/0/1607685699956?e=1614211200&amp;v=beta&amp;t=EegiIwoU5bFGXybpirXk7qxhGDav--Dp5hGojIRj-qY"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/675264969.jpg"/></div>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGPZHRiz7YQRA/article-inline_image-shrink_1500_2232/0/1607685723107?e=1614211200&amp;v=beta&amp;t=ysfWT58QmKz2OfUE_4Q21wXuMfJsoYygqvz2m04nfW8"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1059347369.jpg"/></div>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEG1PNQvDDE0Q/article-inline_image-shrink_1500_2232/0/1607685740119?e=1614211200&amp;v=beta&amp;t=pbExQgKh3ITQKK90MWm7lHIbHOEwGtSMfFJcP0E88fw"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/801781225.jpg"/></div>
 
 This is our zoomed out visual graph. We can see how the program moves from function to function. You will notice there are a series of tags such as \[ol\] or \[ok\] and you can literally type the following:
 
@@ -62,7 +62,7 @@ ol
 
 Now we are inside that function:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQG9ZMomZ06u7Q/article-inline_image-shrink_1500_2232/0/1607686001944?e=1614211200&amp;v=beta&amp;t=ZlAnqJXFMn0TUD1AT3TfKzmHW2cUspvMTA97pnNagwg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/66695859.jpg"/></div>
 
 Then to go back to main.
 

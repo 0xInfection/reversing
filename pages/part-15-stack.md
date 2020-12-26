@@ -10,7 +10,7 @@ The stack pointer is a register that contains the top of the stack. The stack po
 
 The above address is random and is not an absolute where you will find the stack pointer from program to program as it will vary. Lets look at what the stack looks like from an abstract perspective:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGZZei4vehjBw/article-inline_image-shrink_1000_1488/0/1520235829712?e=1614211200&amp;v=beta&amp;t=YTQOO9l-Llma6PpibIGBLjK8g_5PnFQNfwu-wpIW7eM"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/647906576.jpg"/></div>
 
 The above diagram is what I want you to keep clear in your mind as that is what is actually happening in memory. The next series of diagrams will show the opposite of what is shown above.
 
@@ -30,31 +30,31 @@ Let us look at how the stack is used to implement functions. For each function c
 
 Let’s look at the C program we created in tutorial 12 and examine what the main function looks like:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQH0OkSkLG6KRg/article-inline_image-shrink_1000_1488/0/1520622740099?e=1614211200&amp;v=beta&amp;t=C5BcEsnvybyQLbpajjyYDAPMojdWRnKfxM9PTtzKWMA"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/882202621.jpg"/></div>
 
 We see two functions here. The first one is the unreachableFunction to which will never execute under normal circumstances and we also see the main function that will always be the first function to be called onto the stack.
 
 When we run this program, the stack will look like this:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQH2zdNWvg5Icw/article-inline_image-shrink_1000_1488/0/1520622738609?e=1614211200&amp;v=beta&amp;t=KuQzfMNT9HXAsmEytVpzUBWgMVS-c2IYWjQOFyS56zY"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/581582744.jpg"/></div>
 
 We can see the stack frame for int main(void) above.&nbsp;It is also referred to as the activation record.&nbsp;A stack frame exists whenever a function has started but yet to complete.&nbsp;For example, inside of the body of the int main(void) there is a call to int addMe(int a, int b) which takes two arguments a and b.&nbsp;There needs to be assembly language code in int main(void) to push the arguments for int addMe(int a, int b) onto the stack.&nbsp;Lets examine some code.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGhaaCoElKRVA/article-inline_image-shrink_1000_1488/0/1520231875596?e=1614211200&amp;v=beta&amp;t=utFO8KS1w4T2GjYzI6sdlU1Ptpe_vl5W1tRQ079JL7w"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/360213992.jpg"/></div>
 
 When we compile and run this program we will see the value of 5 to be print out like this:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHiisL3QEoXkw/article-inline_image-shrink_1000_1488/0/1520622737902?e=1614211200&amp;v=beta&amp;t=hAp6KdIlwW2wAdwTZDRQChMmCkk7G35Z9iVOMQPAHzA"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/11460120.jpg"/></div>
 
 Very simply, int main(void) calls int addMe(int a, int b) first and will get put on the stack like this:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHCPBizUDnsXA/article-inline_image-shrink_1000_1488/0/1520144504701?e=1614211200&amp;v=beta&amp;t=VkeCrkWFhElQD426tZJA2QKlkeAmCkA6OsPM3mTQqMQ"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/47678804.jpg"/></div>
 
 You can see that by placing the arguments on the stack, the stack frame for __int main(void)__ has increased in size. We also reserved space for the return value which is computed by __int addMe(int a, int b)__ and when the function returns, the return value in __int main(void)__ gets restored and execution continues in __int main(void)__ until it finishes.
 
 Once we get the instructions for __int addMe(int a, int b)__, the function may need local variables so the function needs to push some space on the stack which would look like:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGfya2LGUa6eg/article-inline_image-shrink_1000_1488/0/1520622739277?e=1614211200&amp;v=beta&amp;t=M70VQ0j8SWKSGkuCdRgCSTDgrcMs9pC9rgwNmINWnSE"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1004512553.jpg"/></div>
 
 __int addMe(int a, int b)__ can access the arguments passed to it from __int main(void)__ because the code in __int main(void)__ places the arguments just as __int addMe(int a, int b)__ expects it.&nbsp;
 

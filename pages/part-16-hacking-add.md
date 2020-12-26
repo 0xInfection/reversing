@@ -4,23 +4,23 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let’s again review our ADD example below:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQG1X06Uqob4-g/article-inline_image-shrink_1000_1488/0/1520148983155?e=1614211200&amp;v=beta&amp;t=tChWXUEe3nlfIL8hlpdA_HQOFLPTajtHxQk38hDVMRc"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/541299890.jpg"/></div>
 
 Let’s debug:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHWSwh4VIbgqw/article-inline_image-shrink_1000_1488/0/1520143258587?e=1614211200&amp;v=beta&amp;t=VRpFDPoA8Jg8GDs50GFeAO9sorwL5a-FP0MeJwo6-jg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/33648066.jpg"/></div>
 
 We see the value of __67__ decimal is being moved into __r1__ below:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFWzYbdsGbCyA/article-inline_image-shrink_1000_1488/0/1520171779364?e=1614211200&amp;v=beta&amp;t=PIBLOnX2YcZgd3ymU_30fF_5doyfKMvHv2AmuSPWFvs"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/632809952.jpg"/></div>
 
 Let’s hack! Lets set __r1 = 66__!
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFIN4fui4Iz_Q/article-inline_image-shrink_1000_1488/0/1520211664200?e=1614211200&amp;v=beta&amp;t=GyTegClxG_9WHZ2BVDeRspJowgXNbL0c7yE8SF7-P0E"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/145396469.jpg"/></div>
 
 Now we see we have hacked the program so when it adds the values it will have a different output. If you remember back to the last lecture, __r0 = 120__. Here we see we have hacked r1 and now the value of __r0__ is __119__!
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGT9DC66h7tgQ/article-inline_image-shrink_1000_1488/0/1520211540477?e=1614211200&amp;v=beta&amp;t=D3CyqlJT4RHYfFXTGr8zzBa27ZaX-yjuHwzt2pBYVYU"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/179167959.jpg"/></div>
 
 This is the power of understanding assembly. This is a VERY simple example however with each new series as I have stated we will create a program, debug and hack it.
 

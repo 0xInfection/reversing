@@ -27,7 +27,7 @@ int main(void) {
 }
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFdIMgcYlHsxQ/article-inline_image-shrink_1000_1488/0/1520192758105?e=1614211200&amp;v=beta&amp;t=Cw-cpnI_gSKwLaA95D2XTtJrEYf9CZIdqpPJ6qF5c-g"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/337235772.jpg"/></div>
 
 To compile this we simply type:
 
@@ -36,7 +36,7 @@ To compile this we simply type:
 ./example4
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHKj1-JGT0Ctw/article-inline_image-shrink_1000_1488/0/1520196655358?e=1614211200&amp;v=beta&amp;t=7Cyap7-vGZe6WZFHJ8AXdNMG7e6k1EbWpzEYlKIWKHw"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/49260221.jpg"/></div>
 
 SUCCESS!&nbsp;We see __0__ printed to the standard output or terminal!
 

@@ -4,13 +4,13 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Let’s once again re-examine our code:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQH7FHMg_SnYPQ/article-inline_image-shrink_1000_1488/0/1520215587042?e=1614211200&amp;v=beta&amp;t=v0X2IQbwG2X-wO-7_kePgRwn1PX0DeocwPk7mzNZlgk"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/214738590.jpg"/></div>
 
 We again __add__ __100__ decimal into __r1__, __4,294,967,295__ into __r2__. We then __add r1__ and __r2__ and place in __r0.__
 
 Lets debug:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHGLXJvyy9xww/article-inline_image-shrink_1000_1488/0/1520594576879?e=1614211200&amp;v=beta&amp;t=vbj9DCK4M2W14M8m6MbEE8h2OyKVcilAoGvncNIEQYA"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/760044673.jpg"/></div>
 
 We again see __adds __which sets the flags in the CPSR. We have to remember when we debug in GDB, the value of the CPSR is in hex. In order to see what flags are set, we must convert the hex to binary. This will make sense as we start to debug and hack this example in the coming tutorials.
 
@@ -38,7 +38,7 @@ __Overflow Flag Set __
 
 Lets take a look if we step again:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFVriYdIiJwxg/article-inline_image-shrink_1000_1488/0/1520149286284?e=1614211200&amp;v=beta&amp;t=MN5nZYgUbpPpc_eOiSLHirlRPl3g-2g77Cv3yUqlDOg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/470298628.jpg"/></div>
 
 We see __4294967295 decimal__ or __0xffffffff __in __r2__. We know if we step again we will cause the CPSR to change from 0001 to 0010 which means:
 
@@ -54,11 +54,11 @@ __Overflow Flag NOT Set__
 
 This action sets the carry flag. However lets hack:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQE3luUGwcgEbw/article-inline_image-shrink_1000_1488/0/1520147275008?e=1614211200&amp;v=beta&amp;t=4aI4HJ-k25hpkDTyO4_3fXvcY5RUbazE3bj-KllyF8k"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/19018468.jpg"/></div>
 
 We hacked __r2__ and changed the value to __1 decimal __and__ 0x1 hex__. NOW we know before the__ CPSR __went to __0010__ last time however now that we hacked this, lets see what happens to the __CPSR__ when we step.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFXZWdPV19yMA/article-inline_image-shrink_1000_1488/0/1520211562604?e=1614211200&amp;v=beta&amp;t=EAxw6SGUC-b_7_IkDCoL4i3rRmRM_X2cjnOyFaWpP9E"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="imgs/542639961.jpg"/></div>
 
 BAM! We hacked it and see__ r0 __is __101__ and therefore did NOT trigger the carry flag and kept the __CPSR__ at__ 0x10 hex __which means __0001 binary __which means:
 

@@ -2340,31 +2340,31 @@ int main(void) {
 }
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQE-W2lfO5Z_cA/article-inline_image-shrink_1000_1488/0/1521196070985?e=1614211200&amp;v=beta&amp;t=RWKXhZZGZHVCzAbQtV-bQK7Ea8Fy409f51OkQbHqysE"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/412361713.jpg"></div>
 
 <p>Let&#x2019;s debug!</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQFmb2yUlPGMOA/article-inline_image-shrink_1000_1488/0/1521196099167?e=1614211200&amp;v=beta&amp;t=COWt7C0rXVbWEbqXg3AyIWNcPiITn23wXT0GjrKqFuo"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/918805401.jpg"></div>
 
 <p>Let&#x2019;s break on <strong>main+20</strong> and continue to that point.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQFpDjN2vhgKeQ/article-inline_image-shrink_1000_1488/0/1521196123405?e=1614211200&amp;v=beta&amp;t=0I1-YcZ7owFNpbnG-6OLqxIwPj_9j6Gi94sGCGeIvPc"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/545272970.jpg"></div>
 
 <p>Let&#x2019;s examine what value is inside <strong>r11-8</strong>.&#xA0;We clearly see it is <strong>1337.09998</strong> which approximates our value in our original c++ code.&#xA0;Keep in mind a float has roughly 7 decimal digits of precision and that is why we do not see <strong>1337.1</strong> so please remember that as we go forward.&#xA0;</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQEGcCsAFAAzag/article-inline_image-shrink_1000_1488/0/1521196151522?e=1614211200&amp;v=beta&amp;t=sMv2aIBltLU0qTQf2CzrEjvscSq_jCEQWERbXnBxj7I"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/1032475503.jpg"></div>
 
 <p>We can also see this value in high memory.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQEYJsBEkFRfmA/article-inline_image-shrink_1000_1488/0/1521196178255?e=1614211200&amp;v=beta&amp;t=T6DXcYhk-HziLrRj9FDcH_Dp5kmxQsmcDr4_A8ryW30"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/356519278.jpg"></div>
 
 <p>Let&#x2019;s break on <strong>main+28</strong> and continue.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQGMfcuxt_W1yg/article-inline_image-shrink_1000_1488/0/1521196203419?e=1614211200&amp;v=beta&amp;t=rx-5w_bCf6INOulvfw-g0oh1mQcj5qwXlQBfdc_slNY"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/34099574.jpg"></div>
 
 <p>We see a strange new instruction.&#xA0;We see <strong>vldr</strong> and the value within <strong>r11, #8</strong> being moved into<strong> s0</strong>.&#xA0;So what is <strong>s0</strong>?&#xA0;We have a math co-processor which has a series of additional registers that work with decimal or floating-point numbers.&#xA0;Here we see an example of such to which the value of <strong>1337.09998 </strong>is being moved into <strong>s0</strong>.&#xA0;The <strong>vldr</strong> instruction loads a constant value into every element of a single-precision or double-precision register such as<strong> s0</strong>.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQGASJZmOCaRUQ/article-inline_image-shrink_1000_1488/0/1521196373197?e=1614211200&amp;v=beta&amp;t=S2c5siOgLZbi5XUqD9RZXhDtTnm_C59y-S4pti-PeIs"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/314758046.jpg"></div>
 
 <p>We can only see these special registers if we do a info registers all command as we do below.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQHOWgjk7hN3Tg/article-inline_image-shrink_1000_1488/0/1521196414932?e=1614211200&amp;v=beta&amp;t=iuvSh_U5jZVqNJzIF1lf7wmS3Op9ZJD6OZaRrzL9kFM"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/154106073.jpg"></div>
 
 <p>Below we see the value now being moved into <strong>s0</strong>.</p>
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQFIXNMmWUZv2A/article-inline_image-shrink_1000_1488/0/1521196439893?e=1614211200&amp;v=beta&amp;t=8iQ2SdDL1hqmi28FhXsXGym1Vu6wOH7iTJGK2nsz2ug"></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="imgs/327687930.jpg"></div>
 
 <p>Next week we will dive into Hacking Float Variables.</p>
 
@@ -2410,7 +2410,7 @@ int main(void) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 30 – Debugging Float Variables","level":"1.96","depth":1,"next":{"title":"Part 31 – Hacking Float Variables","level":"1.97","depth":1,"path":"pages/part-31-hacking-float-variables.md","ref":"pages/part-31-hacking-float-variables.md","articles":[]},"previous":{"title":"Part 29 – Float Variables","level":"1.95","depth":1,"path":"pages/part-29-float-variables.md","ref":"pages/part-29-float-variables.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-30-debugging-float-variables.md","mtime":"2020-12-26T16:35:32.051Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T16:36:27.581Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 30 – Debugging Float Variables","level":"1.96","depth":1,"next":{"title":"Part 31 – Hacking Float Variables","level":"1.97","depth":1,"path":"pages/part-31-hacking-float-variables.md","ref":"pages/part-31-hacking-float-variables.md","articles":[]},"previous":{"title":"Part 29 – Float Variables","level":"1.95","depth":1,"path":"pages/part-29-float-variables.md","ref":"pages/part-29-float-variables.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-30-debugging-float-variables.md","mtime":"2020-12-26T17:20:51.910Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T17:31:56.629Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
