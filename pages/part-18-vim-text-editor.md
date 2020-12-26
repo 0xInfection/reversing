@@ -1,1 +1,63 @@
-<h1>Part 18 - vim Text Editor</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>Now that we have a working version of Linux, we need a text editor that we can work with in the terminal.</p><p>To begin, open your terminal and type:</p><div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGrttLPeFnt8Q/article-inline_image-shrink_1000_1488/0/1520640641644?e=1614211200&amp;v=beta&amp;t=_dRtMDJGj7Vnq5g7N-Cu4u8e-m5fyTd2PIycn7zfbJc"/></div><p>This will open up the vi text editor. The first thing you need to type is the letter ‘i’ to set the editor to insert mode so you may begin typing.</p><div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGt60FA4BO6og/article-inline_image-shrink_1000_1488/0/1520640642321?e=1614211200&amp;v=beta&amp;t=h84pHP3e-7JpsDGkJel1wRkUqHrkoQQ4QA0O3wyJI44"/></div><p> </p><p> </p><p>After you a done typing, press the ‘<strong>esc</strong>’ key and type ‘<strong>:wq</strong>’ and press enter.</p><p>Congratulations! You created your first file! This is a one time file that we need to create in order to use our text editor they way we want it to perform.</p><p>The first line states <strong>set number</strong> which means we would like each file to show line numbers as this is essential for debugging code. The<strong> set smartindent</strong>, <strong>set tabstop</strong>, <strong>set shiftwidth</strong> and <strong>set expandtab</strong> statements set forth rules to properly format code and allow 4 spaces per tab indent which will help our code to look clean.</p><p>There are several commands you need to be aware of. Keep in mind, to go into command mode rather than insert mode you must press the ‘<strong>esc</strong>’ key. Below are the most common commands:</p><p><strong>j</strong> or down-arrow [move cursor down one line]</p><p><strong>k</strong> or up-arrow [move cursor up one line]</p><p><strong>h</strong> or left-arrow [move cursor left one character]</p><p><strong>l</strong> or right-arrow [move cursor right one character]</p><p><strong>0</strong> [move cursor to the start of the current line]</p><p><strong>$</strong> [move cursor to the end of the current line]</p><p><strong>b</strong> [move cursor back to the beginning of preceding word]</p><p><strong>dd</strong> [deletes the line the cursor is on]</p><p><strong>D</strong> [deletes from the cursor position to the end of the line]</p><p><strong>yy</strong> [copies the current line]</p><p><strong>p</strong> [puts the copied text after the cursor]</p><p><strong>u</strong> [undo the last change to the file]</p><p><strong>:w</strong> [save file]</p><p><strong>:wq</strong> [save file and exit text editor]</p><p><strong>:q!</strong> [quit text editor and do not save any changes]</p><p>You will be consistently moving between command mode ‘<strong>esc</strong>’ and insert mode ‘<strong>i</strong>’. Remember that when you want to insert characters you need to be in insert mode and when you want to move the cursor other than moving to the next line, you need to be in command mode.</p><p>Now that we have vi configured, lets install vim which has some better functionality. Simply type:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHDiVJnfinpcQ/article-inline_image-shrink_1000_1488/0/1520144566607?e=1614211200&amp;v=beta&amp;t=HnZGIs51EtAbzsmQ2etu3BT3A9p56gFRXB1aAqKqHkY"/></div><p>Once that is installed instead of using vi we will now use vim.</p><p>I look forward to seeing you all next week when we talk about why it’s important to learn Assembly Language.</p>
+# Part 18 - vim Text Editor
+
+For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
+
+Now that we have a working version of Linux, we need a text editor that we can work with in the terminal.
+
+To begin, open your terminal and type:
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGrttLPeFnt8Q/article-inline_image-shrink_1000_1488/0/1520640641644?e=1614211200&amp;v=beta&amp;t=_dRtMDJGj7Vnq5g7N-Cu4u8e-m5fyTd2PIycn7zfbJc"/></div>
+
+This will open up the vi text editor.&nbsp;The first thing you need to type is the letter ‘i’ to set the editor to insert mode so you may begin typing.
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGt60FA4BO6og/article-inline_image-shrink_1000_1488/0/1520640642321?e=1614211200&amp;v=beta&amp;t=h84pHP3e-7JpsDGkJel1wRkUqHrkoQQ4QA0O3wyJI44"/></div>
+
+&nbsp;&nbsp;
+
+After you a done typing, press the ‘__esc__’ key and type ‘__:wq__’ and press enter.
+
+Congratulations! You created your first file! This is a one time file that we need to create in order to use our text editor they way we want it to perform.
+
+The first line states __set number__ which means we would like each file to show line numbers as this is essential for debugging code. The__ set smartindent__, __set tabstop__, __set shiftwidth__ and __set expandtab__ statements set forth rules to properly format code and allow 4 spaces per tab indent which will help our code to look clean.
+
+There are several commands you need to be aware of. Keep in mind, to go into command mode rather than insert mode you must press the ‘__esc__’ key. Below are the most common commands:
+
+__j__ or down-arrow \[move cursor down one line\]
+
+__k__ or up-arrow \[move cursor up one line\]
+
+__h__ or left-arrow \[move cursor left one character\]
+
+__l__ or right-arrow \[move cursor right one character\]
+
+__0__ \[move cursor to the start of the current line\]
+
+__$__ \[move cursor to the end of the current line\]
+
+__b__ \[move cursor back to the beginning of preceding word\]
+
+__dd__ \[deletes the line the cursor is on\]
+
+__D__ \[deletes from the cursor position to the end of the line\]
+
+__yy__ \[copies the current line\]
+
+__p__ \[puts the copied text after the cursor\]
+
+__u__ \[undo the last change to the file\]
+
+__:w__ \[save file\]
+
+__:wq__ \[save file and exit text editor\]
+
+__:q!__ \[quit text editor and do not save any changes\]
+
+You will be consistently moving between command mode ‘__esc__’ and insert mode ‘__i__’. Remember that when you want to insert characters you need to be in insert mode and when you want to move the cursor other than moving to the next line, you need to be in command mode.
+
+Now that we have vi configured, lets install vim which has some better functionality. Simply type:
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHDiVJnfinpcQ/article-inline_image-shrink_1000_1488/0/1520144566607?e=1614211200&amp;v=beta&amp;t=HnZGIs51EtAbzsmQ2etu3BT3A9p56gFRXB1aAqKqHkY"/></div>
+
+Once that is installed instead of using vi we will now use vim.
+
+I look forward to seeing you all next week when we talk about why it’s important to learn Assembly Language.

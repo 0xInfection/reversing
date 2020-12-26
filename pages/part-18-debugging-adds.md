@@ -1,1 +1,67 @@
-<h1>Part 18 – Debugging ADDS</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>Let’s re-examine our code:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEp6bZuV-CIqA/article-inline_image-shrink_1000_1488/0/1520230639459?e=1614211200&amp;v=beta&amp;t=p-e2wCJx6Dp9IIHZUABhcXu3tYY1RVUUN0SN9HgG33M"/></div><p>We again <strong>add</strong> <strong>100</strong> decimal into <strong>r1</strong>, <strong>4,294,967,295</strong> into <strong>r2</strong>. We then <strong>add r1</strong> and <strong>r2</strong> and place in <strong>r0.</strong></p><p>Lets debug:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHhMjLWYNsk-A/article-inline_image-shrink_1000_1488/0/1520149414710?e=1614211200&amp;v=beta&amp;t=JGkOkDQ5VJ5hkmKcJ9gYbAlh_MV-MiH4cMqqGBoRLzg"/></div><p>We again see <strong>adds </strong>which sets the flags in the CPSR. We have to remember when we debug in GDB, the value of the CPSR is in hex. In order to see what flags are set, we must convert the hex to binary. This will make sense as we start to debug and hack this example in the coming tutorials.</p><p>We need to remember that bits 31, 20, 29 and 28 in the CPSR indicate the following:</p><p><strong>bit 31 - N = Negative Flag</strong></p><p><strong>bit 30 - Z = Zero Flag</strong></p><p><strong>bit 29 - C = Carry Flag</strong></p><p><strong>bit 28 - V = Overflow Flag</strong></p><p>We see the <strong>CPSR</strong> at <strong>10 hex</strong>. <strong>10 hex</strong> in binary is <strong>0001</strong>.</p><p>Therefore if the value in binary was <strong>0001</strong> of bit 31, 30, 29 and 28 (<strong>NZCV</strong>) that would mean:</p><p><strong>Negative Flag NOT Set</strong></p><p><strong>Zero Flag NOT SET</strong></p><p><strong>Carry Flag NOT SET</strong></p><p><strong>Overflow Flag Set </strong></p><p>There is nothing in code above which set the <strong>Overflow Flag</strong> however in it’s natural state upon executing this binary it is set.</p><p>Lets step through the program:</p><div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHOCMLh0ihJfQ/article-inline_image-shrink_1000_1488/0/1520609481159?e=1614211200&amp;v=beta&amp;t=mgPAVlG2EYL2CPnWAKfDLzdT-WDXzPUDPdjWQIgLu5c"/></div><p>We see <strong>64 hex</strong> or <strong>100 decimal </strong>moved into <strong>r1</strong> as expected. No change in the <strong>CPSR</strong>. Lets step some more.</p><div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQG_Qy-xMKNKTQ/article-inline_image-shrink_1000_1488/0/1520042941149?e=1614211200&amp;v=beta&amp;t=YDzRxFgnE36cG7ViruMt4qSzUDbBJrVc8g6o4NUhCPg"/></div><p>We see the addition that transpires above and notice the value in <strong>r0 </strong>is <strong>99 decimal</strong> after <strong>100 decimal</strong> and <strong>4294967295 decimal</strong> were added together. How is that possible? The answer is simple, we overflowed the 32-bit register of <strong>r0</strong> from this addition.</p><p>If we examine the <strong>CPSR</strong> we now see <strong>20000010 hex</strong> or <strong>0010 0000 0000 0000 0000 0000 0001 0000 binary</strong>. We only have to focus on the most significant bits which are <strong>0010</strong>:</p><p>The value in binary is <strong>0010</strong> of bit 31, 30, 29 and 28 (<strong>NZCV</strong>) that would mean:</p><p><strong>Negative Flag NOT Set</strong></p><p><strong>Zero Flag NOT SET</strong></p><p><strong>Carry Flag SET</strong></p><p><strong>Overflow Flag NOT Set</strong></p><p>We see that the <strong>Carry Flag</strong> was set and the <strong>Overflow Flag </strong>was NOT set. Why is that?</p><p>The <strong>Carry Flag</strong> is a flag set when two <strong>unsigned numbers</strong> were added and the result is larger than the register where it is saved. We are dealing with a 32-bit register. We are also dealing with unsigned numbers therefore the <strong>CF</strong> is set and the <strong>OF</strong> was not as the <strong>OF</strong> flag deals with <strong>signed numbers</strong>.</p><p>Next week we will dive into Hacking ADDS.</p>
+# Part 18 – Debugging ADDS
+
+For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
+
+Let’s re-examine our code:
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEp6bZuV-CIqA/article-inline_image-shrink_1000_1488/0/1520230639459?e=1614211200&amp;v=beta&amp;t=p-e2wCJx6Dp9IIHZUABhcXu3tYY1RVUUN0SN9HgG33M"/></div>
+
+We again __add__ __100__ decimal into __r1__, __4,294,967,295__ into __r2__. We then __add r1__ and __r2__ and place in __r0.__
+
+Lets debug:
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHhMjLWYNsk-A/article-inline_image-shrink_1000_1488/0/1520149414710?e=1614211200&amp;v=beta&amp;t=JGkOkDQ5VJ5hkmKcJ9gYbAlh_MV-MiH4cMqqGBoRLzg"/></div>
+
+We again see __adds __which sets the flags in the CPSR. We have to remember when we debug in GDB, the value of the CPSR is in hex. In order to see what flags are set, we must convert the hex to binary. This will make sense as we start to debug and hack this example in the coming tutorials.
+
+We need to remember that bits 31, 20, 29 and 28 in the CPSR indicate the following:
+
+__bit 31 - N = Negative Flag__
+
+__bit 30 - Z = Zero Flag__
+
+__bit 29 - C = Carry Flag__
+
+__bit 28 - V = Overflow Flag__
+
+We see the __CPSR__ at __10 hex__. __10 hex__ in binary is __0001__.
+
+Therefore if the value in binary was __0001__ of bit 31, 30, 29 and 28 (__NZCV__) that would mean:
+
+__Negative Flag NOT Set__
+
+__Zero Flag NOT SET__
+
+__Carry Flag NOT SET__
+
+__Overflow Flag Set __
+
+There is nothing in code above which set the __Overflow Flag__ however in it’s natural state upon executing this binary it is set.
+
+Lets step through the program:
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHOCMLh0ihJfQ/article-inline_image-shrink_1000_1488/0/1520609481159?e=1614211200&amp;v=beta&amp;t=mgPAVlG2EYL2CPnWAKfDLzdT-WDXzPUDPdjWQIgLu5c"/></div>
+
+We see __64 hex__ or __100 decimal __moved into __r1__ as expected. No change in the __CPSR__. Lets step some more.
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQG_Qy-xMKNKTQ/article-inline_image-shrink_1000_1488/0/1520042941149?e=1614211200&amp;v=beta&amp;t=YDzRxFgnE36cG7ViruMt4qSzUDbBJrVc8g6o4NUhCPg"/></div>
+
+We see the addition that transpires above and notice the value in __r0 __is __99 decimal__ after __100 decimal__ and __4294967295 decimal__ were added together. How is that possible? The answer is simple, we overflowed the 32-bit register of __r0__ from this addition.
+
+If we examine the __CPSR__ we now see __20000010 hex__ or __0010 0000 0000 0000 0000 0000 0001 0000 binary__. We only have to focus on the most significant bits which are __0010__:
+
+The value in binary is __0010__ of bit 31, 30, 29 and 28 (__NZCV__) that would mean:
+
+__Negative Flag NOT Set__
+
+__Zero Flag NOT SET__
+
+__Carry Flag SET__
+
+__Overflow Flag NOT Set__
+
+We see that the __Carry Flag__ was set and the __Overflow Flag __was NOT set. Why is that?
+
+The __Carry Flag__ is a flag set when two __unsigned numbers__ were added and the result is larger than the register where it is saved. We are dealing with a 32-bit register. We are also dealing with unsigned numbers therefore the __CF__ is set and the __OF__ was not as the __OF__ flag deals with __signed numbers__.
+
+Next week we will dive into Hacking ADDS.

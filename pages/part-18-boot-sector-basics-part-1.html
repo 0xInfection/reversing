@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,7 +2318,31 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-18---boot-sector-basics-part-1">Part 18 - Boot Sector Basics [Part 1]</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>We are at the stage where we are going to start integrating real-world code. If you do not have an active linux desktop I would suggest you get Virtualbox and Ubuntu on either your Windows or Mac. I have a prior tutorial that will walk you through this process below. For some reason I am not able to embed the link so please just copy and paste it into your browser.</p><p><strong>https://www.linkedin.com/pulse/assembly-language-basic-malware-reverse-engineering-kevin-m-thomas-16/ </strong></p><p>You will additionally need a text editor for the terminal. I use VIM. You will find a link to set that up as well below.</p><p><strong>https://www.linkedin.com/pulse/assembly-language-basic-malware-reverse-engineering-kevin-m-thomas-17/</strong></p><p>In addition you will have to install nasm so you may simply type:</p><p><strong>sudo apt-get install nasm</strong></p><p>NASM is the assembler we will use and we will focus on the intel syntax. First go into the terminal and fire up Vim and type the following:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQH9sJkD2-acHw/article-inline_image-shrink_1000_1488/0/1545386856569?e=1614211200&amp;v=beta&amp;t=AOXUfVmqXdxzGQLZ8eNGijw7VeRQYfCeI1KvUB6Szuk"></div><p>Remember to type &apos;i&apos; to insert and then &apos;esc&apos; and &apos;wq&apos; to go into command mode and save your file.</p><p>The above line simply sets an infinite loop and does nothing more. The <strong>loop </strong>label is created to which we simply <strong>jmp</strong> back to itself. This code in itself will compile however it will not run in an OS as it does not trigger what we refer to as the magic number to which BIOS looks to understand this is the end of your boot sector. We will cover more on that in future lectures.</p><div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQE2VHxoXB-_Nw/article-inline_image-shrink_1000_1488/0/1545387039903?e=1614211200&amp;v=beta&amp;t=vZqwxXb4Wx4GnqVtOHSDkjqMPN_dmMybO4zUl8ly95Q"></div><p>We type the above command assuming you saved your file in vim as <strong>bootsector.asm</strong>. This will create a binary file to which we will examine the contents within a hex editor. A hex editor is an application that examines each byte of data that is compiled into a file. We will see that our assembly instructions above will ultimately get translated down to their raw opcode values. The processor only understands raw opcodes which are simply operation codes. Below is a link to a table identifying the opcodes. I saved you the effort of referencing the intel dataset as it is literally thousands of pages and several volumes:</p><p><strong>http://ref.x86asm.net/coder64.html</strong></p><p>Let&apos;s use a hex editor like ghex and open up our bin file.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHUwVitDEnmMg/article-inline_image-shrink_1000_1488/0/1545387311381?e=1614211200&amp;v=beta&amp;t=FY8JDsbQXQv4yotiM0vvKDXKHPW2r6BfWIdTKea_4Yw"></div><p>We see <strong>EB FE</strong> which are hex bytes and each letter is a nibble (a nibble is 4 bits or half a byte). Both <strong>EB FE</strong> make up two full bytes. Keep in mind the processor reads from disk in reverse byte order such that <strong>FE </strong>gets read first and then <strong>EB</strong>. This process is called little endian and is how the x64 processor works.</p><p>If you review the table to which I provided the link you will see that <strong>FE </strong>represents an <strong>INC</strong> or increment by one. This is our loop value.</p><p>Next you will find that <strong>EB</strong> stands for <strong>JMP</strong> which is our jump instruction above.</p><p>This is alot of information if you are new to assembly. Take it step-by-step and follow along with me in a real linux OS and with each lesson you will get a better understanding of the basics.</p><p>Next week we will build upon this lesson by adding some simple data to our binary.</p><p></p>
+                                <h1 id="part-18---boot-sector-basics-part-1">Part 18 - Boot Sector Basics [Part 1]</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>We are at the stage where we are going to start integrating real-world code. If you do not have an active linux desktop I would suggest you get Virtualbox and Ubuntu on either your Windows or Mac. I have a prior tutorial that will walk you through this process below. For some reason I am not able to embed the link so please just copy and paste it into your browser.</p>
+<p><strong><a href="https://www.linkedin.com/pulse/assembly-language-basic-malware-reverse-engineering-kevin-m-thomas-16/" target="_blank">https://www.linkedin.com/pulse/assembly-language-basic-malware-reverse-engineering-kevin-m-thomas-16/</a> </strong></p>
+<p>You will additionally need a text editor for the terminal. I use VIM. You will find a link to set that up as well below.</p>
+<p><strong><a href="https://www.linkedin.com/pulse/assembly-language-basic-malware-reverse-engineering-kevin-m-thomas-17/" target="_blank">https://www.linkedin.com/pulse/assembly-language-basic-malware-reverse-engineering-kevin-m-thomas-17/</a></strong></p>
+<p>In addition you will have to install nasm so you may simply type:</p>
+<p><strong>sudo apt-get install nasm</strong></p>
+<p>NASM is the assembler we will use and we will focus on the intel syntax. First go into the terminal and fire up Vim and type the following:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQH9sJkD2-acHw/article-inline_image-shrink_1000_1488/0/1545386856569?e=1614211200&amp;v=beta&amp;t=AOXUfVmqXdxzGQLZ8eNGijw7VeRQYfCeI1KvUB6Szuk"></div>
+
+<p>Remember to type &apos;i&apos; to insert and then &apos;esc&apos; and &apos;wq&apos; to go into command mode and save your file.</p>
+<p>The above line simply sets an infinite loop and does nothing more. The <strong>loop </strong>label is created to which we simply <strong>jmp</strong> back to itself. This code in itself will compile however it will not run in an OS as it does not trigger what we refer to as the magic number to which BIOS looks to understand this is the end of your boot sector. We will cover more on that in future lectures.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQE2VHxoXB-_Nw/article-inline_image-shrink_1000_1488/0/1545387039903?e=1614211200&amp;v=beta&amp;t=vZqwxXb4Wx4GnqVtOHSDkjqMPN_dmMybO4zUl8ly95Q"></div>
+
+<p>We type the above command assuming you saved your file in vim as <strong>bootsector.asm</strong>. This will create a binary file to which we will examine the contents within a hex editor. A hex editor is an application that examines each byte of data that is compiled into a file. We will see that our assembly instructions above will ultimately get translated down to their raw opcode values. The processor only understands raw opcodes which are simply operation codes. Below is a link to a table identifying the opcodes. I saved you the effort of referencing the intel dataset as it is literally thousands of pages and several volumes:</p>
+<p><strong><a href="http://ref.x86asm.net/coder64.html" target="_blank">http://ref.x86asm.net/coder64.html</a></strong></p>
+<p>Let&apos;s use a hex editor like ghex and open up our bin file.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHUwVitDEnmMg/article-inline_image-shrink_1000_1488/0/1545387311381?e=1614211200&amp;v=beta&amp;t=FY8JDsbQXQv4yotiM0vvKDXKHPW2r6BfWIdTKea_4Yw"></div>
+
+<p>We see <strong>EB FE</strong> which are hex bytes and each letter is a nibble (a nibble is 4 bits or half a byte). Both <strong>EB FE</strong> make up two full bytes. Keep in mind the processor reads from disk in reverse byte order such that <strong>FE </strong>gets read first and then <strong>EB</strong>. This process is called little endian and is how the x64 processor works.</p>
+<p>If you review the table to which I provided the link you will see that <strong>FE </strong>represents an <strong>INC</strong> or increment by one. This is our loop value.</p>
+<p>Next you will find that <strong>EB</strong> stands for <strong>JMP</strong> which is our jump instruction above.</p>
+<p>This is alot of information if you are new to assembly. Take it step-by-step and follow along with me in a real linux OS and with each lesson you will get a better understanding of the basics.</p>
+<p>Next week we will build upon this lesson by adding some simple data to our binary.</p>
 
                                 
                                 </section>
@@ -2362,7 +2386,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 18 - Boot Sector Basics [Part 1]","level":"1.133","depth":1,"next":{"title":"Part 19 - Boot Sector Basics [Part 2]","level":"1.134","depth":1,"path":"pages/part-19-boot-sector-basics-part-2.md","ref":"pages/part-19-boot-sector-basics-part-2.md","articles":[]},"previous":{"title":"Part 17 - ROR Instruction","level":"1.132","depth":1,"path":"pages/part-17-ror-instruction.md","ref":"pages/part-17-ror-instruction.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-18-boot-sector-basics-part-1.md","mtime":"2020-12-26T10:18:05.797Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 18 - Boot Sector Basics [Part 1]","level":"1.133","depth":1,"next":{"title":"Part 19 - Boot Sector Basics [Part 2]","level":"1.134","depth":1,"path":"pages/part-19-boot-sector-basics-part-2.md","ref":"pages/part-19-boot-sector-basics-part-2.md","articles":[]},"previous":{"title":"Part 17 - ROR Instruction","level":"1.132","depth":1,"path":"pages/part-17-ror-instruction.md","ref":"pages/part-17-ror-instruction.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-18-boot-sector-basics-part-1.md","mtime":"2020-12-26T15:00:12.342Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

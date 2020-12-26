@@ -1,1 +1,33 @@
-<h1>Part 21 – Debugging Character Variables</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>Let’s review our code.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEwrAfitQABaA/article-inline_image-shrink_1000_1488/0/1520147096734?e=1614211200&amp;v=beta&amp;t=PLWWGxXoFC0RAxvBuBw8aJHD0ktvxPU_8spsE7_bJTg"/></div><p>Let’s debug!</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEGyoebeHOMpA/article-inline_image-shrink_1000_1488/0/1520229910793?e=1614211200&amp;v=beta&amp;t=Y8UQvvGzYkgp4R6EO2NgH6KoIsQar8gT8XsRmQogJCs"/></div><p>Woah! This is confusing. I don’t see any clear memory addresses being loaded into a register to manipulate the data. </p><p>Let’s keep in mind that we are dealing with a single byte character variable. </p><p>If you remember from last week each character translates down to an ASCII code in hex which the processor understands. The value of <strong>n</strong> is <strong>0x6e</strong> hex or <strong>110</strong> decimal. You can review any ASCII table to see where we derived this value.</p><p>We do see <strong>0x6e</strong> at <strong>main+12</strong> which is the character ‘<strong>n</strong>’.  </p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFryzFQJbq_Qw/article-inline_image-shrink_1000_1488/0/1520209360741?e=1614211200&amp;v=beta&amp;t=Dn3XCnbvk4YRseYCVMEMtwsLgMlBcRrC2Ep038hE58E"/></div><p>If we step into a few times we notice the value has been placed into <strong>r3</strong>. When we print the value in <strong>r3</strong> we now see our ‘<strong>n</strong>’ character.</p><p>Let’s continue.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHIFZeJB4ImeQ/article-inline_image-shrink_1000_1488/0/1520149197565?e=1614211200&amp;v=beta&amp;t=oQb7WzttGAwGV63Br_r-2DrByispecdqaQq1fbKZzQ0"/></div><p>We now see the ‘<strong>n</strong>’ printed to the standard output as expected.</p><p>It is important that you understand this process and understand that each character translates into an ASCII value to which the processor loads directly into a respective register. Our previous experience we have seen a string loaded directly into a memory location and this is not the case here.</p><p>Next week we will dive into Hacking Character Variables.</p>
+# Part 21 – Debugging Character Variables
+
+For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
+
+Let’s review our code.
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEwrAfitQABaA/article-inline_image-shrink_1000_1488/0/1520147096734?e=1614211200&amp;v=beta&amp;t=PLWWGxXoFC0RAxvBuBw8aJHD0ktvxPU_8spsE7_bJTg"/></div>
+
+Let’s debug!
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEGyoebeHOMpA/article-inline_image-shrink_1000_1488/0/1520229910793?e=1614211200&amp;v=beta&amp;t=Y8UQvvGzYkgp4R6EO2NgH6KoIsQar8gT8XsRmQogJCs"/></div>
+
+Woah!&nbsp;This is confusing.&nbsp;I don’t see any clear memory addresses being loaded into a register to manipulate the data.&nbsp;
+
+Let’s keep in mind that we are dealing with a single byte character variable.&nbsp;
+
+If you remember from last week each character translates down to an ASCII code in hex which the processor understands.&nbsp;The value of __n__ is __0x6e__ hex or __110__ decimal.&nbsp;You can review any ASCII table to see where we derived this value.
+
+We do see __0x6e__ at __main+12__ which is the character ‘__n__’.&nbsp;&nbsp;
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFryzFQJbq_Qw/article-inline_image-shrink_1000_1488/0/1520209360741?e=1614211200&amp;v=beta&amp;t=Dn3XCnbvk4YRseYCVMEMtwsLgMlBcRrC2Ep038hE58E"/></div>
+
+If we step into a few times we notice the value has been placed into __r3__.&nbsp;When we print the value in __r3__ we now see our ‘__n__’ character.
+
+Let’s continue.
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHIFZeJB4ImeQ/article-inline_image-shrink_1000_1488/0/1520149197565?e=1614211200&amp;v=beta&amp;t=oQb7WzttGAwGV63Br_r-2DrByispecdqaQq1fbKZzQ0"/></div>
+
+We now see the ‘__n__’ printed to the standard output as expected.
+
+It is important that you understand this process and understand that each character translates into an ASCII value to which the processor loads directly into a respective register.&nbsp;Our previous experience we have seen a string loaded directly into a memory location and this is not the case here.
+
+Next week we will dive into Hacking Character Variables.

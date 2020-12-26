@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,7 +2318,22 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-31---x64-assembly-part-5">Part 31 - x64 Assembly [Part 5]</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>Let&apos;s review our code.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQElNN_jEOL1BA/article-inline_image-shrink_1000_1488/0/1553248751760?e=1614211200&amp;v=beta&amp;t=kM0LO-0o2zwHqVXB3Cdbc-OVQ4pM61KFFA9ZLwkje8M"></div><p>Compile...</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHZZXT8eNsPtQ/article-inline_image-shrink_1000_1488/0/1553248766003?e=1614211200&amp;v=beta&amp;t=v1I8qrtpJ90W8bkRnD4in1ciuV0QhbRrUBUztloznP0"></div><p>Debug...</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEuLBaBtI8MTw/article-inline_image-shrink_1000_1488/0/1553248783477?e=1614211200&amp;v=beta&amp;t=tGW5Z4y3F3Gsp0WWhYqYpvQgTpTOk8_Jle8a9sz4zk0"></div><p>Let&apos;s evaluate what is inside the memory address of 0x6000d8.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQG9j-_tdPqNAw/article-inline_image-shrink_1000_1488/0/1553248844375?e=1614211200&amp;v=beta&amp;t=Jrbii9tYGCkHpXZ3gakSK3SBw81AXhnt5Xo4BW6MV7Y"></div><p>As we can see &quot;<strong>Hello World</strong>&quot; with the return character will then be moved into our <strong>RSI</strong> register.</p><p>Next week we will examine this a bit closer.</p><p></p>
+                                <h1 id="part-31---x64-assembly-part-5">Part 31 - x64 Assembly [Part 5]</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>Let&apos;s review our code.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQElNN_jEOL1BA/article-inline_image-shrink_1000_1488/0/1553248751760?e=1614211200&amp;v=beta&amp;t=kM0LO-0o2zwHqVXB3Cdbc-OVQ4pM61KFFA9ZLwkje8M"></div>
+
+<p>Compile...</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHZZXT8eNsPtQ/article-inline_image-shrink_1000_1488/0/1553248766003?e=1614211200&amp;v=beta&amp;t=v1I8qrtpJ90W8bkRnD4in1ciuV0QhbRrUBUztloznP0"></div>
+
+<p>Debug...</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEuLBaBtI8MTw/article-inline_image-shrink_1000_1488/0/1553248783477?e=1614211200&amp;v=beta&amp;t=tGW5Z4y3F3Gsp0WWhYqYpvQgTpTOk8_Jle8a9sz4zk0"></div>
+
+<p>Let&apos;s evaluate what is inside the memory address of 0x6000d8.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQG9j-_tdPqNAw/article-inline_image-shrink_1000_1488/0/1553248844375?e=1614211200&amp;v=beta&amp;t=Jrbii9tYGCkHpXZ3gakSK3SBw81AXhnt5Xo4BW6MV7Y"></div>
+
+<p>As we can see &quot;<strong>Hello World</strong>&quot; with the return character will then be moved into our <strong>RSI</strong> register.</p>
+<p>Next week we will examine this a bit closer.</p>
 
                                 
                                 </section>
@@ -2362,7 +2377,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 31 - x64 Assembly [Part 5]","level":"1.146","depth":1,"next":{"title":"Part 32 - x64 Assembly [Part 6]","level":"1.147","depth":1,"path":"pages/part-32-x64-assembly-part-6.md","ref":"pages/part-32-x64-assembly-part-6.md","articles":[]},"previous":{"title":"Part 30 - x64 Assembly [Part 4]","level":"1.145","depth":1,"path":"pages/part-30-x64-assembly-part-4.md","ref":"pages/part-30-x64-assembly-part-4.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-31-x64-assembly-part-5.md","mtime":"2020-12-26T10:18:14.878Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 31 - x64 Assembly [Part 5]","level":"1.146","depth":1,"next":{"title":"Part 32 - x64 Assembly [Part 6]","level":"1.147","depth":1,"path":"pages/part-32-x64-assembly-part-6.md","ref":"pages/part-32-x64-assembly-part-6.md","articles":[]},"previous":{"title":"Part 30 - x64 Assembly [Part 4]","level":"1.145","depth":1,"path":"pages/part-30-x64-assembly-part-4.md","ref":"pages/part-30-x64-assembly-part-4.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-31-x64-assembly-part-5.md","mtime":"2020-12-26T15:00:24.188Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

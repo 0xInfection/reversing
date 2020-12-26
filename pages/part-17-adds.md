@@ -1,3 +1,43 @@
-<h1>Part 17 - ADDS</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>ADDS is the same as ADD except it sets the flags accordingly in the CPSR.</p><p>Let’s look at an example to illustrate:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFD3TOMO8WqXQ/article-inline_image-shrink_1000_1488/0/1520241718373?e=1614211200&amp;v=beta&amp;t=ptVf0I35SbNxRENxAm8818_AK7FOEbhUcyWNTDvmxmA"/></div><p>We <strong>add</strong> <strong>100</strong> decimal into <strong>r1</strong>, <strong>4,294,967,295</strong> into <strong>r2</strong>. We then <strong>add r1</strong> and <strong>r2</strong> and place in <strong>r0.</strong></p><p>We see <strong>adds </strong>which sets the flags in the CPSR. We have to remember when we debug in GDB, the value of the CPSR is in hex. In order to see what flags are set, we must convert the hex to binary. This will make sense as we start to debug and hack this example in the coming tutorials.</p><p>You can compile the above by:</p><pre spellcheck="false">as -o adc.o adc.s
+# Part 17 - ADDS
+
+For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
+
+ADDS is the same as ADD except it sets the flags accordingly in the CPSR.
+
+Let’s look at an example to illustrate:
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFD3TOMO8WqXQ/article-inline_image-shrink_1000_1488/0/1520241718373?e=1614211200&amp;v=beta&amp;t=ptVf0I35SbNxRENxAm8818_AK7FOEbhUcyWNTDvmxmA"/></div>
+
+We __add__ __100__ decimal into __r1__, __4,294,967,295__ into __r2__. We then __add r1__ and __r2__ and place in __r0.__
+
+We see __adds __which sets the flags in the CPSR. We have to remember when we debug in GDB, the value of the CPSR is in hex. In order to see what flags are set, we must convert the hex to binary. This will make sense as we start to debug and hack this example in the coming tutorials.
+
+You can compile the above by:
+
+<pre spellcheck="false">as -o adc.o adc.s
 ld -o adc adc.o
-</pre><p>We need to remember that bits 31, 20, 29 and 28 in the CPSR indicate the following:</p><p><strong>bit 31 - N = Negative Flag</strong></p><p><strong>bit 30 - Z = Zero Flag</strong></p><p><strong>bit 29 - C = Carry Flag</strong></p><p><strong>bit 28 - V = Overflow Flag</strong></p><p>Therefore if the value in binary was <strong>0110</strong> of bit 31, 30, 29 and 28 (<strong>NZCV</strong>) that would mean:</p><p><strong>Negative Flag NOT Set</strong></p><p><strong>Zero Flag SET</strong></p><p><strong>Carry Flag SET</strong></p><p><strong>Overflow Flag NOT Set </strong></p><p>It is critical that you compile, debug and hack each exercise in order to understand what is going on here.</p><p>Next week we will dive into Debugging ADDS.</p>
+</pre>
+
+We need to remember that bits 31, 20, 29 and 28 in the CPSR indicate the following:
+
+__bit 31 - N = Negative Flag__
+
+__bit 30 - Z = Zero Flag__
+
+__bit 29 - C = Carry Flag__
+
+__bit 28 - V = Overflow Flag__
+
+Therefore if the value in binary was __0110__ of bit 31, 30, 29 and 28 (__NZCV__) that would mean:
+
+__Negative Flag NOT Set__
+
+__Zero Flag SET__
+
+__Carry Flag SET__
+
+__Overflow Flag NOT Set __
+
+It is critical that you compile, debug and hack each exercise in order to understand what is going on here.
+
+Next week we will dive into Debugging ADDS.

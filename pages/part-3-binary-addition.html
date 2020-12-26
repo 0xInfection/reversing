@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,23 +2318,38 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-3-&#x2013;-binary-addition">Part 3 &#x2013; Binary Addition</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>Binary addition can occur in one of four different fashions:</p><pre spellcheck="false">0 + 0 = 0
+                                <h1 id="part-3-&#x2013;-binary-addition">Part 3 &#x2013; Binary Addition</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>Binary addition can occur in one of four different fashions:</p>
+<pre spellcheck="false">0 + 0 = 0
 1 + 0 = 1
 0 + 1 = 1
 1 + 1 = 0 (1) [One Plus One Equals Zero, Carry One]
-</pre><p>Keep in mind the (1) means a carry bit. It very simply means an overflow.</p><p>Lets take the following 4-bit nibble example:</p><pre spellcheck="false">  0111<p></p>
-<ul>
-<li>0100
-= 1011
-&lt;/pre&gt;<p>We see an obvious carry in the 3rd bit. If the 8th bit had a carry then this would generate a carry flag within the CPU.</p><p>Let&#x2019;s examine an 8-bit number:</p><pre spellcheck="false">  01110000</pre></li>
-<li>01010101
-= 11000101
-&lt;/pre&gt;<p>If we had:</p><pre spellcheck="false">     &#xFEFF;&#xFEFF;11110000</pre></li>
-<li>11010101
-= (1)11000101
-&lt;/pre&gt;<p>Here we see a carry bit which would trigger the carry flag within the CPU to be 1 or true. We will discuss the carry flag in later tutorials. Please just keep in mind this example to reference as it is very important to understand.</p><p>Next week we will dive into binary subtraction! Stay tuned!</p></li>
-</ul>
 </pre>
+
+<p>Keep in mind the (1) means a carry bit. It very simply means an overflow.</p>
+<p>Lets take the following 4-bit nibble example:</p>
+<pre spellcheck="false">  0111
++ 0100
+= 1011
+</pre>
+
+<p>We see an obvious carry in the 3rd bit. If the 8th bit had a carry then this would generate a carry flag within the CPU.</p>
+<p>Let&#x2019;s examine an 8-bit number:</p>
+<pre spellcheck="false">  01110000
++ 01010101
+= 11000101
+</pre>
+
+<p>If we had:</p>
+<pre spellcheck="false">     &#xFEFF;&#xFEFF;11110000
++    11010101
+= (1)11000101
+</pre>
+
+<p>Here we see a carry bit which would trigger the carry flag within the CPU to be 1 or true. We will discuss the carry flag in later tutorials. Please just keep in mind this example to reference as it is very important to understand.</p>
+<p>Next week we will dive into binary subtraction! Stay tuned!</p>
+
                                 
                                 </section>
                             
@@ -2377,7 +2392,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 3 - Binary Addition","level":"1.44","depth":1,"next":{"title":"Part 4 - Binary Subtraction","level":"1.45","depth":1,"path":"pages/part-4-binary-subtraction.md","ref":"pages/part-4-binary-subtraction.md","articles":[]},"previous":{"title":"Part 2 - Number Systems","level":"1.43","depth":1,"path":"pages/part-2-number-systems.md","ref":"pages/part-2-number-systems.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-3-binary-addition.md","mtime":"2020-12-26T10:17:23.140Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 3 - Binary Addition","level":"1.44","depth":1,"next":{"title":"Part 4 - Binary Subtraction","level":"1.45","depth":1,"path":"pages/part-4-binary-subtraction.md","ref":"pages/part-4-binary-subtraction.md","articles":[]},"previous":{"title":"Part 2 - Number Systems","level":"1.43","depth":1,"path":"pages/part-2-number-systems.md","ref":"pages/part-2-number-systems.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-3-binary-addition.md","mtime":"2020-12-26T14:59:12.299Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

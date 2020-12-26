@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,7 +2318,21 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-15---shr-instruction">Part 15 - SHR Instruction</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>The ROL command stands for rotate left.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFJxE3VYgBtbQ/article-inline_image-shrink_1000_1488/0/1543575772711?e=1614211200&amp;v=beta&amp;t=RwucupBjF93kga1f2ozQiDIQFdHp5CWl_Xfw1RqZQIc"></div><p>In our simple x64 example on an Ubuntu Linux machine above we see we <strong>mov 1</strong> into <strong>al </strong>and rotate left by 1 bit.</p><p>The binary representation is <strong>00000001b</strong>. If we <strong>ROL</strong> 1 bit the value simply becomes <strong>00000010b</strong> as demonstrated below.</p><p>We first compile and link by:</p><p><strong>nasm -f elf64 -o test.o test.asm</strong></p><p><strong>ld -o test test.o</strong></p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEXAKzCOvYqxA/article-inline_image-shrink_1000_1488/0/1543575972607?e=1614211200&amp;v=beta&amp;t=rrnFar_z1wGspPI59CEc4_9_NK-5ycSSsUxifZEZDOQ"></div><p>We can see here in the debugger that <strong>al </strong>starts with <strong>1</strong> and when we rotate left it goes to <strong>10b</strong>.</p><p>You can ROL with additional bits as well. The logic would remain the same as the bits will rotate left just as we demonstrated above.</p><p>Next week we will dive into ROR! Stay tuned!</p><p></p>
+                                <h1 id="part-15---shr-instruction">Part 15 - SHR Instruction</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>The ROL command stands for rotate left.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFJxE3VYgBtbQ/article-inline_image-shrink_1000_1488/0/1543575772711?e=1614211200&amp;v=beta&amp;t=RwucupBjF93kga1f2ozQiDIQFdHp5CWl_Xfw1RqZQIc"></div>
+
+<p>In our simple x64 example on an Ubuntu Linux machine above we see we <strong>mov 1</strong> into <strong>al </strong>and rotate left by 1 bit.</p>
+<p>The binary representation is <strong>00000001b</strong>.&#xA0;If we <strong>ROL</strong> 1 bit the value simply becomes <strong>00000010b</strong> as demonstrated below.</p>
+<p>We first compile and link by:</p>
+<p><strong>nasm -f elf64 -o test.o test.asm</strong></p>
+<p><strong>ld -o test test.o</strong></p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEXAKzCOvYqxA/article-inline_image-shrink_1000_1488/0/1543575972607?e=1614211200&amp;v=beta&amp;t=rrnFar_z1wGspPI59CEc4_9_NK-5ycSSsUxifZEZDOQ"></div>
+
+<p>We can see here in the debugger that <strong>al </strong>starts with <strong>1</strong> and when we rotate left it goes to <strong>10b</strong>.</p>
+<p>You can ROL with additional bits as well.&#xA0;The logic would remain the same as the bits will rotate left just as we demonstrated above.</p>
+<p>Next week we will dive into ROR! Stay tuned!</p>
 
                                 
                                 </section>
@@ -2362,7 +2376,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 15 - SHR Instruction","level":"1.130","depth":1,"next":{"title":"Part 16 - ROL Instruction","level":"1.131","depth":1,"path":"pages/part-16-rol-instruction.md","ref":"pages/part-16-rol-instruction.md","articles":[]},"previous":{"title":"Part 14 - SHL Instruction","level":"1.129","depth":1,"path":"pages/part-14-shl-instruction.md","ref":"pages/part-14-shl-instruction.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-15-shr-instruction.md","mtime":"2020-12-26T10:18:03.877Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 15 - SHR Instruction","level":"1.130","depth":1,"next":{"title":"Part 16 - ROL Instruction","level":"1.131","depth":1,"path":"pages/part-16-rol-instruction.md","ref":"pages/part-16-rol-instruction.md","articles":[]},"previous":{"title":"Part 14 - SHL Instruction","level":"1.129","depth":1,"path":"pages/part-14-shl-instruction.md","ref":"pages/part-14-shl-instruction.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-15-shr-instruction.md","mtime":"2020-12-26T15:00:09.602Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

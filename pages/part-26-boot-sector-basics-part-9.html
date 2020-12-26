@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,7 +2318,32 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-26---boot-sector-basics-part-9">Part 26 - Boot Sector Basics [Part 9]</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>Today we begin our actual x64 code basics. Over the next few weeks I will create very simple examples so we get a grasp of the x64 architecture. Let&apos;s start with a basic code block:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGb0wEJY7MBDw/article-inline_image-shrink_1000_1488/0/1550227269983?e=1614211200&amp;v=beta&amp;t=0IHS_FAXm37VTR4VnM-mAIkxjCYL5g_bw6CFZaZV7ws"></div><p>We begin by declaring the <strong>.data</strong> section to which all of our global data is stores. If we had a string or some other form of hard coded data it would go in that block. In our example we will leave it empty.</p><p>The <strong>.text</strong> section declares where the entry point of the program will begin in our case we use <strong>_start</strong> or you can use <strong>main</strong>.</p><p>We simply move the value of decimal 16 or hex 10 into the 64-bit RAX register. We will see in a moment that the processor will use only the lower EAX when we debug in GDB.</p><p>The last piece is just a simple exit routine which we move 60 into RAX and then syscall. It simply returns operation back to the OS.</p><p>Let&apos;s compile and link:</p><div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFu1Dk0PbXPHA/article-inline_image-shrink_1000_1488/0/1550227507149?e=1614211200&amp;v=beta&amp;t=7RI41q89rCAC4Du2j_NN9supgZtEmhygAxS_w1LG6Go"></div><p>Let&apos;s debug in GDB:</p><div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGQKeM_npZRVA/article-inline_image-shrink_1000_1488/0/1550227529034?e=1614211200&amp;v=beta&amp;t=BXCBy2LzVFQHktOWL-OucgQ4pmRIoc-XAIA9bzGLVYY"></div><p>Let&apos;s set the debugger for intel syntax and set a break on start:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEWg3Q9ytbyKw/article-inline_image-shrink_1000_1488/0/1550227565697?e=1614211200&amp;v=beta&amp;t=58qVPsXEadAXrkRL7A4ZVSYXs85Fv7uhiaoHVPxb6pM"></div><p>As we can see 16 decimal or hex 10 is about to be moved into EAX but as we can see it has not been completed until we step forward.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGX6OfrhJb9xw/article-inline_image-shrink_1000_1488/0/1550227619555?e=1614211200&amp;v=beta&amp;t=yApSA7OEa52iFkr8v3Y9YlJhRPi7rszTDhE9up-woaI"></div><p>Now we can view our registers.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFG0dCxLiNapw/article-inline_image-shrink_1000_1488/0/1550227646545?e=1614211200&amp;v=beta&amp;t=g9ENJKbK6c7rIn_7QSbWaYZ_CsdAYjRLG5hq0Aj_ymQ"></div><p>We can see that RAX holds decimal 16 or hex 10 successfully.</p><p>We will spend several weeks on these simple examples so you can get comfortable with how the processor operates and its internal workings.</p><p></p>
+                                <h1 id="part-26---boot-sector-basics-part-9">Part 26 - Boot Sector Basics [Part 9]</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>Today we begin our actual x64 code basics. Over the next few weeks I will create very simple examples so we get a grasp of the x64 architecture. Let&apos;s start with a basic code block:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGb0wEJY7MBDw/article-inline_image-shrink_1000_1488/0/1550227269983?e=1614211200&amp;v=beta&amp;t=0IHS_FAXm37VTR4VnM-mAIkxjCYL5g_bw6CFZaZV7ws"></div>
+
+<p>We begin by declaring the <strong>.data</strong> section to which all of our global data is stores. If we had a string or some other form of hard coded data it would go in that block. In our example we will leave it empty.</p>
+<p>The <strong>.text</strong> section declares where the entry point of the program will begin in our case we use <strong>_start</strong> or you can use <strong>main</strong>.</p>
+<p>We simply move the value of decimal 16 or hex 10 into the 64-bit RAX register. We will see in a moment that the processor will use only the lower EAX when we debug in GDB.</p>
+<p>The last piece is just a simple exit routine which we move 60 into RAX and then syscall. It simply returns operation back to the OS.</p>
+<p>Let&apos;s compile and link:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFu1Dk0PbXPHA/article-inline_image-shrink_1000_1488/0/1550227507149?e=1614211200&amp;v=beta&amp;t=7RI41q89rCAC4Du2j_NN9supgZtEmhygAxS_w1LG6Go"></div>
+
+<p>Let&apos;s debug in GDB:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGQKeM_npZRVA/article-inline_image-shrink_1000_1488/0/1550227529034?e=1614211200&amp;v=beta&amp;t=BXCBy2LzVFQHktOWL-OucgQ4pmRIoc-XAIA9bzGLVYY"></div>
+
+<p>Let&apos;s set the debugger for intel syntax and set a break on start:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEWg3Q9ytbyKw/article-inline_image-shrink_1000_1488/0/1550227565697?e=1614211200&amp;v=beta&amp;t=58qVPsXEadAXrkRL7A4ZVSYXs85Fv7uhiaoHVPxb6pM"></div>
+
+<p>As we can see 16 decimal or hex 10 is about to be moved into EAX but as we can see it has not been completed until we step forward.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGX6OfrhJb9xw/article-inline_image-shrink_1000_1488/0/1550227619555?e=1614211200&amp;v=beta&amp;t=yApSA7OEa52iFkr8v3Y9YlJhRPi7rszTDhE9up-woaI"></div>
+
+<p>Now we can view our registers.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFG0dCxLiNapw/article-inline_image-shrink_1000_1488/0/1550227646545?e=1614211200&amp;v=beta&amp;t=g9ENJKbK6c7rIn_7QSbWaYZ_CsdAYjRLG5hq0Aj_ymQ"></div>
+
+<p>We can see that RAX holds decimal 16 or hex 10 successfully.</p>
+<p>We will spend several weeks on these simple examples so you can get comfortable with how the processor operates and its internal workings.</p>
 
                                 
                                 </section>
@@ -2362,7 +2387,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 26 - Boot Sector Basics [Part 9]","level":"1.141","depth":1,"next":{"title":"Part 27 - x64 Assembly [Part 1]","level":"1.142","depth":1,"path":"pages/part-27-x64-assembly-part-1.md","ref":"pages/part-27-x64-assembly-part-1.md","articles":[]},"previous":{"title":"Part 25 - Boot Sector Basics [Part 8]","level":"1.140","depth":1,"path":"pages/part-25-boot-sector-basics-part-8.md","ref":"pages/part-25-boot-sector-basics-part-8.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-26-boot-sector-basics-part-9.md","mtime":"2020-12-26T10:18:11.569Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 26 - Boot Sector Basics [Part 9]","level":"1.141","depth":1,"next":{"title":"Part 27 - x64 Assembly [Part 1]","level":"1.142","depth":1,"path":"pages/part-27-x64-assembly-part-1.md","ref":"pages/part-27-x64-assembly-part-1.md","articles":[]},"previous":{"title":"Part 25 - Boot Sector Basics [Part 8]","level":"1.140","depth":1,"path":"pages/part-25-boot-sector-basics-part-8.md","ref":"pages/part-25-boot-sector-basics-part-8.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-26-boot-sector-basics-part-9.md","mtime":"2020-12-26T15:00:19.611Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

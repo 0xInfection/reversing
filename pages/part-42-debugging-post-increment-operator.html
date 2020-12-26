@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,16 +2318,37 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-42-&#x2013;-debugging-post-increment-operator">Part 42 &#x2013; Debugging Post-Increment Operator</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>Let&#x2019;s re-examine our code.</p><pre spellcheck="false">#include &lt;iostream&gt;<p></p>
-<p>int main(void) {
-    int myNumber = 16;
-    int myNewNumber = ++myNumber;</p>
-<pre><code>std::cout &amp;lt;&amp;lt; myNewNumber &amp;lt;&amp;lt; std::endl;
+                                <h1 id="part-42-&#x2013;-debugging-post-increment-operator">Part 42 &#x2013; Debugging Post-Increment Operator</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>Let&#x2019;s re-examine our code.</p>
+<pre spellcheck="false">#include &lt;iostream&gt;
 
-return 0;
-</code></pre><p>}
-&lt;/pre&gt;</p><p>We create a variable <strong>myNumber = 16</strong> to which we create another variable <strong>myNewNumber</strong> which post-increments the value of <strong>myNumber</strong>. We see that when we execute our code it shows <strong>16</strong> as the value of <strong>myNewNumber</strong> and <strong>17</strong> as the value of <strong>myNumber</strong> as <strong>myNewNumber</strong> does not get incremented as only <strong>myNumber</strong> get incremented as it is a post operator.</p><p>When we post-increment the value of the variable is incremented after assigning it to another variable. For example <strong>myNumber</strong> is <strong>16</strong> so it gets incremented after being assigned to <strong>myNewNumber</strong> so therefore we get <strong>17</strong>.</p><p>Let&apos;s debug.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFmaWzQRvrFTw/article-inline_image-shrink_1000_1488/0/1528458112325?e=1614211200&amp;v=beta&amp;t=r2hxg9B8WWQKywdrzvuZpmJuNpf6KnnK5WKq8NsRiQ0"></div><p>Let&apos;s break on <strong>*main+28 </strong>and continue.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQH3l-5lgllJ0g/article-inline_image-shrink_1000_1488/0/1528458131421?e=1614211200&amp;v=beta&amp;t=ZZMsTq9vtKenyWmtO1dUA0Z4wzYeKGz3vJTs_iSOGYw"></div><p>As we can see the value in <strong>r3 </strong>is 16 and the value in <strong>r2 </strong>is 17. We can see that as they are loaded from memory into the registers in <strong>*main+12</strong> directly by the <strong>mov</strong> instruction and <strong>*main+24</strong> we add 1 into <strong>r3</strong> and then put that value into <strong>r2</strong>.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHn2yUOd579ug/article-inline_image-shrink_1000_1488/0/1528458142344?e=1614211200&amp;v=beta&amp;t=bHS8Hh0Jv2MwokxhtSabc4AzoSi2rvxwejJxKmox6TQ"></div><p>As we continue we can see the <strong>cout </strong>c++ function called which echos out the values to the terminal (standard output) as expected.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQESA6aDc_cw5w/article-inline_image-shrink_1000_1488/0/1528458154804?e=1614211200&amp;v=beta&amp;t=T7apGoUur4voWNz_WCJMDled6BZ7BLdzb_jfY6Fi244"></div><p>Next week we will dive into Hacking Post-Increment Operator.</p><p></p>
+int main(void) {
+&#xA0;&#xA0; &#xA0;int myNumber = 16;
+&#xA0;&#xA0; &#xA0;int myNewNumber = ++myNumber;
+
+&#xA0;&#xA0; &#xA0;std::cout &lt;&lt; myNewNumber &lt;&lt; std::endl;
+
+&#xA0;&#xA0; &#xA0;return 0;
+}
 </pre>
+
+<p>We create a variable <strong>myNumber = 16</strong> to which we create another variable <strong>myNewNumber</strong> which post-increments the value of <strong>myNumber</strong>.&#xA0;We see that when we execute our code it shows <strong>16</strong> as the value of <strong>myNewNumber</strong> and <strong>17</strong> as the value of <strong>myNumber</strong> as <strong>myNewNumber</strong> does not get incremented as only <strong>myNumber</strong> get incremented as it is a post operator.</p>
+<p>When we post-increment the value of the variable is incremented after assigning it to another variable.&#xA0;For example <strong>myNumber</strong> is <strong>16</strong> so it gets incremented after being assigned to <strong>myNewNumber</strong> so therefore we get <strong>17</strong>.</p>
+<p>Let&apos;s debug.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFmaWzQRvrFTw/article-inline_image-shrink_1000_1488/0/1528458112325?e=1614211200&amp;v=beta&amp;t=r2hxg9B8WWQKywdrzvuZpmJuNpf6KnnK5WKq8NsRiQ0"></div>
+
+<p>Let&apos;s break on <strong>*main+28 </strong>and continue.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQH3l-5lgllJ0g/article-inline_image-shrink_1000_1488/0/1528458131421?e=1614211200&amp;v=beta&amp;t=ZZMsTq9vtKenyWmtO1dUA0Z4wzYeKGz3vJTs_iSOGYw"></div>
+
+<p>As we can see the value in <strong>r3 </strong>is 16 and the value in <strong>r2 </strong>is 17. We can see that as they are loaded from memory into the registers in <strong>*main+12</strong> directly by the <strong>mov</strong> instruction and <strong>*main+24</strong> we add 1 into <strong>r3</strong> and then put that value into <strong>r2</strong>.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHn2yUOd579ug/article-inline_image-shrink_1000_1488/0/1528458142344?e=1614211200&amp;v=beta&amp;t=bHS8Hh0Jv2MwokxhtSabc4AzoSi2rvxwejJxKmox6TQ"></div>
+
+<p>As we continue we can see the <strong>cout </strong>c++ function called which echos out the values to the terminal (standard output) as expected.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQESA6aDc_cw5w/article-inline_image-shrink_1000_1488/0/1528458154804?e=1614211200&amp;v=beta&amp;t=T7apGoUur4voWNz_WCJMDled6BZ7BLdzb_jfY6Fi244"></div>
+
+<p>Next week we will dive into Hacking Post-Increment Operator.</p>
+
                                 
                                 </section>
                             
@@ -2370,7 +2391,7 @@ return 0;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 42 – Debugging Post-Increment Operator","level":"1.108","depth":1,"next":{"title":"Part 43 – Hacking Post-Increment Operator","level":"1.109","depth":1,"path":"pages/part-43-hacking-post-increment-operator.md","ref":"pages/part-43-hacking-post-increment-operator.md","articles":[]},"previous":{"title":"Part 41 – Post-Increment Operator","level":"1.107","depth":1,"path":"pages/part-41-post-increment-operator.md","ref":"pages/part-41-post-increment-operator.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-42-debugging-post-increment-operator.md","mtime":"2020-12-26T10:17:49.297Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 42 – Debugging Post-Increment Operator","level":"1.108","depth":1,"next":{"title":"Part 43 – Hacking Post-Increment Operator","level":"1.109","depth":1,"path":"pages/part-43-hacking-post-increment-operator.md","ref":"pages/part-43-hacking-post-increment-operator.md","articles":[]},"previous":{"title":"Part 41 – Post-Increment Operator","level":"1.107","depth":1,"path":"pages/part-41-post-increment-operator.md","ref":"pages/part-41-post-increment-operator.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-42-debugging-post-increment-operator.md","mtime":"2020-12-26T14:59:49.020Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,4 +1,4 @@
-import re, html, markdownify
+import re, html, html2markdown
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
@@ -17,7 +17,9 @@ def processfName(filen: str):
     fm = fm.replace('-–-', '-').replace('---', '-')
     fm = fm.replace(':', '').replace('.',
         '').replace(',', '').replace('[',
-        '').replace(']', '').replace('/', '')
+        '').replace(']', '').replace('/',
+        '').replace('"', '').replace('?',
+        '').replace('&', '').replace('=', '')
     fm += '.md'
     return fm
 
@@ -48,7 +50,7 @@ def grabContent(pgsrc: str, fname: str):
     dirname = 'pages/{}'.format(processfName(fname))
     toadd = '* [{}]({})'.format(fname, dirname)
     with open(dirname, 'w+') as wf:
-        wf.write(markdownify.markdownify(content))
+        wf.write(html2markdown.convert(content))
     with open('SUMMARY.md', 'a') as wf:
         wf.write(toadd+'\n')
 
@@ -70,5 +72,8 @@ if __name__ == '__main__':
     # visit raw URL
     print("Visiting homepage...")
     driver.get(readmeurl)
+    # init summary.md
+    with open("SUMMARY.md", 'w') as wf:
+        wf.write('# Summary\n\n')
     grabLinks(driver.page_source)
     driver.quit()

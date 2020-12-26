@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,7 +2318,22 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-21---boot-sector-basics-part-4">Part 21 - Boot Sector Basics [Part 4]</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>We begin by looking at some simple additions to our code. What we will accomplish today is to create a simple operating system that does literally nothing but boot. We will use QEMU as an emulator as I am too lazy to set up VirtualBox or VMWare however you can easily port the .bin to an .iso if you chose and boot from either.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFKueFbAlgWJg/article-inline_image-shrink_1000_1488/0/1547203117260?e=1614211200&amp;v=beta&amp;t=8PWHO-WDVtVgLC9kT5b_yxnsq5nTG5s95iAQNkvicnM"></div><p>We are simply adding a padding algorithm on line 7 that simply examines how many bytes are left after we subtract 200h or 512 and then it pads the remaining bytes with zeros. At the end you will see what we refer to as the magic number which is <strong>0xaa55</strong> as this is a signature that the cpu is looking for to identify a boot sector. Remember this code is at sector 0 when it boots as there is no file system so if it finds the successful signature it will attempt to boot it.</p><div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEL43xp4DVVtg/article-inline_image-shrink_1000_1488/0/1547203262774?e=1614211200&amp;v=beta&amp;t=oLsJf3_CU0zKIBCqYZXderlrdZeFPRyI1HYdbzpvsSQ"></div><p>We build the binary with the code above. Now let&apos;s look at the code in the hex editor.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQErn1vFqsRp3g/article-inline_image-shrink_1000_1488/0/1547203298648?e=1614211200&amp;v=beta&amp;t=Y78O1LwzNDCW5rRsIeywgK9Y-Fxcb49laWQBplI8t5g"></div><p>As you can see it pads out the remaining bytes up to 200h or 512 with 0&apos;s as we anticipated. Below is the remainder of the binary.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGGcbn_T4vZyA/article-inline_image-shrink_1000_1488/0/1547203339833?e=1614211200&amp;v=beta&amp;t=7YTLtPcW3Ytq14eQg69yspd5zaN47z1_Qjo9Nwgfb8E"></div><p>As you can see at the very end we have <strong>55 AA</strong>. We remember that our processor is little endian so when we code it it was <strong>aa 55</strong> and which is in it&apos;s mapped format. When it goes into the cpu it reverses the byte order. This is critical that you understand this.</p><p>Next week we will simply do nothing more than launch our new operating system. Stay tuned.</p><p></p>
+                                <h1 id="part-21---boot-sector-basics-part-4">Part 21 - Boot Sector Basics [Part 4]</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>We begin by looking at some simple additions to our code. What we will accomplish today is to create a simple operating system that does literally nothing but boot. We will use QEMU as an emulator as I am too lazy to set up VirtualBox or VMWare however you can easily port the .bin to an .iso if you chose and boot from either.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFKueFbAlgWJg/article-inline_image-shrink_1000_1488/0/1547203117260?e=1614211200&amp;v=beta&amp;t=8PWHO-WDVtVgLC9kT5b_yxnsq5nTG5s95iAQNkvicnM"></div>
+
+<p>We are simply adding a padding algorithm on line 7 that simply examines how many bytes are left after we subtract 200h or 512 and then it pads the remaining bytes with zeros. At the end you will see what we refer to as the magic number which is <strong>0xaa55</strong> as this is a signature that the cpu is looking for to identify a boot sector. Remember this code is at sector 0 when it boots as there is no file system so if it finds the successful signature it will attempt to boot it.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEL43xp4DVVtg/article-inline_image-shrink_1000_1488/0/1547203262774?e=1614211200&amp;v=beta&amp;t=oLsJf3_CU0zKIBCqYZXderlrdZeFPRyI1HYdbzpvsSQ"></div>
+
+<p>We build the binary with the code above. Now let&apos;s look at the code in the hex editor.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQErn1vFqsRp3g/article-inline_image-shrink_1000_1488/0/1547203298648?e=1614211200&amp;v=beta&amp;t=Y78O1LwzNDCW5rRsIeywgK9Y-Fxcb49laWQBplI8t5g"></div>
+
+<p>As you can see it pads out the remaining bytes up to 200h or 512 with 0&apos;s as we anticipated. Below is the remainder of the binary.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGGcbn_T4vZyA/article-inline_image-shrink_1000_1488/0/1547203339833?e=1614211200&amp;v=beta&amp;t=7YTLtPcW3Ytq14eQg69yspd5zaN47z1_Qjo9Nwgfb8E"></div>
+
+<p>As you can see at the very end we have <strong>55 AA</strong>. We remember that our processor is little endian so when we code it it was <strong>aa 55</strong> and which is in it&apos;s mapped format. When it goes into the cpu it reverses the byte order. This is critical that you understand this.</p>
+<p>Next week we will simply do nothing more than launch our new operating system. Stay tuned.</p>
 
                                 
                                 </section>
@@ -2362,7 +2377,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 21 - Boot Sector Basics [Part 4]","level":"1.136","depth":1,"next":{"title":"Part 22 - Boot Sector Basics [Part 5]","level":"1.137","depth":1,"path":"pages/part-22-boot-sector-basics-part-5.md","ref":"pages/part-22-boot-sector-basics-part-5.md","articles":[]},"previous":{"title":"Part 20 - Boot Sector Basics [Part 3]","level":"1.135","depth":1,"path":"pages/part-20-boot-sector-basics-part-3.md","ref":"pages/part-20-boot-sector-basics-part-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-21-boot-sector-basics-part-4.md","mtime":"2020-12-26T10:18:08.061Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 21 - Boot Sector Basics [Part 4]","level":"1.136","depth":1,"next":{"title":"Part 22 - Boot Sector Basics [Part 5]","level":"1.137","depth":1,"path":"pages/part-22-boot-sector-basics-part-5.md","ref":"pages/part-22-boot-sector-basics-part-5.md","articles":[]},"previous":{"title":"Part 20 - Boot Sector Basics [Part 3]","level":"1.135","depth":1,"path":"pages/part-20-boot-sector-basics-part-3.md","ref":"pages/part-20-boot-sector-basics-part-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-21-boot-sector-basics-part-4.md","mtime":"2020-12-26T15:00:15.131Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

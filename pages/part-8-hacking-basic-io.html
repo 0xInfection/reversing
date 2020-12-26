@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,19 +2318,39 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-8---hacking-basic-io">Part 8 - Hacking Basic I/O</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/hacking_c-_arm64</p><p>Today we are going to talk about the first of the C++ primitive.  The <em>char</em> dataype is used to store a single character and must be surrounded by single quotes.</p><p>Let&apos;s look at our basic example.</p><pre spellcheck="false">#include &lt;iostream&gt;<p></p>
-<p>int main()
-{
-    char my_char = &apos;c&apos;;</p>
-<pre><code>std::cout &amp;lt;&amp;lt; my_char &amp;lt;&amp;lt; std::endl;
+                                <h1 id="part-8---hacking-basic-io">Part 8 - Hacking Basic I/O</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. <a href="https://github.com/mytechnotalent/hacking\_c-\_arm64" target="_blank">https://github.com/mytechnotalent/hacking\_c-\_arm64</a></p>
+<p>Today we are going to talk about the first of the C++ primitive. The <em>char</em> dataype is used to store a single character and must be surrounded by single quotes.</p>
+<p>Let&apos;s look at our basic example.</p>
+<pre spellcheck="false">#include &lt;iostream&gt;
 
-return 0;
-</code></pre><p>}
-&lt;/pre&gt;</p><p>Extremely simple.  We are simply creating a char variable called <em>my_char </em>and assigning it the character <em>c</em>.</p><p>We then print it to stdout and nothing more.</p><p>Let&apos;s compile and link.</p><pre spellcheck="false">g++ -o 0x03_asm64_char_primitive_datatype 0x03_asm64_char_primitive_datatype.cpp
-</pre><p>Let&apos;s run.</p><pre spellcheck="false">./0x03_asm64_char_primitive_datatype
-</pre><p>Very simply we see the following.</p><pre spellcheck="false">c
-</pre><p>It successfully echoed c to the terminal stdout.  Very simple.  </p><p>Next week we will debug this very simple example.</p><p><br></p><p></p>
+int main()
+{
+    char my_char = &apos;c&apos;;
+
+    std::cout &lt;&lt; my_char &lt;&lt; std::endl;
+
+    return 0;
+}
 </pre>
+
+<p>Extremely simple. We are simply creating a char variable called <em>my_char _and assigning it the character _c</em>.</p>
+<p>We then print it to stdout and nothing more.</p>
+<p>Let&apos;s compile and link.</p>
+<pre spellcheck="false">g++ -o 0x03_asm64_char_primitive_datatype 0x03_asm64_char_primitive_datatype.cpp
+</pre>
+
+<p>Let&apos;s run.</p>
+<pre spellcheck="false">./0x03_asm64_char_primitive_datatype
+</pre>
+
+<p>Very simply we see the following.</p>
+<pre spellcheck="false">c
+</pre>
+
+<p>It successfully echoed c to the terminal stdout. Very simple. </p>
+<p>Next week we will debug this very simple example.</p>
+
                                 
                                 </section>
                             
@@ -2373,7 +2393,7 @@ return 0;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 8 - Hacking Basic I/O","level":"1.166","depth":1,"next":{"title":"Part 9 - Character Primitive Datatype","level":"1.167","depth":1,"path":"pages/part-9-character-primitive-datatype.md","ref":"pages/part-9-character-primitive-datatype.md","articles":[]},"previous":{"title":"Part 7 - Debugging Basic I/O","level":"1.165","depth":1,"path":"pages/part-7-debugging-basic-io.md","ref":"pages/part-7-debugging-basic-io.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-8-hacking-basic-io.md","mtime":"2020-12-26T10:18:28.746Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 8 - Hacking Basic I/O","level":"1.166","depth":1,"next":{"title":"Part 9 - Character Primitive Datatype","level":"1.167","depth":1,"path":"pages/part-9-character-primitive-datatype.md","ref":"pages/part-9-character-primitive-datatype.md","articles":[]},"previous":{"title":"Part 7 - Debugging Basic I/O","level":"1.165","depth":1,"path":"pages/part-7-debugging-basic-io.md","ref":"pages/part-7-debugging-basic-io.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-8-hacking-basic-io.md","mtime":"2020-12-26T15:00:42.454Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

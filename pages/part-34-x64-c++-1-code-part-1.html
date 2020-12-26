@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,7 +2318,31 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-34---x64-c-1-code-part-1">Part 34 - x64 C++ 1 Code [Part 1]</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>Let&apos;s review our code:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQENfdV6CiAZXQ/article-inline_image-shrink_1000_1488/0/1561714810492?e=1614211200&amp;v=beta&amp;t=1yue3Fox8m_DwRL4qu3B77hLoQ8B2mPq3oshLiDvlQQ"></div><p>Compile:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFa4XFadZl3Gw/article-inline_image-shrink_1000_1488/0/1561714836259?e=1614211200&amp;v=beta&amp;t=T7unD1AqBWl3e562JZUeMrWPnCiplBEIRDeA51IlOi4"></div><p>Run:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHD9kEqc4jUOg/article-inline_image-shrink_1000_1488/0/1561714869555?e=1614211200&amp;v=beta&amp;t=4T6RbjonYPfcxZLb8wYd3mtmGiu-K7Sla9pl7OqbaF0"></div><p>For literally years I have been using GDB as the debugger of choice. The reason is that it is on every Linux based system which runs just about every IoT and Server in the world. In addition, there are versions for Windows.</p><p>I have struggled hard with this but have decided to introduce another terminal based debugger called Radare 2. The reason I like Radare 2 so much is that it is still terminal based yet more robust with its feature set. If you are running a Kali Linux VM like I am here you can simply the below.</p><p>Let&apos;s open up our binary for write mode and simply analyze the binary.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQE7_zNXdtKMzQ/article-inline_image-shrink_1000_1488/0/1561716186925?e=1614211200&amp;v=beta&amp;t=Npp0wYxe4mN_YwTucM-wEPPssTvkwLA3sBKks7G8oAw"></div><p>Ok, there is a lot going on here. Let&apos;s break it down. First, we open up Radare 2 in write mode by typing &apos;<strong>r2 -w ./1</strong>&apos; and then use the &apos;<strong>aaa</strong>&apos; command to analyze the binary. We then use &apos;<strong>s sym.main</strong>&apos; to seek to the main routine of the binary which is our entry point. We then do a &apos;<strong>pdf</strong>&apos; command to disassemble the binary.</p><p>We see what we refer to as the prologue where we push <strong>rbp</strong> the stack base pointer onto the stack. We then move <strong>rsp</strong> into <strong>rbp</strong> for safe keeping and then we reserve <strong>0x10</strong> hex bytes or 16 decimal bytes on the stack to make room for our string.</p><p>If none of this makes sense please go back to the beginning of the tutorial series to review basic assembly and the registers as it is CRITICAL you understand this before we move forward.</p><p>We can clearly see the qword of &apos;<strong>Hello World\n</strong>&apos; at memory address <strong>0x2005</strong> and then we see our C++ library call for the output stream which is <strong>cout </strong>to display our string to the terminal.</p><p>Let&apos;s examine <strong>0x2005</strong> to verify that our string is at that location:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGhSH5m8Z3rng/article-inline_image-shrink_1000_1488/0/1561715552920?e=1614211200&amp;v=beta&amp;t=NzULlXHuDnoVjM_9wP941OXQgusgcI6EPOyU4ZBeA60"></div><p>Next week we will hack the value and modify the binary. I highly encourage you all to install VirtualBox which is free and get the Kali Linux VirtualBox image and install Vim as well.</p><p>There are tutorials on all of this in my prior series. Stay tuned for the hack next week!</p><p></p>
+                                <h1 id="part-34---x64-c-1-code-part-1">Part 34 - x64 C++ 1 Code [Part 1]</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>Let&apos;s review our code:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQENfdV6CiAZXQ/article-inline_image-shrink_1000_1488/0/1561714810492?e=1614211200&amp;v=beta&amp;t=1yue3Fox8m_DwRL4qu3B77hLoQ8B2mPq3oshLiDvlQQ"></div>
+
+<p>Compile:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFa4XFadZl3Gw/article-inline_image-shrink_1000_1488/0/1561714836259?e=1614211200&amp;v=beta&amp;t=T7unD1AqBWl3e562JZUeMrWPnCiplBEIRDeA51IlOi4"></div>
+
+<p>Run:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHD9kEqc4jUOg/article-inline_image-shrink_1000_1488/0/1561714869555?e=1614211200&amp;v=beta&amp;t=4T6RbjonYPfcxZLb8wYd3mtmGiu-K7Sla9pl7OqbaF0"></div>
+
+<p>For literally years I have been using GDB as the debugger of choice. The reason is that it is on every Linux based system which runs just about every IoT and Server in the world. In addition, there are versions for Windows.</p>
+<p>I have struggled hard with this but have decided to introduce another terminal based debugger called Radare 2. The reason I like Radare 2 so much is that it is still terminal based yet more robust with its feature set. If you are running a Kali Linux VM like I am here you can simply the below.</p>
+<p>Let&apos;s open up our binary for write mode and simply analyze the binary.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQE7_zNXdtKMzQ/article-inline_image-shrink_1000_1488/0/1561716186925?e=1614211200&amp;v=beta&amp;t=Npp0wYxe4mN_YwTucM-wEPPssTvkwLA3sBKks7G8oAw"></div>
+
+<p>Ok, there is a lot going on here. Let&apos;s break it down. First, we open up Radare 2 in write mode by typing &apos;<strong>r2 -w ./1</strong>&apos; and then use the &apos;<strong>aaa</strong>&apos; command to analyze the binary. We then use &apos;<strong>s sym.main</strong>&apos; to seek to the main routine of the binary which is our entry point. We then do a &apos;<strong>pdf</strong>&apos; command to disassemble the binary.</p>
+<p>We see what we refer to as the prologue where we push <strong>rbp</strong> the stack base pointer onto the stack. We then move <strong>rsp</strong> into <strong>rbp</strong> for safe keeping and then we reserve <strong>0x10</strong> hex bytes or 16 decimal bytes on the stack to make room for our string.</p>
+<p>If none of this makes sense please go back to the beginning of the tutorial series to review basic assembly and the registers as it is CRITICAL you understand this before we move forward.</p>
+<p>We can clearly see the qword of &apos;<strong>Hello World\n</strong>&apos; at memory address <strong>0x2005</strong> and then we see our C++ library call for the output stream which is <strong>cout </strong>to display our string to the terminal.</p>
+<p>Let&apos;s examine <strong>0x2005</strong> to verify that our string is at that location:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGhSH5m8Z3rng/article-inline_image-shrink_1000_1488/0/1561715552920?e=1614211200&amp;v=beta&amp;t=NzULlXHuDnoVjM_9wP941OXQgusgcI6EPOyU4ZBeA60"></div>
+
+<p>Next week we will hack the value and modify the binary. I highly encourage you all to install VirtualBox which is free and get the Kali Linux VirtualBox image and install Vim as well.</p>
+<p>There are tutorials on all of this in my prior series. Stay tuned for the hack next week!</p>
 
                                 
                                 </section>
@@ -2362,7 +2386,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 34 - x64 C++ 1 Code [Part 1]","level":"1.149","depth":1,"next":{"title":"Part 35 - x64 C++ 2 Debug [Part 2]","level":"1.150","depth":1,"path":"pages/part-35-x64-c++-2-debug-part-2.md","ref":"pages/part-35-x64-c++-2-debug-part-2.md","articles":[]},"previous":{"title":"Part 33 - x64 Assembly [Part 7]","level":"1.148","depth":1,"path":"pages/part-33-x64-assembly-part-7.md","ref":"pages/part-33-x64-assembly-part-7.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-34-x64-c++-1-code-part-1.md","mtime":"2020-12-26T10:18:16.842Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 34 - x64 C++ 1 Code [Part 1]","level":"1.149","depth":1,"next":{"title":"Part 35 - x64 C++ 2 Debug [Part 2]","level":"1.150","depth":1,"path":"pages/part-35-x64-c++-2-debug-part-2.md","ref":"pages/part-35-x64-c++-2-debug-part-2.md","articles":[]},"previous":{"title":"Part 33 - x64 Assembly [Part 7]","level":"1.148","depth":1,"path":"pages/part-33-x64-assembly-part-7.md","ref":"pages/part-33-x64-assembly-part-7.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-34-x64-c++-1-code-part-1.md","mtime":"2020-12-26T15:00:26.900Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

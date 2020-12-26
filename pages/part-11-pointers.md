@@ -1,1 +1,25 @@
-<h1>Part 11 - Pointers</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>When a binary executes in RAM the OS will unmap the code into a data segment where it finds free space in memory. </p><p>Load Effective Address loads a given memory address as a pointer to any given variable. For example:</p><p><strong>lea rbx, my_var</strong></p><p>This will load the address of <strong>my_var </strong> into <strong>rbx</strong>. </p><p>In C++, a pointer actually adds what the user would see as one if something was incremented however it is actually moving it 2 bytes forward under the hood assuming it is a word in length or 16 bits or 2 bytes. Same thing.</p><p>In Assembly every single byte is addressable. For example:</p><p><strong>lea rax, my_var</strong></p><p><strong>inc rax</strong></p><p><strong>mov word ptr [rax], rbx</strong></p><p>Let’s say the value of <strong>0x20</strong> is in <strong>rbx</strong>. This above instruction will place the value of <strong>0x20</strong> into a non-word boundary which will result in an error. You would have to increment <strong>rax</strong> by 2 to ensure that does not happen.</p><p>Next week we will dive into the data segment! Stay tuned!</p>
+# Part 11 - Pointers
+
+For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
+
+When a binary executes in RAM the OS will unmap the code into a data segment where it finds free space in memory.&nbsp;
+
+Load Effective Address loads a given memory address as a pointer to any given variable.&nbsp;For example:
+
+__lea rbx, my\_var__
+
+This will load the address of __my\_var&nbsp;__ into __rbx__.&nbsp;
+
+In C++, a pointer actually adds what the user would see as one if something was incremented however it is actually moving it 2 bytes forward under the hood assuming it is a word in length or 16 bits or 2 bytes.&nbsp;Same thing.
+
+In Assembly every single byte is addressable.&nbsp;For example:
+
+__lea rax, my\_var__
+
+__inc rax__
+
+__mov word ptr \[rax\], rbx__
+
+Let’s say the value of __0x20__ is in __rbx__.&nbsp;This above instruction will place the value of __0x20__ into a non-word boundary which will result in an error.&nbsp;You would have to increment __rax__ by 2 to ensure that does not happen.
+
+Next week we will dive into the data segment! Stay tuned!

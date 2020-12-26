@@ -1,1 +1,45 @@
-<h1>Part 21 – Debugging ADC</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>To recap, ADC is the same as ADD except it adds a 1 if the carry flag is set. We need to pay particular attention to the CPSR or Status Register when we work with ADC.</p><p>Let’s review our code:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGqrMhaSxpa8w/article-inline_image-shrink_1000_1488/0/1520042704437?e=1614211200&amp;v=beta&amp;t=HWKPFUtYhFCZR6JHoWIG2eFpdmL63gkNPI93j2cWO5g"/></div><p>We <strong>add</strong> <strong>100</strong> decimal into <strong>r1</strong>, <strong>4,294,967,295</strong> into <strong>r2</strong>, <strong>100</strong> decimal into <strong>r3</strong> and <strong>100</strong> decimal into <strong>r4</strong>. We then <strong>add r1</strong> and <strong>r2</strong> and place in <strong>r0</strong> and then <strong>add r3</strong> and <strong>r4</strong> and place into <strong>r5</strong>.</p><p>We see <strong>adds </strong>which sets the flags in the CPSR. We have to once again remember when we debug in GDB, the value of the CPSR is in hex. In order to see what flags are set, we must convert the hex to binary. This will make sense as we start to debug and hack this example in the coming tutorials.</p><p>Last week I raised a question where I wanted you to ask yourself what is going to happen when <strong>r3(100 decimal)</strong> is added to <strong>r4(100 decimal)</strong>? What do you think the value of <strong>r5</strong> will be with the above example of setting the flags with the adds result?</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEjUOaVR0DMCg/article-inline_image-shrink_1000_1488/0/1520150885116?e=1614211200&amp;v=beta&amp;t=jKk973_vnmPF1idTHJDeuv1lKl76UvTSXL1b-HDPXHo"/></div><p>Ok so we add <strong>100 decimal</strong> and <strong>100 decimal</strong> together in <strong>r3</strong> and <strong>r4</strong> and we get <strong>201</strong> <strong>decimal</strong> in <strong>r5</strong>! Is something broken? ADC is the same as ADD except it adds a 1 if the carry flag is set. Therefore we get the extra 1 in <strong>r5</strong>.</p><p>We again need to remember that bits 31, 20, 29 and 28 in the CPSR indicate the following:</p><p><strong>bit 31 - N = Negative Flag</strong></p><p><strong>bit 30 - Z = Zero Flag</strong></p><p><strong>bit 29 - C = Carry Flag</strong></p><p><strong>bit 28 - V = Overflow Flag</strong></p><p>We see the <strong>CPSR</strong> at <strong>20000010 hex</strong>. The most significant bits of <strong>20000010 hex</strong> in binary is <strong>0010</strong>.</p><p>Therefore if the value in binary was <strong>0010</strong> of bit 31, 30, 29 and 28 (<strong>NZCV</strong>) that would mean:</p><p><strong>Negative Flag NOT Set</strong></p><p><strong>Zero Flag NOT Set</strong></p><p><strong>Carry Flag SET</strong></p><p><strong>Overflow Flag NOT Set</strong></p><p>As we can clearly see the carry flag was set. I hope you can digest and understand each of these very simple operations and how they have an effect on the CPSR.</p><p>Next week we will dive into Hacking ADC.</p>
+# Part 21 – Debugging ADC
+
+For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
+
+To recap, ADC is the same as ADD except it adds a 1 if the carry flag is set. We need to pay particular attention to the CPSR or Status Register when we work with ADC.
+
+Let’s review our code:
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGqrMhaSxpa8w/article-inline_image-shrink_1000_1488/0/1520042704437?e=1614211200&amp;v=beta&amp;t=HWKPFUtYhFCZR6JHoWIG2eFpdmL63gkNPI93j2cWO5g"/></div>
+
+We __add__ __100__ decimal into __r1__, __4,294,967,295__ into __r2__, __100__ decimal into __r3__ and __100__ decimal into __r4__. We then __add r1__ and __r2__ and place in __r0__ and then __add r3__ and __r4__ and place into __r5__.
+
+We see __adds __which sets the flags in the CPSR. We have to once again remember when we debug in GDB, the value of the CPSR is in hex. In order to see what flags are set, we must convert the hex to binary. This will make sense as we start to debug and hack this example in the coming tutorials.
+
+Last week I raised a question where I wanted you to ask yourself what is going to happen when __r3(100 decimal)__ is added to __r4(100 decimal)__? What do you think the value of __r5__ will be with the above example of setting the flags with the adds result?
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEjUOaVR0DMCg/article-inline_image-shrink_1000_1488/0/1520150885116?e=1614211200&amp;v=beta&amp;t=jKk973_vnmPF1idTHJDeuv1lKl76UvTSXL1b-HDPXHo"/></div>
+
+Ok so we add __100 decimal__ and __100 decimal__ together in __r3__ and __r4__ and we get __201__ __decimal__ in __r5__! Is something broken? ADC is the same as ADD except it adds a 1 if the carry flag is set. Therefore we get the extra 1 in __r5__.
+
+We again need to remember that bits 31, 20, 29 and 28 in the CPSR indicate the following:
+
+__bit 31 - N = Negative Flag__
+
+__bit 30 - Z = Zero Flag__
+
+__bit 29 - C = Carry Flag__
+
+__bit 28 - V = Overflow Flag__
+
+We see the __CPSR__ at __20000010 hex__. The most significant bits of __20000010 hex__ in binary is __0010__.
+
+Therefore if the value in binary was __0010__ of bit 31, 30, 29 and 28 (__NZCV__) that would mean:
+
+__Negative Flag NOT Set__
+
+__Zero Flag NOT Set__
+
+__Carry Flag SET__
+
+__Overflow Flag NOT Set__
+
+As we can clearly see the carry flag was set. I hope you can digest and understand each of these very simple operations and how they have an effect on the CPSR.
+
+Next week we will dive into Hacking ADC.

@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,7 +2318,20 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-20---boot-sector-basics-part-3">Part 20 - Boot Sector Basics [Part 3]</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>Today we continue our Boot Sector Basics. Let&apos;s examine the code:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEiNTz3tBIr7g/article-inline_image-shrink_1000_1488/0/1546600881811?e=1614211200&amp;v=beta&amp;t=Ms5-_urNJVvO_qYnGfF-7438VEm6TSBxZo72NN2wXZE"></div><p>We add a string to our code as seen above and compile.</p><div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHlYsC28Elo5Q/article-inline_image-shrink_1000_1488/0/1546600938007?e=1614211200&amp;v=beta&amp;t=9uDtyFz3O7jHz-h8qdkkzCi4fKIbcbXe78IpfyB3GuY"></div><p>Let&apos;s examine the binary in a hex editor.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFxIaweKrFOxQ/article-inline_image-shrink_1000_1488/0/1546600963265?e=1614211200&amp;v=beta&amp;t=wTaa16oIdkj8b35w2aAiDaFBCE0oRCI8mnzFk505s-8"></div><p>Closely examine the above. We see our original code which we do not have to review however now we see a series of numbers, hex numbers that represent ASCII characters. We see that each letter corresponds with a letter. When we say that ultimately everything goes down to 0 and 1 this is a proof of concept. As you can see <strong>EB </strong>is selected above and we can see those hex values ultimately go to <strong>11101011</strong> in binary.</p><p>Homework: Google and research the ASCII conversion table and do some research on your own and better understand how hex values represent characters.</p><p>Next week we take it to the next level. Stay tuned!</p><p></p>
+                                <h1 id="part-20---boot-sector-basics-part-3">Part 20 - Boot Sector Basics [Part 3]</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>Today we continue our Boot Sector Basics. Let&apos;s examine the code:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEiNTz3tBIr7g/article-inline_image-shrink_1000_1488/0/1546600881811?e=1614211200&amp;v=beta&amp;t=Ms5-_urNJVvO_qYnGfF-7438VEm6TSBxZo72NN2wXZE"></div>
+
+<p>We add a string to our code as seen above and compile.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHlYsC28Elo5Q/article-inline_image-shrink_1000_1488/0/1546600938007?e=1614211200&amp;v=beta&amp;t=9uDtyFz3O7jHz-h8qdkkzCi4fKIbcbXe78IpfyB3GuY"></div>
+
+<p>Let&apos;s examine the binary in a hex editor.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFxIaweKrFOxQ/article-inline_image-shrink_1000_1488/0/1546600963265?e=1614211200&amp;v=beta&amp;t=wTaa16oIdkj8b35w2aAiDaFBCE0oRCI8mnzFk505s-8"></div>
+
+<p>Closely examine the above. We see our original code which we do not have to review however now we see a series of numbers, hex numbers that represent ASCII characters. We see that each letter corresponds with a letter. When we say that ultimately everything goes down to 0 and 1 this is a proof of concept. As you can see <strong>EB </strong>is selected above and we can see those hex values ultimately go to <strong>11101011</strong> in binary.</p>
+<p>Homework: Google and research the ASCII conversion table and do some research on your own and better understand how hex values represent characters.</p>
+<p>Next week we take it to the next level. Stay tuned!</p>
 
                                 
                                 </section>
@@ -2362,7 +2375,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 20 - Boot Sector Basics [Part 3]","level":"1.135","depth":1,"next":{"title":"Part 21 - Boot Sector Basics [Part 4]","level":"1.136","depth":1,"path":"pages/part-21-boot-sector-basics-part-4.md","ref":"pages/part-21-boot-sector-basics-part-4.md","articles":[]},"previous":{"title":"Part 19 - Boot Sector Basics [Part 2]","level":"1.134","depth":1,"path":"pages/part-19-boot-sector-basics-part-2.md","ref":"pages/part-19-boot-sector-basics-part-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-20-boot-sector-basics-part-3.md","mtime":"2020-12-26T10:18:07.333Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 20 - Boot Sector Basics [Part 3]","level":"1.135","depth":1,"next":{"title":"Part 21 - Boot Sector Basics [Part 4]","level":"1.136","depth":1,"path":"pages/part-21-boot-sector-basics-part-4.md","ref":"pages/part-21-boot-sector-basics-part-4.md","articles":[]},"previous":{"title":"Part 19 - Boot Sector Basics [Part 2]","level":"1.134","depth":1,"path":"pages/part-19-boot-sector-basics-part-2.md","ref":"pages/part-19-boot-sector-basics-part-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-20-boot-sector-basics-part-3.md","mtime":"2020-12-26T15:00:14.151Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

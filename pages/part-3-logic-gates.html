@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,7 +2318,56 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-3---logic-gates">Part 3 - Logic Gates</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>It really all breaks down to 1 and 0. No matter how sophisticated the future frameworks evolve they all including interpreted languages ultimately use a JVM or the like and go down to Assembly then Machine Code then binary.</p><p>Why would we need to even talk about number systems? Why is it relevant to our series here? The answer is simple. In addition to everything going down to 1 and 0, the instructions and memory in addition to the processor registers all utilize another number system called hexadecimal. </p><p>Let&#x2019;s discuss binary! At the core of the microprocessor are a series of binary numbers which are either +5V (on or 1) or 0V (off or 0). Each 0 or 1 represents a bit of information within the microprocessor. A combination of 8 bits results in a single byte.</p><p>Before we dive into binary, let&apos;s examine the familiar decimal. If we take the number 2017, we would understand this to be two thousand and seventeen.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHJ1PK-SjcDNA/article-inline_image-shrink_1000_1488/0/1536316029655?e=1614211200&amp;v=beta&amp;t=YQZceMYASwEqGdqEKKMM18aaZWzPMJpy8xGsQ3LaQk8"></div><p>Let&#x2019;s take a look at the binary system and the basics of how it operates.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQH0ueH_RT-RHQ/article-inline_image-shrink_1000_1488/0/1536316062694?e=1614211200&amp;v=beta&amp;t=l4NqvmlvMiEN8MZQIyZl0ysZsEYLwadVXyjjqg-AP-E"></div><p>If we were to convert a binary number into decimal, we would very simply do the following. Let&apos;s take a binary number of 0101 1101 and as you can see it is 93 decimal.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEH0p2hrjO9vw/article-inline_image-shrink_1000_1488/0/1536316087192?e=1614211200&amp;v=beta&amp;t=-4P5Ihn_IpSZAhOsQWYFYYkKuq6icIBardWJP5PXwJE"></div><p>Adding the values in the value column gives us 0 + 64 + 0 + 16 + 8 + 4 + 0 + 1 = 93 decimal.</p><p>If we were to convert a decimal number into binary, we would check to see if a subtraction is possible relative to the highest order bit and if so, a 1 would be placed into the binary column to which the remainder would be carried into the next row. Let&#x2019;s consider the example of the decimal value of 120 which is 0111 1000 binary.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFY5t0vGQyhLw/article-inline_image-shrink_1000_1488/0/1536316117407?e=1614211200&amp;v=beta&amp;t=mCDDsWw-bWAOdqdIqWH4H7MSDeArVYIfmZER8hXzKeQ"></div><p>1)Can 128 fit inside of 120: No, therefore 0.</p><p>2)Can 64 fit inside of 120: Yes, therefore 1, then 120 &#x2013; 64 = 56.</p><p>3)Can 32 fit inside of 56: Yes, therefore 1, then 56 &#x2013; 32 = 24.</p><p>4)Can 16 fit inside of 24: Yes, therefore 1, then 24 &#x2013; 16 = 8.</p><p>5)Can 8 fit inside of 8: Yes, therefore 1, then 8 &#x2013; 8 = 0.</p><p>6)Can 4 fit inside of 0: No, therefore 0.</p><p>7)Can 2 fit inside of 0: No, therefore 0.</p><p>8)Can 1 fit inside of 0: No, therefore 0.</p><p>When we want to convert binary to hex we simply work with the following table.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFuTb7LujnI6A/article-inline_image-shrink_1500_2232/0/1536316179552?e=1614211200&amp;v=beta&amp;t=szQjmJEVOEzI7-Q6uzeaLwI9kyG7U-6Eajf6uO5Ts74"></div><p>Let&apos;s convert a binary number such as 0101 1111 to hex. To do this we very simply look at the table and compare each nibble which is a combination of 4 bits. Keep in mind, 8 bits is equal to a byte and 2 nibbles are equal to a byte.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQENVZuP5YbCkg/article-inline_image-shrink_1000_1488/0/1536316203991?e=1614211200&amp;v=beta&amp;t=6fEsCCv3cOTZTMw8O45YqQIUdHco1p1eOe20jSCE7bc"></div><p>Therefore 0101 1111 binary = 0x5f hex. The 0x notation denotes hex.</p><p>To go from hex to binary it&#x2019;s very simple as you have to simply do the opposite such as:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFTcyNOLfnAuA/article-inline_image-shrink_1000_1488/0/1536316238835?e=1614211200&amp;v=beta&amp;t=LFc74eOOf1UCLQoNp_a08-JLb13fyBKmUitcXi4fdkU"></div><p>It is important to understand that each hex digit is a nibble in length therefore two hex digits are a byte in length.</p><p>To convert from hex to decimal we do the following:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFV0gKzFGOViw/article-inline_image-shrink_1000_1488/0/1536316267782?e=1614211200&amp;v=beta&amp;t=IRuXDXvmvFfcLKi2y1-o5gE9Czr8Hfao1Beaf82Q72s"></div><p>Therefore we can see that 80 + 15 = 95 which is 0x5f hex.</p><p>Finally to convert from decimal to hex. Let&apos;s take the number 850 decimal which is 352 hex.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGgOr2cmhGCLg/article-inline_image-shrink_1000_1488/0/1536316294127?e=1614211200&amp;v=beta&amp;t=0p_qtjoEJfqSOzJ9h6U24TJKFM4a8Q4qdG6xzjdOIbU"></div><p>&#x201C;Why the hell would I waste my time learning all this crap when the computer does all this for me!&#x201D;</p><p>As I mentioned above, it is vital you have a good understanding of these two additional number systems if you are truly to grasp and master reverse engineering at its core. There are some amazing tools that help the RE process however the better understanding that you have of these will help you as you grow.</p><p>I am not suggesting you memorize the above, nor am I suggesting that you do a thousand examples of each. All I ask is that you take the time to really understand that literally everything and I mean everything goes down to binary bits in the processor.</p><p>Whether you are creating, debugging or hacking an Assembly, Python, Java, C, C++, R, JavaScript, or any other new language application that hits the street, ultimately everything MUST go down to binary 0 and 1 to which represent a +5V or 0V.</p><p>We as humans operate on the base 10 decimal system. Let&#x2019;s expand our mind to base 2 binary and base 16 hexadecimal!</p><p>Next week we will dive into binary addition! Stay tuned!</p><p></p>
+                                <h1 id="part-3---logic-gates">Part 3 - Logic Gates</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>It really all breaks down to 1 and 0.&#xA0;No matter how sophisticated the future frameworks evolve they all including interpreted languages ultimately use a JVM or the like and go down to Assembly then Machine Code then binary.</p>
+<p>Why would we need to even talk about number systems?&#xA0;Why is it relevant to our series here?&#xA0;The answer is simple.&#xA0;In addition to everything going down to 1 and 0, the instructions and memory in addition to the processor registers all utilize another number system called hexadecimal.&#xA0;</p>
+<p>Let&#x2019;s discuss binary!&#xA0;At the core of the microprocessor are a series of binary numbers which are either +5V (on or 1) or 0V (off or 0). Each 0 or 1 represents a bit of information within the microprocessor. A combination of 8 bits results in a single byte.</p>
+<p>Before we dive into binary, let&apos;s examine the familiar decimal. If we take the number 2017, we would understand this to be two thousand and seventeen.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHJ1PK-SjcDNA/article-inline_image-shrink_1000_1488/0/1536316029655?e=1614211200&amp;v=beta&amp;t=YQZceMYASwEqGdqEKKMM18aaZWzPMJpy8xGsQ3LaQk8"></div>
+
+<p>Let&#x2019;s take a look at the binary system and the basics of how it operates.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQH0ueH_RT-RHQ/article-inline_image-shrink_1000_1488/0/1536316062694?e=1614211200&amp;v=beta&amp;t=l4NqvmlvMiEN8MZQIyZl0ysZsEYLwadVXyjjqg-AP-E"></div>
+
+<p>If we were to convert a binary number into decimal, we would very simply do the following. Let&apos;s take a binary number of 0101 1101 and as you can see it is 93 decimal.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEH0p2hrjO9vw/article-inline_image-shrink_1000_1488/0/1536316087192?e=1614211200&amp;v=beta&amp;t=-4P5Ihn_IpSZAhOsQWYFYYkKuq6icIBardWJP5PXwJE"></div>
+
+<p>Adding the values in the value column gives us 0 + 64 + 0 + 16 + 8 + 4 + 0 + 1 = 93 decimal.</p>
+<p>If we were to convert a decimal number into binary, we would check to see if a subtraction is possible relative to the highest order bit and if so, a 1 would be placed into the binary column to which the remainder would be carried into the next row. Let&#x2019;s consider the example of the decimal value of 120 which is 0111 1000 binary.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFY5t0vGQyhLw/article-inline_image-shrink_1000_1488/0/1536316117407?e=1614211200&amp;v=beta&amp;t=mCDDsWw-bWAOdqdIqWH4H7MSDeArVYIfmZER8hXzKeQ"></div>
+
+<p>1)Can 128 fit inside of 120: No, therefore 0.</p>
+<p>2)Can 64 fit inside of 120: Yes, therefore 1, then 120 &#x2013; 64 = 56.</p>
+<p>3)Can 32 fit inside of 56: Yes, therefore 1, then 56 &#x2013; 32 = 24.</p>
+<p>4)Can 16 fit inside of 24: Yes, therefore 1, then 24 &#x2013; 16 = 8.</p>
+<p>5)Can 8 fit inside of 8: Yes, therefore 1, then 8 &#x2013; 8 = 0.</p>
+<p>6)Can 4 fit inside of 0: No, therefore 0.</p>
+<p>7)Can 2 fit inside of 0: No, therefore 0.</p>
+<p>8)Can 1 fit inside of 0: No, therefore 0.</p>
+<p>When we want to convert binary to hex we simply work with the following table.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFuTb7LujnI6A/article-inline_image-shrink_1500_2232/0/1536316179552?e=1614211200&amp;v=beta&amp;t=szQjmJEVOEzI7-Q6uzeaLwI9kyG7U-6Eajf6uO5Ts74"></div>
+
+<p>Let&apos;s convert a binary number such as 0101 1111 to hex. To do this we very simply look at the table and compare each nibble which is a combination of 4 bits. Keep in mind, 8 bits is equal to a byte and 2 nibbles are equal to a byte.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQENVZuP5YbCkg/article-inline_image-shrink_1000_1488/0/1536316203991?e=1614211200&amp;v=beta&amp;t=6fEsCCv3cOTZTMw8O45YqQIUdHco1p1eOe20jSCE7bc"></div>
+
+<p>Therefore 0101 1111 binary = 0x5f hex. The 0x notation denotes hex.</p>
+<p>To go from hex to binary it&#x2019;s very simple as you have to simply do the opposite such as:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFTcyNOLfnAuA/article-inline_image-shrink_1000_1488/0/1536316238835?e=1614211200&amp;v=beta&amp;t=LFc74eOOf1UCLQoNp_a08-JLb13fyBKmUitcXi4fdkU"></div>
+
+<p>It is important to understand that each hex digit is a nibble in length therefore two hex digits are a byte in length.</p>
+<p>To convert from hex to decimal we do the following:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFV0gKzFGOViw/article-inline_image-shrink_1000_1488/0/1536316267782?e=1614211200&amp;v=beta&amp;t=IRuXDXvmvFfcLKi2y1-o5gE9Czr8Hfao1Beaf82Q72s"></div>
+
+<p>Therefore we can see that 80 + 15 = 95 which is 0x5f hex.</p>
+<p>Finally to convert from decimal to hex. Let&apos;s take the number 850 decimal which is 352 hex.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGgOr2cmhGCLg/article-inline_image-shrink_1000_1488/0/1536316294127?e=1614211200&amp;v=beta&amp;t=0p_qtjoEJfqSOzJ9h6U24TJKFM4a8Q4qdG6xzjdOIbU"></div>
+
+<p>&#x201C;Why the hell would I waste my time learning all this crap when the computer does all this for me!&#x201D;</p>
+<p>As I mentioned above, it is vital you have a good understanding of these two additional number systems if you are truly to grasp and master reverse engineering at its core.&#xA0;There are some amazing tools that help the RE process however the better understanding that you have of these will help you as you grow.</p>
+<p>I am not suggesting you memorize the above, nor am I suggesting that you do a thousand examples of each. All I ask is that you take the time to really understand that literally everything and I mean everything goes down to binary bits in the processor.</p>
+<p>Whether you are creating, debugging or hacking an Assembly, Python, Java, C, C++, R, JavaScript, or any other new language application that hits the street, ultimately everything MUST go down to binary 0 and 1 to which represent a +5V or 0V.</p>
+<p>We as humans operate on the base 10 decimal system.&#xA0;Let&#x2019;s expand our mind to base 2 binary and base 16 hexadecimal!</p>
+<p>Next week we will dive into binary addition! Stay tuned!</p>
 
                                 
                                 </section>
@@ -2362,7 +2411,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 3 - Logic Gates","level":"1.118","depth":1,"next":{"title":"Part 4 - Number Systems","level":"1.119","depth":1,"path":"pages/part-4-number-systems.md","ref":"pages/part-4-number-systems.md","articles":[]},"previous":{"title":"Part 2 - Transistors","level":"1.117","depth":1,"path":"pages/part-2-transistors.md","ref":"pages/part-2-transistors.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-3-logic-gates.md","mtime":"2020-12-26T10:17:56.009Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 3 - Logic Gates","level":"1.118","depth":1,"next":{"title":"Part 4 - Number Systems","level":"1.119","depth":1,"path":"pages/part-4-number-systems.md","ref":"pages/part-4-number-systems.md","articles":[]},"previous":{"title":"Part 2 - Transistors","level":"1.117","depth":1,"path":"pages/part-2-transistors.md","ref":"pages/part-2-transistors.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-3-logic-gates.md","mtime":"2020-12-26T14:59:58.805Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

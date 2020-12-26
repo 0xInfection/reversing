@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,7 +2318,34 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-20---instruction-code-handling">Part 20 - Instruction Code Handling</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>A CPU reads instruction codes that are stored in memory as each code set can contain one of more bytes of information that guide the processor to perform a very specific task. As each instruction code is read in from memory, any data needed for the instruction code is also stored and read into memory.</p><p>Keep in mind, memory that contain instruction codes are no different than the bytes that contain the data used by the CPU and special pointers are used to help the CPU keep track of where in memory data is and where instruction codes are stored.</p><p>A data pointer helps the CPU keep track of where the data area in memory starts which is the stack. When new data elements are placed in the stack, the stack pointer moves down in memory and as data is read from the stack the stack pointer moves up in memory. Please review Part 15 &#x2013; Stack if you don&#x2019;t understand this concept.</p><p>The instruction pointer is used to help the CPU keep track of which instruction codes have already been processed and what code is to be processed next. Please review Part 12 &#x2013; Instruction Pointer Register if you don&#x2019;t understand this concept.</p><p>Each and every instruction code must include an opcode that defines the basic function or task to be performed by the CPU to which opcodes are between 1 and 3 bytes in length and uniquely defines the function that is performed.</p><p>Lets examine a simple C program called test.c to get started.</p><div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFZgSNh-FhN0A/article-inline_image-shrink_1000_1488/0/1520446165914?e=1614211200&amp;v=beta&amp;t=rPahrWLH0sxxeVNY5TU5R404qpP6V6W29K3Rya1tPPo"></div><p>All we are doing is creating a main function of type integer to which it has a void parameter and returning 0. All this program does is simply exit the OS.</p><p>Lets compile and run this program.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHNy-NdvV3RvA/article-inline_image-shrink_1000_1488/0/1520147571659?e=1614211200&amp;v=beta&amp;t=p3WhKJF_2aWxCXHgm8sJ_sT5nV_TD0GpUU0ug5_pWks"></div><p>Lets use the objdump tool to and find the main function within it.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFPlbzUJ8hNgw/article-inline_image-shrink_1000_1488/0/1520190277217?e=1614211200&amp;v=beta&amp;t=vGSh9bBM670NSSwFpnYvwPuMMvRnY3j6TR1IQErVwo4"></div><p>Here is a snippet of the results you would get by running the above command. Here are the contents of the main function. Keep in mind the below is in Intel syntax as we spoke about in the last tutorial.</p><div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEP4ncdSBy_lA/article-inline_image-shrink_1000_1488/0/1520446166055?e=1614211200&amp;v=beta&amp;t=QIQ7uBd0SoxjoOwrpSQJoTcocj_WOnH1uXFnZCXdoUc"></div><p>On the far left we have the corresponding memory addresses. In the center we have the opcodes and finally on the right we have the corresponding assembly language in Intel syntax.</p><p>To keep this simple, lets examine memory address <strong>80483de</strong> where we see op codes <strong>b8 00 00 00 00</strong>. We can see that the <strong>b8</strong> opcode corresponds with the <strong>mov eax, 0x0</strong> instruction on the right. The next series of 00 00 00 00 represents 4 bytes of the value 0. We see <strong>mov eax, 0x0</strong> therefore the value of 0 is moved into eax therefore representing the above code. Keep in mind, the IA-32 platform uses what we call little-endian notation which means the lower-value bytes appear first in order when reading right to left.</p><p>I want to make sure you have this straight in your head so lets pretend the value above was:</p><p><strong>mov eax, 0x1</strong></p><p>In this scenario the corresponding opcode would be:</p><p><strong>b8 01 00 00 00</strong></p><p>If you are confused it is ok. Remember little-endian? Keep in mind eax is 32-bits wide therefore that is 4 bytes (8 bits = 1 byte). The values are listed in reverse order therefore we see the above representation.</p><p>I look forward to seeing you all next week when we dive into the details about how to compile a program.</p><p></p>
+                                <h1 id="part-20---instruction-code-handling">Part 20 - Instruction Code Handling</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>A CPU reads instruction codes that are stored in memory as each code set can contain one of more bytes of information that guide the processor to perform a very specific task. As each instruction code is read in from memory, any data needed for the instruction code is also stored and read into memory.</p>
+<p>Keep in mind, memory that contain instruction codes are no different than the bytes that contain the data used by the CPU and special pointers are used to help the CPU keep track of where in memory data is and where instruction codes are stored.</p>
+<p>A data pointer helps the CPU keep track of where the data area in memory starts which is the stack. When new data elements are placed in the stack, the stack pointer moves down in memory and as data is read from the stack the stack pointer moves up in memory. Please review Part 15 &#x2013; Stack if you don&#x2019;t understand this concept.</p>
+<p>The instruction pointer is used to help the CPU keep track of which instruction codes have already been processed and what code is to be processed next. Please review Part 12 &#x2013; Instruction Pointer Register if you don&#x2019;t understand this concept.</p>
+<p>Each and every instruction code must include an opcode that defines the basic function or task to be performed by the CPU to which opcodes are between 1 and 3 bytes in length and uniquely defines the function that is performed.</p>
+<p>Lets examine a simple C program called test.c to get started.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFZgSNh-FhN0A/article-inline_image-shrink_1000_1488/0/1520446165914?e=1614211200&amp;v=beta&amp;t=rPahrWLH0sxxeVNY5TU5R404qpP6V6W29K3Rya1tPPo"></div>
+
+<p>All we are doing is creating a main function of type integer to which it has a void parameter and returning 0. All this program does is simply exit the OS.</p>
+<p>Lets compile and run this program.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHNy-NdvV3RvA/article-inline_image-shrink_1000_1488/0/1520147571659?e=1614211200&amp;v=beta&amp;t=p3WhKJF_2aWxCXHgm8sJ_sT5nV_TD0GpUU0ug5_pWks"></div>
+
+<p>Lets use the objdump tool to and find the main function within it.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFPlbzUJ8hNgw/article-inline_image-shrink_1000_1488/0/1520190277217?e=1614211200&amp;v=beta&amp;t=vGSh9bBM670NSSwFpnYvwPuMMvRnY3j6TR1IQErVwo4"></div>
+
+<p>Here is a snippet of the results you would get by running the above command.&#xA0;Here are the contents of the main function.&#xA0;Keep in mind the below is in Intel syntax as we spoke about in the last tutorial.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEP4ncdSBy_lA/article-inline_image-shrink_1000_1488/0/1520446166055?e=1614211200&amp;v=beta&amp;t=QIQ7uBd0SoxjoOwrpSQJoTcocj_WOnH1uXFnZCXdoUc"></div>
+
+<p>On the far left we have the corresponding memory addresses. In the center we have the opcodes and finally on the right we have the corresponding assembly language in Intel syntax.</p>
+<p>To keep this simple, lets examine memory address <strong>80483de</strong> where we see op codes <strong>b8 00 00 00 00</strong>. We can see that the <strong>b8</strong> opcode corresponds with the <strong>mov eax, 0x0</strong> instruction on the right. The next series of 00 00 00 00 represents 4 bytes of the value 0. We see <strong>mov eax, 0x0</strong> therefore the value of 0 is moved into eax therefore representing the above code. Keep in mind, the IA-32 platform uses what we call little-endian notation which means the lower-value bytes appear first in order when reading right to left.</p>
+<p>I want to make sure you have this straight in your head so lets pretend the value above was:</p>
+<p><strong>mov eax, 0x1</strong></p>
+<p>In this scenario the corresponding opcode would be:</p>
+<p><strong>b8 01 00 00 00</strong></p>
+<p>If you are confused it is ok. Remember little-endian? Keep in mind eax is 32-bits wide therefore that is 4 bytes (8 bits = 1 byte). The values are listed in reverse order therefore we see the above representation.</p>
+<p>I look forward to seeing you all next week when we dive into the details about how to compile a program.</p>
 
                                 
                                 </section>
@@ -2362,7 +2389,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 20 - Instruction Code Handling","level":"1.21","depth":1,"next":{"title":"Part 21 - How To Compile A Program","level":"1.22","depth":1,"path":"pages/part-21-how-to-compile-a-program.md","ref":"pages/part-21-how-to-compile-a-program.md","articles":[]},"previous":{"title":"Part 19 - Why Learn Assembly","level":"1.20","depth":1,"path":"pages/part-19-why-learn-assembly.md","ref":"pages/part-19-why-learn-assembly.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-20-instruction-code-handling.md","mtime":"2020-12-26T10:16:51.442Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 20 - Instruction Code Handling","level":"1.21","depth":1,"next":{"title":"Part 21 - How To Compile A Program","level":"1.22","depth":1,"path":"pages/part-21-how-to-compile-a-program.md","ref":"pages/part-21-how-to-compile-a-program.md","articles":[]},"previous":{"title":"Part 19 - Why Learn Assembly","level":"1.20","depth":1,"path":"pages/part-19-why-learn-assembly.md","ref":"pages/part-19-why-learn-assembly.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-20-instruction-code-handling.md","mtime":"2020-12-26T14:58:25.431Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

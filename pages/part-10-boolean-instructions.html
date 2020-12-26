@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,7 +2318,21 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-10---boolean-instructions">Part 10 - Boolean Instructions</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>x64 utilizes the flat memory model to which we have one large array of addresses that exist within the processor. </p><p>A pointer is nothing more than the address of a specific value in memory. Let&#x2019;s take an example:</p><p><strong>mov rax, 0x10</strong></p><p>In this example we are moving <strong>10</strong> hex into the <strong>rax </strong>register.</p><p>To get the value inside <strong>rax</strong> at <strong>0x10,</strong> you would use the following syntax:</p><p><strong>mov rbx, word ptr [rax] </strong></p><p>Let&#x2019;s assume the value inside memory <strong>0x10</strong> was <strong>0x20</strong> therefore <strong>rax </strong>points to the value inside <strong>0x10</strong> which when you dereference by <strong>[rax]</strong> contains<strong> 0x20</strong>. <strong>0x20</strong> is the value inside of the register <strong>rax</strong>.</p><p>We are moving a word value pointed inside of <strong>rax </strong> into <strong>rbx</strong>.</p><p>If we do:</p><p><strong>mov word ptr [rax], 0x66</strong></p><p>This will put the value of <strong>0x66</strong> into the memory location at <strong>0x10</strong>. We know that the value inside <strong>0x10 </strong>memory location was <strong>0x20</strong> so therefore the new value inside the memory at <strong>0x10</strong> will be <strong>0x66.</strong></p><p>This can get confusing however when we get into code over the coming months this will become more apparent. </p><p>Next week we will dive into load effective address! Stay tuned!</p><p></p>
+                                <h1 id="part-10---boolean-instructions">Part 10 - Boolean Instructions</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>x64 utilizes the flat memory model to which we have one large array of addresses that exist within the processor.&#xA0;</p>
+<p>A pointer is nothing more than the address of a specific value in memory.&#xA0;Let&#x2019;s take an example:</p>
+<p><strong>mov rax, 0x10</strong></p>
+<p>In this example we are moving <strong>10</strong> hex into the <strong>rax </strong>register.</p>
+<p>To get the value inside <strong>rax</strong> at <strong>0x10,</strong> you would use the following syntax:</p>
+<p><strong>mov rbx, word ptr [rax]&#xA0;</strong></p>
+<p>Let&#x2019;s assume the value inside memory <strong>0x10</strong> was <strong>0x20</strong> therefore <strong>rax </strong>points to the value inside <strong>0x10</strong> which when you dereference by <strong>[rax]</strong> contains<strong> 0x20</strong>.&#xA0;<strong>0x20</strong> is the value inside of the register <strong>rax</strong>.</p>
+<p>We are moving a word value pointed inside of <strong>rax&#xA0;</strong> into <strong>rbx</strong>.</p>
+<p>If we do:</p>
+<p><strong>mov word ptr [rax], 0x66</strong></p>
+<p>This will put the value of <strong>0x66</strong> into the memory location at <strong>0x10</strong>.&#xA0;We know that the value inside <strong>0x10 </strong>memory location was <strong>0x20</strong> so therefore the new value inside the memory at <strong>0x10</strong> will be <strong>0x66.</strong></p>
+<p>This can get confusing however when we get into code over the coming months this will become more apparent.&#xA0;</p>
+<p>Next week we will dive into load effective address! Stay tuned!</p>
 
                                 
                                 </section>
@@ -2362,7 +2376,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 10 - Boolean Instructions","level":"1.125","depth":1,"next":{"title":"Part 11 - Pointers","level":"1.126","depth":1,"path":"pages/part-11-pointers.md","ref":"pages/part-11-pointers.md","articles":[]},"previous":{"title":"Part 9 - Calling Conventions","level":"1.124","depth":1,"path":"pages/part-9-calling-conventions.md","ref":"pages/part-9-calling-conventions.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-10-boolean-instructions.md","mtime":"2020-12-26T10:18:00.585Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 10 - Boolean Instructions","level":"1.125","depth":1,"next":{"title":"Part 11 - Pointers","level":"1.126","depth":1,"path":"pages/part-11-pointers.md","ref":"pages/part-11-pointers.md","articles":[]},"previous":{"title":"Part 9 - Calling Conventions","level":"1.124","depth":1,"path":"pages/part-9-calling-conventions.md","ref":"pages/part-9-calling-conventions.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-10-boolean-instructions.md","mtime":"2020-12-26T15:00:05.182Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

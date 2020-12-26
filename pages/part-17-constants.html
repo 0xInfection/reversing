@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,17 +2318,42 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-17---constants">Part 17 - Constants</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>So far we have created, debugged and hacked a simple string echo to the standard terminal. We will expand upon that example by adding a constant.</p><p>A constant in C++ is a value that will not change throughout program execution (unless hacked). It is used such that you have a declaration early in the code so that if your future program architecture ever changes you can redefine the constant in one place rather than having to update code all through your code base.</p><p>It is standard practice to code our constants in all CAPS so that when we see it referenced somewhere in the code we know that value is a constant.</p><p>We start with our second program in C++ which is our &#x201C;Constant&#x201D; program. Let&#x2019;s dive in and break each line down step-by-step and see how this language works. We will call this <strong>example2.cpp</strong> and save it to our device.</p><pre spellcheck="false">#include &lt;iostream&gt;<p></p>
-<p>int main(void) {
-            cons tint YEAR = 2017;</p>
-<pre><code>        std::cout &amp;lt;&amp;lt; YEAR &amp;lt;&amp;lt; std::endl;
-
-        return 0;
-</code></pre><p>}
-&lt;/pre&gt;<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFWPk7zWKpvdQ/article-inline_image-shrink_1000_1488/0/1520149852856?e=1614211200&amp;v=beta&amp;t=k0amEJgKGr2RxGiqYI2eF9AqugKWjf1lMWAXymTGiwU"></div></p><p>To compile this we simply type:</p><pre spellcheck="false">g++ example2.cpp -o example2
-</pre><p>We simply then type:</p><pre spellcheck="false">./example2
-</pre><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEmqR8vsjj4Nw/article-inline_image-shrink_1000_1488/0/1520148263310?e=1614211200&amp;v=beta&amp;t=LrS0Os2om14rPWuDX1YPnWD17Wbjm93wNgIAYQ7x4UE"></div><p>SUCCESS! We see &#x201C;<strong>2017</strong>&#x201D; printed to the standard output or terminal!</p><p>Let&#x2019;s break it down:</p><p>We utilize the <strong>const </strong>keyword to indicate a constant to which we assign it the integer value of 2017.</p><p>We then utilize the <strong>cout </strong>function to print it to the standard output or terminal and add a new line with the <strong>endl</strong> function.</p><p>That&#x2019;s it! Very simple.</p><p>Next week we will dive into Debugging Constants.</p><p></p>
+                                <h1 id="part-17---constants">Part 17 - Constants</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>So far we have created, debugged and hacked a simple string echo to the standard terminal.&#xA0;We will expand upon that example by adding a constant.</p>
+<p>A constant in C++ is a value that will not change throughout program execution (unless hacked).&#xA0;It is used such that you have a declaration early in the code so that if your future program architecture ever changes you can redefine the constant in one place rather than having to update code all through your code base.</p>
+<p>It is standard practice to code our constants in all CAPS so that when we see it referenced somewhere in the code we know that value is a constant.</p>
+<p>We start with our second program in C++ which is our &#x201C;Constant&#x201D; program.&#xA0;Let&#x2019;s dive in and break each line down step-by-step and see how this language works.&#xA0;We will call this <strong>example2.cpp</strong> and save it to our device.</p>
+<pre spellcheck="false">#include &lt;iostream&gt;
+&#xA0;
+int main(void) {
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; cons tint YEAR = 2017;
+&#xA0;
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; std::cout &lt;&lt; YEAR &lt;&lt; std::endl;
+&#xA0;
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; return 0;
+}
 </pre>
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFWPk7zWKpvdQ/article-inline_image-shrink_1000_1488/0/1520149852856?e=1614211200&amp;v=beta&amp;t=k0amEJgKGr2RxGiqYI2eF9AqugKWjf1lMWAXymTGiwU"></div>
+
+<p>To compile this we simply type:</p>
+<pre spellcheck="false">g++ example2.cpp -o example2
+</pre>
+
+<p>We simply then type:</p>
+<pre spellcheck="false">./example2
+</pre>
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEmqR8vsjj4Nw/article-inline_image-shrink_1000_1488/0/1520148263310?e=1614211200&amp;v=beta&amp;t=LrS0Os2om14rPWuDX1YPnWD17Wbjm93wNgIAYQ7x4UE"></div>
+
+<p>SUCCESS!&#xA0;We see &#x201C;<strong>2017</strong>&#x201D; printed to the standard output or terminal!</p>
+<p>Let&#x2019;s break it down:</p>
+<p>We utilize the <strong>const </strong>keyword to indicate a constant to which we assign it the integer value of 2017.</p>
+<p>We then utilize the <strong>cout </strong>function to print it to the standard output or terminal and add a new line with the <strong>endl</strong> function.</p>
+<p>That&#x2019;s it!&#xA0;Very simple.</p>
+<p>Next week we will dive into Debugging Constants.</p>
+
                                 
                                 </section>
                             
@@ -2371,7 +2396,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 17 - Constants","level":"1.83","depth":1,"next":{"title":"Part 18 – Debugging Constants","level":"1.84","depth":1,"path":"pages/part-18-debugging-constants.md","ref":"pages/part-18-debugging-constants.md","articles":[]},"previous":{"title":"Part 16 - Hacking Hello World","level":"1.82","depth":1,"path":"pages/part-16-hacking-hello-world.md","ref":"pages/part-16-hacking-hello-world.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-17-constants.md","mtime":"2020-12-26T10:17:32.140Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 17 - Constants","level":"1.83","depth":1,"next":{"title":"Part 18 – Debugging Constants","level":"1.84","depth":1,"path":"pages/part-18-debugging-constants.md","ref":"pages/part-18-debugging-constants.md","articles":[]},"previous":{"title":"Part 16 - Hacking Hello World","level":"1.82","depth":1,"path":"pages/part-16-hacking-hello-world.md","ref":"pages/part-16-hacking-hello-world.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-17-constants.md","mtime":"2020-12-26T14:59:26.165Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,7 +2318,22 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-34---asm-program-5-indirect-addressing-with-registers">Part 34 - ASM Program 5 [Indirect Addressing With Registers]</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>In our fifth program we will demonstrate how we can manipulate indirect addressing with registers. </p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGYn0nmnkFssA/article-inline_image-shrink_1000_1488/0/1520086819422?e=1614211200&amp;v=beta&amp;t=tVmSb4Vm3WSQ5joKpX_O1ZV1J0IclHs1a1krWJJc0nM"></div><p>We can place more than one value in memory as indicated above. In the past, our memory location contained one single value. In the above as you can see the value of constants contains 11 separate values.</p><p>This creates a sequential series of data values placed in memory. Each data value occupies one unit of memory which is an integer or 4 bytes.</p><p>We must use an index system to determine these values as what we have created above is an array.</p><p>We will utilize the indexed memory mode where the memory address is determined by a base address, an offset address to add to the base address and the size of the data element, in our case an integer of 4 bytes and an index to determine which data element to select.</p><p>Keep in mind an array starts with index 0. Therefore in the above code we see 1 moving into edi which is the 2nd index which ultimately goes into ebx.</p><p>We will dive deeper into this in the next lesson we debug however I want you to take some time to study the code above and get a good grasp of what is going on.</p><p>Keep in mind to assemble we type:</p><p><strong>as &#x2013;32 -o indirect_addressing_with_registers.o indirect_addressing_with_registers.s</strong></p><p>To link the object file we type:</p><p><strong>ld -m elf_i386 -o indirect_addressing_with_registers indirect_addressing_with_registers.o </strong></p><p>I look forward to seeing you all next week when we dive into debugging our fifth assembly program!</p><p></p>
+                                <h1 id="part-34---asm-program-5-indirect-addressing-with-registers">Part 34 - ASM Program 5 [Indirect Addressing With Registers]</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>In our fifth program we will demonstrate how we can manipulate indirect addressing with registers.&#xA0;</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGYn0nmnkFssA/article-inline_image-shrink_1000_1488/0/1520086819422?e=1614211200&amp;v=beta&amp;t=tVmSb4Vm3WSQ5joKpX_O1ZV1J0IclHs1a1krWJJc0nM"></div>
+
+<p>We can place more than one value in memory as indicated above. In the past, our memory location contained one single value. In the above as you can see the value of constants contains 11 separate values.</p>
+<p>This creates a sequential series of data values placed in memory. Each data value occupies one unit of memory which is an integer or 4 bytes.</p>
+<p>We must use an index system to determine these values as what we have created above is an array.</p>
+<p>We will utilize the indexed memory mode where the memory address is determined by a base address, an offset address to add to the base address and the size of the data element, in our case an integer of 4 bytes and an index to determine which data element to select.</p>
+<p>Keep in mind an array starts with index 0. Therefore in the above code we see 1 moving into edi which is the 2nd index which ultimately goes into ebx.</p>
+<p>We will dive deeper into this in the next lesson we debug however I want you to take some time to study the code above and get a good grasp of what is going on.</p>
+<p>Keep in mind to assemble we type:</p>
+<p><strong>as &#x2013;32 -o indirect_addressing_with_registers.o indirect_addressing_with_registers.s</strong></p>
+<p>To link the object file we type:</p>
+<p><strong>ld -m elf_i386 -o indirect_addressing_with_registers indirect_addressing_with_registers.o </strong></p>
+<p>I look forward to seeing you all next week when we dive into debugging our fifth assembly program!</p>
 
                                 
                                 </section>
@@ -2362,7 +2377,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 34 - ASM Program 5 [Indirect Addressing With Registers]","level":"1.35","depth":1,"next":{"title":"Part 35 - ASM Debugging 5 [Indirect Addressing With Registers]","level":"1.36","depth":1,"path":"pages/part-35-asm-debugging-5-indirect-addressing-with-registers.md","ref":"pages/part-35-asm-debugging-5-indirect-addressing-with-registers.md","articles":[]},"previous":{"title":"Part 33 - ASM Hacking 4 [Moving Data Between Registers And Memory]","level":"1.34","depth":1,"path":"pages/part-33-asm-hacking-4-moving-data-between-registers-and-memory.md","ref":"pages/part-33-asm-hacking-4-moving-data-between-registers-and-memory.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-34-asm-program-5-indirect-addressing-with-registers.md","mtime":"2020-12-26T10:17:00.595Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 34 - ASM Program 5 [Indirect Addressing With Registers]","level":"1.35","depth":1,"next":{"title":"Part 35 - ASM Debugging 5 [Indirect Addressing With Registers]","level":"1.36","depth":1,"path":"pages/part-35-asm-debugging-5-indirect-addressing-with-registers.md","ref":"pages/part-35-asm-debugging-5-indirect-addressing-with-registers.md","articles":[]},"previous":{"title":"Part 33 - ASM Hacking 4 [Moving Data Between Registers And Memory]","level":"1.34","depth":1,"path":"pages/part-33-asm-hacking-4-moving-data-between-registers-and-memory.md","ref":"pages/part-33-asm-hacking-4-moving-data-between-registers-and-memory.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-34-asm-program-5-indirect-addressing-with-registers.md","mtime":"2020-12-26T14:58:38.646Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

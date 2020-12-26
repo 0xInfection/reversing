@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Part 5 - Hacking "Hello World" · Reverse Engineering</title>
+        <title>Part 37 - x64 C & Genesis Of Life · Reverse Engineering</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="part-6-basic-io.html" />
+    <link rel="next" href="part-38-x64-networking-basics.html" />
     
     
-    <link rel="prev" href="part-4-debugging-"hello-world".html" />
+    <link rel="prev" href="part-36-x64-c++-3-hacking-part-3.html" />
     
 
     </head>
@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter active" data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2303,7 +2303,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Part 5 - Hacking "Hello World"</a>
+        <a href=".." >Part 37 - x64 C & Genesis Of Life</a>
     </h1>
 </div>
 
@@ -2318,47 +2318,22 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-5---hacking-hello-world">Part 5 - Hacking &quot;Hello World&quot;</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/hacking_c-_arm64</p><p>Today we are going to look at a basic I/O C++ program that has some minimal validation.</p><p>Before I get into the brief lecture as I try to keep these short, I wanted to explain why I am not using the textbook straight <em>cin</em> examples that you see across the globe.</p><p>The <em>cin</em>, standard input stream, which takes input from the keyboard is referred to as our stdin.</p><p>What <em>cin</em> does is use whitespace, tab and newline as a terminator to the input stream. For example if you input <em>&apos;abc&apos;</em> and hit a tab or put a whitespace or newline by hitting return the data to the right of it will be ignored.</p><p>The problem is if you read from <em>cin</em> again it will pick up the remaining data in the stream if you do not flush the input buffer.</p><p>If you had for example:</p><pre spellcheck="false">std::cin &gt;&gt; val1;
-std::cin &gt;&gt; val2;
-</pre><p>If the user enters <em>1</em> and then leaves a space and then <em>2</em> and presses enter, you have no issue. <em>1</em> will be assigned into <em>val1</em> and <em>2</em> will be assigned to <em>val2</em> as they are chained.</p><p>The problem is what if you enter <em>&apos;Hey Jude&apos;</em> instead of an integer? What happens is it tries to read an integer and it goes into a failed state and from that point everything else it is extracting is unreliable.</p><p>I did not mean to be long winded but I really wanted to emphasize why you would NEVER use <em>cin</em> by itself and I mean NEVER!</p><p>Let&apos;s take a look at our basic i/o program that we will debug in the next lesson with a very basic C++ program that validates input.</p><pre spellcheck="false">#include &lt;iostream&gt;<p></p>
-<h1 id="include-sstream">include &lt;sstream&gt;</h1>
-<h1 id="include-string">include &lt;string&gt;</h1>
-<p>int main()
-{
-    int age = 0;
-    bool valid = false;
-    char null = &apos;\0&apos;;</p>
-<pre><code>while (!valid)
-{
-    std::cout &amp;lt;&amp;lt; &quot;Enter Age: &quot;;
+                                <h1 id="part-37---x64-c--genesis-of-life">Part 37 - x64 C &amp; Genesis Of Life</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>Ok so what now? Where are we in the world? What is our purpose? What shall I focus on? What shall I learn?</p>
+<p>There are over 30 billion devices connected to the Internet today. Nonetheless, the common thread in all basic architecture is the C programming language.</p>
+<p>We have established that networking can be described in a very high-level pseudo framework called the OSI Model which has 7 layers.</p>
+<p><strong>P</strong>LEASE <strong>D</strong>O <strong>N</strong>OT <strong>T</strong>HROW <strong>S</strong>AUSAGE <strong>P</strong>IZZA <strong>A</strong>WAY. Ok I am not insane, well, ok I am but this is a good standard agreed upon way to remember the layers in the OSI model which is our Open Systems Interconnection model.</p>
+<p>1)<strong>PHYSICAL LAYER</strong> - Raw electrical layer which read voltages on an ethernet cable or reading the Wi-Fi RF (radio frequencies). Protocols associated: USB, DSL, ISDN, Infrared, etc...</p>
+<p>2)<strong>DATA LINK LAYER </strong>- Deals with how a message between notes starts and ends called framing which has some error correction, detection and some flow control. Protocols associated: Ethernet, VLAN, etc...</p>
+<p>3)<strong>NETWORK LAYER</strong> - Transmits packets between nodes in different networks which involves routing. Protocols associated: IPX, NAT, ICMP, ARP, etc...</p>
+<p>4)<strong>TRANSPORT LAYER</strong> - Reliably deliver data between two hosts which must split it up into chunks to send. Protocols associated: NetBIOS, TCP, UDP, etc...</p>
+<p>5)<strong>SESSION LAYER</strong> - Adds checkpoint and resume in addition to term dialogues. Protocols associated: SMB, SOCKS, etc...</p>
+<p>6)<strong>PRESENTATION LAYER</strong> - Where data structure for and presentation for an application are created where we have encoding, serialization and encryption. Protocols associated: TLS, SSL, etc...</p>
+<p>7)<strong>APPLICATION LAYER</strong> - Web browsers and apps that use web interfaces like email, etc. Protocols associated: DHCP, DNS, HTTP, HTTPS, POP3, SMTP, FTP, TELNET, etc...</p>
+<p>As we browse a website we start at the PHYSICAL and go to the APP and as it hits the server it is at the APP and goes back down to the PHYSICAL and back through the cycle.</p>
+<p>This is an important series of concepts that you must understand in any basic networking. This is NOT a course in networking as we will touch BRIEFLY on these concepts so I would suggest you find a free course on YouTube for networking if you are stuck. I want to get through some basic theory so we can work with C networking apps.</p>
 
-    // Get input as string
-    std::string line;
-    getline(std::cin, line);
-
-    // Init stringstream
-    std::stringstream is(line);
-
-    // Attempt to read a valid age from the stringstream and
-    // if a number can&apos;t be read, or there is more than white
-    // space in the string after the number, then fail the read
-    // and get another string from the user and make sure the 
-    // dude is at least a year old and less than or equal to
-    // 100 years old
-    if (!(is &amp;gt;&amp;gt; age) || (is &amp;gt;&amp;gt; std::ws &amp;amp;&amp;amp; is.get(null)) || age &amp;gt;= 100 || age &amp;lt;= 0)
-        std::cout &amp;lt;&amp;lt; &quot;Dude be real!&quot; &amp;lt;&amp;lt; std::endl;
-    else
-        valid = true ;
-}
-
-std::cout &amp;lt;&amp;lt; &quot;Your are &quot; &amp;lt;&amp;lt; age &amp;lt;&amp;lt; &quot; years old, seems legit!&quot; &amp;lt;&amp;lt; std::endl;
-
-return 0;
-</code></pre><p>}
-&lt;/pre&gt;</p><p>We start by importing <em>iostream</em>, <em>sstream</em> and <em>string</em>. So far nothing tricky.</p><p>We then prompt the user to enter their age. We then create a string object called <em>line</em> and take advantage of C++ <em>getline()</em> which is a standard C++ library function that is used to read a string or a line from an input stream properly.</p><p>We then take advantage of the <em>stringstream</em> as it associates a string object with a stream allowing you to read from the string as if it were a stream like we would do with raw <em>cin</em>. In this simple example we create an <em>is</em> object which is short for input stringstream and connect it with our <em>line</em> object.</p><p>Then before we echo data to stdout we do a little validation. We first check to see if <em>age</em> is the type it was defined as which is an <em>int</em> OR is there a white space in the stream after a given integer OR is age greater than <em>100</em> or less than <em>0</em>. Very simply it provides a response if the input does not meet this criteria.</p><p>Finally if all is well it echoes out a simple <em>cout</em>.</p><p>Let&apos;s compile and link.</p><pre spellcheck="false">g++ -o 0x02_asm64_basicio 0x02_asm64_basicio.cpp
-</pre><p>Let&apos;s run.</p><pre spellcheck="false">./0x02_asm64_basicio
-</pre><p>Depending on what you enter it will validate as appropriate as described above. PLEASE try this example and manipulate the source to get a full understanding of what is going on here.</p><p>In our next lesson we will debug this very simple binary using our dev build of Radare2.</p><p></p>
-</pre>
                                 
                                 </section>
                             
@@ -2385,12 +2360,12 @@ return 0;
 
             
                 
-                <a href="part-4-debugging-"hello-world".html" class="navigation navigation-prev " aria-label="Previous page: Part 4 - Debugging "Hello World"">
+                <a href="part-36-x64-c++-3-hacking-part-3.html" class="navigation navigation-prev " aria-label="Previous page: Part 36 - x64 C++ 3 Hacking [Part 3]">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="part-6-basic-io.html" class="navigation navigation-next " aria-label="Next page: Part 6 - Basic I/O">
+                <a href="part-38-x64-networking-basics.html" class="navigation navigation-next " aria-label="Next page: Part 38 - x64 Networking Basics">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -2401,7 +2376,7 @@ return 0;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 5 - Hacking \"Hello World\"","level":"1.163","depth":1,"next":{"title":"Part 6 - Basic I/O","level":"1.164","depth":1,"path":"pages/part-6-basic-io.md","ref":"pages/part-6-basic-io.md","articles":[]},"previous":{"title":"Part 4 - Debugging \"Hello World\"","level":"1.162","depth":1,"path":"pages/part-4-debugging-\"hello-world\".md","ref":"pages/part-4-debugging-\"hello-world\".md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-5-hacking-\"hello-world\".md","mtime":"2020-12-26T10:18:26.246Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 37 - x64 C & Genesis Of Life","level":"1.152","depth":1,"next":{"title":"Part 38 - x64 Networking Basics","level":"1.153","depth":1,"path":"pages/part-38-x64-networking-basics.md","ref":"pages/part-38-x64-networking-basics.md","articles":[]},"previous":{"title":"Part 36 - x64 C++ 3 Hacking [Part 3]","level":"1.151","depth":1,"path":"pages/part-36-x64-c++-3-hacking-part-3.md","ref":"pages/part-36-x64-c++-3-hacking-part-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-37-x64-c-amp;-genesis-of-life.md","mtime":"2020-12-26T15:00:29.568Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

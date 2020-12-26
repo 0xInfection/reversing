@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,7 +2318,12 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-6-&#x2013;-registers">Part 6 &#x2013; Registers</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>Our ARM microprocessor has internal storage which make any operation must faster as there is no external memory access needed. There are two modes, User and Thumb. We will be focusing on User Mode as we are ultimately focused on developing for a system on chip within a Linux OS rather than bare-metal programming which would be better suited on a microcontroller device.</p><p>In User Mode we have 16 registers and a CPSR register to which have a word length each which is 32-bits each or 8 bytes each.</p><p>Registers R0 to R12 are multi-purpose registers to which R13 &#x2013; R15 have a unique purpose as well as the CPSR. Lets take a look at a simple table to illustrate.</p><pre spellcheck="false">R0 GPR (General-Purpose Register)
+                                <h1 id="part-6-&#x2013;-registers">Part 6 &#x2013; Registers</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>Our ARM microprocessor has internal storage which make any operation must faster as there is no external memory access needed. There are two modes, User and Thumb. We will be focusing on User Mode as we are ultimately focused on developing for a system on chip within a Linux OS rather than bare-metal programming which would be better suited on a microcontroller device.</p>
+<p>In User Mode we have 16 registers and a CPSR register to which have a word length each which is 32-bits each or 8 bytes each.</p>
+<p>Registers R0 to R12 are multi-purpose registers to which R13 &#x2013; R15 have a unique purpose as well as the CPSR. Lets take a look at a simple table to illustrate.</p>
+<pre spellcheck="false">R0 GPR (General-Purpose Register)
 R1 GPR (General-Purpose Register)
 R2 GPR (General-Purpose Register)
 R3 GPR (General-Purpose Register)
@@ -2335,14 +2340,23 @@ R13 Stack Pointer
 R14 Link Register
 R15 Program Counter
 CPSR Current Program Status Register
-</pre><p>It is critical that we understand registers in a very detailed way. At this point we understand R0 &#x2013; R12 are general purpose and will be used to manipulate data as we build our programs and additionally when you are hacking apart or reverse engineering binaries from a hex dump on a cell phone or other ARM device, no matter what high-level language it is written in, it must ultimately come down to assembly which you need to understand registers and how they work to grasp and understand of any such aforementioned operation.</p><p>The chip we are working with is known as a load and store machine. This means we load a register with the contents of a register or memory location and we can store a register with the contents of a memory or register location. For example:</p><pre spellcheck="false">ldr, r4, [r10] @ 
-    load r4 with the contents of r10, if r10 had the decimal value of 
-    say 22, 22 would go to r4<p></p>
-<p>str, r9, [r4] @ 
-    store r9 contents into location in r4, if r9 had 0x02 hex, 
-    0x02 would be stored into location r4
-&lt;/pre&gt;</p><p>The @ simply indicates to the compiler that what follows it on a given line is a comment and to be ignored.</p><p>The next few weeks we will take our time and look at each of the special purpose registers so you have a great understanding of what they do.</p><p>Next week we will dive into more information on the program counter! Stay tuned!</p><p></p>
 </pre>
+
+<p>It is critical that we understand registers in a very detailed way. At this point we understand R0 &#x2013; R12 are general purpose and will be used to manipulate data as we build our programs and additionally when you are hacking apart or reverse engineering binaries from a hex dump on a cell phone or other ARM device, no matter what high-level language it is written in, it must ultimately come down to assembly which you need to understand registers and how they work to grasp and understand of any such aforementioned operation.</p>
+<p>The chip we are working with is known as a load and store machine. This means we load a register with the contents of a register or memory location and we can store a register with the contents of a memory or register location. For example:</p>
+<pre spellcheck="false">ldr, r4, [r10] @ 
+&#xA0;&#xA0;&#xA0; load r4 with the contents of r10, if r10 had the decimal value of 
+&#xA0;&#xA0;&#xA0; say 22, 22 would go to r4
+
+str, r9, [r4] @ 
+&#xA0;&#xA0;&#xA0; store r9 contents into location in r4, if r9 had 0x02 hex, 
+&#xA0;&#xA0;&#xA0; 0x02 would be stored into location r4
+</pre>
+
+<p>The @ simply indicates to the compiler that what follows it on a given line is a comment and to be ignored.</p>
+<p>The next few weeks we will take our time and look at each of the special purpose registers so you have a great understanding of what they do.</p>
+<p>Next week we will dive into more information on the program counter! Stay tuned!</p>
+
                                 
                                 </section>
                             
@@ -2385,7 +2399,7 @@ CPSR Current Program Status Register
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 6 - Registers","level":"1.47","depth":1,"next":{"title":"Part 7 - Program Counter","level":"1.48","depth":1,"path":"pages/part-7-program-counter.md","ref":"pages/part-7-program-counter.md","articles":[]},"previous":{"title":"Part 5 - Word Lengths","level":"1.46","depth":1,"path":"pages/part-5-word-lengths.md","ref":"pages/part-5-word-lengths.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-6-registers.md","mtime":"2020-12-26T10:17:24.976Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 6 - Registers","level":"1.47","depth":1,"next":{"title":"Part 7 - Program Counter","level":"1.48","depth":1,"path":"pages/part-7-program-counter.md","ref":"pages/part-7-program-counter.md","articles":[]},"previous":{"title":"Part 5 - Word Lengths","level":"1.46","depth":1,"path":"pages/part-5-word-lengths.md","ref":"pages/part-5-word-lengths.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-6-registers.md","mtime":"2020-12-26T14:59:15.007Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

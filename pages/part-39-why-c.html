@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter active" data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,7 +2318,43 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-39---why-c">Part 39 - Why C?</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>Ok it is time we look at the most basic C program, debug it and hack it. If we are to have mastery we must create and destroy in a single-step so that we have mastery over the domain.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFhKrIQN4pv5g/article-inline_image-shrink_1000_1488/0/1565910335250?e=1614211200&amp;v=beta&amp;t=XRiM3pS2RD6W2Vj1N4Ho5PjUBZZtycprKjre43FV7Zc"></div><p>Let us fire up VIM and type out the following. We include our standard library and create a main function to which we use the library function of printf to echo a string of chars and since the type of main is int meaning integer we return 0.</p><p>Let us compile and see what happens when we run:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHtCIH1D9SY4A/article-inline_image-shrink_1000_1488/0/1565910684168?e=1614211200&amp;v=beta&amp;t=v-lX2_270YMzK6-Ht1k5oLN6QbVuBDZmUmUHlbNqBnc"></div><p>As we see like we did in our C++ example we see &apos;<strong>Hello World!</strong>&apos; echoed successfully.</p><p>Let&apos;s debug in Radare:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFMERmwTZesYQ/article-inline_image-shrink_1000_1488/0/1566057508295?e=1614211200&amp;v=beta&amp;t=UTeDin-TI3b6CVARIk7okQd3PTwE4o9UYyn_ZgALqcQ"></div><p>This is simple, we use <strong>aaa</strong> to analyze the binary and seek to main with <strong>s sym.main</strong>.</p><p>Let&apos;s look at the assembly and analyze:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHt0UUOp9rmQw/article-inline_image-shrink_1000_1488/0/1566057552155?e=1614211200&amp;v=beta&amp;t=u1_WOzuEyPDV7L41xZEeDa1lR8G9QGPRwjj9Vav3PEg"></div><p>Assembly! The definition of raw sexy!</p><p>I went over this in detail in the previous lessons on Assembly but let us review.</p><p>1)We <strong>push rbp </strong>which means we push the value currently in the base pointer onto the stack.</p><p>2)We <strong>lea rdi, qword str.Hello_World </strong>which means we load the effective address of the quad word of our string into the <strong>rdi</strong> register. So far should be simple for you to follow along.</p><p>3)We then <strong>call sym.imp.puts</strong> um wait! We used <strong>printf</strong> what the hell! Well our compiler optimizes our code and the compiler chose the <strong>puts</strong> function in the stdio library to echo the string to our terminal. Again easy enough.</p><p>4)We clean out <strong>eax</strong> and then pop the original value in the <strong>rbp</strong> register back into <strong>rbp</strong>. If you are confused by this review the earlier part of the series please.</p><p>We know our string &apos;<strong>Hello World!</strong>&apos; lives at a pretty house in Arlington, VA at the address of <strong>0x2004</strong> well ok, it&apos;s not Arlington, VA but it is in mapped memory (since we are not technically debugging we are messing with mapped code meaning the same values on disk).</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEHzarQ6JQi5A/article-inline_image-shrink_1000_1488/0/1565911732441?e=1614211200&amp;v=beta&amp;t=jo9TpeQVqdJ85N0BeEjzrMLCvndWUw0dwmxLfrdtMn8"></div><p>To confirm we see the value at <strong>0x2004</strong> is &apos;<strong>Hello World!</strong>&apos; Let&apos;s hack that value to anything we want with the <strong>w</strong> command and write directly to that mapped memory address.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFcAq7XdJb2bg/article-inline_image-shrink_1000_1488/0/1565911764019?e=1614211200&amp;v=beta&amp;t=puGLCd2aairEqGdr-1sJI6sQd20rOsWjH5brUiGaSno"></div><p>Let us re-examine who NOW lives in our Arlington, VA house!</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQF7NAd3tUqMXg/article-inline_image-shrink_1000_1488/0/1565911840111?e=1614211200&amp;v=beta&amp;t=3yOJX1VJJ8P0UWrROZqmYS4d5BLzCo9OUy9F7m11yIQ"></div><p>Success! We hacked the value and when we exit our debugger we see:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFN2s98z2OQUg/article-inline_image-shrink_1000_1488/0/1565911868600?e=1614211200&amp;v=beta&amp;t=Gs22xDE7tTsGIQgSfD7dCAp6rlbVfv-_SDEWbD1aOF4"></div><p>We have successfully altered the binary.</p><p>This is alot to digest here. If you are stumped ask questions in the comments PLEASE! Do not continue as I am here to help. It is CRITICAL you understand these most basic things before we continue!</p><p></p>
+                                <h1 id="part-39---why-c">Part 39 - Why C?</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>Ok it is time we look at the most basic C program, debug it and hack it. If we are to have mastery we must create and destroy in a single-step so that we have mastery over the domain.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFhKrIQN4pv5g/article-inline_image-shrink_1000_1488/0/1565910335250?e=1614211200&amp;v=beta&amp;t=XRiM3pS2RD6W2Vj1N4Ho5PjUBZZtycprKjre43FV7Zc"></div>
+
+<p>Let us fire up VIM and type out the following. We include our standard library and create a main function to which we use the library function of printf to echo a string of chars and since the type of main is int meaning integer we return 0.</p>
+<p>Let us compile and see what happens when we run:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHtCIH1D9SY4A/article-inline_image-shrink_1000_1488/0/1565910684168?e=1614211200&amp;v=beta&amp;t=v-lX2_270YMzK6-Ht1k5oLN6QbVuBDZmUmUHlbNqBnc"></div>
+
+<p>As we see like we did in our C++ example we see &apos;<strong>Hello World!</strong>&apos; echoed successfully.</p>
+<p>Let&apos;s debug in Radare:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFMERmwTZesYQ/article-inline_image-shrink_1000_1488/0/1566057508295?e=1614211200&amp;v=beta&amp;t=UTeDin-TI3b6CVARIk7okQd3PTwE4o9UYyn_ZgALqcQ"></div>
+
+<p>This is simple, we use <strong>aaa</strong> to analyze the binary and seek to main with <strong>s sym.main</strong>.</p>
+<p>Let&apos;s look at the assembly and analyze:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHt0UUOp9rmQw/article-inline_image-shrink_1000_1488/0/1566057552155?e=1614211200&amp;v=beta&amp;t=u1_WOzuEyPDV7L41xZEeDa1lR8G9QGPRwjj9Vav3PEg"></div>
+
+<p>Assembly! The definition of raw sexy!</p>
+<p>I went over this in detail in the previous lessons on Assembly but let us review.</p>
+<p>1)We <strong>push rbp </strong>which means we push the value currently in the base pointer onto the stack.</p>
+<p>2)We <strong>lea rdi, qword str.Hello_World </strong>which means we load the effective address of the quad word of our string into the <strong>rdi</strong> register. So far should be simple for you to follow along.</p>
+<p>3)We then <strong>call sym.imp.puts</strong> um wait! We used <strong>printf</strong> what the hell! Well our compiler optimizes our code and the compiler chose the <strong>puts</strong> function in the stdio library to echo the string to our terminal. Again easy enough.</p>
+<p>4)We clean out <strong>eax</strong> and then pop the original value in the <strong>rbp</strong> register back into <strong>rbp</strong>. If you are confused by this review the earlier part of the series please.</p>
+<p>We know our string &apos;<strong>Hello World!</strong>&apos; lives at a pretty house in Arlington, VA at the address of <strong>0x2004</strong> well ok, it&apos;s not Arlington, VA but it is in mapped memory (since we are not technically debugging we are messing with mapped code meaning the same values on disk).</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEHzarQ6JQi5A/article-inline_image-shrink_1000_1488/0/1565911732441?e=1614211200&amp;v=beta&amp;t=jo9TpeQVqdJ85N0BeEjzrMLCvndWUw0dwmxLfrdtMn8"></div>
+
+<p>To confirm we see the value at <strong>0x2004</strong> is &apos;<strong>Hello World!</strong>&apos; Let&apos;s hack that value to anything we want with the <strong>w</strong> command and write directly to that mapped memory address.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFcAq7XdJb2bg/article-inline_image-shrink_1000_1488/0/1565911764019?e=1614211200&amp;v=beta&amp;t=puGLCd2aairEqGdr-1sJI6sQd20rOsWjH5brUiGaSno"></div>
+
+<p>Let us re-examine who NOW lives in our Arlington, VA house!</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQF7NAd3tUqMXg/article-inline_image-shrink_1000_1488/0/1565911840111?e=1614211200&amp;v=beta&amp;t=3yOJX1VJJ8P0UWrROZqmYS4d5BLzCo9OUy9F7m11yIQ"></div>
+
+<p>Success! We hacked the value and when we exit our debugger we see:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFN2s98z2OQUg/article-inline_image-shrink_1000_1488/0/1565911868600?e=1614211200&amp;v=beta&amp;t=Gs22xDE7tTsGIQgSfD7dCAp6rlbVfv-_SDEWbD1aOF4"></div>
+
+<p>We have successfully altered the binary.</p>
+<p>This is alot to digest here. If you are stumped ask questions in the comments PLEASE! Do not continue as I am here to help. It is CRITICAL you understand these most basic things before we continue!</p>
 
                                 
                                 </section>
@@ -2362,7 +2398,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 39 - Why C?","level":"1.154","depth":1,"next":{"title":"Part 40 - Hacking Hello World!","level":"1.155","depth":1,"path":"pages/part-40-hacking-hello-world!.md","ref":"pages/part-40-hacking-hello-world!.md","articles":[]},"previous":{"title":"Part 38 - x64 Networking Basics","level":"1.153","depth":1,"path":"pages/part-38-x64-networking-basics.md","ref":"pages/part-38-x64-networking-basics.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-39-why-c?.md","mtime":"2020-12-26T10:18:20.118Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 39 - Why C?","level":"1.154","depth":1,"next":{"title":"Part 40 - Hacking Hello World!","level":"1.155","depth":1,"path":"pages/part-40-hacking-hello-world!.md","ref":"pages/part-40-hacking-hello-world!.md","articles":[]},"previous":{"title":"Part 38 - x64 Networking Basics","level":"1.153","depth":1,"path":"pages/part-38-x64-networking-basics.md","ref":"pages/part-38-x64-networking-basics.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-39-why-c.md","mtime":"2020-12-26T15:00:31.312Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

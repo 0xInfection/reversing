@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,21 +2318,72 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-7---debugging-basic-io">Part 7 - Debugging Basic I/O</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/hacking_c-_arm64</p><p>Today we hack the input validation from our last lesson. </p><p>Let&apos;s fire up radare2 in write mode.</p><pre spellcheck="false">radare2 -w ./0x02_asm_64_basicio
-</pre><p>Let&apos;s auto analyze.</p><pre spellcheck="false">aaa
-</pre><p>Seek to main.</p><pre spellcheck="false">s main
-</pre><p>View disassembly.</p><pre spellcheck="false">v
-</pre><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQErvkdMr1NFEQ/article-inline_image-shrink_1500_2232/0/1607709949903?e=1614211200&amp;v=beta&amp;t=PLgZhADmTex0JpVsuGZ0GUrCpyXc_SeF9RZEJBWGCZ4"></div><p>You can right click and <strong>Open image in new tab </strong>to get an expanded view.</p><p>Let&apos;s get back to the terminal view.</p><pre spellcheck="false">q
-</pre><p>Let&apos;s look at the visual graph and begin with the first <em>b.ne</em> which under the proper expected conditions it will only accept a valid integer between <em>0</em> and <em>100</em> as we demonstrated in the last lecture.</p><p>The <em>b.ne</em> meaning <em>branch if not equal</em>.  The assembly before it simply does not matter in this case as we know if we leave b.ne as is the input validation will be in tact.</p><p>We need to disable this input validation by changing that instruction to a <em>b.eq</em> or <em>branch if equal</em>.</p><p>Let&apos;s look at that code block.</p><div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEYu3t0SC3bOw/article-inline_image-shrink_1000_1488/0/1607710722312?e=1614211200&amp;v=beta&amp;t=uWpu45XtlcD8ya-81CE8loE_dZCYrGYZkPE7RbqlAxE"></div><p>We see that it if it is true, meaning validation is correct and we have an integer between 0 and 100 we will follow the true green line to the next function which is as follows:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGK6I1fEl1OLg/article-inline_image-shrink_1500_2232/0/1607710870812?e=1614211200&amp;v=beta&amp;t=IL4hUO-UCmQiZKhkpoelTiA4QzNsnsz80Pd07wdV8fU"></div><p>You can right click and <strong>Open image in new tab </strong>to get an expanded view.</p><p>If we fail the validation we will be sent to the false condition to obtain new input:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEVggrRbTNdSA/article-inline_image-shrink_1500_2232/0/1607710976917?e=1614211200&amp;v=beta&amp;t=YurXzwQQJnIL8iMSBlQDykrdh-XMRxd8BhxthITNgDs"></div><p>Let&apos;s q to a terminal prompt.</p><pre spellcheck="false">qq
-</pre><p>Let&apos;s seek to the statement we want to hack.</p><pre spellcheck="false">[0x000010a4]&gt; s 0x000010c4
-</pre><p>Let&apos;s now hack the branch as discussed.</p><pre spellcheck="false">[0x000010c4]&gt; wa b.eq 0x1214
+                                <h1 id="part-7---debugging-basic-io">Part 7 - Debugging Basic I/O</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. <a href="https://github.com/mytechnotalent/hacking\_c-\_arm64" target="_blank">https://github.com/mytechnotalent/hacking\_c-\_arm64</a></p>
+<p>Today we hack the input validation from our last lesson. </p>
+<p>Let&apos;s fire up radare2 in write mode.</p>
+<pre spellcheck="false">radare2 -w ./0x02_asm_64_basicio
+</pre>
+
+<p>Let&apos;s auto analyze.</p>
+<pre spellcheck="false">aaa
+</pre>
+
+<p>Seek to main.</p>
+<pre spellcheck="false">s main
+</pre>
+
+<p>View disassembly.</p>
+<pre spellcheck="false">v
+</pre>
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQErvkdMr1NFEQ/article-inline_image-shrink_1500_2232/0/1607709949903?e=1614211200&amp;v=beta&amp;t=PLgZhADmTex0JpVsuGZ0GUrCpyXc_SeF9RZEJBWGCZ4"></div>
+
+<p>You can right click and&#xA0;<strong>Open image in new tab&#xA0;</strong>to get an expanded view.</p>
+<p>Let&apos;s get back to the terminal view.</p>
+<pre spellcheck="false">q
+</pre>
+
+<p>Let&apos;s look at the visual graph and begin with the first <em>b.ne</em> which under the proper expected conditions it will only accept a valid integer between <em>0</em> and <em>100</em> as we demonstrated in the last lecture.</p>
+<p>The <em>b.ne</em> meaning <em>branch if not equal</em>. The assembly before it simply does not matter in this case as we know if we leave b.ne as is the input validation will be in tact.</p>
+<p>We need to disable this input validation by changing that instruction to a <em>b.eq</em> or <em>branch if equal</em>.</p>
+<p>Let&apos;s look at that code block.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEYu3t0SC3bOw/article-inline_image-shrink_1000_1488/0/1607710722312?e=1614211200&amp;v=beta&amp;t=uWpu45XtlcD8ya-81CE8loE_dZCYrGYZkPE7RbqlAxE"></div>
+
+<p>We see that it if it is true, meaning validation is correct and we have an integer between 0 and 100 we will follow the true green line to the next function which is as follows:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGK6I1fEl1OLg/article-inline_image-shrink_1500_2232/0/1607710870812?e=1614211200&amp;v=beta&amp;t=IL4hUO-UCmQiZKhkpoelTiA4QzNsnsz80Pd07wdV8fU"></div>
+
+<p>You can right click and&#xA0;<strong>Open image in new tab&#xA0;</strong>to get an expanded view.</p>
+<p>If we fail the validation we will be sent to the false condition to obtain new input:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEVggrRbTNdSA/article-inline_image-shrink_1500_2232/0/1607710976917?e=1614211200&amp;v=beta&amp;t=YurXzwQQJnIL8iMSBlQDykrdh-XMRxd8BhxthITNgDs"></div>
+
+<p>Let&apos;s q to a terminal prompt.</p>
+<pre spellcheck="false">qq
+</pre>
+
+<p>Let&apos;s seek to the statement we want to hack.</p>
+<pre spellcheck="false">[0x000010a4]&gt; s 0x000010c4
+</pre>
+
+<p>Let&apos;s now hack the branch as discussed.</p>
+<pre spellcheck="false">[0x000010c4]&gt; wa b.eq 0x1214
 Written 4 byte(s) (b.eq 0x1214) = wx 800a0054
 [0x000010c4]&gt;
-</pre><p>Let&apos;s quit.</p><pre spellcheck="false">q
-</pre><p>Now when we run the binary it will simply ignore any input at all let alone input validation and simply arrive at the desired point.</p><pre spellcheck="false">kali@kali:~/Documents/0x02_asm_64_basicio$ ./0x02_asm_64_basicio
+</pre>
+
+<p>Let&apos;s quit.</p>
+<pre spellcheck="false">q
+</pre>
+
+<p>Now when we run the binary it will simply ignore any input at all let alone input validation and simply arrive at the desired point.</p>
+<pre spellcheck="false">kali@kali:~/Documents/0x02_asm_64_basicio$ ./0x02_asm_64_basicio
 Your are 0 years old, seems legit!
 kali@kali:~/Documents/0x02_asm_64_basicio$
-</pre><p>Even though 0 is valid it is simply an unstable value that happened to be in one of the registers that the program expected to be properly assigned during a normal program flow.  Here we were able to change the binary permanently to accomplish our hack.</p><p>These are VERY simple examples however when you combine these as you progress you will literally be able to Reverse Engineer anything.</p><p>In our next lesson we will discuss the char primitive data type.</p><p><br></p><p><br></p><p></p>
+</pre>
+
+<p>Even though 0 is valid it is simply an unstable value that happened to be in one of the registers that the program expected to be properly assigned during a normal program flow. Here we were able to change the binary permanently to accomplish our hack.</p>
+<p>These are VERY simple examples however when you combine these as you progress you will literally be able to Reverse Engineer anything.</p>
+<p>In our next lesson we will discuss the char primitive data type.</p>
 
                                 
                                 </section>
@@ -2376,7 +2427,7 @@ kali@kali:~/Documents/0x02_asm_64_basicio$
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 7 - Debugging Basic I/O","level":"1.165","depth":1,"next":{"title":"Part 8 - Hacking Basic I/O","level":"1.166","depth":1,"path":"pages/part-8-hacking-basic-io.md","ref":"pages/part-8-hacking-basic-io.md","articles":[]},"previous":{"title":"Part 6 - Basic I/O","level":"1.164","depth":1,"path":"pages/part-6-basic-io.md","ref":"pages/part-6-basic-io.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-7-debugging-basic-io.md","mtime":"2020-12-26T10:18:27.998Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 7 - Debugging Basic I/O","level":"1.165","depth":1,"next":{"title":"Part 8 - Hacking Basic I/O","level":"1.166","depth":1,"path":"pages/part-8-hacking-basic-io.md","ref":"pages/part-8-hacking-basic-io.md","articles":[]},"previous":{"title":"Part 6 - Basic I/O","level":"1.164","depth":1,"path":"pages/part-6-basic-io.md","ref":"pages/part-6-basic-io.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-7-debugging-basic-io.md","mtime":"2020-12-26T15:00:41.565Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

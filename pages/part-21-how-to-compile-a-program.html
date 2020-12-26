@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,7 +2318,51 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-21---how-to-compile-a-program">Part 21 - How To Compile A Program</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>Let&#x2019;s look again at last weeks C program and take a deeper look at how we turn that source code into an executable file.</p><div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGP6GCX02SLOg/article-inline_image-shrink_1000_1488/0/1520461365362?e=1614211200&amp;v=beta&amp;t=GehNWbfKhc8rqyZ_Gsk46MrzV21OrEQR18E-47BSiXg"></div><p>To compile this program in C, we simply type:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGBu4p6ZvYGWA/article-inline_image-shrink_1000_1488/0/1520190744251?e=1614211200&amp;v=beta&amp;t=Qh3jAoLAjE-EOJEaGxY-S3-Z4g__3HBEN3F45-WQ9LQ"></div><p>This single step will create <strong>exit.o</strong> which is the binary object file and <strong>exit</strong> which is the binary executable file.</p><p>If we wanted to convert this C source code to Assembly, we need to use the GNU compiler in the below fashion. Lets start by running the below command in the terminal:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEyj0GWTprBMQ/article-inline_image-shrink_1000_1488/0/1520193559694?e=1614211200&amp;v=beta&amp;t=VkWkjCePWY1iglbh7D_ia63z7ZRJfRj5QzRom9ASoeI"></div><p>Let&#x2019;s begin with the -S switch. The -S switch will create comparable AT&amp;T Syntax Assembly source code. The -m32 will create a 32-bit executable and the -O0 will tell the compiler how much optimization to use when compiling the binary. That is the capital O and the numeric 0. Numeric 0 in that case means no optimization which means it is at the most human readable instruction set. If you were to substitute a 1, 2 or 3 the amount of optimization increases as the values go up.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFiK0eE9QCVqA/article-inline_image-shrink_1000_1488/0/1520230747774?e=1614211200&amp;v=beta&amp;t=6s5UcPhVlmodq1NW7bTRCZWcRWG47MF3plrYptGcYbQ"></div><p>This step above creates exit.s which is the equivalent Assembly Language source code as we mentioned above.</p><p>We then need to compile the Assembly source code into a binary object file which will generate a <strong>exit.o</strong> file.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQE7hRqugKLvvA/article-inline_image-shrink_1000_1488/0/1520191376275?e=1614211200&amp;v=beta&amp;t=-omIwmoR4ahLPkNbXSPFDzZ61toEg82xTgtpsi0MSlE"></div><p>Finally we need to use a linker to create the actual binary executable code from the binary object file which will create an executable called exit. </p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQG-BjhJCC50jg/article-inline_image-shrink_1000_1488/0/1520231891958?e=1614211200&amp;v=beta&amp;t=lpAvrwKbDnkNl0oQEgDNll7-sO4hUDkvwX3ZWIAibe8"></div><p>Last week when we examined the executable file exit in a program called objdump, and examined the main area we saw the following below except this time we will use AT&amp;T Assembly Language Syntax:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEcb_FuZhn22Q/article-inline_image-shrink_1000_1488/0/1520461365373?e=1614211200&amp;v=beta&amp;t=MqMb07Ng5bw1UNKzYNlB_Xjf8QBwNKKRCzTc6F6alWU"></div><p>This command above will create the following output below:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFj08db0fqejg/article-inline_image-shrink_1000_1488/0/1520142510413?e=1614211200&amp;v=beta&amp;t=e0Ox4LPHn45fVT_ZNV9z678scCOSvusFtDv0fxZm7rE"></div><p>Lets examine the code in the debugger. Let&#x2019;s start GDB which is the GNU debugger and first list the source code by typing l, then set a breakpoint on main and run the program. Finally we will disassemble and review the output below:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGSwZLDVLkcXw/article-inline_image-shrink_1000_1488/0/1520461365667?e=1614211200&amp;v=beta&amp;t=OjMVqRr1Ox6MpcWtmxG4EizwTjHhZ6e8pOg7xgsnjnQ"></div><p>In each of the three above examinations, you will essentially see the same set of instructions which we will take a deeper look as to what is exactly going on in future tutorials.</p><p>Throughout this tutorial series thus far we have been looking at Intel Syntax Assembly Language. We are going to turn our focus to AT&amp;T Syntax as I have stated above as this is the natural syntax utilized in Linux with the GNU Assembler and GNU Debugger.</p><p>The biggest different you will see is that in AT&amp;T Syntax, the source and destinations are reversed.</p><p>AT&amp;T Syntax : <strong>movl %esp, %ebp</strong> [This means move esp into ebp.]</p><p>Intel Syntax : <strong>mov esp, ebp</strong> [This means move ebp into esp.]</p><p>You will also see some additional variances as AT&amp;T uses additional variances which we will cover in a later tutorial.</p><p>If we wanted to create a pure Assembly Code program which does the same thing above we would type:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHHW1SARWXbwg/article-inline_image-shrink_1000_1488/0/1520248174155?e=1614211200&amp;v=beta&amp;t=l19IMSg2mU__CzVtQdmFMsi9kMJReocf8ckwiISHqlY"></div><p>To compile this we would use the GAS Assembler and Linker:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHQV0qdoWzRSw/article-inline_image-shrink_1000_1488/0/1520170234389?e=1614211200&amp;v=beta&amp;t=WwHfqUDYzb1Rda2hNdmYCyg5TKoOdw6AvRmyvzf9EcA"></div><p>To run any executable in Linux you type ./ and the name of the binary executable. In this case we type ./exit and press return. When we do so, nothing happens. That is good as all we did was create a program that exited to the OS.</p><p>I look forward to seeing you all next week when we dive into more assembly code!</p><p></p>
+                                <h1 id="part-21---how-to-compile-a-program">Part 21 - How To Compile A Program</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>Let&#x2019;s look again at last weeks C program and take a deeper look at how we turn that source code into an executable file.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGP6GCX02SLOg/article-inline_image-shrink_1000_1488/0/1520461365362?e=1614211200&amp;v=beta&amp;t=GehNWbfKhc8rqyZ_Gsk46MrzV21OrEQR18E-47BSiXg"></div>
+
+<p>To compile this program in C, we simply type:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGBu4p6ZvYGWA/article-inline_image-shrink_1000_1488/0/1520190744251?e=1614211200&amp;v=beta&amp;t=Qh3jAoLAjE-EOJEaGxY-S3-Z4g__3HBEN3F45-WQ9LQ"></div>
+
+<p>This single step will create <strong>exit.o</strong> which is the binary object file and <strong>exit</strong> which is the binary executable file.</p>
+<p>If we wanted to convert this C source code to Assembly, we need to use the GNU compiler in the below fashion. Lets start by running the below command in the terminal:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEyj0GWTprBMQ/article-inline_image-shrink_1000_1488/0/1520193559694?e=1614211200&amp;v=beta&amp;t=VkWkjCePWY1iglbh7D_ia63z7ZRJfRj5QzRom9ASoeI"></div>
+
+<p>Let&#x2019;s begin with the -S switch.&#xA0;The -S switch will create comparable AT&amp;T Syntax Assembly source code.&#xA0;The -m32 will create a 32-bit executable and the -O0 will tell the compiler how much optimization to use when compiling the binary.&#xA0;That is the capital O and the numeric 0.&#xA0;Numeric 0 in that case means no optimization which means it is at the most human readable instruction set.&#xA0;If you were to substitute a 1, 2 or 3 the amount of optimization increases as the values go up.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFiK0eE9QCVqA/article-inline_image-shrink_1000_1488/0/1520230747774?e=1614211200&amp;v=beta&amp;t=6s5UcPhVlmodq1NW7bTRCZWcRWG47MF3plrYptGcYbQ"></div>
+
+<p>This step above creates exit.s which is the equivalent Assembly Language source code as we mentioned above.</p>
+<p>We then need to compile the Assembly source code into a binary object file which will generate a <strong>exit.o</strong> file.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQE7hRqugKLvvA/article-inline_image-shrink_1000_1488/0/1520191376275?e=1614211200&amp;v=beta&amp;t=-omIwmoR4ahLPkNbXSPFDzZ61toEg82xTgtpsi0MSlE"></div>
+
+<p>Finally we need to use a linker to create the actual binary executable code from the binary object file which will create an executable called exit.&#xA0;</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQG-BjhJCC50jg/article-inline_image-shrink_1000_1488/0/1520231891958?e=1614211200&amp;v=beta&amp;t=lpAvrwKbDnkNl0oQEgDNll7-sO4hUDkvwX3ZWIAibe8"></div>
+
+<p>Last week when we examined the executable file exit in a program called objdump, and examined the main area we saw the following below except this time we will use AT&amp;T Assembly Language Syntax:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEcb_FuZhn22Q/article-inline_image-shrink_1000_1488/0/1520461365373?e=1614211200&amp;v=beta&amp;t=MqMb07Ng5bw1UNKzYNlB_Xjf8QBwNKKRCzTc6F6alWU"></div>
+
+<p>This command above will create the following output below:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFj08db0fqejg/article-inline_image-shrink_1000_1488/0/1520142510413?e=1614211200&amp;v=beta&amp;t=e0Ox4LPHn45fVT_ZNV9z678scCOSvusFtDv0fxZm7rE"></div>
+
+<p>Lets examine the code in the debugger.&#xA0;Let&#x2019;s start GDB which is the GNU debugger and first list the source code by typing l, then set a breakpoint on main and run the program.&#xA0;Finally we will disassemble and review the output below:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGSwZLDVLkcXw/article-inline_image-shrink_1000_1488/0/1520461365667?e=1614211200&amp;v=beta&amp;t=OjMVqRr1Ox6MpcWtmxG4EizwTjHhZ6e8pOg7xgsnjnQ"></div>
+
+<p>In each of the three above examinations, you will essentially see the same set of instructions which we will take a deeper look as to what is exactly going on in future tutorials.</p>
+<p>Throughout this tutorial series thus far we have been looking at Intel Syntax Assembly Language. We are going to turn our focus to AT&amp;T Syntax as I have stated above as this is the natural syntax utilized in Linux with the GNU Assembler and GNU Debugger.</p>
+<p>The biggest different you will see is that in AT&amp;T Syntax, the source and destinations are reversed.</p>
+<p>AT&amp;T Syntax : <strong>movl %esp, %ebp</strong> [This means move esp into ebp.]</p>
+<p>Intel Syntax : <strong>mov esp, ebp</strong> [This means move ebp into esp.]</p>
+<p>You will also see some additional variances as AT&amp;T uses additional variances which we will cover in a later tutorial.</p>
+<p>If we wanted to create a pure Assembly Code program which does the same thing above we would type:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHHW1SARWXbwg/article-inline_image-shrink_1000_1488/0/1520248174155?e=1614211200&amp;v=beta&amp;t=l19IMSg2mU__CzVtQdmFMsi9kMJReocf8ckwiISHqlY"></div>
+
+<p>To compile this we would use the GAS Assembler and Linker:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHQV0qdoWzRSw/article-inline_image-shrink_1000_1488/0/1520170234389?e=1614211200&amp;v=beta&amp;t=WwHfqUDYzb1Rda2hNdmYCyg5TKoOdw6AvRmyvzf9EcA"></div>
+
+<p>To run any executable in Linux you type ./ and the name of the binary executable. In this case we type ./exit and press return. When we do so, nothing happens. That is good as all we did was create a program that exited to the OS.</p>
+<p>I look forward to seeing you all next week when we dive into more assembly&#xA0;code!</p>
 
                                 
                                 </section>
@@ -2362,7 +2406,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 21 - How To Compile A Program","level":"1.22","depth":1,"next":{"title":"Part 22 - ASM Program 1 [Moving Immediate Data]","level":"1.23","depth":1,"path":"pages/part-22-asm-program-1-moving-immediate-data.md","ref":"pages/part-22-asm-program-1-moving-immediate-data.md","articles":[]},"previous":{"title":"Part 20 - Instruction Code Handling","level":"1.21","depth":1,"path":"pages/part-20-instruction-code-handling.md","ref":"pages/part-20-instruction-code-handling.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-21-how-to-compile-a-program.md","mtime":"2020-12-26T10:16:52.234Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 21 - How To Compile A Program","level":"1.22","depth":1,"next":{"title":"Part 22 - ASM Program 1 [Moving Immediate Data]","level":"1.23","depth":1,"path":"pages/part-22-asm-program-1-moving-immediate-data.md","ref":"pages/part-22-asm-program-1-moving-immediate-data.md","articles":[]},"previous":{"title":"Part 20 - Instruction Code Handling","level":"1.21","depth":1,"path":"pages/part-20-instruction-code-handling.md","ref":"pages/part-20-instruction-code-handling.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-21-how-to-compile-a-program.md","mtime":"2020-12-26T14:58:26.395Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

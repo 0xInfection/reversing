@@ -60,7 +60,7 @@
     <link rel="next" href="part-7-debugging-basic-io.html" />
     
     
-    <link rel="prev" href="part-5-hacking-"hello-world".html" />
+    <link rel="prev" href="part-5-hacking-hello-world.html" />
     
 
     </head>
@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,20 +2318,67 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-6---basic-io">Part 6 - Basic I/O</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/hacking_c-_arm64</p><p>Today we are going to debug our very basic input validation program from last lecture.</p><p>To begin let&apos;s open up our binary in Radare2.</p><pre spellcheck="false">radare2 ./0x02_asm_64_basicio
-</pre><p>Let&apos;s take advantage of Radare2&apos;s auto analysis feature.</p><pre spellcheck="false">aaa
-</pre><p>The next thing we want to do logically is fire up the program in debug mode so it maps the raw machine code from disk to a running process.</p><pre spellcheck="false">ood
-</pre><p>Now that we have a running instance we can seek to the main entry point of the binary.</p><pre spellcheck="false">s main
-</pre><p>Let us take an initial examination by doing the following.</p><pre spellcheck="false">v
-</pre><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQG6NyVW13i3Zw/article-inline_image-shrink_1500_2232/0/1607682836896?e=1614211200&amp;v=beta&amp;t=g4y3txIMTWaLNYMA_MZ-mBvlhnoYFhPqxmR1I_6CoNo"></div><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEAKlltNuR-iw/article-inline_image-shrink_1500_2232/0/1607683092302?e=1614211200&amp;v=beta&amp;t=DklG-bA9CW5781iIRbZX24oVwlv5WNPXFviN9SPdJR0"></div><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHMBU4OCBknnw/article-inline_image-shrink_1500_2232/0/1607683246880?e=1614211200&amp;v=beta&amp;t=FzZ1T-PaK9NommACqes6otzMPkTu8eOVAuRimquZQoE"></div><p>You can right click and <strong>Open image in new tab </strong>to get an expanded view.</p><p>A couple things to note we see at <em>0x5566be00cc</em> the output of <em>&quot;Enter Age: &quot;</em> and at <em>0x5566be017c</em> a call to <em>istream</em> which is going to capture the values from <em>stdin</em> to which we identify a failure condition at 0x5566be01d0 where we find <em>&quot;Dude be real!&quot;</em> and we see the results of a proper input validation starting at <em>0x5566be0218 </em>where we say <em>&quot;You are &quot;</em> and then we see a call to the output stream at <em>0x5566be0238</em> and then the continuation of the validation string at <em>0x5566be0244</em> where we say <em>&quot; years old, seems legit!&quot;</em>.</p><p>The next step is to look at the binary with a visual graph.</p><pre spellcheck="false">q
+                                <h1 id="part-6---basic-io">Part 6 - Basic I/O</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. <a href="https://github.com/mytechnotalent/hacking\_c-\_arm64" target="_blank">https://github.com/mytechnotalent/hacking\_c-\_arm64</a></p>
+<p>Today we are going to debug our very basic input validation program from last lecture.</p>
+<p>To begin let&apos;s open up our binary in Radare2.</p>
+<pre spellcheck="false">radare2 ./0x02_asm_64_basicio
+</pre>
+
+<p>Let&apos;s take advantage of Radare2&apos;s auto analysis feature.</p>
+<pre spellcheck="false">aaa
+</pre>
+
+<p>The next thing we want to do logically is fire up the program in debug mode so it maps the raw machine code from disk to a running process.</p>
+<pre spellcheck="false">ood
+</pre>
+
+<p>Now that we have a running instance we can seek to the main entry point of the binary.</p>
+<pre spellcheck="false">s main
+</pre>
+
+<p>Let us take an initial examination by doing the following.</p>
+<pre spellcheck="false">v
+</pre>
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQG6NyVW13i3Zw/article-inline_image-shrink_1500_2232/0/1607682836896?e=1614211200&amp;v=beta&amp;t=g4y3txIMTWaLNYMA_MZ-mBvlhnoYFhPqxmR1I_6CoNo"></div>
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEAKlltNuR-iw/article-inline_image-shrink_1500_2232/0/1607683092302?e=1614211200&amp;v=beta&amp;t=DklG-bA9CW5781iIRbZX24oVwlv5WNPXFviN9SPdJR0"></div>
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHMBU4OCBknnw/article-inline_image-shrink_1500_2232/0/1607683246880?e=1614211200&amp;v=beta&amp;t=FzZ1T-PaK9NommACqes6otzMPkTu8eOVAuRimquZQoE"></div>
+
+<p>You can right click and&#xA0;<strong>Open image in new tab&#xA0;</strong>to get an expanded view.</p>
+<p>A couple things to note we see at <em>0x5566be00cc</em> the output of <em>&quot;Enter Age: &quot;</em> and at <em>0x5566be017c</em> a call to <em>istream</em> which is going to capture the values from <em>stdin</em> to which we identify a failure condition at 0x5566be01d0 where we find <em>&quot;Dude be real!&quot;</em> and we see the results of a proper input validation starting at <em>0x5566be0218 _where we say </em>&quot;You are &quot;<em> and then we see a call to the output stream at _0x5566be0238</em> and then the continuation of the validation string at <em>0x5566be0244</em> where we say <em>&quot; years old, seems legit!&quot;</em>.</p>
+<p>The next step is to look at the binary with a visual graph.</p>
+<pre spellcheck="false">q
 VV
 ppppp
-</pre><p>We see the following:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGgOVss1prAyQ/article-inline_image-shrink_1500_2232/0/1607685699956?e=1614211200&amp;v=beta&amp;t=EegiIwoU5bFGXybpirXk7qxhGDav--Dp5hGojIRj-qY"></div><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGPZHRiz7YQRA/article-inline_image-shrink_1500_2232/0/1607685723107?e=1614211200&amp;v=beta&amp;t=ysfWT58QmKz2OfUE_4Q21wXuMfJsoYygqvz2m04nfW8"></div><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEG1PNQvDDE0Q/article-inline_image-shrink_1500_2232/0/1607685740119?e=1614211200&amp;v=beta&amp;t=pbExQgKh3ITQKK90MWm7lHIbHOEwGtSMfFJcP0E88fw"></div><p>This is our zoomed out visual graph.  We can see how the program moves from function to function.  You will notice there are a series of tags such as [ol] or [ok] and  you can literally type the following:</p><pre spellcheck="false">p
+</pre>
+
+<p>We see the following:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGgOVss1prAyQ/article-inline_image-shrink_1500_2232/0/1607685699956?e=1614211200&amp;v=beta&amp;t=EegiIwoU5bFGXybpirXk7qxhGDav--Dp5hGojIRj-qY"></div>
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGPZHRiz7YQRA/article-inline_image-shrink_1500_2232/0/1607685723107?e=1614211200&amp;v=beta&amp;t=ysfWT58QmKz2OfUE_4Q21wXuMfJsoYygqvz2m04nfW8"></div>
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEG1PNQvDDE0Q/article-inline_image-shrink_1500_2232/0/1607685740119?e=1614211200&amp;v=beta&amp;t=pbExQgKh3ITQKK90MWm7lHIbHOEwGtSMfFJcP0E88fw"></div>
+
+<p>This is our zoomed out visual graph. We can see how the program moves from function to function. You will notice there are a series of tags such as [ol] or [ok] and you can literally type the following:</p>
+<pre spellcheck="false">p
 ol
-</pre><p>Now we are inside that function:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQG9ZMomZ06u7Q/article-inline_image-shrink_1500_2232/0/1607686001944?e=1614211200&amp;v=beta&amp;t=ZlAnqJXFMn0TUD1AT3TfKzmHW2cUspvMTA97pnNagwg"></div><p>Then to go back to main.</p><pre spellcheck="false">qq
+</pre>
+
+<p>Now we are inside that function:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQG9ZMomZ06u7Q/article-inline_image-shrink_1500_2232/0/1607686001944?e=1614211200&amp;v=beta&amp;t=ZlAnqJXFMn0TUD1AT3TfKzmHW2cUspvMTA97pnNagwg"></div>
+
+<p>Then to go back to main.</p>
+<pre spellcheck="false">qq
 s main
 VV
-</pre><p>This will take us to an expanded graph that we can also use our arrow keys to look around.</p><p>Let&apos;s set a breakpoint at <em>0x5566be00c4</em> where we <em>bne 0x5566be0214</em> which is where we see the success route of our binary.</p><pre spellcheck="false">[0x5566be0194]&gt; db 0x5566be00c4
+</pre>
+
+<p>This will take us to an expanded graph that we can also use our arrow keys to look around.</p>
+<p>Let&apos;s set a breakpoint at <em>0x5566be00c4</em> where we <em>bne 0x5566be0214</em> which is where we see the success route of our binary.</p>
+<pre spellcheck="false">[0x5566be0194]&gt; db 0x5566be00c4
 [0x5566be0194]&gt; dc
 hit breakpoint at: 0x5566be00c4
 Enter Age: 33
@@ -2339,7 +2386,10 @@ hit breakpoint at: 0x5566be00c4
 [0x5566be0194]&gt; dc
 Your are 33 years old, seems legit!
 (2215) Process exited with status=0x0
-</pre><p>As you can see we cycled the loop and entered in a correct validation and was able to get our success return.</p><p>In our next lesson we will hack the validation.</p><p><br></p><p></p>
+</pre>
+
+<p>As you can see we cycled the loop and entered in a correct validation and was able to get our success return.</p>
+<p>In our next lesson we will hack the validation.</p>
 
                                 
                                 </section>
@@ -2367,7 +2417,7 @@ Your are 33 years old, seems legit!
 
             
                 
-                <a href="part-5-hacking-"hello-world".html" class="navigation navigation-prev " aria-label="Previous page: Part 5 - Hacking "Hello World"">
+                <a href="part-5-hacking-hello-world.html" class="navigation navigation-prev " aria-label="Previous page: Part 5 - Hacking "Hello World"">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -2383,7 +2433,7 @@ Your are 33 years old, seems legit!
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 6 - Basic I/O","level":"1.164","depth":1,"next":{"title":"Part 7 - Debugging Basic I/O","level":"1.165","depth":1,"path":"pages/part-7-debugging-basic-io.md","ref":"pages/part-7-debugging-basic-io.md","articles":[]},"previous":{"title":"Part 5 - Hacking \"Hello World\"","level":"1.163","depth":1,"path":"pages/part-5-hacking-\"hello-world\".md","ref":"pages/part-5-hacking-\"hello-world\".md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-6-basic-io.md","mtime":"2020-12-26T10:18:27.002Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 6 - Basic I/O","level":"1.164","depth":1,"next":{"title":"Part 7 - Debugging Basic I/O","level":"1.165","depth":1,"path":"pages/part-7-debugging-basic-io.md","ref":"pages/part-7-debugging-basic-io.md","articles":[]},"previous":{"title":"Part 5 - Hacking \"Hello World\"","level":"1.163","depth":1,"path":"pages/part-5-hacking-hello-world.md","ref":"pages/part-5-hacking-hello-world.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-6-basic-io.md","mtime":"2020-12-26T15:00:40.641Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,22 +2318,55 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-39-&#x2013;-debugging-pre-increment-operator">Part 39 &#x2013; Debugging Pre-Increment Operator</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>Let&#x2019;s re-examine our code.</p><pre spellcheck="false">#include &lt;iostream&gt;<p></p>
-<p>int main(void) {</p>
-<pre><code>        int myNumber = 16;
+                                <h1 id="part-39-&#x2013;-debugging-pre-increment-operator">Part 39 &#x2013; Debugging Pre-Increment Operator</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>Let&#x2019;s re-examine our code.</p>
+<pre spellcheck="false">#include &lt;iostream&gt;
 
-        int myNewNumber = ++myNumber;
+&#xA0;
 
+int main(void) {
 
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; int myNumber = 16;
 
-        std::cout &amp;lt;&amp;lt; myNewNumber &amp;lt;&amp;lt; std::endl;
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; int myNewNumber = ++myNumber;
 
+&#xA0;
 
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; std::cout &lt;&lt; myNewNumber &lt;&lt; std::endl;
 
-        return 0;
-</code></pre><p>}
-&lt;/pre&gt;<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQGIZYwlBA99fg/article-inline_image-shrink_1000_1488/0/1526639245794?e=1614211200&amp;v=beta&amp;t=eVvTTprlCAOEqV7fpMN_zVznLH81lWT1GL6lJIYGuuk"></div></p><p>To compile this we simply type:</p><p>g++ example9.cpp -o example9</p><p>./example9</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQE75NiyR4ifTQ/article-inline_image-shrink_1000_1488/0/1526639272084?e=1614211200&amp;v=beta&amp;t=GudMLB3bIPwAh4DvMF4_aZfhFqBK7GLWN76V6OBOqyo"></div><p>We see 17 printed to the screen.</p><p>Let&#x2019;s break it down:</p><p>We create a variable <strong>myNumber = 16</strong> to which we create another variable <strong>myNewNumber</strong> which pre-increments the value of <strong>myNumber</strong>. We see that when we execute our code it shows 17.</p><p>When we pre-increment the value of the variable is incremented before assigning it to another variable. For example <strong>myNumber</strong> is <strong>16</strong> so it gets incremented before being assigned to <strong>myNewNumber</strong> so therefore we get <strong>17</strong>.</p><p>Let&#x2019;s debug.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQHslw_KZKVWJQ/article-inline_image-shrink_1000_1488/0/1526639315124?e=1614211200&amp;v=beta&amp;t=rIddupyFWMyTKId7Bb1-Da4Fgv5rhmhfcqRA3mirrRw"></div><p>We do our normal start in gdb and break on main. Take note at <strong>main+24</strong> we are moving the value of <strong>1</strong> into <strong>r3</strong>. We then see at <strong>main+28</strong> we are storing that value at <strong>r11-8</strong> to which we will set a breakpoint and continue.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQHWgyX00i86Ew/article-inline_image-shrink_1000_1488/0/1526639338414?e=1614211200&amp;v=beta&amp;t=qtUgbZmqC2dfqsqisZY6BsfmzvDi1fYdxaqKEj6ZQ14"></div><p>As we evaluate the value in <strong>r3</strong> at this stage we see <strong>17</strong>. Remember back in our original code that the value in the <strong>myNumber</strong> variable was <strong>16</strong>. We can see that the pre-increment operator was successful to increment the value <strong>1</strong> to give us <strong>17</strong>.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQGKrEmz0bC6kw/article-inline_image-shrink_1000_1488/0/1526639366619?e=1614211200&amp;v=beta&amp;t=XWukpz5i5U8FogJnw41wGDideBWZ_Bv8hQ9xbQ0iD60"></div><p>We see that when we continue through the code the value <strong>17</strong> is successfully echoed to the terminal as expected.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQHghS8AmmLqoQ/article-inline_image-shrink_1000_1488/0/1526639388837?e=1614211200&amp;v=beta&amp;t=MbjxgZEvFGS5CQZ2Xzvbg1olaMhVG0E2flXEGqhmllE"></div><p>Next week we will dive into Hacking Debugging Pre-Increment Operator.</p><p></p>
+&#xA0;
+
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; return 0;
+
+}
 </pre>
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQGIZYwlBA99fg/article-inline_image-shrink_1000_1488/0/1526639245794?e=1614211200&amp;v=beta&amp;t=eVvTTprlCAOEqV7fpMN_zVznLH81lWT1GL6lJIYGuuk"></div>
+
+<p>To compile this we simply type:</p>
+<p>g++ example9.cpp -o example9</p>
+<p>./example9</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQE75NiyR4ifTQ/article-inline_image-shrink_1000_1488/0/1526639272084?e=1614211200&amp;v=beta&amp;t=GudMLB3bIPwAh4DvMF4_aZfhFqBK7GLWN76V6OBOqyo"></div>
+
+<p>We see 17 printed to the screen.</p>
+<p>Let&#x2019;s break it down:</p>
+<p>We create a variable <strong>myNumber = 16</strong> to which we create another variable <strong>myNewNumber</strong> which pre-increments the value of <strong>myNumber</strong>.&#xA0;We see that when we execute our code it shows 17.</p>
+<p>When we pre-increment the value of the variable is incremented before assigning it to another variable.&#xA0;For example <strong>myNumber</strong> is <strong>16</strong> so it gets incremented before being assigned to <strong>myNewNumber</strong> so therefore we get <strong>17</strong>.</p>
+<p>Let&#x2019;s debug.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQHslw_KZKVWJQ/article-inline_image-shrink_1000_1488/0/1526639315124?e=1614211200&amp;v=beta&amp;t=rIddupyFWMyTKId7Bb1-Da4Fgv5rhmhfcqRA3mirrRw"></div>
+
+<p>We do our normal start in gdb and break on main.&#xA0;Take note at <strong>main+24</strong> we are moving the value of <strong>1</strong> into <strong>r3</strong>.&#xA0;We then see at <strong>main+28</strong> we are storing that value at <strong>r11-8</strong> to which we will set a breakpoint and continue.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQHWgyX00i86Ew/article-inline_image-shrink_1000_1488/0/1526639338414?e=1614211200&amp;v=beta&amp;t=qtUgbZmqC2dfqsqisZY6BsfmzvDi1fYdxaqKEj6ZQ14"></div>
+
+<p>As we evaluate the value in <strong>r3</strong> at this stage we see <strong>17</strong>.&#xA0;Remember back in our original code that the value in the <strong>myNumber</strong> variable was <strong>16</strong>.&#xA0;We can see that the pre-increment operator was successful to increment the value <strong>1</strong> to give us <strong>17</strong>.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQGKrEmz0bC6kw/article-inline_image-shrink_1000_1488/0/1526639366619?e=1614211200&amp;v=beta&amp;t=XWukpz5i5U8FogJnw41wGDideBWZ_Bv8hQ9xbQ0iD60"></div>
+
+<p>We see that when we continue through the code the value <strong>17</strong> is successfully echoed to the terminal as expected.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C5612AQHghS8AmmLqoQ/article-inline_image-shrink_1000_1488/0/1526639388837?e=1614211200&amp;v=beta&amp;t=MbjxgZEvFGS5CQZ2Xzvbg1olaMhVG0E2flXEGqhmllE"></div>
+
+<p>Next week we will dive into Hacking Debugging Pre-Increment Operator.</p>
+
                                 
                                 </section>
                             
@@ -2376,7 +2409,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 39 – Debugging Pre-Increment Operator","level":"1.105","depth":1,"next":{"title":"Part 40 – Hacking Pre-Increment Operator","level":"1.106","depth":1,"path":"pages/part-40-hacking-pre-increment-operator.md","ref":"pages/part-40-hacking-pre-increment-operator.md","articles":[]},"previous":{"title":"Part 38 – Pre-Increment Operator","level":"1.104","depth":1,"path":"pages/part-38-pre-increment-operator.md","ref":"pages/part-38-pre-increment-operator.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-39-debugging-pre-increment-operator.md","mtime":"2020-12-26T10:17:47.201Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 39 – Debugging Pre-Increment Operator","level":"1.105","depth":1,"next":{"title":"Part 40 – Hacking Pre-Increment Operator","level":"1.106","depth":1,"path":"pages/part-40-hacking-pre-increment-operator.md","ref":"pages/part-40-hacking-pre-increment-operator.md","articles":[]},"previous":{"title":"Part 38 – Pre-Increment Operator","level":"1.104","depth":1,"path":"pages/part-38-pre-increment-operator.md","ref":"pages/part-38-pre-increment-operator.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-39-debugging-pre-increment-operator.md","mtime":"2020-12-26T14:59:46.343Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

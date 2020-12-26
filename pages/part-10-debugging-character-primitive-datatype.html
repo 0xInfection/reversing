@@ -2050,9 +2050,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2076,9 +2076,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2167,9 +2167,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2180,9 +2180,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2193,9 +2193,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2316,18 +2316,48 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-10---debugging-character-primitive-datatype">Part 10 - Debugging Character Primitive Datatype</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/hacking_c-_arm64</p><p>Today we hack the char from the last lesson.</p><p>Let&apos;s fire up radare2 in write mode.</p><pre spellcheck="false">radare2 -w ./0x03_asm64_char_primitive_datatype
-</pre><p>Let&apos;s auto analyze.</p><pre spellcheck="false">aaa
-</pre><p>Seek to main.</p><pre spellcheck="false">s main
-</pre><p>View disassembly.</p><pre spellcheck="false">v
-</pre><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEtmWlcbps5Xg/article-inline_image-shrink_1500_2232/0/1608839510539?e=1614211200&amp;v=beta&amp;t=6F6vepS7IPvLWC2qFOoHNO77Nhe9HMoVQZon5mmvts4"></div><p>You can right click and <strong>Open image in new tab </strong>to get an expanded view.</p><p>Let&apos;s get back to the terminal view.</p><pre spellcheck="false">q
-</pre><p>All we have to do is write assembly to 0x000009ec and specify a new char of our choosing.</p><pre spellcheck="false">[0x000009e4]&gt; wa movz w0, 0x66 @ 0x000009ec
+                                <h1 id="part-10---debugging-character-primitive-datatype">Part 10 - Debugging Character Primitive Datatype</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. <a href="https://github.com/mytechnotalent/hacking\_c-\_arm64" target="_blank">https://github.com/mytechnotalent/hacking\_c-\_arm64</a></p>
+<p>Today we hack the char from the last lesson.</p>
+<p>Let&apos;s fire up radare2 in write mode.</p>
+<pre spellcheck="false">radare2 -w ./0x03_asm64_char_primitive_datatype
+</pre>
+
+<p>Let&apos;s auto analyze.</p>
+<pre spellcheck="false">aaa
+</pre>
+
+<p>Seek to main.</p>
+<pre spellcheck="false">s main
+</pre>
+
+<p>View disassembly.</p>
+<pre spellcheck="false">v
+</pre>
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEtmWlcbps5Xg/article-inline_image-shrink_1500_2232/0/1608839510539?e=1614211200&amp;v=beta&amp;t=6F6vepS7IPvLWC2qFOoHNO77Nhe9HMoVQZon5mmvts4"></div>
+
+<p>You can right click and&#xA0;<strong>Open image in new tab&#xA0;</strong>to get an expanded view.</p>
+<p>Let&apos;s get back to the terminal view.</p>
+<pre spellcheck="false">q
+</pre>
+
+<p>All we have to do is write assembly to 0x000009ec and specify a new char of our choosing.</p>
+<pre spellcheck="false">[0x000009e4]&gt; wa movz w0, 0x66 @ 0x000009ec
 Written 4 byte(s) (movz w0, 0x66) = wx c00c8052
 [0x000009e4]&gt;
-</pre><p>Let&apos;s quit and run the new binary from the terminal.</p><pre spellcheck="false">[0x000009e4]&gt; q
+</pre>
+
+<p>Let&apos;s quit and run the new binary from the terminal.</p>
+<pre spellcheck="false">[0x000009e4]&gt; q
 kali@kali:~/Documents/0x03_asm64_char_primitive_datatype$ ./0x03_asm64_char_primitive_datatype
 f
-</pre><pre spellcheck="false"></pre><p>As you can see we successfully and permanently hacked the binary!  It is very trivial but when you take the last series of lessons together with each new successive lesson you build a real skill-set!</p><p>In our next lesson we will work with the boolean primitive datatype.</p><p><br></p><p></p>
+</pre>
+
+<pre spellcheck="false"></pre>
+
+<p>As you can see we successfully and permanently hacked the binary! It is very trivial but when you take the last series of lessons together with each new successive lesson you build a real skill-set!</p>
+<p>In our next lesson we will work with the boolean primitive datatype.</p>
 
                                 
                                 </section>
@@ -2367,7 +2397,7 @@ f
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 10 - Debugging Character Primitive Datatype","level":"1.168","depth":1,"previous":{"title":"Part 9 - Character Primitive Datatype","level":"1.167","depth":1,"path":"pages/part-9-character-primitive-datatype.md","ref":"pages/part-9-character-primitive-datatype.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-10-debugging-character-primitive-datatype.md","mtime":"2020-12-26T10:18:30.182Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 10 - Debugging Character Primitive Datatype","level":"1.168","depth":1,"previous":{"title":"Part 9 - Character Primitive Datatype","level":"1.167","depth":1,"path":"pages/part-9-character-primitive-datatype.md","ref":"pages/part-9-character-primitive-datatype.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-10-debugging-character-primitive-datatype.md","mtime":"2020-12-26T15:00:44.330Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

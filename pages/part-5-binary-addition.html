@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,7 +2318,28 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-5---binary-addition">Part 5 - Binary Addition</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>Binary subtraction is nothing more than adding the negative value of the number to be subtracted. For example 8 + - 4, the starting point would be zero to which we move 8 points in the positive direction and then four points in the negative direction yielding a value of 4.</p><p>We represent a sign bit in binary to which bit 7 indicates the sign of number where 0 is positive and 1 is negative.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHYLqgRKpbx0Q/article-inline_image-shrink_1000_1488/0/1537526862141?e=1614211200&amp;v=beta&amp;t=PixeXI4OpufCVGtA0NOWSsUTf7wYYqYQr02Ej7wCFzI"></div><p>The above would represent -2.</p><p>We utilize the concept of twos compliment which inverts each bit and then finally adding 1.</p><p>Lets example binary 2.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGkaaiw3ZYLmg/article-inline_image-shrink_1000_1488/0/1537526884698?e=1614211200&amp;v=beta&amp;t=ijX-S-jI_HLjdQN0E1sXT0SAs_9xPvqTx6hV40yu2qU"></div><p>Invert the bits.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGAorLG2cI6Sg/article-inline_image-shrink_1000_1488/0/1537526902723?e=1614211200&amp;v=beta&amp;t=O-m4H8FrMb18JjPplHrQrKCjV5evU49XUluFy64pstM"></div><p>Add 1.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFl_K2NxMipMg/article-inline_image-shrink_1000_1488/0/1537526921447?e=1614211200&amp;v=beta&amp;t=X_cErri7uy7VIAfkWBNUnbzieeXjrqKOBvLiPWi2l_E"></div><p>Let&#x2019;s examine a subtraction operation:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFEKlyk02qWFw/article-inline_image-shrink_1000_1488/0/1537526940998?e=1614211200&amp;v=beta&amp;t=vMim5GYoEIbJuOnXgLkz3JjC6Sl69q9SumfNHlVrmNs"></div><p>So what is the (1) you may ask, that is the overflow bit. In future tutorials we will examine what we refer to as the overflow flag and carry flag.</p><p>Next week we will dive into word lengths! Stay tuned!</p><p></p>
+                                <h1 id="part-5---binary-addition">Part 5 - Binary Addition</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>Binary subtraction is nothing more than adding the negative value of the number to be subtracted. For example 8 + - 4, the starting point would be zero to which we move 8 points in the positive direction and then four points in the negative direction yielding a value of 4.</p>
+<p>We represent a sign bit in binary to which bit 7 indicates the sign of number where 0 is positive and 1 is negative.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHYLqgRKpbx0Q/article-inline_image-shrink_1000_1488/0/1537526862141?e=1614211200&amp;v=beta&amp;t=PixeXI4OpufCVGtA0NOWSsUTf7wYYqYQr02Ej7wCFzI"></div>
+
+<p>The above would represent -2.</p>
+<p>We utilize the concept of twos compliment which inverts each bit and then finally adding 1.</p>
+<p>Lets example binary 2.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGkaaiw3ZYLmg/article-inline_image-shrink_1000_1488/0/1537526884698?e=1614211200&amp;v=beta&amp;t=ijX-S-jI_HLjdQN0E1sXT0SAs_9xPvqTx6hV40yu2qU"></div>
+
+<p>Invert the bits.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGAorLG2cI6Sg/article-inline_image-shrink_1000_1488/0/1537526902723?e=1614211200&amp;v=beta&amp;t=O-m4H8FrMb18JjPplHrQrKCjV5evU49XUluFy64pstM"></div>
+
+<p>Add 1.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFl_K2NxMipMg/article-inline_image-shrink_1000_1488/0/1537526921447?e=1614211200&amp;v=beta&amp;t=X_cErri7uy7VIAfkWBNUnbzieeXjrqKOBvLiPWi2l_E"></div>
+
+<p>Let&#x2019;s examine a subtraction operation:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFEKlyk02qWFw/article-inline_image-shrink_1000_1488/0/1537526940998?e=1614211200&amp;v=beta&amp;t=vMim5GYoEIbJuOnXgLkz3JjC6Sl69q9SumfNHlVrmNs"></div>
+
+<p>So what is the (1) you may ask, that is the overflow bit. In future tutorials we will examine what we refer to as the overflow flag and carry flag.</p>
+<p>Next week we will dive into word lengths! Stay tuned!</p>
 
                                 
                                 </section>
@@ -2362,7 +2383,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 5 - Binary Addition","level":"1.120","depth":1,"next":{"title":"Part 6 - Binary Subtraction","level":"1.121","depth":1,"path":"pages/part-6-binary-subtraction.md","ref":"pages/part-6-binary-subtraction.md","articles":[]},"previous":{"title":"Part 4 - Number Systems","level":"1.119","depth":1,"path":"pages/part-4-number-systems.md","ref":"pages/part-4-number-systems.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-5-binary-addition.md","mtime":"2020-12-26T10:17:57.377Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 5 - Binary Addition","level":"1.120","depth":1,"next":{"title":"Part 6 - Binary Subtraction","level":"1.121","depth":1,"path":"pages/part-6-binary-subtraction.md","ref":"pages/part-6-binary-subtraction.md","articles":[]},"previous":{"title":"Part 4 - Number Systems","level":"1.119","depth":1,"path":"pages/part-4-number-systems.md","ref":"pages/part-4-number-systems.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-5-binary-addition.md","mtime":"2020-12-26T15:00:00.585Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

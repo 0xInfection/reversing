@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,15 +2318,50 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-14---hello-world">Part 14 - Hello World</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>Today we begin our journey into the world of C++ and gaining a better understanding of how C++ interacts with our ARM processor.</p><p>The prior lessons in this series focus on the basics of the ARM processor and touch upon its architecture and how everything ultimately translates down to Assembly Language and then ultimately opcodes into machine language.</p><p>We start with our first program in C++ which is our &#x201C;Hello World&#x201D; program. Let&#x2019;s dive in and break each line down step-by-step and see how this language works. We will call this <strong>example1.cpp</strong> and save it to our device.</p><pre spellcheck="false">#include &lt;iostream&gt;<p></p>
-<p>int main(void) {
-    std::cout &lt;&lt; &#x201C;Hello World&#x201D; std::endl;</p>
-<pre><code>return 0;
-</code></pre><p>}
-&lt;/pre&gt;<div class="slate-resizable-image-embed"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEbStDvDoxw0Q/article-inline_image-shrink_1000_1488/0/1520191083072?e=1614211200&amp;v=beta&amp;t=gV2PzS_bhVM99-q6RQUx7j3ixkhrFDHNz-BhBWa_3B0"></div></p><p>To compile this we simply type:</p><pre spellcheck="false">g++ example1.cpp -o example1
-</pre><p>We simply then type:</p><pre spellcheck="false">./example1
-</pre><div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHx4gcyoVXPIQ/article-inline_image-shrink_1000_1488/0/1520237920732?e=1614211200&amp;v=beta&amp;t=UESFqR47aiRNtsp7EGKdHhPwJzmWOKhpDsOHhWV20mE"></div><p><br></p><p>SUCCESS! We see &#x201C;Hello World&#x201D; printed to the standard output or terminal!</p><p>Lets break it down line by line:</p><p><strong>#include &lt;iostream&gt; </strong>is referred to as a preprocessor statement. These preprocessor statements happen just before the compilation of the rest of the code. The #include keyword will find a file called <strong>iostream</strong> and take all of the contents of that file and paste it into the existing code we just created. These files are also called header files. </p><p>We call <strong>iostream</strong> because we need a declaration for a function called <strong>cout</strong> and <strong>endl</strong>. The <strong>cout</strong> function allows us to print text to the standard output or terminal and the <strong>endl</strong> function creates a new line after the text has been displayed.</p><p>The main section which is of type integer is the entry point into the main application or binary. You will notice a <strong>void</strong> inside the <strong>()</strong> which indicates that it does not have any parameters which will be passed into the function.</p><p>The <strong>std </strong>indicates a namespace which is quite simply a mechanism to organize code into logical groups in order to prevent name collisions when you are dealing with multiple libraries.</p><p>You will see many examples where they declare a using namespace std; however I will NEVER utilize this approach as it can cause naming collisions in more complex applications.</p><p>The <strong>&lt;&lt;</strong> operator is referred to as an overloaded operator. They are essentially a function very similar to <strong>printf</strong> in the C language. We are simply moving the <strong>&#x201C;Hello World&#x201D; </strong>string into the <strong>cout</strong> function through the use of the <strong>&lt;&lt;</strong> overloaded operator. We then push the <strong>endl</strong> which creates a new line to the console.</p><p>The final line is the return 0. Since our main function is of type int, we have to return something. In C++ 11 there is no need for this in the main function however is required for every other function. I will stick to tradition and simply include it.</p><p>The next stage is that we compile the file. The first thing that occurs is the entire contents of the iostream header goes into the source file as we discussed. The compile process is where the C++ code gets translated into machine code. The next stage of compilation occurs when the rest of the lines of our existing code are parsed through. Essentially we have all of the contents of iostream into a new file and then all of the contents of our existing file added to a single file.</p><p>Compiling takes our text file the cpp file and converts it into an intermediate format called an obj file. An abstract syntax tree is created which is a conversion of constant data, variables and instructions.</p><p>Once the tree is created the code is generated. This means we now have machine code that our ARM CPU will execute. Every cpp file (translation units) which will have its own respective obj file associated with it. </p><p>Linking takes our obj files, our compiled files, in addition to the C++ Standard Library and finds where each symbol and function is and link them all together into one executable.   </p><p>The concepts above may appear a bit confusing if you are new to programming however as you code and compile and later debug and hack in Assembly Language it will all become very clear and you will learn to master the processor.</p><p>Next week we will dive into Debugging Hello World.</p><p></p>
+                                <h1 id="part-14---hello-world">Part 14 - Hello World</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>Today we begin our journey into the world of C++ and gaining a better understanding of how C++ interacts with our ARM processor.</p>
+<p>The prior lessons in this series focus on the basics of the ARM processor and touch upon its architecture and how everything ultimately translates down to Assembly Language and then ultimately opcodes into machine language.</p>
+<p>We start with our first program in C++ which is our &#x201C;Hello World&#x201D; program.&#xA0;Let&#x2019;s dive in and break each line down step-by-step and see how this language works.&#xA0;We will call this <strong>example1.cpp</strong> and save it to our device.</p>
+<pre spellcheck="false">#include &lt;iostream&gt;
+&#xA0;
+int main(void) {
+    std::cout &lt;&lt; &#x201C;Hello World&#x201D; std::endl;
+&#xA0;
+&#xA0;&#xA0;&#xA0;&#xA0;return 0;
+}
 </pre>
+
+<div class="slate-resizable-image-embed"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEbStDvDoxw0Q/article-inline_image-shrink_1000_1488/0/1520191083072?e=1614211200&amp;v=beta&amp;t=gV2PzS_bhVM99-q6RQUx7j3ixkhrFDHNz-BhBWa_3B0"></div>
+
+<p>To compile this we simply type:</p>
+<pre spellcheck="false">g++ example1.cpp -o example1
+</pre>
+
+<p>We simply then type:</p>
+<pre spellcheck="false">./example1
+</pre>
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHx4gcyoVXPIQ/article-inline_image-shrink_1000_1488/0/1520237920732?e=1614211200&amp;v=beta&amp;t=UESFqR47aiRNtsp7EGKdHhPwJzmWOKhpDsOHhWV20mE"></div>
+
+
+
+<p>SUCCESS!&#xA0;We see &#x201C;Hello World&#x201D; printed to the standard output or terminal!</p>
+<p>Lets break it down line by line:</p>
+<p><strong>#include &lt;iostream&gt; </strong>is referred to as a preprocessor statement.&#xA0;These preprocessor statements happen just before the compilation of the rest of the code.&#xA0;The #include keyword will find a file called <strong>iostream</strong> and take all of the contents of that file and paste it into the existing code we just created.&#xA0;These files are also called header files.&#xA0;</p>
+<p>We call <strong>iostream</strong> because we need a declaration for a function called <strong>cout</strong> and <strong>endl</strong>.&#xA0;The <strong>cout</strong> function allows us to print text to the standard output or terminal and the <strong>endl</strong> function creates a new line after the text has been displayed.</p>
+<p>The main section which is of type integer is the entry point into the main application or binary.&#xA0;You will notice a <strong>void</strong> inside the <strong>()</strong> which indicates that it does not have any parameters which will be passed into the function.</p>
+<p>The <strong>std </strong>indicates a namespace which is quite simply a mechanism to organize code into logical groups in order to prevent name collisions when you are dealing with multiple libraries.</p>
+<p>You will see many examples where they declare a using namespace std; however I will NEVER utilize this approach as it can cause naming collisions in more complex applications.</p>
+<p>The <strong>&lt;&lt;</strong> operator is referred to as an overloaded operator.&#xA0;They are essentially a function very similar to <strong>printf</strong> in the C language.&#xA0;We are simply moving the <strong>&#x201C;Hello World&#x201D; </strong>string into the <strong>cout</strong> function through the use of the <strong>&lt;&lt;</strong> overloaded operator.&#xA0;We then push the <strong>endl</strong> which creates a new line to the console.</p>
+<p>The final line is the return 0.&#xA0;Since our main function is of type int, we have to return something.&#xA0;In C++ 11 there is no need for this in the main function however is required for every other function.&#xA0;I will stick to tradition and simply include it.</p>
+<p>The next stage is that we compile the file.&#xA0;The first thing that occurs is the entire contents of the iostream header goes into the source file as we discussed.&#xA0;The compile process is where the C++ code gets translated into machine code.&#xA0;The next stage of compilation occurs when the rest of the lines of our existing code are parsed through.&#xA0;Essentially we have all of the contents of iostream into a new file and then all of the contents of our existing file added to a single file.</p>
+<p>Compiling takes our text file the cpp file and converts it into an intermediate format called an obj file.&#xA0;An abstract syntax tree is created which is a conversion of constant data, variables and instructions.</p>
+<p>Once the tree is created the code is generated.&#xA0;This means we now have machine code that our ARM CPU will execute.&#xA0;Every cpp file (translation units) which will have its own respective obj file associated with it.&#xA0;</p>
+<p>Linking takes our obj files, our compiled files, in addition to the C++ Standard Library and finds where each symbol and function is and link them all together into one executable.&#xA0;&#xA0;&#xA0;</p>
+<p>The concepts above may appear a bit confusing if you are new to programming however as you code and compile and later debug and hack in Assembly Language it will all become very clear and you will learn to master the processor.</p>
+<p>Next week we will dive into Debugging Hello World.</p>
+
                                 
                                 </section>
                             
@@ -2369,7 +2404,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 14 - Hello World","level":"1.80","depth":1,"next":{"title":"Part 15 - Debugging Hello World","level":"1.81","depth":1,"path":"pages/part-15-debugging-hello-world.md","ref":"pages/part-15-debugging-hello-world.md","articles":[]},"previous":{"title":"Part 13 - Instruction Pipeline","level":"1.79","depth":1,"path":"pages/part-13-instruction-pipeline.md","ref":"pages/part-13-instruction-pipeline.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-14-hello-world.md","mtime":"2020-12-26T10:17:30.184Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 14 - Hello World","level":"1.80","depth":1,"next":{"title":"Part 15 - Debugging Hello World","level":"1.81","depth":1,"path":"pages/part-15-debugging-hello-world.md","ref":"pages/part-15-debugging-hello-world.md","articles":[]},"previous":{"title":"Part 13 - Instruction Pipeline","level":"1.79","depth":1,"path":"pages/part-13-instruction-pipeline.md","ref":"pages/part-13-instruction-pipeline.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-14-hello-world.md","mtime":"2020-12-26T14:59:23.412Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

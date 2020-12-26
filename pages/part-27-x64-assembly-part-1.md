@@ -1,1 +1,25 @@
-<h1>Part 27 - x64 Assembly [Part 1]</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>Let's continue with another example:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEfqz2y8IXjmg/article-inline_image-shrink_1000_1488/0/1550829629337?e=1614211200&amp;v=beta&amp;t=__tUcBq9YEaI2EDSCxLW_QSYiedxN3ypuB6BKVcmG_g"/></div><p>As we can see we are moving <strong>0x10</strong> into <strong>RAX</strong> and adding <strong>0x05</strong> into <strong>RAX</strong>.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGhL0q5wm0INQ/article-inline_image-shrink_1000_1488/0/1550829671542?e=1614211200&amp;v=beta&amp;t=uNtrsshbiDzX4IdQMRx8xOIxurZl1zKCnRHYkKMSChI"/></div><p>We compile and let's disassemble.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFb2yVTXfVaPQ/article-inline_image-shrink_1000_1488/0/1550829696687?e=1614211200&amp;v=beta&amp;t=R396qzfoyf8eOSNanMe8uTS5z4fh5tlnG6v4CsRyyvI"/></div><p>As you can see as expected we see our code in debug.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEIIoJtk0Cgew/article-inline_image-shrink_1000_1488/0/1550829787663?e=1614211200&amp;v=beta&amp;t=Jb8t4Mp5WNYxO4QGVcZMfACm4DIKqwDcEcToYDt1wgw"/></div><p>We step twice and then...</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEruNpLl5kGGA/article-inline_image-shrink_1000_1488/0/1550829821644?e=1614211200&amp;v=beta&amp;t=Nm1YKTkHv2NRQyCiTgoOdzDhuT_AcQf_hhj6eMCy6ko"/></div><p>We see <strong>0x15 </strong>or <strong>21</strong> decimal moved into <strong>RAX</strong>. Take the time to carefully try these very simple examples as we go forward.</p>
+# Part 27 - x64 Assembly \[Part 1\]
+
+For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
+
+Let's continue with another example:
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEfqz2y8IXjmg/article-inline_image-shrink_1000_1488/0/1550829629337?e=1614211200&amp;v=beta&amp;t=__tUcBq9YEaI2EDSCxLW_QSYiedxN3ypuB6BKVcmG_g"/></div>
+
+As we can see we are moving __0x10__ into __RAX__ and adding __0x05__ into __RAX__.
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGhL0q5wm0INQ/article-inline_image-shrink_1000_1488/0/1550829671542?e=1614211200&amp;v=beta&amp;t=uNtrsshbiDzX4IdQMRx8xOIxurZl1zKCnRHYkKMSChI"/></div>
+
+We compile and let's disassemble.
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFb2yVTXfVaPQ/article-inline_image-shrink_1000_1488/0/1550829696687?e=1614211200&amp;v=beta&amp;t=R396qzfoyf8eOSNanMe8uTS5z4fh5tlnG6v4CsRyyvI"/></div>
+
+As you can see as expected we see our code in debug.
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEIIoJtk0Cgew/article-inline_image-shrink_1000_1488/0/1550829787663?e=1614211200&amp;v=beta&amp;t=Jb8t4Mp5WNYxO4QGVcZMfACm4DIKqwDcEcToYDt1wgw"/></div>
+
+We step twice and then...
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEruNpLl5kGGA/article-inline_image-shrink_1000_1488/0/1550829821644?e=1614211200&amp;v=beta&amp;t=Nm1YKTkHv2NRQyCiTgoOdzDhuT_AcQf_hhj6eMCy6ko"/></div>
+
+We see __0x15 __or __21__ decimal moved into __RAX__. Take the time to carefully try these very simple examples as we go forward.

@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,7 +2318,29 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-35---asm-debugging-5-indirect-addressing-with-registers">Part 35 - ASM Debugging 5 [Indirect Addressing With Registers]</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>In our fifth program we demonstrated how we can manipulate indirect addressing with registers.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEv1n4OpN4PiA/article-inline_image-shrink_1000_1488/0/1520483251669?e=1614211200&amp;v=beta&amp;t=F_hrI_rqxa3CCS3JeV5gnBOZIHEiOA21xSU39jMu-4k"></div><p>I want to start by addressing the question of why I use AT&amp;T syntax. In previous lessons I provided many ways to easily convert back and forth between AT&amp;T syntax and Intel syntax.</p><p>I deliberately choose this path so that it forces you to be comfortable with the most complex flavor of x86. If you are confused with this syntax please review the prior lessons as I go through the differences between both.</p><p>Let&#x2019;s recap. We will use objdump to take a compiled binary such as the one above that we compiled in our last lesson and show how we can view it&#x2019;s Intel source code.</p><p><strong>objdump -d -M intel indirect_addressing_with_registers | grep _start.: -A24 </strong></p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGbp7CDg0Oxfw/article-inline_image-shrink_1000_1488/0/1520148750030?e=1614211200&amp;v=beta&amp;t=87bKJ-1jmZk1x9qdQQfON6ma5QejlNi6ZDO3-rk2sqE"></div><p>Now back to our regularly scheduled program.</p><p>Let&#x2019;s load the binary into GDB and break on _start, step a few steps and examine 6 of the 11 values inside the constants label.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHy1ZKVvSsr-Q/article-inline_image-shrink_1000_1488/0/1520145698959?e=1614211200&amp;v=beta&amp;t=Gvk9Cv5xL2GTGpXy5_x6S0Q0-33NYOU-v6SourSqQ5c"></div><p>We then move the memory address of the constants label into edi and move the immediate value of 25 decimal into the second index of our array. This is in essence a source code hack as we are changing the original value of 8 to 25.</p><p>If you examine the source code you see line 18 where we load the value of 1 into edi. Keep in mind this is the second value as arrays are 0 based.</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHdhSvCdNu8JA/article-inline_image-shrink_1000_1488/0/1520241367735?e=1614211200&amp;v=beta&amp;t=vqggZeXZ6YGJL8cXTeJKbQokkecJ4Ixi0lzwgeoNbeM"></div><p>You can see we changed the value of 8 decimal into 25 as explained.</p><p>This is our first introduction to arrays in assembly language. It is critical that you understand how they work as you may someday be a Malware Analyst or Reverse Engineer looking at the compiled binary of any number of higher-level program compiled arrays.</p><p>In our next lesson we will manually hack one of the values in GDB. Keep in mind, we will have to overwrite the contents inside an actual memory address with an immediate value. The fun is only beginning!</p><p>I look forward to seeing you all next week when we dive into hacking our fifth assembly program!</p><p></p>
+                                <h1 id="part-35---asm-debugging-5-indirect-addressing-with-registers">Part 35 - ASM Debugging 5 [Indirect Addressing With Registers]</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>In our fifth program we demonstrated how we can manipulate indirect addressing with registers.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEv1n4OpN4PiA/article-inline_image-shrink_1000_1488/0/1520483251669?e=1614211200&amp;v=beta&amp;t=F_hrI_rqxa3CCS3JeV5gnBOZIHEiOA21xSU39jMu-4k"></div>
+
+<p>I want to start by addressing the question of why I use AT&amp;T syntax. In previous lessons I provided many ways to easily convert back and forth between AT&amp;T syntax and Intel syntax.</p>
+<p>I deliberately choose this path so that it forces you to be comfortable with the most complex flavor of x86. If you are confused with this syntax please review the prior lessons as I go through the differences between both.</p>
+<p>Let&#x2019;s recap. We will use objdump to take a compiled binary such as the one above that we compiled in our last lesson and show how we can view it&#x2019;s Intel source code.</p>
+<p><strong>objdump -d -M intel indirect_addressing_with_registers | grep _start.: -A24 </strong></p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGbp7CDg0Oxfw/article-inline_image-shrink_1000_1488/0/1520148750030?e=1614211200&amp;v=beta&amp;t=87bKJ-1jmZk1x9qdQQfON6ma5QejlNi6ZDO3-rk2sqE"></div>
+
+<p>Now back to our regularly scheduled program.</p>
+<p>Let&#x2019;s load the binary into GDB and break on _start, step a few steps and examine 6 of the 11 values inside the constants label.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHy1ZKVvSsr-Q/article-inline_image-shrink_1000_1488/0/1520145698959?e=1614211200&amp;v=beta&amp;t=Gvk9Cv5xL2GTGpXy5_x6S0Q0-33NYOU-v6SourSqQ5c"></div>
+
+<p>We then move the memory address of the constants label into edi and move the immediate value of 25 decimal into the second index of our array. This is in essence a source code hack as we are changing the original value of 8 to 25.</p>
+<p>If you examine the source code you see line 18 where we load the value of 1 into edi. Keep in mind this is the second value as arrays are 0 based.</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHdhSvCdNu8JA/article-inline_image-shrink_1000_1488/0/1520241367735?e=1614211200&amp;v=beta&amp;t=vqggZeXZ6YGJL8cXTeJKbQokkecJ4Ixi0lzwgeoNbeM"></div>
+
+<p>You can see we changed the value of 8 decimal into 25 as explained.</p>
+<p>This is our first introduction to arrays in assembly language. It is critical that you understand how they work as you may someday be a Malware Analyst or Reverse Engineer looking at the compiled binary of any number of higher-level program compiled arrays.</p>
+<p>In our next lesson we will manually hack one of the values in GDB. Keep in mind, we will have to overwrite the contents inside an actual memory address with an immediate value. The fun is only beginning!</p>
+<p>I look forward to seeing you all next week when we dive into hacking our fifth assembly program!</p>
 
                                 
                                 </section>
@@ -2362,7 +2384,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 35 - ASM Debugging 5 [Indirect Addressing With Registers]","level":"1.36","depth":1,"next":{"title":"Part 36 - ASM Hacking 5 [Indirect Addressing With Registers]","level":"1.37","depth":1,"path":"pages/part-36-asm-hacking-5-indirect-addressing-with-registers.md","ref":"pages/part-36-asm-hacking-5-indirect-addressing-with-registers.md","articles":[]},"previous":{"title":"Part 34 - ASM Program 5 [Indirect Addressing With Registers]","level":"1.35","depth":1,"path":"pages/part-34-asm-program-5-indirect-addressing-with-registers.md","ref":"pages/part-34-asm-program-5-indirect-addressing-with-registers.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-35-asm-debugging-5-indirect-addressing-with-registers.md","mtime":"2020-12-26T10:17:01.267Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 35 - ASM Debugging 5 [Indirect Addressing With Registers]","level":"1.36","depth":1,"next":{"title":"Part 36 - ASM Hacking 5 [Indirect Addressing With Registers]","level":"1.37","depth":1,"path":"pages/part-36-asm-hacking-5-indirect-addressing-with-registers.md","ref":"pages/part-36-asm-hacking-5-indirect-addressing-with-registers.md","articles":[]},"previous":{"title":"Part 34 - ASM Program 5 [Indirect Addressing With Registers]","level":"1.35","depth":1,"path":"pages/part-34-asm-program-5-indirect-addressing-with-registers.md","ref":"pages/part-34-asm-program-5-indirect-addressing-with-registers.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-35-asm-debugging-5-indirect-addressing-with-registers.md","mtime":"2020-12-26T14:58:39.614Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

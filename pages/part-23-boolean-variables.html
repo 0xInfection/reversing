@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,22 +2318,45 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-23-&#x2013;-boolean-variables">Part 23 &#x2013; Boolean Variables</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>The next stage in our journey is that of Boolean variables. The name goes back to the great George Boole to which all modern computer science has derived. </p><p>At the lowest level a value is either 0 or 1, false or true, + &lt; 5 volts or +5 volts, etc.</p><p>Let&#x2019;s examine our code.</p><pre spellcheck="false">#include &lt;iostream&gt;<p></p>
-<p>int main(void) {</p>
-<pre><code>        bool isHacked = false;
+                                <h1 id="part-23-&#x2013;-boolean-variables">Part 23 &#x2013; Boolean Variables</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>The next stage in our journey is that of Boolean variables.&#xA0;The name goes back to the great George Boole to which all modern computer science has derived.&#xA0;</p>
+<p>At the lowest level a value is either 0 or 1, false or true, + &lt; 5 volts or +5 volts, etc.</p>
+<p>Let&#x2019;s examine our code.</p>
+<pre spellcheck="false">#include &lt;iostream&gt;
 
+&#xA0;
 
+int main(void) {
 
-        std::cout &amp;lt;&amp;lt; isHacked &amp;lt;&amp;lt; std::endl;
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; bool isHacked = false;
 
+&#xA0;
 
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; std::cout &lt;&lt; isHacked &lt;&lt; std::endl;
 
-        return 0;
-</code></pre><p>}
-&lt;/pre&gt;<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFdIMgcYlHsxQ/article-inline_image-shrink_1000_1488/0/1520192758105?e=1614211200&amp;v=beta&amp;t=Cw-cpnI_gSKwLaA95D2XTtJrEYf9CZIdqpPJ6qF5c-g"></div></p><p>To compile this we simply type:</p><pre spellcheck="false">g++ example4.cpp -o example4<p></p>
-<p>./example4
-&lt;/pre&gt;<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHKj1-JGT0Ctw/article-inline_image-shrink_1000_1488/0/1520196655358?e=1614211200&amp;v=beta&amp;t=7Cyap7-vGZe6WZFHJ8AXdNMG7e6k1EbWpzEYlKIWKHw"></div></p><p>SUCCESS! We see <strong>0</strong> printed to the standard output or terminal!</p><p>Let&#x2019;s break it down:</p><p>We create a boolean variable called <strong>isHacked </strong>to which we assign a value of <strong>false</strong> or <strong>0</strong>. When we run the binary we clearly see the value <strong>0</strong> that successfully was echoed to the standard output.</p><p>Next week we will dive into Debugging Boolean Variables.</p><p></p>
-</pre></pre>
+&#xA0;
+
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; return 0;
+
+}
+</pre>
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFdIMgcYlHsxQ/article-inline_image-shrink_1000_1488/0/1520192758105?e=1614211200&amp;v=beta&amp;t=Cw-cpnI_gSKwLaA95D2XTtJrEYf9CZIdqpPJ6qF5c-g"></div>
+
+<p>To compile this we simply type:</p>
+<pre spellcheck="false">g++ example4.cpp -o example4
+
+./example4
+</pre>
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQHKj1-JGT0Ctw/article-inline_image-shrink_1000_1488/0/1520196655358?e=1614211200&amp;v=beta&amp;t=7Cyap7-vGZe6WZFHJ8AXdNMG7e6k1EbWpzEYlKIWKHw"></div>
+
+<p>SUCCESS!&#xA0;We see <strong>0</strong> printed to the standard output or terminal!</p>
+<p>Let&#x2019;s break it down:</p>
+<p>We create a boolean variable called <strong>isHacked </strong>to which we assign a value of <strong>false</strong> or <strong>0</strong>.&#xA0;When we run the binary we clearly see the value <strong>0</strong> that successfully was echoed to the standard output.</p>
+<p>Next week we will dive into Debugging Boolean Variables.</p>
+
                                 
                                 </section>
                             
@@ -2376,7 +2399,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 23 – Boolean Variables","level":"1.89","depth":1,"next":{"title":"Part 24 – Debugging Boolean Variables","level":"1.90","depth":1,"path":"pages/part-24-debugging-boolean-variables.md","ref":"pages/part-24-debugging-boolean-variables.md","articles":[]},"previous":{"title":"Part 22 – Hacking Character Variables","level":"1.88","depth":1,"path":"pages/part-22-hacking-character-variables.md","ref":"pages/part-22-hacking-character-variables.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-23-boolean-variables.md","mtime":"2020-12-26T10:17:36.080Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 23 – Boolean Variables","level":"1.89","depth":1,"next":{"title":"Part 24 – Debugging Boolean Variables","level":"1.90","depth":1,"path":"pages/part-24-debugging-boolean-variables.md","ref":"pages/part-24-debugging-boolean-variables.md","articles":[]},"previous":{"title":"Part 22 – Hacking Character Variables","level":"1.88","depth":1,"path":"pages/part-22-hacking-character-variables.md","ref":"pages/part-22-hacking-character-variables.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-23-boolean-variables.md","mtime":"2020-12-26T14:59:31.590Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

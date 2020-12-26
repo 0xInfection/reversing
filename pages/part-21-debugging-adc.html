@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter " data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2318,7 +2318,31 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-21-&#x2013;-debugging-adc">Part 21 &#x2013; Debugging ADC</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</p><p>To recap, ADC is the same as ADD except it adds a 1 if the carry flag is set. We need to pay particular attention to the CPSR or Status Register when we work with ADC.</p><p>Let&#x2019;s review our code:</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGqrMhaSxpa8w/article-inline_image-shrink_1000_1488/0/1520042704437?e=1614211200&amp;v=beta&amp;t=HWKPFUtYhFCZR6JHoWIG2eFpdmL63gkNPI93j2cWO5g"></div><p>We <strong>add</strong> <strong>100</strong> decimal into <strong>r1</strong>, <strong>4,294,967,295</strong> into <strong>r2</strong>, <strong>100</strong> decimal into <strong>r3</strong> and <strong>100</strong> decimal into <strong>r4</strong>. We then <strong>add r1</strong> and <strong>r2</strong> and place in <strong>r0</strong> and then <strong>add r3</strong> and <strong>r4</strong> and place into <strong>r5</strong>.</p><p>We see <strong>adds </strong>which sets the flags in the CPSR. We have to once again remember when we debug in GDB, the value of the CPSR is in hex. In order to see what flags are set, we must convert the hex to binary. This will make sense as we start to debug and hack this example in the coming tutorials.</p><p>Last week I raised a question where I wanted you to ask yourself what is going to happen when <strong>r3(100 decimal)</strong> is added to <strong>r4(100 decimal)</strong>? What do you think the value of <strong>r5</strong> will be with the above example of setting the flags with the adds result?</p><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEjUOaVR0DMCg/article-inline_image-shrink_1000_1488/0/1520150885116?e=1614211200&amp;v=beta&amp;t=jKk973_vnmPF1idTHJDeuv1lKl76UvTSXL1b-HDPXHo"></div><p>Ok so we add <strong>100 decimal</strong> and <strong>100 decimal</strong> together in <strong>r3</strong> and <strong>r4</strong> and we get <strong>201</strong> <strong>decimal</strong> in <strong>r5</strong>! Is something broken? ADC is the same as ADD except it adds a 1 if the carry flag is set. Therefore we get the extra 1 in <strong>r5</strong>.</p><p>We again need to remember that bits 31, 20, 29 and 28 in the CPSR indicate the following:</p><p><strong>bit 31 - N = Negative Flag</strong></p><p><strong>bit 30 - Z = Zero Flag</strong></p><p><strong>bit 29 - C = Carry Flag</strong></p><p><strong>bit 28 - V = Overflow Flag</strong></p><p>We see the <strong>CPSR</strong> at <strong>20000010 hex</strong>. The most significant bits of <strong>20000010 hex</strong> in binary is <strong>0010</strong>.</p><p>Therefore if the value in binary was <strong>0010</strong> of bit 31, 30, 29 and 28 (<strong>NZCV</strong>) that would mean:</p><p><strong>Negative Flag NOT Set</strong></p><p><strong>Zero Flag NOT Set</strong></p><p><strong>Carry Flag SET</strong></p><p><strong>Overflow Flag NOT Set</strong></p><p>As we can clearly see the carry flag was set. I hope you can digest and understand each of these very simple operations and how they have an effect on the CPSR.</p><p>Next week we will dive into Hacking ADC.</p><p></p>
+                                <h1 id="part-21-&#x2013;-debugging-adc">Part 21 &#x2013; Debugging ADC</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
+<p>To recap, ADC is the same as ADD except it adds a 1 if the carry flag is set. We need to pay particular attention to the CPSR or Status Register when we work with ADC.</p>
+<p>Let&#x2019;s review our code:</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGqrMhaSxpa8w/article-inline_image-shrink_1000_1488/0/1520042704437?e=1614211200&amp;v=beta&amp;t=HWKPFUtYhFCZR6JHoWIG2eFpdmL63gkNPI93j2cWO5g"></div>
+
+<p>We <strong>add</strong> <strong>100</strong> decimal into <strong>r1</strong>, <strong>4,294,967,295</strong> into <strong>r2</strong>, <strong>100</strong> decimal into <strong>r3</strong> and <strong>100</strong> decimal into <strong>r4</strong>. We then <strong>add r1</strong> and <strong>r2</strong> and place in <strong>r0</strong> and then <strong>add r3</strong> and <strong>r4</strong> and place into <strong>r5</strong>.</p>
+<p>We see <strong>adds </strong>which sets the flags in the CPSR. We have to once again remember when we debug in GDB, the value of the CPSR is in hex. In order to see what flags are set, we must convert the hex to binary. This will make sense as we start to debug and hack this example in the coming tutorials.</p>
+<p>Last week I raised a question where I wanted you to ask yourself what is going to happen when <strong>r3(100 decimal)</strong> is added to <strong>r4(100 decimal)</strong>? What do you think the value of <strong>r5</strong> will be with the above example of setting the flags with the adds result?</p>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQEjUOaVR0DMCg/article-inline_image-shrink_1000_1488/0/1520150885116?e=1614211200&amp;v=beta&amp;t=jKk973_vnmPF1idTHJDeuv1lKl76UvTSXL1b-HDPXHo"></div>
+
+<p>Ok so we add <strong>100 decimal</strong> and <strong>100 decimal</strong> together in <strong>r3</strong> and <strong>r4</strong> and we get <strong>201</strong> <strong>decimal</strong> in <strong>r5</strong>! Is something broken? ADC is the same as ADD except it adds a 1 if the carry flag is set. Therefore we get the extra 1 in <strong>r5</strong>.</p>
+<p>We again need to remember that bits 31, 20, 29 and 28 in the CPSR indicate the following:</p>
+<p><strong>bit 31 - N = Negative Flag</strong></p>
+<p><strong>bit 30 - Z = Zero Flag</strong></p>
+<p><strong>bit 29 - C = Carry Flag</strong></p>
+<p><strong>bit 28 - V = Overflow Flag</strong></p>
+<p>We see the <strong>CPSR</strong> at <strong>20000010 hex</strong>. The most significant bits of <strong>20000010 hex</strong> in binary is <strong>0010</strong>.</p>
+<p>Therefore if the value in binary was <strong>0010</strong> of bit 31, 30, 29 and 28 (<strong>NZCV</strong>) that would mean:</p>
+<p><strong>Negative Flag NOT Set</strong></p>
+<p><strong>Zero Flag NOT Set</strong></p>
+<p><strong>Carry Flag SET</strong></p>
+<p><strong>Overflow Flag NOT Set</strong></p>
+<p>As we can clearly see the carry flag was set. I hope you can digest and understand each of these very simple operations and how they have an effect on the CPSR.</p>
+<p>Next week we will dive into Hacking ADC.</p>
 
                                 
                                 </section>
@@ -2362,7 +2386,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 21 – Debugging ADC","level":"1.62","depth":1,"next":{"title":"Part 22 – Hacking ADC","level":"1.63","depth":1,"path":"pages/part-22-hacking-adc.md","ref":"pages/part-22-hacking-adc.md","articles":[]},"previous":{"title":"Part 20 – ADC","level":"1.61","depth":1,"path":"pages/part-20-adc.md","ref":"pages/part-20-adc.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-21-debugging-adc.md","mtime":"2020-12-26T10:17:18.787Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 21 – Debugging ADC","level":"1.62","depth":1,"next":{"title":"Part 22 – Hacking ADC","level":"1.63","depth":1,"path":"pages/part-22-hacking-adc.md","ref":"pages/part-22-hacking-adc.md","articles":[]},"previous":{"title":"Part 20 – ADC","level":"1.61","depth":1,"path":"pages/part-20-adc.md","ref":"pages/part-20-adc.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-21-debugging-adc.md","mtime":"2020-12-26T14:59:05.602Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

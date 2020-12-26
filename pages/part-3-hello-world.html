@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Part 4 - Debugging "Hello World" · Reverse Engineering</title>
+        <title>Part 3 - "Hello World" · Reverse Engineering</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="part-5-hacking-"hello-world".html" />
+    <link rel="next" href="part-4-debugging-hello-world.html" />
     
     
-    <link rel="prev" href="part-3-"hello-world".html" />
+    <link rel="prev" href="part-2-development-setup.html" />
     
 
     </head>
@@ -2052,9 +2052,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-&-genesis-of-life.md">
+        <li class="chapter " data-level="1.152" data-path="part-37-x64-c-amp;-genesis-of-life.html">
             
-                <span>
+                <a href="part-37-x64-c-amp;-genesis-of-life.html">
             
                     
                     Part 37 - x64 C & Genesis Of Life
@@ -2078,9 +2078,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.154" data-path="part-39-why-c?.html">
+        <li class="chapter " data-level="1.154" data-path="part-39-why-c.html">
             
-                <a href="part-39-why-c?.html">
+                <a href="part-39-why-c.html">
             
                     
                     Part 39 - Why C?
@@ -2169,9 +2169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.161" data-path="part-3-"hello-world".html">
+        <li class="chapter active" data-level="1.161" data-path="part-3-hello-world.html">
             
-                <a href="part-3-"hello-world".html">
+                <a href="part-3-hello-world.html">
             
                     
                     Part 3 - "Hello World"
@@ -2182,9 +2182,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.162" data-path="part-4-debugging-"hello-world".html">
+        <li class="chapter " data-level="1.162" data-path="part-4-debugging-hello-world.html">
             
-                <a href="part-4-debugging-"hello-world".html">
+                <a href="part-4-debugging-hello-world.html">
             
                     
                     Part 4 - Debugging "Hello World"
@@ -2195,9 +2195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.163" data-path="part-5-hacking-"hello-world".html">
+        <li class="chapter " data-level="1.163" data-path="part-5-hacking-hello-world.html">
             
-                <a href="part-5-hacking-"hello-world".html">
+                <a href="part-5-hacking-hello-world.html">
             
                     
                     Part 5 - Hacking "Hello World"
@@ -2303,7 +2303,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Part 4 - Debugging "Hello World"</a>
+        <a href=".." >Part 3 - "Hello World"</a>
     </h1>
 </div>
 
@@ -2318,23 +2318,112 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p></p><h1 id="part-4---debugging-hello-world">Part 4 - Debugging &quot;Hello World&quot;</h1><p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/hacking_c-_arm64</p><p>In the last lesson we spent a good deal of time really understanding what is going on inside our binary.  This laid the groundwork for an easy hack.</p><p>Let&apos;s fire up radare2 in write mode.</p><pre spellcheck="false">radare2 -w ./0x01_asm_64_helloworld
-</pre><p>Let&apos;s auto analyze.</p><pre spellcheck="false">aaa
-</pre><p>Seek to main.</p><pre spellcheck="false">s main
-</pre><p>View disassembly.</p><pre spellcheck="false">v
-</pre><div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQF_AB5hVPpF-g/article-inline_image-shrink_1500_2232/0/1606475269047?e=1614211200&amp;v=beta&amp;t=lNqLA2rqeTf2PQlaUw4d9ABGKMz6PG-lddmClxoAP_o"></div><p>You can right click and <strong>Open image in new tab </strong>to get an expanded view.</p><p>We see the memory addresses as they are on disk as we are not running the binary as we discussed in the last lesson.</p><p>We see that at <strong>0xb48</strong> we very easily find our string.</p><p>Let&apos;s get back to the terminal view.</p><pre spellcheck="false">q
-</pre><p>Let&apos;s verify the string.</p><pre spellcheck="false">[0x000009e4]&gt; ps @0xb48
-Hello World!
-[0x000009e4]&gt;<p></p>
-<p>&lt;/pre&gt;</p><p>Let&apos;s hack the string.</p><pre spellcheck="false">[0x000009e4]&gt; w Hacked World @0xb48
-</pre><p>Let&apos;s verify the hack.</p><pre spellcheck="false">[0x000009e4]&gt; ps @0xb48
-Hacked World
-[0x000009e4]&gt;
-</pre><p>Let&apos;s quit radare2.</p><pre spellcheck="false">q
-</pre><p>Now let&apos;s run our binary again!</p><pre spellcheck="false">./0x01_asm_64_helloworld
-Hacked World
-</pre><p>We see that we very easily hacked the binary.  These lessons will help you understand how an attacker creates a workflow so you can learn how to anticipate and better reverse engineer.</p><p>In our next lesson we will work with simple I/O.</p><p></p>
+                                <h1 id="part-3---hello-world">Part 3 - &quot;Hello World&quot;</h1>
+<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. <a href="https://github.com/mytechnotalent/hacking\_c-\_arm64" target="_blank">https://github.com/mytechnotalent/hacking\_c-\_arm64</a></p>
+<p>Today we are going to debug our first program utilizing our dev build of Radare2.</p>
+<p>If this is your first time working with Assembly I would encourage you check out this series as it may better prepare you for the upcoming lessons.</p>
+<iframe allowfullscreen="true" class="center lazy-loaded" frameborder="0" height="294" src="https://www.linkedin.com/embeds/publishingEmbed.html?articleId=7574498398602237511" title="mytechnotalent/Reverse-Engineering-Tutorial" width="744"></iframe>
+
+<p>To begin let&apos;s open up our binary in Radare2.</p>
+<pre spellcheck="false">radare2 ./0x01_asm_64_helloworld
 </pre>
+
+<p>Let&apos;s take advantage of Radare2&apos;s auto analysis feature.</p>
+<pre spellcheck="false">aaa
+</pre>
+
+<p>The next thing we want to do logically is fire up the program in debug mode so it maps the raw machine code from disk to a running process.</p>
+<pre spellcheck="false">ood
+</pre>
+
+<p>Now that we have a running instance we can seek to the main entry point of the binary.</p>
+<pre spellcheck="false">s main
+</pre>
+
+<p>Let us take an initial examination by doing the following.</p>
+<pre spellcheck="false">v
+</pre>
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQGbmlq5BpJRvQ/article-inline_image-shrink_1500_2232/0/1606325530734?e=1614211200&amp;v=beta&amp;t=XlkybYoKX_nrr9rlLdtK042bxOc_mcjIiKFkUSKb3G4"></div>
+
+<p>You can right click and <strong>Open image in new tab </strong>to get an expanded view.</p>
+<p>Remember there is a difference between an executable on disk and what resides when it is mapped. When it is on disk it is referred to as unmapped. We will look at that at the end of the lesson. For now we are looking at a mapped version as you see it is an offset of the mapped code we will examine later.</p>
+<p>Do you notice that as your mapped memory values are different than mine? That is because of ALSR.</p>
+<p>Address Space Layout Randomization (ASLR) is a security technique used in operating systems, first implemented in 2001. The current versions of all major operating systems (iOS, Android, Windows, macOS, and Linux) feature ASLR protection.</p>
+<p>ASLR is primarily used to protect against buffer overflow attacks. In a buffer overflow, attackers feed a function as much junk data as it can handle, followed by a malicious payload.</p>
+<p>We notice in my mapped memory that at address <em>0x55629cab48</em> we see our string<em> &quot;Hello World!&quot;</em>. You will have a different offset as we discussed but will find the same result.</p>
+<p>Let us get back to a console window by doing the following.</p>
+<pre spellcheck="false">q
+</pre>
+
+<p>Let&apos;s verify our initial analysis.</p>
+<pre spellcheck="false">[0x55629ca9e4]&gt; ps @0x55629cab48
+Hello World!
+[0x55629ca9e4]&gt;
+</pre>
+
+<p>We can see that it is in fact true that at the mapped memory address of <em>0x55629cab48</em> we see the string <em>&quot;Hello World!&quot;</em>.</p>
+<p>Let&apos;s also look at the hex view so we can see and better understand what is going on at the machine code level.</p>
+<pre spellcheck="false">px @0x55629cab48
+</pre>
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFpr4Sn53SDaQ/article-inline_image-shrink_1000_1488/0/1606325962588?e=1614211200&amp;v=beta&amp;t=lkVQRvc1_fUHdKH7BQ6xvIoyOVtd1HZuBOFS9NT-v-0"></div>
+
+<p>We see our &quot;Hello World!&quot; string and we can again see that it exists starting at the mapped memory address of 0x55629cab48.</p>
+<p>We see that our machine code instructions are 16 bytes long or 64-bits long as we can see the first column start at <em>48</em> and end with <em>00</em>.</p>
+<p>It is VERY important we understand a few key things. First is the fact that a single hex digit is 4-bits wide or a nibble or a half of a byte. In our case <em>4</em> is a half of a byte and <em>8</em> is the other half of the byte. Together they form a byte and in our case a valid ascii char code.</p>
+<p>Let&apos;s visit the online ascii table.</p>
+<iframe allowfullscreen="true" class="center lazy-load" data-delayed-url="https://www.linkedin.com/embeds/publishingEmbed.html?articleId=7387163987651632632" frameborder="0" height="104" src="about:blank" title="ASCII Table and Description" width="744"></iframe>
+
+<p>Second, we need to understand what the machine code translates to. Let&apos;s look up what <em>48</em> is in hex. We see that it is a capital &apos;H&apos;. That maps perfectly as you see in the right hand column of the image above we see a 0 and below it the letter H.</p>
+<p>Obviously <em>65</em> hex is <strong><em>&apos;e&apos;</em></strong> and so on and so forth. You can extrapolate the rest for yourself now that you have a basic understanding of what you are looking at.</p>
+<p>Let&apos;s now define a breakpoint on main and execute this binary to verify in fact that when we continue on from main it will print <em>&quot;Hello World&quot;</em> to the stdout.</p>
+<pre spellcheck="false">[0x55629ca9e4]&gt; db 0x55629ca9e4
+[0x55629ca9e4]&gt;
+</pre>
+
+<p>Let us continue and verify our hypothesis. First we continue and break on main.</p>
+<pre spellcheck="false">[0x55629ca9e4]&gt; dc
+hit breakpoint at: 0x55629ca9e4
+[0x55629ca9e4]&gt;
+</pre>
+
+<p>Now we step again and since there are no other breakpoints we will conclude the execution and verify our result in stdout.</p>
+<pre spellcheck="false">[0x55629ca9e4]&gt; dc
+Hello World!
+(59575) Process exited with status=0x0
+[0x7fb146cb8c]&gt;
+</pre>
+
+<p>Let&apos;s exit Radare2.</p>
+<pre spellcheck="false">q
+y
+y
+</pre>
+
+<p>Let us rerun Radare2 again and this time not run the binary and simply look at the unmapped binary that is on disk.</p>
+<pre spellcheck="false">radare2 ./0x01_asm_64_helloworld
+</pre>
+
+<p>Let&apos;s auto analyze.</p>
+<pre spellcheck="false">aaa
+</pre>
+
+<p>Let&apos;s seek to main.</p>
+<pre spellcheck="false">s main
+</pre>
+
+<p>Then view.</p>
+<pre spellcheck="false">v
+</pre>
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQFxOrN5kQQhuQ/article-inline_image-shrink_1500_2232/0/1606327203401?e=1614211200&amp;v=beta&amp;t=7ogFQ8LalKVuK3ZaYPun01rpyEmgW4wXLpy3kZpyOD0"></div>
+
+<p>You can right click and <strong>Open image in new tab </strong>to get an expanded view.</p>
+<p>Notice that we have <em>&quot;Hello World!&quot;</em> this time at the unmapped memory address of <em>0xb48</em>. You notice that when you ran the binary the executable had an offset to this value but the LSB were <em>48</em> hex.</p>
+<p>I hope this lesson helps you to understand the basics of 64-bit ARM assembly and how to reverse it properly.</p>
+<p>In our next lesson we will hack the value.</p>
+
                                 
                                 </section>
                             
@@ -2361,12 +2450,12 @@ Hacked World
 
             
                 
-                <a href="part-3-"hello-world".html" class="navigation navigation-prev " aria-label="Previous page: Part 3 - "Hello World"">
+                <a href="part-2-development-setup.html" class="navigation navigation-prev " aria-label="Previous page: Part 2 - Development Setup">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="part-5-hacking-"hello-world".html" class="navigation navigation-next " aria-label="Next page: Part 5 - Hacking "Hello World"">
+                <a href="part-4-debugging-hello-world.html" class="navigation navigation-next " aria-label="Next page: Part 4 - Debugging "Hello World"">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -2377,7 +2466,7 @@ Hacked World
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 4 - Debugging \"Hello World\"","level":"1.162","depth":1,"next":{"title":"Part 5 - Hacking \"Hello World\"","level":"1.163","depth":1,"path":"pages/part-5-hacking-\"hello-world\".md","ref":"pages/part-5-hacking-\"hello-world\".md","articles":[]},"previous":{"title":"Part 3 - \"Hello World\"","level":"1.161","depth":1,"path":"pages/part-3-\"hello-world\".md","ref":"pages/part-3-\"hello-world\".md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-4-debugging-\"hello-world\".md","mtime":"2020-12-26T10:18:25.634Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:28:20.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 3 - \"Hello World\"","level":"1.161","depth":1,"next":{"title":"Part 4 - Debugging \"Hello World\"","level":"1.162","depth":1,"path":"pages/part-4-debugging-hello-world.md","ref":"pages/part-4-debugging-hello-world.md","articles":[]},"previous":{"title":"Part 2 - Development Setup","level":"1.160","depth":1,"path":"pages/part-2-development-setup.md","ref":"pages/part-2-development-setup.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-3-hello-world.md","mtime":"2020-12-26T15:00:37.845Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T15:05:30.630Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
