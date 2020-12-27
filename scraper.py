@@ -106,4 +106,3 @@ if __name__ == '__main__':
     driver.get(readmeurl)
     grabLinks(driver.page_source)
     driver.quit()
-
