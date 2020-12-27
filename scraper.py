@@ -76,7 +76,7 @@ def grabContent(pgsrc: str, category: str, fname: str):
     dirname = 'pages/{}'.format(processfName(fname))
     if category not in open('SUMMARY.md', 'r').read():
         with open('SUMMARY.md', 'a') as wf:
-            wf.write('* [{}]({})'.format(category, '/{}'.format(processfName(category))))
+            wf.write('* [{}]({})\n'.format(category, 'pages/{}'.format(processfName(category))))
     toadd = '\t* [{}]({})'.format(fname, dirname)
     with open(dirname, 'w+') as wf:
         wf.write(html2markdown.convert(content))
