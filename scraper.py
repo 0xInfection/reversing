@@ -76,8 +76,7 @@ def grabContent(pgsrc: str, category: str, fname: str):
     dirname = 'pages/{}'.format(processfName(fname))
     if category not in open('SUMMARY.md', 'r').read():
         with open('SUMMARY.md', 'a') as wf:
-            wf.write('* [{}]({})'.format(category,
-                '/{}'.format(processfName(category))))
+            wf.write('* [{}]({})'.format(category, '/{}'.format(processfName(category))))
     toadd = '\t* [{}]({})'.format(fname, dirname)
     with open(dirname, 'w+') as wf:
         wf.write(html2markdown.convert(content))
@@ -89,23 +88,19 @@ def grabLinks(source: str):
     Grabs links to the linkedin site
     '''
     patt = re.compile(r'(?i)click\s\[[a-z]{4}\]\((.*?)\)', re.MULTILINE)
-    fname = re.compile(r'(?i)^##\s*Lesson\s*\d{1,4}:(.+?)\((.*?)\)', re.MULTILINE)
+    fname = re.compile(r'(?i)^##\s*Lesson\s*\d{1,5}:(.+?)\((.*?)\)', re.MULTILINE)
     rexmatch = [i for i in patt.finditer(source)]
     rexname = [i for i in fname.finditer(source)]
     for match, name in zip(rexmatch, rexname):
         if match.group(1).startswith('https://www.linkedin.com/pulse/'):
             print("Visiting link:", match.group(1))
             driver.get(match.group(1))
-            grabContent(driver.page_source, name.group(1), name.group(2))
+            grabContent(driver.page_source, name.group(1).strip(), name.group(2))
 
 if __name__ == '__main__':
     # init summary.md
     with open("SUMMARY.md", 'w') as wf:
         wf.write('# Summary\n\n')
-    # create images dir
-    if os.path.exists('imgs/'):
-        shutil.rmtree('imgs/')
-    os.makedirs('imgs/')
     # visit raw URL
     print("Visiting homepage...")
     driver.get(readmeurl)
