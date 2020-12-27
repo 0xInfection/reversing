@@ -1,4 +1,4 @@
-# Part 17 – How To Install Linux
+## Part 17 – How To Install Linux
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
@@ -126,9 +126,7 @@ Next you should then type sudo apt-get upgrade and press enter.
 
 In order to work with 32-bit Assembly examination, we need to install the gcc multilib package so that we can compile 32-bit versions of C code for examination.&nbsp;Type sudo apt-get install gcc-multilib and press enter.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="/imgs/1520546711790.jpg"/></div>
-
-&nbsp;&nbsp;&nbsp;&nbsp;
+![](/imgs/1520546711790.jpg)&nbsp;&nbsp;&nbsp;&nbsp;
 
 Finally click on __Devices__ and click __Insert Guest Additions CD Image…__ in order to get a better working functionality out of your VM.
 

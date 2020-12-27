@@ -1,4 +1,4 @@
-# Part 8 - Bytes, Words, Double Words, etc...
+## Part 8 - Bytes, Words, Double Words, etc...
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
@@ -14,9 +14,7 @@ Don't worry if this does not make sense yet. The point of utilizing this example
 
 Below is an examination of the ESP register. Again, it is not critical that you understand what a register is or what ESP does. We simply want to see what a memory location looks like:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="/imgs/1520519298916.jpg"/></div>
-
-&nbsp;
+![](/imgs/1520519298916.jpg)&nbsp;
 
 We see the memory location of 0xffffd040 which of course is in hexadecimal. We also see the value inside the ESP register which is 0xf7fac3dc which is also in hexadecimal.
 

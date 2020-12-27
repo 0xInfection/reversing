@@ -1,25 +1,21 @@
-# Part 15 - SHR Instruction
+## Part 15 - SHR Instruction
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
-The ROL command stands for rotate left.
+The SHR command stands for shift right.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1543575772711.jpg"/></div>
+Let’s assume the register __al__ holds 00010100b which is an 8-bit binary value.&nbsp;Let’s assume the instruction is __shr al, 2__.&nbsp;Below is what transpires as we see the values move two bits to the left.
 
-In our simple x64 example on an Ubuntu Linux machine above we see we __mov 1__ into __al __and rotate left by 1 bit.
+&nbsp;00010100
 
-The binary representation is __00000001b__.&nbsp;If we __ROL__ 1 bit the value simply becomes __00000010b__ as demonstrated below.
+&nbsp;&nbsp;&nbsp;00010100
 
-We first compile and link by:
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1542995744073.jpg"/></div>
 
-__nasm -f elf64 -o test.o test.asm__
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1542995747116.jpg"/></div>
 
-__ld -o test test.o__
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1542995744391.jpg"/></div>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1543575972607.jpg"/></div>
+00000101
 
-We can see here in the debugger that __al __starts with __1__ and when we rotate left it goes to __10b__.
-
-You can ROL with additional bits as well.&nbsp;The logic would remain the same as the bits will rotate left just as we demonstrated above.
-
-Next week we will dive into ROR! Stay tuned!
+Next week we will dive into ROL! Stay tuned!

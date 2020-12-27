@@ -1,92 +1,90 @@
-# Part 6 - Basic I/O
+## Part 6 - Basic I/O
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/hacking\_c-\_arm64
 
-Today we are going to debug our very basic input validation program from last lecture.
+Today we are going to look at a basic I/O C++ program that has some minimal validation.
 
-To begin let's open up our binary in Radare2.
+Before I get into the brief lecture as I try to keep these short, I wanted to explain why I am not using the textbook straight _cin_ examples that you see across the globe.
 
-<pre spellcheck="false">radare2 ./0x02_asm_64_basicio
+The _cin_, standard input stream, which takes input from the keyboard is referred to as our stdin.
+
+What _cin_ does is use whitespace, tab and newline as a terminator to the input stream. For example if you input _'abc'_ and hit a tab or put a whitespace or newline by hitting return the data to the right of it will be ignored.
+
+The problem is if you read from _cin_ again it will pick up the remaining data in the stream if you do not flush the input buffer.
+
+If you had for example:
+
+<pre spellcheck="false">std::cin &gt;&gt; val1;
+std::cin &gt;&gt; val2;
 </pre>
 
-Let's take advantage of Radare2's auto analysis feature.
+If the user enters _1_ and then leaves a space and then _2_ and presses enter, you have no issue. _1_ will be assigned into _val1_ and _2_ will be assigned to _val2_ as they are chained.
 
-<pre spellcheck="false">aaa
+The problem is what if you enter _'Hey Jude'_ instead of an integer? What happens is it tries to read an integer and it goes into a failed state and from that point everything else it is extracting is unreliable.
+
+I did not mean to be long winded but I really wanted to emphasize why you would NEVER use _cin_ by itself and I mean NEVER!
+
+Let's take a look at our basic i/o program that we will debug in the next lesson with a very basic C++ program that validates input.
+
+<pre spellcheck="false">#include &lt;iostream&gt;
+#include &lt;sstream&gt;
+#include &lt;string&gt;
+
+int main()
+{
+    int age = 0;
+    bool valid = false;
+    char null = '\0';
+
+    while (!valid)
+    {
+        std::cout &lt;&lt; "Enter Age: ";
+
+        // Get input as string
+        std::string line;
+        getline(std::cin, line);
+
+        // Init stringstream
+        std::stringstream is(line);
+
+        // Attempt to read a valid age from the stringstream and
+        // if a number can't be read, or there is more than white
+        // space in the string after the number, then fail the read
+        // and get another string from the user and make sure the 
+        // dude is at least a year old and less than or equal to
+        // 100 years old
+        if (!(is &gt;&gt; age) || (is &gt;&gt; std::ws &amp;&amp; is.get(null)) || age &gt;= 100 || age &lt;= 0)
+            std::cout &lt;&lt; "Dude be real!" &lt;&lt; std::endl;
+        else
+            valid = true ;
+    }
+
+    std::cout &lt;&lt; "Your are " &lt;&lt; age &lt;&lt; " years old, seems legit!" &lt;&lt; std::endl;
+
+    return 0;
+}
 </pre>
 
-The next thing we want to do logically is fire up the program in debug mode so it maps the raw machine code from disk to a running process.
+We start by importing _iostream_, _sstream_ and _string_. So far nothing tricky.
 
-<pre spellcheck="false">ood
+We then prompt the user to enter their age. We then create a string object called _line_ and take advantage of C++ _getline()_ which is a standard C++ library function that is used to read a string or a line from an input stream properly.
+
+We then take advantage of the _stringstream_ as it associates a string object with a stream allowing you to read from the string as if it were a stream like we would do with raw _cin_. In this simple example we create an _is_ object which is short for input stringstream and connect it with our _line_ object.
+
+Then before we echo data to stdout we do a little validation. We first check to see if _age_ is the type it was defined as which is an _int_ OR is there a white space in the stream after a given integer OR is age greater than _100_ or less than _0_. Very simply it provides a response if the input does not meet this criteria.
+
+Finally if all is well it echoes out a simple _cout_.
+
+Let's compile and link.
+
+<pre spellcheck="false">g++ -o 0x02_asm64_basicio 0x02_asm64_basicio.cpp
 </pre>
 
-Now that we have a running instance we can seek to the main entry point of the binary.
+Let's run.
 
-<pre spellcheck="false">s main
+<pre spellcheck="false">./0x02_asm64_basicio
 </pre>
 
-Let us take an initial examination by doing the following.
+Depending on what you enter it will validate as appropriate as described above. PLEASE try this example and manipulate the source to get a full understanding of what is going on here.
 
-<pre spellcheck="false">v
-</pre>
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607682836896.jpg"/></div>
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607683092302.jpg"/></div>
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607683246880.jpg"/></div>
-
-You can right click and&nbsp;__Open image in new tab&nbsp;__to get an expanded view.
-
-A couple things to note we see at _0x5566be00cc_ the output of _"Enter Age: "_ and at _0x5566be017c_ a call to _istream_ which is going to capture the values from _stdin_ to which we identify a failure condition at 0x5566be01d0 where we find _"Dude be real!"_ and we see the results of a proper input validation starting at _0x5566be0218 _where we say _"You are "_ and then we see a call to the output stream at _0x5566be0238_ and then the continuation of the validation string at _0x5566be0244_ where we say _" years old, seems legit!"_.
-
-The next step is to look at the binary with a visual graph.
-
-<pre spellcheck="false">q
-VV
-ppppp
-</pre>
-
-We see the following:
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607685699956.jpg"/></div>
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607685723107.jpg"/></div>
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607685740119.jpg"/></div>
-
-This is our zoomed out visual graph. We can see how the program moves from function to function. You will notice there are a series of tags such as \[ol\] or \[ok\] and you can literally type the following:
-
-<pre spellcheck="false">p
-ol
-</pre>
-
-Now we are inside that function:
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607686001944.jpg"/></div>
-
-Then to go back to main.
-
-<pre spellcheck="false">qq
-s main
-VV
-</pre>
-
-This will take us to an expanded graph that we can also use our arrow keys to look around.
-
-Let's set a breakpoint at _0x5566be00c4_ where we _bne 0x5566be0214_ which is where we see the success route of our binary.
-
-<pre spellcheck="false">[0x5566be0194]&gt; db 0x5566be00c4
-[0x5566be0194]&gt; dc
-hit breakpoint at: 0x5566be00c4
-Enter Age: 33
-hit breakpoint at: 0x5566be00c4
-[0x5566be0194]&gt; dc
-Your are 33 years old, seems legit!
-(2215) Process exited with status=0x0
-</pre>
-
-As you can see we cycled the loop and entered in a correct validation and was able to get our success return.
-
-In our next lesson we will hack the validation.
-
-  
+In our next lesson we will debug this very simple binary using our dev build of Radare2.

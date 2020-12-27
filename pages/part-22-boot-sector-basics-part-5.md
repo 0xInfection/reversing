@@ -1,25 +1,23 @@
-# Part 22 - Boot Sector Basics \[Part 5\]
+## Part 22 - Boot Sector Basics \[Part 5\]
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
-This week we will focus on how to use QEMU which is an emulator to boot our simple new OS.
+We begin by looking at some simple additions to our code. What we will accomplish today is to create a simple operating system that does literally nothing but boot. We will use QEMU as an emulator as I am too lazy to set up VirtualBox or VMWare however you can easily port the .bin to an .iso if you chose and boot from either.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1547804344026.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1547203117260.jpg"/></div>
 
-Type the above to obtain qemu specifically for x86 systems.
+We are simply adding a padding algorithm on line 7 that simply examines how many bytes are left after we subtract 200h or 512 and then it pads the remaining bytes with zeros. At the end you will see what we refer to as the magic number which is __0xaa55__ as this is a signature that the cpu is looking for to identify a boot sector. Remember this code is at sector 0 when it boots as there is no file system so if it finds the successful signature it will attempt to boot it.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1547804375264.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1547203262774.jpg"/></div>
 
-Run the emulator with our binary.
+We build the binary with the code above. Now let's look at the code in the hex editor.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1547804407713.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1547203298648.jpg"/></div>
 
-You will see the following. Keep in mind it does nothing but an infinite loop jump which we discussed in detail in previous lessons. This however is the most basic x86 OS one can create.
+As you can see it pads out the remaining bytes up to 200h or 512 with 0's as we anticipated. Below is the remainder of the binary.
 
-It simply looks for the signature which we spoke of last week (if this does not make sense please review last weeks lecture) and if it is exactly 200h bytes and it is placed at the first sector of the boot medium the process will be successful.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1547203339833.jpg"/></div>
 
-If you are interested there are different emulators for different architectures.
+As you can see at the very end we have __55 AA__. We remember that our processor is little endian so when we code it it was __aa 55__ and which is in it's mapped format. When it goes into the cpu it reverses the byte order. This is critical that you understand this.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1547804592522.jpg"/></div>
-
-Next week we will discuss memory addressing so that we can set up a stack within our simple os.
+Next week we will simply do nothing more than launch our new operating system. Stay tuned.

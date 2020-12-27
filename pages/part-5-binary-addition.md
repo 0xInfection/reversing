@@ -1,33 +1,27 @@
-# Part 5 - Binary Addition
+## Part 5 - Binary Addition
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
-Binary subtraction is nothing more than adding the negative value of the number to be subtracted. For example 8 + - 4, the starting point would be zero to which we move 8 points in the positive direction and then four points in the negative direction yielding a value of 4.
+Binary addition can occur in one of four different fashions:
 
-We represent a sign bit in binary to which bit 7 indicates the sign of number where 0 is positive and 1 is negative.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1536919520880.jpg"/></div>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1537526862141.jpg"/></div>
+Keep in mind the (1) means a carry bit. It very simply means an overflow.
 
-The above would represent -2.
+Lets take the following 4-bit nibble example:
 
-We utilize the concept of twos compliment which inverts each bit and then finally adding 1.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1536919547320.jpg"/></div>
 
-Lets example binary 2.
+We see an obvious carry in the 3rd bit. If the 8th bit had a carry then this would generate a carry flag within the CPU.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1537526884698.jpg"/></div>
+Let’s examine an 8-bit number:
 
-Invert the bits.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1536919574450.jpg"/></div>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1537526902723.jpg"/></div>
+If we had:
 
-Add 1.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1536919592305.jpg"/></div>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1537526921447.jpg"/></div>
+Here we see a carry bit which would trigger the carry flag within the CPU to be 1 or true. We will discuss the carry flag in later tutorials. Please just keep in mind this example to reference as it is very important to understand.
 
-Let’s examine a subtraction operation:
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1537526940998.jpg"/></div>
-
-So what is the (1) you may ask, that is the overflow bit. In future tutorials we will examine what we refer to as the overflow flag and carry flag.
-
-Next week we will dive into word lengths! Stay tuned!
+Next week we will dive into binary subtraction! Stay tuned!

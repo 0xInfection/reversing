@@ -1,27 +1,23 @@
-# Part 24 - Boot Sector Basics \[Part 7\]
+## Part 24 - Boot Sector Basics \[Part 7\]
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
-Today we will put all the pieces together. We will create our custom OS that does nothing but boot-up, set a video mode and then only accept numeric digits in the console. This is the final tutorial in this mini-series of Boot Sector Basics.
+We need to discuss memory at this point. Before we can discuss setting up a simple stack in our bootloader we must understand how memory is allocated in the bootsector.
 
-Let's examine our code:
+1)__0x0 = Interrupt Vector Table __- This is where our interrupt table exists at the very base of memory. This is where all of our interrupt calls exist.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1549024795636.jpg"/></div>
+2)__0x400 = BIOS Data Area__ - This stores variables about the state of the bootable device.
 
-The first thing we do is move to the programable area of the boot sector code at address 0x7c00. We then set the stack base and identify the area for our stack and set the base pointer into the stack pointer.
+3)__0x7c00 = Loaded Boot Sector__ - This has our machine code that will be loaded into RAM by the bootloader firmware (note: firmware is simply code that runs before an OS runs like what we are doing).
 
-We then call our video mode function where we set a 640x200 greyscale console. We then call our get character input function that will only allow digits 0 to 9 as you can see 0x30 is the hex ascii value for 0 and 0x39 is the hex ascii value of 9. If the user types anything else in the console literally nothing will enter into the console. This is the absolute control you have in Assembly.
+4)__0x7e00 = Free__ - This is your stack area that you can develop in.
 
-Lets compile and run:
+5)__0x9fc00 = Extended BIOS Data Area__ - Holds data from disk track buffers and other connected devices as remember there is no file system as of yet.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1549025055903.jpg"/></div>
+6)__0xa0000 = Video Memory__ - BIOS maps your video memory here at boot.
 
-We then see the qemu console:
+7)__0xc0000 = BIOS__ - Where BIOS officially resides.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1549025085922.jpg"/></div>
+8)__0x100000 = Free__ - Additional space you can develop in.
 
-As you can see I am only able to type numeric digits in our OS. Try it for yourself. Write the code and compile and run in the qemu editor. If you do not have qemu installed I show you in detail how to install it in the last two tutorials.
-
-Take the time to really review what I am doing here as it is critical to understand that this is how your computer boots before going into 32 then 64-bit mode.
-
-Next week we will simply discuss the high-level concept of how your computer bridges a 64-bit OS.
+This is critical that you understand how memory is laid out at boot. In our next lesson we will create a simple stack at __0x7e00__.

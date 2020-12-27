@@ -1,23 +1,21 @@
-# Part 21 - Boot Sector Basics \[Part 4\]
+## Part 21 - Boot Sector Basics \[Part 4\]
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
-We begin by looking at some simple additions to our code. What we will accomplish today is to create a simple operating system that does literally nothing but boot. We will use QEMU as an emulator as I am too lazy to set up VirtualBox or VMWare however you can easily port the .bin to an .iso if you chose and boot from either.
+Today we continue our Boot Sector Basics. Let's examine the code:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1547203117260.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1546600881811.jpg"/></div>
 
-We are simply adding a padding algorithm on line 7 that simply examines how many bytes are left after we subtract 200h or 512 and then it pads the remaining bytes with zeros. At the end you will see what we refer to as the magic number which is __0xaa55__ as this is a signature that the cpu is looking for to identify a boot sector. Remember this code is at sector 0 when it boots as there is no file system so if it finds the successful signature it will attempt to boot it.
+We add a string to our code as seen above and compile.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1547203262774.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1546600938007.jpg"/></div>
 
-We build the binary with the code above. Now let's look at the code in the hex editor.
+Let's examine the binary in a hex editor.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1547203298648.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1546600963265.jpg"/></div>
 
-As you can see it pads out the remaining bytes up to 200h or 512 with 0's as we anticipated. Below is the remainder of the binary.
+Closely examine the above. We see our original code which we do not have to review however now we see a series of numbers, hex numbers that represent ASCII characters. We see that each letter corresponds with a letter. When we say that ultimately everything goes down to 0 and 1 this is a proof of concept. As you can see __EB __is selected above and we can see those hex values ultimately go to __11101011__ in binary.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1547203339833.jpg"/></div>
+Homework: Google and research the ASCII conversion table and do some research on your own and better understand how hex values represent characters.
 
-As you can see at the very end we have __55 AA__. We remember that our processor is little endian so when we code it it was __aa 55__ and which is in it's mapped format. When it goes into the cpu it reverses the byte order. This is critical that you understand this.
-
-Next week we will simply do nothing more than launch our new operating system. Stay tuned.
+Next week we take it to the next level. Stay tuned!

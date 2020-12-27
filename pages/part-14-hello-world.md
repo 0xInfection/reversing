@@ -1,4 +1,4 @@
-# Part 14 - Hello World
+## Part 14 - Hello World
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
@@ -29,7 +29,7 @@ We simply then type:
 <pre spellcheck="false">./example1
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="/imgs/1520237920732.jpg"/></div>
+![](/imgs/1520237920732.jpg)
 
   
 

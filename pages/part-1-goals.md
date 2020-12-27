@@ -1,6 +1,4 @@
-# Part 1: Goals
-
-For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
+## Part 1: Goals
 
 Essential to the discussion of basic reverse engineering is the concept of modern malware analysis. Malware analysis is the understanding and examination of information necessary to respond to a network intrusion.
 
@@ -16,6 +14,6 @@ In contrast, network signatures are used to find malicious code by examining net
 
 Upon identification of these aforementioned signatures, the next step is to identify what the malware is actually doing.
 
-__UNDER NO CONDITIONS ARE YOU TO EVER USE THIS EDUCATION TO CAUSE HARM TO ANY SYSTEM OF ANY KIND AS I AM NOT RESPONSIBLE! THIS IS FOR LEARNING PURPOSES ONLY!__
+____
 
 In our next lesson we will discuss techniques of malware analysis.

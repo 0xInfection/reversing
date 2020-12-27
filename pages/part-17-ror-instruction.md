@@ -1,13 +1,23 @@
-# Part 17 - ROR Instruction
+## Part 17 - ROR Instruction
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
-Over the next few tutorials we are going to write a very basic x86 Operating System to which we will use QEMU which is a full system emulator or OS emulator. You could also install VirtualBox and ultimately convert our boot loader to an ISO if you so choose.
+The ROR command stands for rotate right.
 
-At the very core of a computer booting is what we refer to as the boot loader. The boot loader physically reads the first sector or sector 0 from your HD or other media to ultimately bootstrap an OS.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1544181149655.jpg"/></div>
 
-When the computer boots it reads the first sector which is exactly 0x200 bytes (hex) or 512 bytes in decimal.
+In our simple x64 example on an Ubuntu Linux machine above we see we&nbsp;mov 1&nbsp;into&nbsp;al&nbsp;and rotate right by 1 bit.
 
-The system that is reading this boot loader is what is referred to as BIOS which is a basic input output system and it loads in 16-bit mode. It does this to be compatible with older processors. Modern processors immediately switch to what we refer to as UEFI which is a more sophisticated IO system however we will focus on the very basics here with BIOS.
+The binary representation is __00000001b__.&nbsp;If we __ROR__ 1 bit the value simply becomes __10000000b__ as demonstrated below.
 
-Next week we will discuss what exactly goes on when BIOS reads the boot sector.
+We first compile and link by:
+
+__nasm -f elf64 -o test.o test.asm__
+
+__ld -o test test.o__
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1544181229818.jpg"/></div>
+
+We can see here in the debugger that&nbsp;al&nbsp;starts with&nbsp;1&nbsp;and when we rotate right it goes to&nbsp;__10000000b__.
+
+Next week we will dive into Boot Sector Basics! Stay tuned!

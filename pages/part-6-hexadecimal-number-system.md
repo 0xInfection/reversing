@@ -1,4 +1,4 @@
-# Part 6: Hexadecimal Number System
+## Part 6: Hexadecimal Number System
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
@@ -12,9 +12,7 @@ Hexadecimal is similar to every other number system except in hexadecimal, each 
 
 Lets look at a simple table to see how hexadecimal compares to decimal.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="/imgs/1520241886257.jpg"/></div>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![](/imgs/1520241886257.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 Ok I see the smoke coming out of your ears but its ok! In decimal, everything is dealt with in the power of 10. Let's take the number 42 and examine it in decimal:
 
@@ -80,7 +78,7 @@ Lets take another example of F5 hexadecimal. This would be as follows:
 
 Lets look at a binary to hexadecimal table:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="/imgs/1520145784508.jpg"/></div>
+![](/imgs/1520145784508.jpg)
 
   
 
@@ -108,15 +106,11 @@ F --- 15 x 4096 = 61,440
 
 Addition in hexadecimal works as follows. From this point forward all numbers in hexadecimal will have a 'h' next to the number:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="/imgs/1520242000178.jpg"/></div>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![](/imgs/1520242000178.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 Another example is as such:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="/imgs/1520243446596.jpg"/></div>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![](/imgs/1520243446596.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 A final add example is as such:
 

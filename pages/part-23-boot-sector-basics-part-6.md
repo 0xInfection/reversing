@@ -1,23 +1,25 @@
-# Part 23 - Boot Sector Basics \[Part 6\]
+## Part 23 - Boot Sector Basics \[Part 6\]
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
-We need to discuss memory at this point. Before we can discuss setting up a simple stack in our bootloader we must understand how memory is allocated in the bootsector.
+This week we will focus on how to use QEMU which is an emulator to boot our simple new OS.
 
-1)__0x0 = Interrupt Vector Table __- This is where our interrupt table exists at the very base of memory. This is where all of our interrupt calls exist.
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1547804344026.jpg"/></div>
 
-2)__0x400 = BIOS Data Area__ - This stores variables about the state of the bootable device.
+Type the above to obtain qemu specifically for x86 systems.
 
-3)__0x7c00 = Loaded Boot Sector__ - This has our machine code that will be loaded into RAM by the bootloader firmware (note: firmware is simply code that runs before an OS runs like what we are doing).
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1547804375264.jpg"/></div>
 
-4)__0x7e00 = Free__ - This is your stack area that you can develop in.
+Run the emulator with our binary.
 
-5)__0x9fc00 = Extended BIOS Data Area__ - Holds data from disk track buffers and other connected devices as remember there is no file system as of yet.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1547804407713.jpg"/></div>
 
-6)__0xa0000 = Video Memory__ - BIOS maps your video memory here at boot.
+You will see the following. Keep in mind it does nothing but an infinite loop jump which we discussed in detail in previous lessons. This however is the most basic x86 OS one can create.
 
-7)__0xc0000 = BIOS__ - Where BIOS officially resides.
+It simply looks for the signature which we spoke of last week (if this does not make sense please review last weeks lecture) and if it is exactly 200h bytes and it is placed at the first sector of the boot medium the process will be successful.
 
-8)__0x100000 = Free__ - Additional space you can develop in.
+If you are interested there are different emulators for different architectures.
 
-This is critical that you understand how memory is laid out at boot. In our next lesson we will create a simple stack at __0x7e00__.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1547804592522.jpg"/></div>
+
+Next week we will discuss memory addressing so that we can set up a stack within our simple os.

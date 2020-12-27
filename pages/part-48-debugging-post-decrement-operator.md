@@ -1,8 +1,8 @@
-# Part 48 – Debugging Post-Decrement Operator
+## Part 48 – Debugging Post-Decrement Operator
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
-Let's once again review our code.
+Let's re-examine our code.
 
 <pre spellcheck="false">#include &lt;iostream&gt;
 
@@ -17,14 +17,18 @@ int main(void) {
 }
 </pre>
 
-Let's review last week's debug.
+We see our very simple C++ code above to which we are doing nothing more than assigning a number into a variable to which we init another int variable and assign the original variable to which it is post-decremented. We then output each value to the terminal.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1532690049930.jpg"/></div>
+Let's debug.
 
-As we can see here the value in __r1__ at __main+68__ is __15__. Let's hack!
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1532085310684.jpg"/></div>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1532690140517.jpg"/></div>
+It is clear that the value for the post-decrement operator gets loaded into __r1__ at __main+68 __so let's break at __main+72__.
 
-Once again we have manipulated and changed program execution to our own bidding. With each of these bite-size lessons you continue to get a better grasp on the processor and how it interfaces with the binary.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1532085326445.jpg"/></div>
 
-I hope this series gives you a solid framework for understanding the ARM processor. This concludes the series. Thank you all for coming along on the journey!
+We can clearly see that __r1 __does in fact hold the value of __15__ to which was decremented from our original value.
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1532085443370.jpg"/></div>
+
+Next week we will dive into Hacking Post-Decrement Operator.

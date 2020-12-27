@@ -30,7 +30,8 @@ def processfName(filen: str):
     fm = filen.lower().replace(' ', '-').replace('-–-', '-').replace(
         '---', '-').replace(':', '').replace('.', '').replace(
         ',', '').replace('[', '').replace(']', '').replace('/', ''
-        ).replace('"', '').replace('?', '').replace('&', '').replace('=', '')
+        ).replace('"', '').replace('?', '').replace('&',
+        '').replace('=', '').strip()
     fm += '.md'
     return fm
 
@@ -63,16 +64,21 @@ def processContent(source: str):
             toput = toput.replace(i, '')
     return toput
 
-def grabContent(pgsrc: str, fname: str):
+def grabContent(pgsrc: str, category: str, fname: str):
     '''
     Grabs blog content off the linkedin page
     '''
-    soup = BeautifulSoup(pgsrc, 'html.parser')
-    content = processContent(soup.find('section', attrs={'class': 'article-body'}))
+    rex = r"<section class=\"article-body\" data-redirect-url=.+?>(<p>.*)</section><div class=(?:\"ugc-post-bar\"><h3 class=\"ugc-post-bar__published_by|\"author-info author-info__container)"
+    patt = re.compile(rex, re.DOTALL | re.MULTILINE)
+    content = processContent(re.search(patt, pgsrc).group(1))
     content = '<h2>{}</h2>{}'.format(fname, content)
     print('\n\n'+content+'\n\n')
     dirname = 'pages/{}'.format(processfName(fname))
-    toadd = '* [{}]({})'.format(fname, dirname)
+    if category not in open('SUMMARY.md', 'r').read():
+        with open('SUMMARY.md', 'a') as wf:
+            wf.write('* [{}]({})'.format(category,
+                '/{}'.format(processfName(category))))
+    toadd = '\t* [{}]({})'.format(fname, dirname)
     with open(dirname, 'w+') as wf:
         wf.write(html2markdown.convert(content))
     with open('SUMMARY.md', 'a') as wf:
@@ -83,14 +89,14 @@ def grabLinks(source: str):
     Grabs links to the linkedin site
     '''
     patt = re.compile(r'(?i)click\s\[[a-z]{4}\]\((.*?)\)', re.MULTILINE)
-    fname = re.compile(r'(?i)^##\s*Lesson\s*\d{1,4}:.+?\((.*?)\)', re.MULTILINE)
+    fname = re.compile(r'(?i)^##\s*Lesson\s*\d{1,4}:(.+?)\((.*?)\)', re.MULTILINE)
     rexmatch = [i for i in patt.finditer(source)]
     rexname = [i for i in fname.finditer(source)]
     for match, name in zip(rexmatch, rexname):
         if match.group(1).startswith('https://www.linkedin.com/pulse/'):
             print("Visiting link:", match.group(1))
             driver.get(match.group(1))
-            grabContent(driver.page_source, name.group(1))
+            grabContent(driver.page_source, name.group(1), name.group(2))
 
 if __name__ == '__main__':
     # init summary.md

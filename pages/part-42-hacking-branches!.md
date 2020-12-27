@@ -1,79 +1,35 @@
-# Part 42 - Hacking Branches!
+## Part 42 - Hacking Branches!
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
-We are at the end of the road. This is the final video in the x64 series. The final topic is that of pointers.
+Let's take a look at some branching logic:
 
-What are pointers? Let us start with an example.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1566729104643.jpg"/></div>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1567286671465.jpg"/></div>
+As we can plainly see we init an int to 1 and if the variable is equal to 1 the first if statement prints a response to standard output.
 
-A pointer is nothing more than a memory address. When we compile we will clearly see where lottery\_number lives in mapped memory (this is a running example unlike our unmapped Radare examples).
+Let's compile:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1567286745307.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1566729192665.jpg"/></div>
 
-Let's add a true pointer to the example:
+Let's run:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1567287725406.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1566729212374.jpg"/></div>
 
-We see the same value:
+As we can logically see the first branch is taken. Let's take it into Radare and look around at the assembly:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1567287787090.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1566729291450.jpg"/></div>
 
-Let us experiment more:
+We can see the branching logic with the aqua colored arrows. At __0x0000114a__ we see our first branch being loaded into __rdi__. Take note at __0x00001148__ we see a __jne 0x1158__. At __0x00001158__ we see our second branch being loaded into __rdi__.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1567288396508.jpg"/></div>
+The __jne__ means jump if not equal. This means if what is being compared in __0x00001144__ is not equal to 1 (we see __1__ being compared to what is in __local\_4h__ which we know is pseudo code for what is actually in __rbp-0x4__. This should make sense as I went over this in detail last week if you are confused please revisit our last lesson.
 
-We see the pointer address point to a new address:
+To hack we simply make the __jne__ statement to __je__ which is jump if equal which we know the __cmp__ or comparison is equal so it will now branch to "__A is NOT 1!__".
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1567288456995.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1566729757650.jpg"/></div>
 
-Remember pointers are memory addresses of other variables. Let's look at it another way:
+When we exit Radare we can see we have hacked the binary successfully:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1567289354121.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1566729786175.jpg"/></div>
 
-Let us compile:
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1567289368216.jpg"/></div>
-
-We deference by doing the following:
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1567289646596.jpg"/></div>
-
-Then we compile:
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1567289657671.jpg"/></div>
-
-We can see the deference pointer is equal to 777.
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1567290644015.jpg"/></div>
-
-We can see the example with an array:
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1567290665083.jpg"/></div>
-
-Let's debug:
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1567290786481.jpg"/></div>
-
-Then we disassemble:
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1567290800965.jpg"/></div>
-
-Let's hack!
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1567292294462.jpg"/></div>
-
-Let's re-examine the binary:
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1567292311387.jpg"/></div>
-
-We can see we hacked the value of 3 with 6.
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1567292376880.jpg"/></div>
-
-We can see we have made the successful hack.
-
-I hope over the years through the literal hundreds of x86, ARM and x64 tutorials you have a basic knowledge of how to do GOOD to protect critical infrastructures from malicious hands by understanding how the enemy works. Go and do GOOD work!
-
-  
+Stay tuned!

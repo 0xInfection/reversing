@@ -1,33 +1,17 @@
-# Part 2 - Transistors
+## Part 2 - Transistors
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
-In our last tutorial we spoke briefly about binary to which we represent as either true or false.&nbsp;In binary, true is equal to 1 and false is equal to 0.&nbsp;Computers are ultimately built on this very simple concept to which at the core we have four possible logic gates which can be combined in an infinite amount of sequences.
+To understand modern computing we have to go down to the most basic level.&nbsp;Our journey starts with the transistor.&nbsp;
 
-Let’s start with the __AND Gate __below.
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1535107553506.jpg"/></div>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1535712345568.jpg"/></div>
+A transistor is nothing more than a complex relay as it is a switch that can be open or closed by applying an electrical charge.&nbsp;This charge is made possible by the use of a control wire.&nbsp;The control wire is attached to a material that can conduct or resist electricity to which on the other end there are two electrodes attached to such a material.&nbsp;This is the concept of a semiconductor.&nbsp;The control wire attaches to a gate electrode where if you change the electrical charge of the gate the conductivity of the semiconductor material can be manipulated.&nbsp;Think of a simple kitchen faucet to which you can turn water on or off.&nbsp;The concept is quite similar.
 
-In an AND Gate there are two binary values to which outputs 1 only if both binary values are 1.&nbsp;
+Quite simply the flow of electricity represents a 1 and the lack of such an electricity flow represents a 0.&nbsp;This is a boolean on or off architecture to which we need to take a deeper dive into the binary number system at a later time.
 
-The __NOT Gate__ is represented below.
+I deliberately try to keep these lessons short so that it draws the largest audience to take just a few minutes each week to properly grasp some complicated architectures.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1535712373734.jpg"/></div>
+Next week we will touch on logic gates and discuss how the combination of such gates make up the core of how the processor works. We will only discuss them on a high level as it would be an entire additional course in electrical engineering to really get into how the processor is made to which we will stick to the basics and spend more of our time on how to program the chip.
 
-In a NOT Gate it simply takes a single binary value and negates it.
-
-The __OR Gate__ is represented below.
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1535712396805.jpg"/></div>
-
-In an OR Gate only one of the inputs has to be 1 in order to output a 1.
-
-The __XOR Gate&nbsp;__ is represented below.
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1535712436598.jpg"/></div>
-
-In an XOR Gate if both inputs are either 0 or 1 the output is 0.
-
-"The Why..." Ok so why am I going over this? What does this have to do with understanding Assembly or Reverse Engineering? Well... At the very CORE of all processors are these simple logic gates that when combined together form complex instructions. I could spend literally years showing you this in practice however I will leave that for another to pick up the charge. What is important is that you get a basic understanding of what is going on here when we ultimately see instructions such as AND, OR, XOR, etc when we code in Assembly and more importantly when we Reverse Engineer.
-
-Stay tuned! We will be building our own very SIMPLE Operating System shortly!
+After some basics about the processor and an introduction to the binary and hexadecimal number systems we will build our very own bootable operating system.

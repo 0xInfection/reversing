@@ -1,34 +1,30 @@
-# Part 47 – Post-Decrement Operator
+## Part 47 – Post-Decrement Operator
 
-For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
+This week we will address the post-decrement operator. Let's examine our code.
 
-Let's re-examine our code.
+<pre spellcheck="false"><span class="hljs-meta">#include &lt;iostream&gt;</span>
 
-<pre spellcheck="false">#include &lt;iostream&gt;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+&nbsp;&nbsp; &nbsp;<span class="hljs-keyword">int</span> myNumber = <span class="hljs-number">16</span>;
+&nbsp;&nbsp; &nbsp;<span class="hljs-keyword">int</span> myNewNumber = myNumber--;
 
-int main(void) {
-&nbsp;&nbsp; &nbsp;int myNumber = 16;
-&nbsp;&nbsp; &nbsp;int myNewNumber = myNumber--;
+&nbsp;&nbsp; &nbsp;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; myNewNumber &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; myNumber &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
 
-&nbsp;&nbsp; &nbsp;std::cout &lt;&lt; myNewNumber &lt;&lt; std::endl;
-    std::cout &lt;&lt; myNumber &lt;&lt; std::endl;
-
-&nbsp;&nbsp; &nbsp;return 0;
+&nbsp;&nbsp; &nbsp;<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 }
 </pre>
 
-We see our very simple C++ code above to which we are doing nothing more than assigning a number into a variable to which we init another int variable and assign the original variable to which it is post-decremented. We then output each value to the terminal.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width">
+<img src="/imgs/1531481191370.jpg"/>
+</div>
 
-Let's debug.
+ As we compile we see __16__ and __15__ printed out respectively.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1532085310684.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width">
+<img src="/imgs/1531481259797.jpg"/>
+</div>
 
-It is clear that the value for the post-decrement operator gets loaded into __r1__ at __main+68 __so let's break at __main+72__.
+We see that in this scenario __myNewNumber__ does get decremented as __myNumber-- __takes the value of 16 and reduces it to 15.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1532085326445.jpg"/></div>
-
-We can clearly see that __r1 __does in fact hold the value of __15__ to which was decremented from our original value.
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1532085443370.jpg"/></div>
-
-Next week we will dive into Hacking Post-Decrement Operator.
+Next week we will dive into the Debugging Post-Decrement Operator.

@@ -1,39 +1,15 @@
-# Part 26 - Boot Sector Basics \[Part 9\]
+## Part 26 - Boot Sector Basics \[Part 9\]
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
-Today we begin our actual x64 code basics. Over the next few weeks I will create very simple examples so we get a grasp of the x64 architecture. Let's start with a basic code block:
+Before we dive into x64 Assembly I want to talk very briefly about what we refer to as long mode.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1550227269983.jpg"/></div>
+When the computer boots it needs to enable what we refer to as the A-20 line. In early architectures, processors had 20 address lines which were A-0 to A-19 to which could access 2 to the power of 20 bytes of information. The A-20 line is an external memory reference containing a 16-bit offset address added to a 16-bit segmented number which shifts 4 bits to get the additional access.
 
-We begin by declaring the __.data__ section to which all of our global data is stores. If we had a string or some other form of hard coded data it would go in that block. In our example we will leave it empty.
+This process combined with the Global Descriptor Table allows you to work with your Control Register to to execute a far jump to enter protected mode which is 32-bits.
 
-The __.text__ section declares where the entry point of the program will begin in our case we use __\_start__ or you can use __main__.
+Long mode which is 64-bit mode which we are all familiar with in our modern architectures extend the address space to access 0xFFFFFFFFFFFFFFFF.
 
-We simply move the value of decimal 16 or hex 10 into the 64-bit RAX register. We will see in a moment that the processor will use only the lower EAX when we debug in GDB.
+This topic alone can take weeks to explain however I wanted to at a very high level touch base on the fact that the processor needs to bridge to 32-bit mode and then finally to 64-bit through setting the A-20 line, working with the control register and GDT in combination with paging.
 
-The last piece is just a simple exit routine which we move 60 into RAX and then syscall. It simply returns operation back to the OS.
-
-Let's compile and link:
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1550227507149.jpg"/></div>
-
-Let's debug in GDB:
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1550227529034.jpg"/></div>
-
-Let's set the debugger for intel syntax and set a break on start:
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1550227565697.jpg"/></div>
-
-As we can see 16 decimal or hex 10 is about to be moved into EAX but as we can see it has not been completed until we step forward.
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1550227619555.jpg"/></div>
-
-Now we can view our registers.
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1550227646545.jpg"/></div>
-
-We can see that RAX holds decimal 16 or hex 10 successfully.
-
-We will spend several weeks on these simple examples so you can get comfortable with how the processor operates and its internal workings.
+I took several months to get to this point so that you have a basic understanding of Assembly as we will start to get into actual 64-bit Assembly in the following tutorials and then our C++ tutorial to which we will reverse engineer each code block into 64-bit Assembly.

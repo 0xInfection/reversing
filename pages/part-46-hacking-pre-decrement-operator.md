@@ -1,30 +1,56 @@
-# Part 46 – Hacking Pre-Decrement Operator
+## Part 46 – Hacking Pre-Decrement Operator
 
-This week we will address the post-decrement operator. Let's examine our code.
+For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
-<pre spellcheck="false"><span class="hljs-meta">#include &lt;iostream&gt;</span>
+Let's re-examine our code.
 
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
-&nbsp;&nbsp; &nbsp;<span class="hljs-keyword">int</span> myNumber = <span class="hljs-number">16</span>;
-&nbsp;&nbsp; &nbsp;<span class="hljs-keyword">int</span> myNewNumber = myNumber--;
+<pre spellcheck="false">#include &lt;iostream&gt;
 
-&nbsp;&nbsp; &nbsp;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; myNewNumber &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
-    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; myNumber &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+int main(void) {
+&nbsp;&nbsp; &nbsp;int myNumber = 16;
+&nbsp;&nbsp; &nbsp;int myNewNumber = --myNumber;
 
-&nbsp;&nbsp; &nbsp;<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&nbsp;&nbsp; &nbsp;std::cout &lt;&lt; myNewNumber &lt;&lt; std::endl;
+    std::cout &lt;&lt; myNumber &lt;&lt; std::endl;
+
+&nbsp;&nbsp; &nbsp;return 0;
 }
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width">
-<img src="/imgs/1531481191370.jpg"/>
-</div>
+We remember when we compile we get 15.
 
- As we compile we see __16__ and __15__ printed out respectively.
+Let's debug.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width">
-<img src="/imgs/1531481259797.jpg"/>
-</div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1530875391750.jpg"/></div>
 
-We see that in this scenario __myNewNumber__ does get decremented as __myNumber-- __takes the value of 16 and reduces it to 15.
+Let's break.
 
-Next week we will dive into the Debugging Post-Decrement Operator.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1530875474311.jpg"/></div>
+
+Let's review what is inside __r3 __and hack it.
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1530875492398.jpg"/></div>
+
+Now as we continue we see it did not successfully hack why is that?
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1530875528881.jpg"/></div>
+
+We re-run the binary and break and see the value here at __r1 __hold __15__.
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1530875553276.jpg"/></div>
+
+When we continue we see 15 which we don't want.
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1530875636786.jpg"/></div>
+
+Now we break again and print the value.
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1530875661356.jpg"/></div>
+
+This time we set __r1__ and we can see we have successfully hacked!
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1530875673374.jpg"/></div>
+
+This is your first experience with really breaking down the registers and seeing where things are stored and how it can affect outcome. Take time and run this yourself so you really have a firm handle on this.
+
+Next week we will dive into the Post-Decrement Operator.

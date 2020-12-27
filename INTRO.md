@@ -1,13 +1,13 @@
 <h1 align="center">
-    Reverse Engineering for Everyone!
+    Reverse Engineering For Everyone!
 </h1>
 
-<h5 align="center">
+<h4 align="center">
     &mdash; by
     <a href="https://twitter.com/mytechnotalent">
         @mytechnotalent
     </a>
-</h5>
+</h4>
 
 <p align="center">
     <a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial">
@@ -41,11 +41,11 @@
     This comprehensive set of reverse engineering tutorials covers x86, x64 as well as 32-bit ARM and 64-bit architectures. If you're a newbie looking to learn reversing, or just someone looking to revise on some concepts, you're at the right place. As a beginner, these tutorials will carry you from nothing upto the mid-basics of reverse engineering, a skill that everyone within the realm of cyber-security should possess. If you're here just to refresh some concepts, you can conveniently use the side bar to take a look at the sections that has been covered so far.
 </p>
 <br>
-<div align="center">
+<p align="center">
     <sub>
         Site crafted with ♡ by
         <a href="https://twitter.com/0xInfection">
             @0xInfection
         </a>
     </sub>
-</div>
+</p>

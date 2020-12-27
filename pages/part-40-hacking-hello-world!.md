@@ -1,41 +1,57 @@
-# Part 40 - Hacking Hello World!
+## Part 40 - Hacking Hello World!
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
-In C we have several data types to which we can create variables. I will use a few simple examples:
+Ok it is time we look at the most basic C program, debug it and hack it. If we are to have mastery we must create and destroy in a single-step so that we have mastery over the domain.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1566059490750.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1565910335250.jpg"/></div>
 
-Let's compile and run:
+Let us fire up VIM and type out the following. We include our standard library and create a main function to which we use the library function of printf to echo a string of chars and since the type of main is int meaning integer we return 0.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1566059504696.jpg"/></div>
+Let us compile and see what happens when we run:
 
-Ok as we can see we have a character an integer and a double. These are some of the most basic data types in C to which we have created a series of variables as shown above.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1565910684168.jpg"/></div>
 
-Let us load the binary into Radare:
+As we see like we did in our C++ example we see '__Hello World!__' echoed successfully.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1566059659639.jpg"/></div>
+Let's debug in Radare:
 
-Let's disassemble at main:
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1566057508295.jpg"/></div>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1566059725847.jpg"/></div>
+This is simple, we use __aaa__ to analyze the binary and seek to main with __s sym.main__.
 
-Ok very simply we see 3 variable declarations defined up at the top in reverse order as they are __local\_1h __which is our __char a,__ __local\_8h__ which is our __int b__ and __local\_10h__ which is our __double c__. You can also see the __rbp__ base pointer allocating space for these variables. This is nice pseudo code that the debugger shows you up top.
+Let's look at the assembly and analyze:
 
-Ok stay with me!
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1566057552155.jpg"/></div>
 
-Within memory at __0x0000113d __we see the instructions __mov byte \[local1\_h\], 0x61__ which is in our ascii table a lowercase '__a'__. We know that \[local1\_h\] is not real code however what is going on under the hood is the fact that these variables are pushed onto the stack in reverse order as we can see above. Therefore, if we were to hack our code to something like __mov byte \[rbp-0x1\], 0x62 __what do you think might happen? Very simple, we know that in reality the code at the mapped memory address of __0x0000113d__ what is really going on is __mov byte \[rbp-0x1\], 0x61__. Quite simply what we have just done is hack our value of '__a__' to '__b__'. This should hopefully make sense to you.
+Assembly! The definition of raw sexy!
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1566060689050.jpg"/></div>
+I went over this in detail in the previous lessons on Assembly but let us review.
 
-Now let us re-examine our binary:
+1)We __push rbp __which means we push the value currently in the base pointer onto the stack.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1566060755864.jpg"/></div>
+2)We __lea rdi, qword str.Hello\_World __which means we load the effective address of the quad word of our string into the __rdi__ register. So far should be simple for you to follow along.
 
-As we can clearly see at memory address __0x0000113d __we in fact see '__b__'. We have successfully hacked this portion.
+3)We then __call sym.imp.puts__ um wait! We used __printf__ what the hell! Well our compiler optimizes our code and the compiler chose the __puts__ function in the stdio library to echo the string to our terminal. Again easy enough.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1566060872094.jpg"/></div>
+4)We clean out __eax__ and then pop the original value in the __rbp__ register back into __rbp__. If you are confused by this review the earlier part of the series please.
 
-We exit out of Radare and re-run the binary and we can see we have successfully hacked the value.
+We know our string '__Hello World!__' lives at a pretty house in Arlington, VA at the address of __0x2004__ well ok, it's not Arlington, VA but it is in mapped memory (since we are not technically debugging we are messing with mapped code meaning the same values on disk).
 
-HOMEWORK TIME! I want you to with this knowledge now hack the __int__ and the __double__. I want you to put your results in the comment sections below. It is VERY important that you type all of this out and actually explore the exercises so I am looking forward to seeing your hacks in the comments!
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1565911732441.jpg"/></div>
+
+To confirm we see the value at __0x2004__ is '__Hello World!__' Let's hack that value to anything we want with the __w__ command and write directly to that mapped memory address.
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1565911764019.jpg"/></div>
+
+Let us re-examine who NOW lives in our Arlington, VA house!
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1565911840111.jpg"/></div>
+
+Success! We hacked the value and when we exit our debugger we see:
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1565911868600.jpg"/></div>
+
+We have successfully altered the binary.
+
+This is alot to digest here. If you are stumped ask questions in the comments PLEASE! Do not continue as I am here to help. It is CRITICAL you understand these most basic things before we continue!

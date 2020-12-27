@@ -1,56 +1,70 @@
-# Part 10 - Debugging Character Primitive Datatype
+## Part 10 - Debugging Character Primitive Datatype
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/hacking\_c-\_arm64
 
-Today we hack the char from the last lesson.
+Today we are going to debug our very simple character primitive datatype.
 
-Let's fire up radare2 in write mode.
+To begin let's open up our binary in Radare2.
 
-<pre spellcheck="false">radare2 -w ./0x03_asm64_char_primitive_datatype
+<pre spellcheck="false">radare2 ./0x03_asm64_char_primitive_datatype
 </pre>
 
-Let's auto analyze.
+Let's take advantage of Radare2's auto analysis feature.
 
 <pre spellcheck="false">aaa
 </pre>
 
-Seek to main.
+The next thing we want to do logically is fire up the program in debug mode so it maps the raw machine code from disk to a running process.
+
+<pre spellcheck="false">ood
+</pre>
+
+Now that we have a running instance we can seek to the main entry point of the binary.
 
 <pre spellcheck="false">s main
 </pre>
 
-View disassembly.
+Let us take an initial examination by doing the following.
 
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1608839510539.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1608824475984.jpg"/></div>
 
 You can right click and&nbsp;__Open image in new tab&nbsp;__to get an expanded view.
 
-Let's get back to the terminal view.
+We can see that at _0x5576bff9ec_ we are moving _0x63_ or ascii _'c'_ into the _w0_ register.
 
-<pre spellcheck="false">q
-</pre>
+Let's set a breakpoint at&nbsp;_0x5576bff9ec_&nbsp;and verify the contents.
 
-All we have to do is write assembly to 0x000009ec and specify a new char of our choosing.
+<pre spellcheck="false">[0x5576bff9e4]&gt; db 0x5576bff9ec
+[0x5576bff9e4]&gt; dc
+hit breakpoint at: 0x5576bff9ec
+[0x5576bff9ec]&gt; dr w0
+0x00000001
+[0x5576bff9ec]&gt; ds
+[0x5576bff9ec]&gt; dr w0
+0x00000063
+[0x5576bff9ec]&gt;
 
-<pre spellcheck="false">[0x000009e4]&gt; wa movz w0, 0x66 @ 0x000009ec
-Written 4 byte(s) (movz w0, 0x66) = wx c00c8052
-[0x000009e4]&gt;
-</pre>
-
-Let's quit and run the new binary from the terminal.
-
-<pre spellcheck="false">[0x000009e4]&gt; q
-kali@kali:~/Documents/0x03_asm64_char_primitive_datatype$ ./0x03_asm64_char_primitive_datatype
-f
 </pre>
 
 <pre spellcheck="false"></pre>
 
-As you can see we successfully and permanently hacked the binary! It is very trivial but when you take the last series of lessons together with each new successive lesson you build a real skill-set!
+This is very simple but let's break it down. We set our breakpoint and continued. We looked inside the register w0 and saw that the value is 0x01. 
 
-In our next lesson we will work with the boolean primitive datatype.
+We then stepped once and looked again to see that 0x63 was successfully moved into w0 as now we see it does in fact contain 0x63.
+
+If we dc again we see it echoed to the stdout as expected.
+
+<pre spellcheck="false">[0x5576bff9ec]&gt; dc
+c
+(10845) Process exited with status=0x0
+</pre>
+
+<pre spellcheck="false">[0x7f9727503c]&gt;
+</pre>
+
+In our next lesson we will hack the char to another value of our choice.
 
   

@@ -1,13 +1,33 @@
-# Part 6 - Binary Subtraction
+## Part 6 - Binary Subtraction
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
-Before we dive into the architecture lets talk about how we define various bits and how they are structured within the processor.
+Binary subtraction is nothing more than adding the negative value of the number to be subtracted. For example 8 + - 4, the starting point would be zero to which we move 8 points in the positive direction and then four points in the negative direction yielding a value of 4.
 
-In both x64 and x86, we define a byte as 8 bits.&nbsp;We define a word as 16 bits.&nbsp;We define a double word as 32 bits and a quadword as 64 bits.&nbsp;Finally we define a double quadword as 128 bits.&nbsp;
+We represent a sign bit in binary to which bit 7 indicates the sign of number where 0 is positive and 1 is negative.
 
-Intel processors store bytes as what we refer to as "little endian," meaning lower significant bytes are stored in lower memory addresses.&nbsp;Lets give an example of a simple 16-bit or 2 byte value.&nbsp;On disk - 0xAABB.&nbsp;When it goes into memory it is stored as 0xBBAA as I hope this provides a good visual as this concept can be quite confusing.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1537526862141.jpg"/></div>
 
-Keep in mind, 8 bits make up a byte.&nbsp;4 bits are also called a nibble which are equivalent to one hex digit.
+The above would represent -2.
 
-Next week we will dive into general architecture! Stay tuned!
+We utilize the concept of twos compliment which inverts each bit and then finally adding 1.
+
+Lets example binary 2.
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1537526884698.jpg"/></div>
+
+Invert the bits.
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1537526902723.jpg"/></div>
+
+Add 1.
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1537526921447.jpg"/></div>
+
+Let’s examine a subtraction operation:
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1537526940998.jpg"/></div>
+
+So what is the (1) you may ask, that is the overflow bit. In future tutorials we will examine what we refer to as the overflow flag and carry flag.
+
+Next week we will dive into word lengths! Stay tuned!

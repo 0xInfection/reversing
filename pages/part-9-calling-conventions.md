@@ -1,65 +1,27 @@
-# Part 9 - Calling Conventions
+## Part 9 - Calling Conventions
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
-There are four boolean instructions to which exist are AND, OR, XOR and NOT.&nbsp;Earlier in this tutorial we briefly discussed gates which took advantage of the same logic down to the metal. We will see this logic throughout our reversing so it is important to understand what it does down at the individual bit level.
+The x64 processor uses what we refer to as \_\_fastcall.&nbsp;
 
-AND = If the first number has a 0 and the second number has a 0, the result is 0.
+The&nbsp;\_\_fastcall&nbsp;calling convention specifies that arguments to functions are to be passed in registers, when possible. This calling convention only applies to the x86 architecture.
 
-AND = If the first number has a 0 and the second number has a 1, the result is 0.
+The first two DWORD or smaller arguments that are found in the argument list from left to right are passed in __ecx__ and __edx__ registers; all other arguments are passed on the stack from right to left.
 
-AND = If the first number has a 1 and the second number has a 0, the result is 0.
+Called function pops the arguments from the stack.
 
-AND = If the first number has a 1 and the second number has a 1, the result is 1.
+At sign (@) is prefixed to names; an at sign followed by the number of bytes (in decimal) in the parameter list is suffixed to names.
 
-ex: 0 0 1 0 0 0 1 0&nbsp;
+No case translation performed.
 
-ex: 0 1 1 0 1 1 1 0
+Here is a simple breakdown to illustrate:
 
-ex:———————
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1539336219028.jpg"/></div>
 
-ex: 0 0 1 0 0 0 1 0
+If you have two parameters you are passing from a function, for example int __x__ and int __y__ and it is a QWORD, __x__ will go into __rcx__ and __y__ will go into__ rdx__.&nbsp;
 
-OR = If the first number has a 0 and the second number has a 0, the result is 0.
+If you have five parameters you are passing for example int __a__, int __b__, int __c__, int __d__, int __e__ and it is a WORD in length, __a__ will go into __cx__, __b__ into __dx__, __c__ into __r8w__, __d__ into r9w and e into the stack.
 
-OR = If the first number has a 0 and the second number has a 1, the result is 1.
+  
 
-OR = If the first number has a 1 and the second number has a 0, the result is 1.
-
-OR = If the first number has a 1 and the second number has a 1, the result is 1.
-
-ex: 0 0 1 0 0 0 1 0&nbsp;
-
-ex: 0 1 1 0 1 1 1 0
-
-ex:———————
-
-ex: 0 1 1 0 1 1 1 0
-
-XOR = If the first number has a 0 and the second number has a 0, the result is 0.
-
-XOR = If the first number has a 0 and the second number has a 1, the result is 1.
-
-XOR = If the first number has a 1 and the second number has a 0, the result is 1.
-
-XOR = If the first number has a 1 and the second number has a 1, the result is 0.
-
-ex: 0 0 1 0 0 0 1 0&nbsp;
-
-ex: 0 1 1 0 1 1 1 0
-
-ex:———————
-
-ex: 0 1 0 0 1 1 0 0
-
-NOT = If the first number has a 0 the second number becomes 1.
-
-NOT = If the first number has a 1 the second number becomes 0.
-
-ex: 0 0 1 0 0 0 1 0&nbsp;
-
-ex:———————
-
-ex: 1 1 0 1 1 1 0 1
-
-Next week we will dive into pointers! Stay tuned!
+Next week we will dive into boolean instructions! Stay tuned!

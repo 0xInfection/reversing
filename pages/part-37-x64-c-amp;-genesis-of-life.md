@@ -1,29 +1,13 @@
-# Part 37 - x64 C &amp; Genesis Of Life
+## Part 37 - x64 C &amp; Genesis Of Life
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
-Ok so what now? Where are we in the world? What is our purpose? What shall I focus on? What shall I learn?
+Congrats you wrote, compiled and hacked your first C++ program. For the rest of this tutorial I am going to focus on the father of all programming languages from "Hello World" to web servers in the programming language to which ALL modern languages come from C.
 
-There are over 30 billion devices connected to the Internet today. Nonetheless, the common thread in all basic architecture is the C programming language.
+Like the variety of religions there are programming languages. Nonetheless there is the ROOT religion or language to which all spawn which is C. I am going to over the next several months teach you C and Reverse Engineer each binary so you have a mastery over the MASTER language of all existence.
 
-We have established that networking can be described in a very high-level pseudo framework called the OSI Model which has 7 layers.
+When we need to develop in an agile environment we will of course use Java or Python or any of the other rapid development languages however if you are to master Cyber Engineering you MUST become ONE with the WORD to which in digital and cyber terms is the C Programming Language.
 
-__P__LEASE __D__O __N__OT __T__HROW __S__AUSAGE __P__IZZA __A__WAY. Ok I am not insane, well, ok I am but this is a good standard agreed upon way to remember the layers in the OSI model which is our Open Systems Interconnection model.
+Think of C as if you are in church where Python or Java or C\# you are in a secular environment. C will allow TOTAL and complete control over your program or environment where Java or Python will allow only partial control however they are NECESSARY languages in today's rapid development business logic environments.
 
-1)__PHYSICAL LAYER__ - Raw electrical layer which read voltages on an ethernet cable or reading the Wi-Fi RF (radio frequencies). Protocols associated: USB, DSL, ISDN, Infrared, etc...
-
-2)__DATA LINK LAYER __- Deals with how a message between notes starts and ends called framing which has some error correction, detection and some flow control. Protocols associated: Ethernet, VLAN, etc...
-
-3)__NETWORK LAYER__ - Transmits packets between nodes in different networks which involves routing. Protocols associated: IPX, NAT, ICMP, ARP, etc...
-
-4)__TRANSPORT LAYER__ - Reliably deliver data between two hosts which must split it up into chunks to send. Protocols associated: NetBIOS, TCP, UDP, etc...
-
-5)__SESSION LAYER__ - Adds checkpoint and resume in addition to term dialogues. Protocols associated: SMB, SOCKS, etc...
-
-6)__PRESENTATION LAYER__ - Where data structure for and presentation for an application are created where we have encoding, serialization and encryption. Protocols associated: TLS, SSL, etc...
-
-7)__APPLICATION LAYER__ - Web browsers and apps that use web interfaces like email, etc. Protocols associated: DHCP, DNS, HTTP, HTTPS, POP3, SMTP, FTP, TELNET, etc...
-
-As we browse a website we start at the PHYSICAL and go to the APP and as it hits the server it is at the APP and goes back down to the PHYSICAL and back through the cycle.
-
-This is an important series of concepts that you must understand in any basic networking. This is NOT a course in networking as we will touch BRIEFLY on these concepts so I would suggest you find a free course on YouTube for networking if you are stuck. I want to get through some basic theory so we can work with C networking apps.
+In our next lesson we begin with the basic "hello world" program as we did in our prior lesson however we now will work with C. Remember Einstein - "__I want to know God's thoughts, the rest are details.__" This is the difference between C and any other language you are sitting at the ROOT of engineering design for portable systems!

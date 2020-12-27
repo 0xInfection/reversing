@@ -1,25 +1,43 @@
-# Part 19 - Boot Sector Basics \[Part 2\]
+## Part 19 - Boot Sector Basics \[Part 2\]
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
-For those of you that are familiar with assembly these next several weeks/months might seem like we are progressing very slowly however the aim is to help those with little understanding of hardware to get a better understanding of the very systems that power the cloud.
+We are at the stage where we are going to start integrating real-world code. If you do not have an active linux desktop I would suggest you get Virtualbox and Ubuntu on either your Windows or Mac. I have a prior tutorial that will walk you through this process below. For some reason I am not able to embed the link so please just copy and paste it into your browser.
 
-The vast majority of AWS and Azure as well as many other cloud services utilize x64 based operating systems. Understanding what happens when these systems boot is of significant value and that is why we are going to go thorough a very slow process looking at each piece of a boot sector when a machine loads.
+__https://www.linkedin.com/pulse/assembly-language-basic-malware-reverse-engineering-kevin-m-thomas-16/ __
 
-Let's examine our source code. Follow along in Vim or Nano.
+You will additionally need a text editor for the terminal. I use VIM. You will find a link to set that up as well below.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1545990601552.jpg"/></div>
+__https://www.linkedin.com/pulse/assembly-language-basic-malware-reverse-engineering-kevin-m-thomas-17/__
 
-Last week we learned the opcodes for line 1 and 2 to which we do not have to review. Today we add a byte of data into our code. Notice this is a hexadecimal number and will match our binary upon inspection. In future lessons we will see how it looks when we do decimal and other systems.
+In addition you will have to install nasm so you may simply type:
 
-Let's compile. If you do not have NASM installed please ensure you type __sudo apt-get install nasm__.
+__sudo apt-get install nasm__
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1545990746117.jpg"/></div>
+NASM is the assembler we will use and we will focus on the intel syntax. First go into the terminal and fire up Vim and type the following:
 
-Let's look at our binary in a hex editor. I use GHex as I keep to the GNU tradition as we will in future lessons use the GNU debugger called GDB. These are all on your Linux systems as I am using Ubuntu for these tutorials.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1545386856569.jpg"/></div>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1545990876404.jpg"/></div>
+Remember to type 'i' to insert and then 'esc' and 'wq' to go into command mode and save your file.
 
-We saw last week that the __EB__ and __FE__ correspond to our __INC__ and __JMP__ instructions. If this is unclear please re-read last weeks lecture. We see the 3rd byte as __10__. Remember this is hexadecimal so the value in decimal would be __16__.
+The above line simply sets an infinite loop and does nothing more. The __loop __label is created to which we simply __jmp__ back to itself. This code in itself will compile however it will not run in an OS as it does not trigger what we refer to as the magic number to which BIOS looks to understand this is the end of your boot sector. We will cover more on that in future lectures.
 
-Next week we will keep adding to our code and progress in our OS development series.
+<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1545387039903.jpg"/></div>
+
+We type the above command assuming you saved your file in vim as __bootsector.asm__. This will create a binary file to which we will examine the contents within a hex editor. A hex editor is an application that examines each byte of data that is compiled into a file. We will see that our assembly instructions above will ultimately get translated down to their raw opcode values. The processor only understands raw opcodes which are simply operation codes. Below is a link to a table identifying the opcodes. I saved you the effort of referencing the intel dataset as it is literally thousands of pages and several volumes:
+
+__http://ref.x86asm.net/coder64.html__
+
+Let's use a hex editor like ghex and open up our bin file.
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1545387311381.jpg"/></div>
+
+We see __EB FE__ which are hex bytes and each letter is a nibble (a nibble is 4 bits or half a byte). Both __EB FE__ make up two full bytes. Keep in mind the processor reads from disk in reverse byte order such that __FE __gets read first and then __EB__. This process is called little endian and is how the x64 processor works.
+
+If you review the table to which I provided the link you will see that __FE __represents an __INC__ or increment by one. This is our loop value.
+
+Next you will find that __EB__ stands for __JMP__ which is our jump instruction above.
+
+This is alot of information if you are new to assembly. Take it step-by-step and follow along with me in a real linux OS and with each lesson you will get a better understanding of the basics.
+
+Next week we will build upon this lesson by adding some simple data to our binary.

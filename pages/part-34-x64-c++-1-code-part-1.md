@@ -1,39 +1,23 @@
-# Part 34 - x64 C++ 1 Code \[Part 1\]
+## Part 34 - x64 C++ 1 Code \[Part 1\]
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
-Let's review our code:
+Today we start our RE with the C++ language. The vast majority of malware is written in C++ and walking through simple code examples over the coming months and breaking them down in a debugger will give you a real hands-on approach to learning true RE.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1561714810492.jpg"/></div>
+We will use Kali Linux going forward with Radare 2. You can get VirtualBox and download the Kali Linux x64 Appliance to follow along.
 
-Compile:
+Let's start with the C++ 1 code example:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1561714836259.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1561023464535.jpg"/></div>
 
-Run:
+Here we simply create a main function and use the C++ output stream library to output the text "Hello World" with a new line at the end to the terminal. Let's compile and link:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1561714869555.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1561023530059.jpg"/></div>
 
-For literally years I have been using GDB as the debugger of choice. The reason is that it is on every Linux based system which runs just about every IoT and Server in the world. In addition, there are versions for Windows.
+Let's run in the terminal:
 
-I have struggled hard with this but have decided to introduce another terminal based debugger called Radare 2. The reason I like Radare 2 so much is that it is still terminal based yet more robust with its feature set. If you are running a Kali Linux VM like I am here you can simply the below.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1561023550876.jpg"/></div>
 
-Let's open up our binary for write mode and simply analyze the binary.
+As we can see "Hello World" successfully echoed to the terminal.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1561716186925.jpg"/></div>
-
-Ok, there is a lot going on here. Let's break it down. First, we open up Radare 2 in write mode by typing '__r2 -w ./1__' and then use the '__aaa__' command to analyze the binary. We then use '__s sym.main__' to seek to the main routine of the binary which is our entry point. We then do a '__pdf__' command to disassemble the binary.
-
-We see what we refer to as the prologue where we push __rbp__ the stack base pointer onto the stack. We then move __rsp__ into __rbp__ for safe keeping and then we reserve __0x10__ hex bytes or 16 decimal bytes on the stack to make room for our string.
-
-If none of this makes sense please go back to the beginning of the tutorial series to review basic assembly and the registers as it is CRITICAL you understand this before we move forward.
-
-We can clearly see the qword of '__Hello World\\n__' at memory address __0x2005__ and then we see our C++ library call for the output stream which is __cout __to display our string to the terminal.
-
-Let's examine __0x2005__ to verify that our string is at that location:
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1561715552920.jpg"/></div>
-
-Next week we will hack the value and modify the binary. I highly encourage you all to install VirtualBox which is free and get the Kali Linux VirtualBox image and install Vim as well.
-
-There are tutorials on all of this in my prior series. Stay tuned for the hack next week!
+Next week we will introduce Radare 2 and debug the code and examine what it looks like in x64 Assembly.

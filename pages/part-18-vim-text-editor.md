@@ -1,4 +1,4 @@
-# Part 18 - vim Text Editor
+## Part 18 - vim Text Editor
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&nbsp;https://github.com/mytechnotalent/Reverse-Engineering-Tutorial
 
@@ -10,9 +10,7 @@ To begin, open your terminal and type:
 
 This will open up the vi text editor.&nbsp;The first thing you need to type is the letter ‘i’ to set the editor to insert mode so you may begin typing.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-left"><img src="/imgs/1520640642321.jpg"/></div>
-
-&nbsp;&nbsp;
+![](/imgs/1520640642321.jpg)&nbsp;&nbsp;
 
 After you a done typing, press the ‘__esc__’ key and type ‘__:wq__’ and press enter.
 

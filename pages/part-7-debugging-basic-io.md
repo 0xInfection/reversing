@@ -1,93 +1,92 @@
-# Part 7 - Debugging Basic I/O
+## Part 7 - Debugging Basic I/O
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/hacking\_c-\_arm64
 
-Today we hack the input validation from our last lesson. 
+Today we are going to debug our very basic input validation program from last lecture.
 
-Let's fire up radare2 in write mode.
+To begin let's open up our binary in Radare2.
 
-<pre spellcheck="false">radare2 -w ./0x02_asm_64_basicio
+<pre spellcheck="false">radare2 ./0x02_asm_64_basicio
 </pre>
 
-Let's auto analyze.
+Let's take advantage of Radare2's auto analysis feature.
 
 <pre spellcheck="false">aaa
 </pre>
 
-Seek to main.
+The next thing we want to do logically is fire up the program in debug mode so it maps the raw machine code from disk to a running process.
+
+<pre spellcheck="false">ood
+</pre>
+
+Now that we have a running instance we can seek to the main entry point of the binary.
 
 <pre spellcheck="false">s main
 </pre>
 
-View disassembly.
+Let us take an initial examination by doing the following.
 
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607709949903.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607682836896.jpg"/></div>
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607683092302.jpg"/></div>
+
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607683246880.jpg"/></div>
 
 You can right click and&nbsp;__Open image in new tab&nbsp;__to get an expanded view.
 
-Let's get back to the terminal view.
+A couple things to note we see at _0x5566be00cc_ the output of _"Enter Age: "_ and at _0x5566be017c_ a call to _istream_ which is going to capture the values from _stdin_ to which we identify a failure condition at 0x5566be01d0 where we find _"Dude be real!"_ and we see the results of a proper input validation starting at _0x5566be0218 _where we say _"You are "_ and then we see a call to the output stream at _0x5566be0238_ and then the continuation of the validation string at _0x5566be0244_ where we say _" years old, seems legit!"_.
+
+The next step is to look at the binary with a visual graph.
 
 <pre spellcheck="false">q
+VV
+ppppp
 </pre>
 
-Let's look at the visual graph and begin with the first _b.ne_ which under the proper expected conditions it will only accept a valid integer between _0_ and _100_ as we demonstrated in the last lecture.
+We see the following:
 
-The _b.ne_ meaning _branch if not equal_. The assembly before it simply does not matter in this case as we know if we leave b.ne as is the input validation will be in tact.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607685699956.jpg"/></div>
 
-We need to disable this input validation by changing that instruction to a _b.eq_ or _branch if equal_.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607685723107.jpg"/></div>
 
-Let's look at that code block.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607685740119.jpg"/></div>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1607710722312.jpg"/></div>
+This is our zoomed out visual graph. We can see how the program moves from function to function. You will notice there are a series of tags such as \[ol\] or \[ok\] and you can literally type the following:
 
-We see that it if it is true, meaning validation is correct and we have an integer between 0 and 100 we will follow the true green line to the next function which is as follows:
+<pre spellcheck="false">p
+ol
+</pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607710870812.jpg"/></div>
+Now we are inside that function:
 
-You can right click and&nbsp;__Open image in new tab&nbsp;__to get an expanded view.
+<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607686001944.jpg"/></div>
 
-If we fail the validation we will be sent to the false condition to obtain new input:
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607710976917.jpg"/></div>
-
-Let's q to a terminal prompt.
+Then to go back to main.
 
 <pre spellcheck="false">qq
+s main
+VV
 </pre>
 
-Let's seek to the statement we want to hack.
+This will take us to an expanded graph that we can also use our arrow keys to look around.
 
-<pre spellcheck="false">[0x000010a4]&gt; s 0x000010c4
+Let's set a breakpoint at _0x5566be00c4_ where we _bne 0x5566be0214_ which is where we see the success route of our binary.
+
+<pre spellcheck="false">[0x5566be0194]&gt; db 0x5566be00c4
+[0x5566be0194]&gt; dc
+hit breakpoint at: 0x5566be00c4
+Enter Age: 33
+hit breakpoint at: 0x5566be00c4
+[0x5566be0194]&gt; dc
+Your are 33 years old, seems legit!
+(2215) Process exited with status=0x0
 </pre>
 
-Let's now hack the branch as discussed.
+As you can see we cycled the loop and entered in a correct validation and was able to get our success return.
 
-<pre spellcheck="false">[0x000010c4]&gt; wa b.eq 0x1214
-Written 4 byte(s) (b.eq 0x1214) = wx 800a0054
-[0x000010c4]&gt;
-</pre>
-
-Let's quit.
-
-<pre spellcheck="false">q
-</pre>
-
-Now when we run the binary it will simply ignore any input at all let alone input validation and simply arrive at the desired point.
-
-<pre spellcheck="false">kali@kali:~/Documents/0x02_asm_64_basicio$ ./0x02_asm_64_basicio
-Your are 0 years old, seems legit!
-kali@kali:~/Documents/0x02_asm_64_basicio$
-</pre>
-
-Even though 0 is valid it is simply an unstable value that happened to be in one of the registers that the program expected to be properly assigned during a normal program flow. Here we were able to change the binary permanently to accomplish our hack.
-
-These are VERY simple examples however when you combine these as you progress you will literally be able to Reverse Engineer anything.
-
-In our next lesson we will discuss the char primitive data type.
-
-  
+In our next lesson we will hack the validation.
 
   
