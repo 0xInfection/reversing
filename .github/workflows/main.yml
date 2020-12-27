@@ -41,7 +41,7 @@ jobs:
       - name: Setup node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 10
       
       - name: Setup gitbook
         run: sudo npm install -g gitbook-cli
