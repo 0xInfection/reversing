@@ -67,9 +67,8 @@ def grabContent(pgsrc: str, fname: str):
     '''
     Grabs blog content off the linkedin page
     '''
-    rex = r"<section class=\"article-body\" data-redirect-url=.+?>(<p>.*)</section><div class=(?:\"ugc-post-bar\"><h3 class=\"ugc-post-bar__published_by|\"author-info author-info__container)"
-    patt = re.compile(rex, re.DOTALL | re.MULTILINE)
-    content = processContent(re.search(patt, pgsrc).group(1))
+    soup = BeautifulSoup(pgsrc, 'html.parser')
+    content = processContent(soup.find('section', attrs={'class': 'article-body'}))
     content = '<h2>{}</h2>{}'.format(fname, content)
     print('\n\n'+content+'\n\n')
     dirname = 'pages/{}'.format(processfName(fname))
