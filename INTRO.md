@@ -11,7 +11,7 @@
 
 <p align="center">
     <a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial">
-        <img src="https://img.shields.io/badge/GitHub-Reverse%20Engineering%20for%20Everyone!-green.svg?logo=github">
+        <img src="https://img.shields.io/badge/GitHub-Reverse%20Engineering%20For%20Everyone!-green.svg?logo=github">
     </a>
         <a href="https://twitter.com/mytechnotalent">
         <img src="https://img.shields.io/badge/Twitter-@mytechnotalent-blue.svg?logo=twitter">
@@ -22,17 +22,17 @@
 </p>
 
 <h3>
-    Wait, what's reversing?
+    Wait, what's reverse engineering?
 </h3>
 <p>
     Wikipedia defines it as:
     <blockquote>
         Reverse engineering, also called backwards engineering or back engineering, is the process by which an artificial object is deconstructed to reveal its designs, architecture, code, or to extract knowledge from the object. It is similar to scientific research, the only difference being that scientific research is conducted into a natural phenomenon.
     </blockquote>
-        Whew, that was quite a mouthful, wasn't it? Well, it is one of the main reasons why this tutorial set exists. To make reverse engineering
-        <i>
-            as simple as possible.
-        </i>
+    Whew, that was quite a mouthful, wasn't it? Well, it is one of the main reasons why this tutorial set exists. To make reverse engineering
+    <i>
+        as simple as possible.
+    </i>
 </p>
 <p align="center">
     <img src="cover.png"  />
