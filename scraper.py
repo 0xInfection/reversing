@@ -1,4 +1,4 @@
-import re, html, html2markdown, requests, random, os, shutil
+import re, html, html2markdown, requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
