@@ -43,7 +43,7 @@
 <br>
 <p align="center">
     <sub>
-        Site crafted with ♡ by
+        Crafted with ♡ by
         <a href="https://twitter.com/0xInfection">
             @0xInfection
         </a>
