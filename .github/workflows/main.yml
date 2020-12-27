@@ -1,0 +1,61 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Autobuild gitbook every week
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the gh-pages branch
+  push:
+    branches: [ gh-pages ]
+  schedule:
+    - cron: '0 12 * * 1'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      
+      - name : Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install bs4 html2markdown selenium requests 
+      
+      - name: Run the scraper
+        run: python scraper.py
+      
+      # Time to setup gitbook and trigger build
+      - name: Setup node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      
+      - name: Setup gitbook
+        run: sudo npm install -g gitbook-cli
+          
+      - name: Run everything and build
+        run: |
+          gitbook install && gitbook build
+          cp -R _book/* .
+          rm -rf _book
+        
+      # Runs a set of commands using the runners shell
+      - name: Commit and push
+        uses: stefanzweifel/git-auto-commit-action@v4.2.0
+        with:
+          commit_message: Regenerate GitBook (${{ github.sha }})
+          commit_user_name: 'GitBook Workflow'
+          commit_user_email: 'github-actions.dont-use@github.com'
