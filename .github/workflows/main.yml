@@ -52,10 +52,23 @@ jobs:
           cp -R _book/* .
           rm -rf _book
         
+      - name: Download ebook creator from calibre
+        run: |
+          sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+
+      - name: Generate PDF, MOBI, EPUB versions
+        run: |
+          gitbook pdf .
+          mv book.pdf reversing-for-everyone.pdf
+          gitbook epub .
+          mv book.epub reversing-for-everyone.epub
+          gitbook mobi .
+          mv book.mobi reversing-for-everyone.mobi
+
       # Runs a set of commands using the runners shell
       - name: Commit and push
         uses: stefanzweifel/git-auto-commit-action@v4.2.0
         with:
           commit_message: Regenerate GitBook (${{ github.sha }})
           commit_user_name: 'GitBook Workflow'
-          commit_user_email: 'github-actions.dont-use@github.com'
+          commit_user_email: 'github-actions.reversing@github.com'
