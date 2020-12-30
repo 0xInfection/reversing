@@ -58,6 +58,7 @@ jobs:
 
       - name: Generate PDF, MOBI, EPUB versions
         run: |
+          rm reversing-for-everyone.pdf reversing-for-everyone.epub reversing-for-everyone.mobi
           gitbook pdf .
           mv book.pdf reversing-for-everyone.pdf
           gitbook epub .
