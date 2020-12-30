@@ -60,9 +60,13 @@ jobs:
         run: |
           rm reversing-for-everyone.pdf reversing-for-everyone.mobi
           gitbook pdf .
-          mv book.pdf reversing-for-everyone.pdf
           gitbook mobi .
           mv book.mobi reversing-for-everyone.mobi
+
+      - name: Use ghostscript to decrease PDF size (~66MB to ~25MB)
+        run: |
+          sudo apt install ghostscript
+          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=reversing-for-everyone.pdf book.pdf
 
       # Runs a set of commands using the runners shell
       - name: Commit and push
