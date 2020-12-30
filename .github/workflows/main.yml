@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Autobuild gitbook every week
+name: Autobuild gitbook every week & on push
 
 # Controls when the action will run. 
 on:
@@ -56,13 +56,11 @@ jobs:
         run: |
           sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
 
-      - name: Generate PDF, MOBI, EPUB versions
+      - name: Generate PDF & MOBI versions
         run: |
-          rm reversing-for-everyone.pdf reversing-for-everyone.epub reversing-for-everyone.mobi
+          rm reversing-for-everyone.pdf reversing-for-everyone.mobi
           gitbook pdf .
           mv book.pdf reversing-for-everyone.pdf
-          gitbook epub .
-          mv book.epub reversing-for-everyone.epub
           gitbook mobi .
           mv book.mobi reversing-for-everyone.mobi
 

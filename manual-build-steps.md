@@ -3,6 +3,7 @@
 The following contains simple instructions on how to build the site **manually**. Automated deployments are done by GitHub Actions every week.
 
 ### Install the deps
+On your system, you'll require the following dependencies:
 - You'll need Git.
 - You'll need Python > 3.6 atleast.
     - Run `python3 -m pip install bs4 html2markdown selenium requests`

@@ -41,7 +41,10 @@
     This comprehensive set of reverse engineering tutorials covers x86, x64 as well as 32-bit ARM and 64-bit architectures. If you're a newbie looking to learn reversing, or just someone looking to revise on some concepts, you're at the right place. As a beginner, these tutorials will carry you from nothing upto the mid-basics of reverse engineering, a skill that everyone within the realm of cyber-security should possess. If you're here just to refresh some concepts, you can conveniently use the side bar to take a look at the sections that has been covered so far.
 </p>
 <p>
-    You can get the entire tutorial set in form of PDF, ePub or MOBI format. All these ebook versions will get updated automatically as new tutorials will gradually be added. Download here: [ <a href="reversing-for-everyone.pdf">PDF</a> | <a href="reversing-for-everyone.epub">EPUB</a> | <a href="reversing-for-everyone.mobi">MOBI</a> ]
+    You can get the entire tutorial set in PDF or MOBI format. All these ebook versions will get updated automatically as new tutorials will be added. 
+</p>
+<p>
+    Download here: [ <a href="reversing-for-everyone.pdf">PDF</a> | <a href="reversing-for-everyone.mobi">MOBI</a> ]
 </p>
 <br>
 <p align="center">
