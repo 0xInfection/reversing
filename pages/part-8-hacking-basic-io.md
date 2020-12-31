@@ -2,7 +2,7 @@
 
 For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/hacking\_c-\_arm64
 
-Today we hack the input validation from our last lesson. 
+Today we hack the input validation from our last lesson.
 
 Let's fire up radare2 in write mode.
 
@@ -24,9 +24,7 @@ View disassembly.
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607709949903.jpg"/></div>
-
-You can right click and&nbsp;__Open image in new tab&nbsp;__to get an expanded view.
+<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1607709949903.jpg"/></div>
 
 Let's get back to the terminal view.
 
@@ -45,13 +43,11 @@ Let's look at that code block.
 
 We see that it if it is true, meaning validation is correct and we have an integer between 0 and 100 we will follow the true green line to the next function which is as follows:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607710870812.jpg"/></div>
-
-You can right click and&nbsp;__Open image in new tab&nbsp;__to get an expanded view.
+<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1607710870812.jpg"/></div>
 
 If we fail the validation we will be sent to the false condition to obtain new input:
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1607710976917.jpg"/></div>
+<div class="slate-resizable-image-embed slate-image-embed--active slate-image-embed__resize-bleed"><img src="/imgs/1607710976917.jpg"/></div>
 
 Let's q to a terminal prompt.
 
@@ -87,7 +83,5 @@ Even though 0 is valid it is simply an unstable value that happened to be in one
 These are VERY simple examples however when you combine these as you progress you will literally be able to Reverse Engineer anything.
 
 In our next lesson we will discuss the char primitive data type.
-
-  
 
   

@@ -29,9 +29,7 @@ Let us take an initial examination by doing the following.
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1608824475984.jpg"/></div>
-
-You can right click and&nbsp;__Open image in new tab&nbsp;__to get an expanded view.
+<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1608824475984.jpg"/></div>
 
 We can see that at _0x5576bff9ec_ we are moving _0x63_ or ascii _'c'_ into the _w0_ register.
 
@@ -49,9 +47,7 @@ hit breakpoint at: 0x5576bff9ec
 
 </pre>
 
-<pre spellcheck="false"></pre>
-
-This is very simple but let's break it down. We set our breakpoint and continued. We looked inside the register w0 and saw that the value is 0x01. 
+This is very simple but let's break it down. We set our breakpoint and continued. We looked inside the register w0 and saw that the value is 0x01.
 
 We then stepped once and looked again to see that 0x63 was successfully moved into w0 as now we see it does in fact contain 0x63.
 
@@ -60,11 +56,7 @@ If we dc again we see it echoed to the stdout as expected.
 <pre spellcheck="false">[0x5576bff9ec]&gt; dc
 c
 (10845) Process exited with status=0x0
-</pre>
-
-<pre spellcheck="false">[0x7f9727503c]&gt;
+[0x7f9727503c]&gt;
 </pre>
 
 In our next lesson we will hack the char to another value of our choice.
-
-  

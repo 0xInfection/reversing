@@ -24,9 +24,7 @@ View disassembly.
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1608839510539.jpg"/></div>
-
-You can right click and&nbsp;__Open image in new tab&nbsp;__to get an expanded view.
+<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1608839510539.jpg"/></div>
 
 Let's get back to the terminal view.
 
@@ -47,10 +45,6 @@ kali@kali:~/Documents/0x03_asm64_char_primitive_datatype$ ./0x03_asm64_char_prim
 f
 </pre>
 
-<pre spellcheck="false"></pre>
-
 As you can see we successfully and permanently hacked the binary! It is very trivial but when you take the last series of lessons together with each new successive lesson you build a real skill-set!
 
 In our next lesson we will work with the boolean primitive datatype.
-
-  

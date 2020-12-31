@@ -24,9 +24,7 @@ View disassembly.
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1606475269047.jpg"/></div>
-
-You can right click and&nbsp;__Open image in new tab&nbsp;__to get an expanded view.
+<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1606475269047.jpg"/></div>
 
 We see the memory addresses as they are on disk as we are not running the binary as we discussed in the last lesson.
 
