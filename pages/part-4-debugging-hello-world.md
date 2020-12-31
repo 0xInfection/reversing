@@ -4,10 +4,6 @@ For a complete table of contents of all the lessons please click below as it wil
 
 Today we are going to debug our first program utilizing our dev build of Radare2.
 
-If this is your first time working with Assembly I would encourage you check out this series as it may better prepare you for the upcoming lessons.
-
-<iframe allowfullscreen="true" class="lazy-load" data-delayed-url="https://www.linkedin.com/embeds/publishingEmbed.html?articleId=7574498398602237511" frameborder="0" height="294" src="about:blank" title="mytechnotalent/Reverse-Engineering-Tutorial" width="744"></iframe>
-
 To begin let's open up our binary in Radare2.
 
 <pre spellcheck="false">radare2 ./0x01_asm_64_helloworld
@@ -74,7 +70,7 @@ It is VERY important we understand a few key things. First is the fact that a si
 
 Let's visit the online ascii table.
 
-<iframe allowfullscreen="true" class="lazy-load" data-delayed-url="https://www.linkedin.com/embeds/publishingEmbed.html?articleId=7387163987651632632" frameborder="0" height="104" src="about:blank" title="ASCII Table and Description" width="744"></iframe>
+http://www.asciitable.com
 
 Second, we need to understand what the machine code translates to. Let's look up what _48_ is in hex. We see that it is a capital 'H'. That maps perfectly as you see in the right hand column of the image above we see a 0 and below it the letter H.
 
