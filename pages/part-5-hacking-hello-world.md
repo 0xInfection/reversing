@@ -24,8 +24,6 @@ View disassembly.
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1606475269047.jpg"/></div>
-
 We see the memory addresses as they are on disk as we are not running the binary as we discussed in the last lesson.
 
 We see that at __0xb48__ we very easily find our string.

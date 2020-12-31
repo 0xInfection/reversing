@@ -24,8 +24,6 @@ View disassembly.
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1607709949903.jpg"/></div>
-
 Let's get back to the terminal view.
 
 <pre spellcheck="false">q
@@ -41,13 +39,9 @@ Let's look at that code block.
 
 <div class="slate-resizable-image-embed slate-image-embed__resize-middle"><img src="/imgs/1607710722312.jpg"/></div>
 
-We see that it if it is true, meaning validation is correct and we have an integer between 0 and 100 we will follow the true green line to the next function which is as follows:
+We see that it if it is true, meaning validation is correct and we have an integer between 0 and 100 we will follow the true green line to the next function.
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1607710870812.jpg"/></div>
-
-If we fail the validation we will be sent to the false condition to obtain new input:
-
-<div class="slate-resizable-image-embed slate-image-embed--active slate-image-embed__resize-bleed"><img src="/imgs/1607710976917.jpg"/></div>
+If we fail the validation we will be sent to the false condition to obtain new input.
 
 Let's q to a terminal prompt.
 
@@ -83,5 +77,3 @@ Even though 0 is valid it is simply an unstable value that happened to be in one
 These are VERY simple examples however when you combine these as you progress you will literally be able to Reverse Engineer anything.
 
 In our next lesson we will discuss the char primitive data type.
-
-  

@@ -29,12 +29,6 @@ Let us take an initial examination by doing the following.
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1607682836896.jpg"/></div>
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1607683092302.jpg"/></div>
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1607683246880.jpg"/></div>
-
 A couple things to note we see at _0x5566be00cc_ the output of _"Enter Age: "_ and at _0x5566be017c_ a call to _istream_ which is going to capture the values from _stdin_ to which we identify a failure condition at 0x5566be01d0 where we find _"Dude be real!"_ and we see the results of a proper input validation starting at _0x5566be0218 _where we say _"You are "_ and then we see a call to the output stream at _0x5566be0238_ and then the continuation of the validation string at _0x5566be0244_ where we say _" years old, seems legit!"_.
 
 The next step is to look at the binary with a visual graph.
@@ -44,23 +38,13 @@ VV
 ppppp
 </pre>
 
-We see the following:
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1607685699956.jpg"/></div>
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1607685723107.jpg"/></div>
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1607685740119.jpg"/></div>
-
 This is our zoomed out visual graph. We can see how the program moves from function to function. You will notice there are a series of tags such as \[ol\] or \[ok\] and you can literally type the following:
 
 <pre spellcheck="false">p
 ol
 </pre>
 
-Now we are inside that function:
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1607686001944.jpg"/></div>
+Now we are inside that function.
 
 Then to go back to main.
 

@@ -33,7 +33,7 @@ Let us take an initial examination by doing the following.
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1606325530734.jpg"/></div>
+The output from Radare2 is entirely too large to display in this course however as you follow along in your own environment you will be able to follow along. We will keep this convention throughout this course for better readability of the document.
 
 Remember there is a difference between an executable on disk and what resides when it is mapped. When it is on disk it is referred to as unmapped. We will look at that at the end of the lesson. For now we are looking at a mapped version as you see it is an offset of the mapped code we will examine later.
 
@@ -127,8 +127,6 @@ Then view.
 
 <pre spellcheck="false">v
 </pre>
-
-<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1606327203401.jpg"/></div>
 
 Notice that we have _"Hello World!"_ this time at the unmapped memory address of _0xb48_. You notice that when you ran the binary the executable had an offset to this value but the LSB were _48_ hex.
 

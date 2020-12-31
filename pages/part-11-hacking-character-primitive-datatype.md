@@ -24,8 +24,6 @@ View disassembly.
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1608839510539.jpg"/></div>
-
 Let's get back to the terminal view.
 
 <pre spellcheck="false">q

@@ -29,9 +29,7 @@ Let us take an initial examination by doing the following.
 <pre spellcheck="false">v
 </pre>
 
-<div class="slate-resizable-image-embed slate-image-embed__resize-bleed"><img src="/imgs/1608824475984.jpg"/></div>
-
-We can see that at _0x5576bff9ec_ we are moving _0x63_ or ascii _'c'_ into the _w0_ register.
+We can see that at _0x5576bff9ec_ we are moving _0x63_ or ascii _'c'_ into the _w0_ register. REMEMBER your address will be different due to ASLR.
 
 Let's set a breakpoint at&nbsp;_0x5576bff9ec_&nbsp;and verify the contents.
 
