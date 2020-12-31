@@ -6,7 +6,7 @@ Today we are going to debug our first program utilizing our dev build of Radare2
 
 If this is your first time working with Assembly I would encourage you check out this series as it may better prepare you for the upcoming lessons.
 
-<iframe allowfullscreen="true" class="lazy-loaded" frameborder="0" height="294" src="https://www.linkedin.com/embeds/publishingEmbed.html?articleId=7574498398602237511" title="mytechnotalent/Reverse-Engineering-Tutorial" width="744"></iframe>
+<iframe allowfullscreen="true" class="lazy-load" data-delayed-url="https://www.linkedin.com/embeds/publishingEmbed.html?articleId=7574498398602237511" frameborder="0" height="294" src="about:blank" title="mytechnotalent/Reverse-Engineering-Tutorial" width="744"></iframe>
 
 To begin let's open up our binary in Radare2.
 
