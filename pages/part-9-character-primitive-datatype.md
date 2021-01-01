@@ -37,8 +37,6 @@ Very simply we see the following.
 <pre spellcheck="false">c
 </pre>
 
-It successfully echoed c to the terminal stdout. Very simple. 
+It successfully echoed _c_ to the terminal stdout. Very simple.
 
 Next week we will debug this very simple example.
-
-  

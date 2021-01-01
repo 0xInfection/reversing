@@ -173,3 +173,4 @@
 	* [Part 9 - Character Primitive Datatype](pages/part-9-character-primitive-datatype.md)
 	* [Part 10 - Debugging Character Primitive Datatype](pages/part-10-debugging-character-primitive-datatype.md)
 	* [Part 11 - Hacking Character Primitive Datatype](pages/part-11-hacking-character-primitive-datatype.md)
+	* [Part 12 - Boolean Primitive Datatype](pages/part-12-boolean-primitive-datatype.md)
