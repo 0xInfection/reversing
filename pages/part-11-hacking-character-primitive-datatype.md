@@ -29,7 +29,7 @@ Let's get back to the terminal view.
 <pre spellcheck="false">q
 </pre>
 
-All we have to do is write assembly to 0x000009ec and specify a new char of our choosing.
+All we have to do is write assembly to _0x000009ec_ and specify a new char of our choosing.
 
 <pre spellcheck="false">[0x000009e4]&gt; wa movz w0, 0x66 @ 0x000009ec
 Written 4 byte(s) (movz w0, 0x66) = wx c00c8052
