@@ -52,10 +52,12 @@ def processContent(source: str):
     soup = BeautifulSoup(source, 'html.parser')
     for img in soup.find_all('img'):
         if not img.get('data-delayed-url'):
-            lnk = html.unescape(img.get('src'))
+            lnk = img.get('src')
+            if lnk == "//:0":
+                lnk = img.get('data-li-src')
         else:
-            lnk = html.unescape(img.get('data-delayed-url'))
-        ntag = soup.new_tag('img', src=downloadImage(lnk))
+            lnk = img.get('data-delayed-url')
+        ntag = soup.new_tag('img', src=downloadImage(html.unescape(lnk)))
         img.replaceWith(ntag)
     texts = ['''For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. https://github.com/mytechnotalent/Reverse-Engineering-Tutorial''', '''UNDER NO CONDITIONS ARE YOU TO EVER USE THIS EDUCATION TO CAUSE HARM TO ANY SYSTEM OF ANY KIND AS I AM NOT RESPONSIBLE! THIS IS FOR LEARNING PURPOSES ONLY!''', '''<div class="slate-resizable-image-embed slate-image-embed__resize-left">''']
     toput = soup.__str__()
