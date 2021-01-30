@@ -178,3 +178,4 @@
 	* [Part 14 - Hacking Boolean Primitive Datatype](pages/part-14-hacking-boolean-primitive-datatype.md)
 	* [Part 15 - Float Primitive Datatype](pages/part-15-float-primitive-datatype.md)
 	* [Part 16 - Debugging Float Primitive Datatype](pages/part-16-debugging-float-primitive-datatype.md)
+	* [Part 17 - Hacking Float Primitive Datatype](pages/part-17-hacking-float-primitive-datatype.md)
