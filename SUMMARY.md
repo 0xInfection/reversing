@@ -179,3 +179,4 @@
 	* [Part 15 - Float Primitive Datatype](pages/part-15-float-primitive-datatype.md)
 	* [Part 16 - Debugging Float Primitive Datatype](pages/part-16-debugging-float-primitive-datatype.md)
 	* [Part 17 - Hacking Float Primitive Datatype](pages/part-17-hacking-float-primitive-datatype.md)
+	* [Part 18 - Double Primitive Datatype](pages/part-18-double-primitive-datatype.md)

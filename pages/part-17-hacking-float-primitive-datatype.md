@@ -13,7 +13,7 @@ sys/user.sh
 
 If you did not follow the instructions earlier you have to build radare2 from source for this to work as they rarely update releases.
 
-<iframe allowfullscreen="true" data-li-src="https://www.linkedin.com/embeds/publishingEmbed.html?articleId=8901357596711809999" frameborder="0" height="274" src="about:blank" title="radareorg/radare2" width="744"></iframe>
+https://github.com/radareorg/radare2
 
 If you do not have the repo, clone it and follow the instructions above.
 
