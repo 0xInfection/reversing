@@ -49,7 +49,7 @@ movk w0, 0x4121, lsl 16
 fmov s0, w0
 </pre>
 
-We move our _w0_ register into s0 so we HAVE to change these values here before letting it get into _s0_ otherwise it will be significantly harder to hack in the next lesson.
+We move our _w0_ register into _s0_ so we HAVE to change these values here before letting it get into _s0_ otherwise it will be significantly harder to hack in the next lesson.
 
 Lets continue to show our value.
 
@@ -60,5 +60,3 @@ Lets continue to show our value.
 </pre>
 
 In our next lesson we will hack this value!
-
-  
