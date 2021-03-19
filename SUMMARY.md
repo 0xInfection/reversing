@@ -182,3 +182,5 @@
 	* [Part 18 - Double Primitive Datatype](pages/part-18-double-primitive-datatype.md)
 	* [Part 19 - Debugging Double Primitive Datatype](pages/part-19-debugging-double-primitive-datatype.md)
 	* [Part 20 - Hacking Double Primitive Datatype](pages/part-20-hacking-double-primitive-datatype.md)
+* [Pico Hacking Course](pages/pico-hacking-course.md)
+	* [Part 1 - The Why, The How...](pages/part-1-the-why-the-how.md)
