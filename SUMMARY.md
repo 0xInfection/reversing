@@ -186,3 +186,4 @@
 	* [Part 1 - The Why, The How...](pages/part-1-the-why-the-how.md)
 	* [Part 2 - Hello World](pages/part-2-hello-world.md)
 	* [Part 3 - Debugging Hello World](pages/part-3-debugging-hello-world.md)
+	* [Part 4 - Hacking Hello World](pages/part-4-hacking-hello-world.md)

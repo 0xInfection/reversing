@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="part-4-hacking-hello-world.html" />
+    
     
     <link rel="prev" href="part-2-hello-world.html" />
     
@@ -2549,6 +2551,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7.4" data-path="part-4-hacking-hello-world.html">
+            
+                <a href="part-4-hacking-hello-world.html">
+            
+                    
+                    Part 4 - Hacking Hello World
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2686,6 +2701,8 @@ Hello world!
 <pre spellcheck="false">lsls r0, r0, 2
 </pre>
 
+<p>If you are not familiar with ARM 32 Assembly instructions, please reference this great table provided by Keil.</p>
+<p><a href="https://developer.arm.com/documentation/ddi0210/c/Introduction/Instruction-set-summary/ARM-instruction-summary?lang=en" target="_blank">https://developer.arm.com/documentation/ddi0210/c/Introduction/Instruction-set-summary/ARM-instruction-summary?lang=en</a> </p>
 <p>We then branch long to our <em>sleep_ms</em> function.</p>
 <pre spellcheck="false">bl sym.sleep_ms
 </pre>
@@ -2726,10 +2743,14 @@ Hello world!
 
             
                 
-                <a href="part-2-hello-world.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Part 2 - Hello World">
+                <a href="part-2-hello-world.html" class="navigation navigation-prev " aria-label="Previous page: Part 2 - Hello World">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="part-4-hacking-hello-world.html" class="navigation navigation-next " aria-label="Next page: Part 4 - Hacking Hello World">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -2738,7 +2759,7 @@ Hello world!
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 3 - Debugging Hello World","level":"1.7.3","depth":2,"previous":{"title":"Part 2 - Hello World","level":"1.7.2","depth":2,"path":"pages/part-2-hello-world.md","ref":"pages/part-2-hello-world.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-3-debugging-hello-world.md","mtime":"2021-03-21T16:56:51.651Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-21T16:57:37.082Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 3 - Debugging Hello World","level":"1.7.3","depth":2,"next":{"title":"Part 4 - Hacking Hello World","level":"1.7.4","depth":2,"path":"pages/part-4-hacking-hello-world.md","ref":"pages/part-4-hacking-hello-world.md","articles":[]},"previous":{"title":"Part 2 - Hello World","level":"1.7.2","depth":2,"path":"pages/part-2-hello-world.md","ref":"pages/part-2-hello-world.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-3-debugging-hello-world.md","mtime":"2021-03-22T20:45:01.408Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-22T20:45:40.883Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

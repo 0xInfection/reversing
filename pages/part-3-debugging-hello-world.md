@@ -105,6 +105,10 @@ We then logically shift left, 2, and set the flags. This of course multiplies ou
 <pre spellcheck="false">lsls r0, r0, 2
 </pre>
 
+If you are not familiar with ARM 32 Assembly instructions, please reference this great table provided by Keil.
+
+https://developer.arm.com/documentation/ddi0210/c/Introduction/Instruction-set-summary/ARM-instruction-summary?lang=en 
+
 We then branch long to our _sleep\_ms_ function.
 
 <pre spellcheck="false">bl sym.sleep_ms
