@@ -10,7 +10,7 @@ On your system, you'll require the following dependencies:
     - Python dependencies are resolved and are required for the `scraper.py`.
 - You'll need Node.js < 12 (Node.js v10.x should be fine).
     - Simple `apt install nodejs && apt install npm` does the job.
-    - Next you'll require `gitbook 3.x.x` - `npm install -g gitbook`.
+    - Next you'll require `gitbook 3.x.x` - `npm install -g gitbook-cli`.
 - All dependencies are resolved.
 
 ### Build and deploy ¯\_(ツ)_/¯
