@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Part 13 - Debugging Boolean Primitive Datatype · Reverse Engineering</title>
+        <title>Pico Hacking Course · Reverse Engineering</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="part-14-hacking-boolean-primitive-datatype.html" />
+    <link rel="next" href="part-1-the-why-the-how.html" />
     
     
-    <link rel="prev" href="part-12-boolean-primitive-datatype.html" />
+    <link rel="prev" href="part-20-hacking-double-primitive-datatype.html" />
     
 
     </head>
@@ -2389,7 +2389,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.13" data-path="part-13-debugging-boolean-primitive-datatype.html">
+        <li class="chapter " data-level="1.6.13" data-path="part-13-debugging-boolean-primitive-datatype.html">
             
                 <a href="part-13-debugging-boolean-primitive-datatype.html">
             
@@ -2498,7 +2498,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="pico-hacking-course.html">
+        <li class="chapter active" data-level="1.7" data-path="pico-hacking-course.html">
             
                 <a href="pico-hacking-course.html">
             
@@ -2677,7 +2677,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Part 13 - Debugging Boolean Primitive Datatype</a>
+        <a href=".." >Pico Hacking Course</a>
     </h1>
 </div>
 
@@ -2692,55 +2692,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="part-13---debugging-boolean-primitive-datatype">Part 13 - Debugging Boolean Primitive Datatype</h2>
-<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover. <a href="https://github.com/mytechnotalent/hacking\_c-\_arm64" target="_blank">https://github.com/mytechnotalent/hacking\_c-\_arm64</a></p>
-<p>Today we are going to debug our very simple boolean primitive datatype.</p>
-<p>To begin let&apos;s open up our binary in Radare2.</p>
-<pre spellcheck="false">radare2 ./0x04_asm64_boolean_primitive_datatype
-</pre>
-
-<p>Let&apos;s take advantage of Radare2&apos;s auto analysis feature.</p>
-<pre spellcheck="false">aaa
-</pre>
-
-<p>The next thing we want to do logically is fire up the program in debug mode so it maps the raw machine code from disk to a running process.</p>
-<pre spellcheck="false">ood
-</pre>
-
-<p>Now that we have a running instance we can seek to the main entry point of the binary.</p>
-<pre spellcheck="false">s main
-</pre>
-
-<p>Let us take an initial examination by doing the following.</p>
-<pre spellcheck="false">v
-</pre>
-
-<p>We see in <em>0x55718999bc</em> <em>movz w0, 0x1_or moving _0x1</em> into <em>w0</em> which is our bool true. REMEMBER your address will be different due to ASLR.</p>
-<p>Let&apos;s set a breakpoint at <em>0x55718999bc</em> and verify the contents.</p>
-<pre spellcheck="false">[0x55718999b4]&gt; db 0x55718999bc
-[0x55718999b4]&gt; dc
-</pre>
-
-<pre spellcheck="false">hit breakpoint at: 0x55718999bc
-</pre>
-
-<pre spellcheck="false">[0x55718999bc]&gt; ds
-[0x55718999bc]&gt; dr w0
-0x00000001
-[0x55718999bc]&gt;
-</pre>
-
-<p>Very simply we broke right before the value <em>0x1</em> was to be placed in <em>w0</em> and then we stepped and saw that it was in fact <em>0x1</em> inside of <em>w0</em> after the step. This means that our program successfully put a <em>1 _or _true</em> into the <em>w0</em> register which matches what our source code created.</p>
-<p>If we dc again we see it echoed to the stdout as expected.</p>
-<pre spellcheck="false">[0x55718999bc]&gt; dc
-1
-(96445) Process exited with status=0x0
-</pre>
-
-<pre spellcheck="false">[0x7fac4f903c]&gt;
-</pre>
-
-<p>In our next lesson we will hack the boolean to make it 0.</p>
+                                <p></p><h2 align="center" id="
+----pico-hacking-course
+">
+    Pico Hacking Course
+</h2><p></p>
+<p align="center">
+    Let&apos;s dive in rightaway!
+</p>
 
                                 
                                 </section>
@@ -2768,12 +2727,12 @@
 
             
                 
-                <a href="part-12-boolean-primitive-datatype.html" class="navigation navigation-prev " aria-label="Previous page: Part 12 - Boolean Primitive Datatype">
+                <a href="part-20-hacking-double-primitive-datatype.html" class="navigation navigation-prev " aria-label="Previous page: Part 20 - Hacking Double Primitive Datatype">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="part-14-hacking-boolean-primitive-datatype.html" class="navigation navigation-next " aria-label="Next page: Part 14 - Hacking Boolean Primitive Datatype">
+                <a href="part-1-the-why-the-how.html" class="navigation navigation-next " aria-label="Next page: Part 1 - The Why, The How...">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -2784,7 +2743,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 13 - Debugging Boolean Primitive Datatype","level":"1.6.13","depth":2,"next":{"title":"Part 14 - Hacking Boolean Primitive Datatype","level":"1.6.14","depth":2,"path":"pages/part-14-hacking-boolean-primitive-datatype.md","ref":"pages/part-14-hacking-boolean-primitive-datatype.md","articles":[]},"previous":{"title":"Part 12 - Boolean Primitive Datatype","level":"1.6.12","depth":2,"path":"pages/part-12-boolean-primitive-datatype.md","ref":"pages/part-12-boolean-primitive-datatype.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-13-debugging-boolean-primitive-datatype.md","mtime":"2021-04-05T16:12:02.621Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-05T16:12:57.754Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Pico Hacking Course","level":"1.7","depth":1,"next":{"title":"Part 1 - The Why, The How...","level":"1.7.1","depth":2,"path":"pages/part-1-the-why-the-how.md","ref":"pages/part-1-the-why-the-how.md","articles":[]},"previous":{"title":"Part 20 - Hacking Double Primitive Datatype","level":"1.6.20","depth":2,"path":"pages/part-20-hacking-double-primitive-datatype.md","ref":"pages/part-20-hacking-double-primitive-datatype.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/pico-hacking-course.md","mtime":"2021-04-05T16:05:43.116Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-05T16:12:57.754Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
