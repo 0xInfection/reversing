@@ -25,6 +25,7 @@ int main()&nbsp;
 &nbsp; while(1)&nbsp;
 &nbsp; {
 &nbsp;   printf("Hello world!\n");
+
 &nbsp; &nbsp; sleep_ms(1000);
 &nbsp; }
     
@@ -42,6 +43,7 @@ Finally we print _"Hello world!"_ every 1 second to the standard output in an in
 <pre spellcheck="false">&nbsp; &nbsp; while(1)&nbsp;
 &nbsp; &nbsp; {
 &nbsp; &nbsp;   printf("Hello world!\n");
+
 &nbsp; &nbsp; &nbsp; sleep_ms(1000);
 &nbsp; &nbsp; }
 </pre>
@@ -113,5 +115,3 @@ Press tab to find the drive and then in my case I will use __screen__ to connect
 Hooray! You should see, "Hello world!" to the standard output every second.
 
 In our next lesson we will debug the __.elf__ binary in __Radare2__.
-
-  

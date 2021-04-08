@@ -32,11 +32,11 @@ You will need to update .vimrc file.
 Then...
 
 <pre spellcheck="false">set number
-set tabstop=2
-set noexpandtab
-%retab!
+set tabstop=2 &nbsp; &nbsp;
+set shiftwidth=2
+set expandtab&nbsp;
 syntax on
-set syntax=c&nbsp;&nbsp;
+set syntax=c&nbsp;
 </pre>
 
 You will need the Raspberry Pi Pico repo.

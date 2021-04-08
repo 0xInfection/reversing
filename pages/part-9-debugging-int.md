@@ -16,13 +16,12 @@ int main()&nbsp;
 &nbsp; &nbsp; int x = 40;&nbsp;
 
 &nbsp; &nbsp; printf("%d\n", x);&nbsp;
+
 &nbsp; &nbsp; sleep_ms(1000);
 &nbsp; }
 
 &nbsp; return 0;
-</pre>
-
-<pre spellcheck="false">}
+}
 </pre>
 
 Let's fire up in our debugger.

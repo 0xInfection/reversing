@@ -14,6 +14,7 @@ int main()&nbsp;
 &nbsp; &nbsp; char x = 'x';
 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
 &nbsp; &nbsp; printf("%c\n", x);
+
 &nbsp; &nbsp; sleep_ms(1000);
 &nbsp; }
 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;

@@ -16,6 +16,7 @@ int main()&nbsp;
 &nbsp; &nbsp; int x = 40;&nbsp;
 
 &nbsp; &nbsp; printf("%d\n", x);&nbsp;
+
 &nbsp; &nbsp; sleep_ms(1000);
 &nbsp; }
 

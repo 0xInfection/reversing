@@ -14,6 +14,7 @@ int main()&nbsp;
 &nbsp; while(1)&nbsp;
 &nbsp; {
 &nbsp;   printf("Hello world!\n");
+
 &nbsp; &nbsp; sleep_ms(1000);
 &nbsp; }
     
@@ -107,7 +108,7 @@ We then logically shift left, 2, and set the flags. This of course multiplies ou
 
 If you are not familiar with ARM 32 Assembly instructions, please reference this great table provided by Keil.
 
-https://developer.arm.com/documentation/ddi0210/c/Introduction/Instruction-set-summary/ARM-instruction-summary?lang=en 
+https://developer.arm.com/documentation/ddi0210/c/Introduction/Instruction-set-summary/ARM-instruction-summary?lang=en
 
 We then branch long to our _sleep\_ms_ function.
 

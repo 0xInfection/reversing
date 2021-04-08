@@ -193,3 +193,4 @@
 	* [Part 8 - int](pages/part-8-int.md)
 	* [Part 9 - Debugging int](pages/part-9-debugging-int.md)
 	* [Part 10 - Hacking int](pages/part-10-hacking-int.md)
+	* [Part 11 - float](pages/part-11-float.md)

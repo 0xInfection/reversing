@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Part 8 - CPSR · Reverse Engineering</title>
+        <title>Part 11 - float · Reverse Engineering</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="part-9-link-register.html" />
     
-    
-    <link rel="prev" href="part-7-program-counter.html" />
+    <link rel="prev" href="part-10-hacking-int.html" />
     
 
     </head>
@@ -746,7 +744,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.8" data-path="part-8-cpsr.html">
+        <li class="chapter " data-level="1.3.8" data-path="part-8-cpsr.html">
             
                 <a href="part-8-cpsr.html">
             
@@ -1090,7 +1088,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.8" data-path="part-8-cpsr.html">
+        <li class="chapter " data-level="1.4.8" data-path="part-8-cpsr.html">
             
                 <a href="part-8-cpsr.html">
             
@@ -2642,7 +2640,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.11" data-path="part-11-float.html">
+        <li class="chapter active" data-level="1.7.11" data-path="part-11-float.html">
             
                 <a href="part-11-float.html">
             
@@ -2690,7 +2688,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Part 8 - CPSR</a>
+        <a href=".." >Part 11 - float</a>
     </h1>
 </div>
 
@@ -2705,26 +2703,103 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="part-8---cpsr">Part 8 - CPSR</h2>
-<p>For a complete table of contents of all the lessons please click below as it will give you a brief of each lesson in addition to the topics it will cover.&#xA0;<a href="https://github.com/mytechnotalent/Reverse-Engineering-Tutorial" target="_blank">https://github.com/mytechnotalent/Reverse-Engineering-Tutorial</a></p>
-<p>The CPSR register stores information about the program and the results of a particular operation. Bits that are in the respective registers have pre-assigned conditions that are tested for an occurrence which are flags.</p>
-<p>There are 32-bits that total this register. The highest 4 we are concerned with most which are:</p>
-<p>Bit 31 &#x2013; N = Negative Flag</p>
-<p>Bit 30 &#x2013; Z = Zero Flag</p>
-<p>Bit 29 &#x2013; C = Carry Flag (UNSIGNED OPERATIONS)</p>
-<p>Bit 28 &#x2013; V = Overflow flag (SIGNED OPERATIONS)</p>
-<p>When the instruction completes the CPSR can get updated if it falls into one of the aforementioned scenarios. If one of the conditions occurs, a 1 goes into the respective bits.</p>
-<p>There are two instructions that directly effect the CPSR flags which are CMP and CMN. CMP is compare such as:</p>
-<pre spellcheck="false">CMP R1, R0 @ notational subtraction where R1 &#x2013; R0 and if the result is 0, bit 30 Z would be set to 1
+                                <h2 id="part-11---float">Part 11 - float</h2>
+<p>Today we are going to handle the float data type. In the Pico there is no co-processor to handle floating-point numbers as this is handled through a series of functionality through software in the API.</p>
+<p>Let&apos;s work with a simple example.&#xA0;<strong>0x05_float.c</strong>&#xA0;as follows.</p>
+<pre spellcheck="false">#include &lt;stdio.h&gt;
+#include &quot;pico/stdlib.h&quot;
+
+int main()&#xA0;
+{
+&#xA0; stdio_init_all();
+
+&#xA0; while(1)&#xA0;
+&#xA0; {
+&#xA0; &#xA0; float x = 40.5;
+
+&#xA0; &#xA0; printf(&quot;%f\n&quot;, x);&#xA0;
+
+&#xA0; &#xA0; sleep_ms(1000);
+&#xA0; }
+
+&#xA0; return 0;
+}
 </pre>
 
-<p>The most logical command that usually follows is BEQ = branch if equal, meaning the zero flag was set and branches to another label within the code.</p>
-<p>Regarding CMP, if two operands are equal then the result is zero. CMN makes the same comparison but with the second operand negated for example:</p>
-<pre spellcheck="false">CMN R1, R0 @ R1 - (-R0) or R1 + R0
+<p>Very simply we assign a float of <em>40.5</em> into <em>x</em> and print it with the <em>%f _format modifier and then sleep for _1</em> second.</p>
+<p>Let&apos;s make a new dir&#xA0;<strong>0x05_float</strong>&#xA0;and add our&#xA0;<strong>CMakeLists.txt</strong>&#xA0;file in it.</p>
+<pre spellcheck="false">cmake_minimum_required(VERSION 3.13)
+
+include(pico_sdk_import.cmake)
+
+project(test_project C CXX ASM)
+set(CMAKE_C_STANDARD 11)&#xA0;
+set(CMAKE_CXX_STANDARD 17)&#xA0;
+pico_sdk_init()
+
+add_executable(0x05_float
+&#xA0; 0x05_float.c
+)
+
+pico_enable_stdio_usb(0x05_float 1)
+
+pico_add_extra_outputs(0x05_float)
+
+target_link_libraries(0x05_float pico_stdlib)
 </pre>
 
-<p>When dealing with the SUB command, the result would NOT update the CPSR you would have to use the SUBS command to make any flag update respectively.</p>
-<p>Next week we will dive into more information on the Link Register! Stay tuned!</p>
+<p>Next we need to copy the&#xA0;<strong>pico_sdk_import.cmake</strong>&#xA0;file from the external folder in the&#xA0;<strong>pico-sdk</strong>&#xA0;installation to the&#xA0;<strong>0x04_int</strong>&#xA0;project folder.</p>
+<pre spellcheck="false">cp ../pico-sdk/external/pico_sdk_import.cmake .
+</pre>
+
+<p>Finally we are ready to build.</p>
+<pre spellcheck="false">mkdir build
+cd build
+export PICO_SDK_PATH=../../pico-sdk
+cmake ..
+make
+</pre>
+
+<p>Then simply copy the&#xA0;<strong>.uf2</strong>&#xA0;file to the drive.</p>
+<pre spellcheck="false">cp 0x04_int.uf2 /Volumes/RPI-RP2
+</pre>
+
+<p>Then we need to locate the USB drive so you can do the following.</p>
+<pre spellcheck="false">ls /dev/tty.
+</pre>
+
+<p>Press tab to find the drive and then in my case I will use&#xA0;<strong>screen</strong>&#xA0;to connect.</p>
+<pre spellcheck="false">screen /dev/tty.usbmodem0000000000001
+</pre>
+
+<p>You should see a an&#xA0;<em>40.5</em>&#xA0;being printed every second.</p>
+<pre spellcheck="false">40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+
+40.500000
+</pre>
+
+<p>In our next lesson we will debug.</p>
 
                                 
                                 </section>
@@ -2752,14 +2827,10 @@
 
             
                 
-                <a href="part-7-program-counter.html" class="navigation navigation-prev " aria-label="Previous page: Part 7 - Program Counter">
+                <a href="part-10-hacking-int.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Part 10 - Hacking int">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="part-9-link-register.html" class="navigation navigation-next " aria-label="Next page: Part 9 - Link Register">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -2768,7 +2839,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 8 - CPSR","level":"1.3.8","depth":2,"next":{"title":"Part 9 - Link Register","level":"1.3.9","depth":2,"path":"pages/part-9-link-register.md","ref":"pages/part-9-link-register.md","articles":[]},"previous":{"title":"Part 7 - Program Counter","level":"1.3.7","depth":2,"path":"pages/part-7-program-counter.md","ref":"pages/part-7-program-counter.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-8-cpsr.md","mtime":"2021-04-08T09:41:18.577Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-08T09:44:33.244Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 11 - float","level":"1.7.11","depth":2,"previous":{"title":"Part 10 - Hacking int","level":"1.7.10","depth":2,"path":"pages/part-10-hacking-int.md","ref":"pages/part-10-hacking-int.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-11-float.md","mtime":"2021-04-08T09:43:50.976Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-08T09:44:33.244Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

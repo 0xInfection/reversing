@@ -1,8 +1,8 @@
-## Part 8 - int
+## Part 11 - float
 
-Today we are going to work with the int data type which are nothing more than whole numbers. They can be signed or unsigned as well.
+Today we are going to handle the float data type. In the Pico there is no co-processor to handle floating-point numbers as this is handled through a series of functionality through software in the API.
 
-Let's work with a simple example. __0x04\_int.c__ as follows.
+Let's work with a simple example.&nbsp;__0x05\_float.c__&nbsp;as follows.
 
 <pre spellcheck="false">#include &lt;stdio.h&gt;
 #include "pico/stdlib.h"
@@ -13,9 +13,9 @@ int main()&nbsp;
 
 &nbsp; while(1)&nbsp;
 &nbsp; {
-&nbsp; &nbsp; int x = 40;&nbsp;
+&nbsp; &nbsp; float x = 40.5;
 
-&nbsp; &nbsp; printf("%d\n", x);&nbsp;
+&nbsp; &nbsp; printf("%f\n", x);&nbsp;
 
 &nbsp; &nbsp; sleep_ms(1000);
 &nbsp; }
@@ -24,9 +24,9 @@ int main()&nbsp;
 }
 </pre>
 
-Here we simply have our standard IO function followed by our infinite loop. We simply assign _40_ to the int data type _x_ and print it using the _%d_ format modifier and sleep for _1_ second.
+Very simply we assign a float of _40.5_ into _x_ and print it with the _%f _format modifier and then sleep for _1_ second.
 
-Let's make a new dir&nbsp;__0x04\_int__&nbsp;and add our&nbsp;__CMakeLists.txt__&nbsp;file in it.
+Let's make a new dir&nbsp;__0x05\_float__&nbsp;and add our&nbsp;__CMakeLists.txt__&nbsp;file in it.
 
 <pre spellcheck="false">cmake_minimum_required(VERSION 3.13)
 
@@ -37,15 +37,15 @@ set(CMAKE_C_STANDARD 11)&nbsp;
 set(CMAKE_CXX_STANDARD 17)&nbsp;
 pico_sdk_init()
 
-add_executable(0x04_int
-&nbsp; 0x04_int.c
+add_executable(0x05_float
+&nbsp; 0x05_float.c
 )
 
-pico_enable_stdio_usb(0x04_int 1)
+pico_enable_stdio_usb(0x05_float 1)
 
-pico_add_extra_outputs(0x04_int)
+pico_add_extra_outputs(0x05_float)
 
-target_link_libraries(0x04_int pico_stdlib)
+target_link_libraries(0x05_float pico_stdlib)
 </pre>
 
 Next we need to copy the&nbsp;__pico\_sdk\_import.cmake__&nbsp;file from the external folder in the&nbsp;__pico-sdk__&nbsp;installation to the&nbsp;__0x04\_int__&nbsp;project folder.
@@ -77,20 +77,32 @@ Press tab to find the drive and then in my case I will use&nbsp;__screen__&nbsp;
 <pre spellcheck="false">screen /dev/tty.usbmodem0000000000001
 </pre>
 
-You should see a an _40_ being printed every second.
+You should see a an&nbsp;_40.5_&nbsp;being printed every second.
 
-<pre spellcheck="false">40
-40
-40
-40
-40
-40
-40
-40
-40
-40
-40
-40
+<pre spellcheck="false">40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+40.500000
+
+40.500000
 </pre>
 
 In our next lesson we will debug.
