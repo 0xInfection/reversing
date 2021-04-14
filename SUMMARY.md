@@ -195,3 +195,4 @@
 	* [Part 10 - Hacking int](pages/part-10-hacking-int.md)
 	* [Part 11 - float](pages/part-11-float.md)
 	* [Part 12 - Debugging float](pages/part-12-debugging-float.md)
+	* [Part 13 - Hacking float](pages/part-13-hacking-float.md)
