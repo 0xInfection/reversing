@@ -2681,6 +2681,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7.14" data-path="part-14-double.html">
+            
+                <a href="part-14-double.html">
+            
+                    
+                    Part 14 - double
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2776,7 +2789,7 @@ pico_add_extra_outputs(0x05_float)
 target_link_libraries(0x05_float pico_stdlib)
 </pre>
 
-<p>Next we need to copy the&#xA0;<strong>pico_sdk_import.cmake</strong>&#xA0;file from the external folder in the&#xA0;<strong>pico-sdk</strong>&#xA0;installation to the&#xA0;<strong>0x04_int</strong>&#xA0;project folder.</p>
+<p>Next we need to copy the&#xA0;<strong>pico_sdk_import.cmake</strong>&#xA0;file from the external folder in the&#xA0;<strong>pico-sdk</strong>&#xA0;installation to the&#xA0;<strong>0x05_float</strong>&#xA0;project folder.</p>
 <pre spellcheck="false">cp ../pico-sdk/external/pico_sdk_import.cmake .
 </pre>
 
@@ -2789,7 +2802,7 @@ make
 </pre>
 
 <p>Then simply copy the&#xA0;<strong>.uf2</strong>&#xA0;file to the drive.</p>
-<pre spellcheck="false">cp 0x04_int.uf2 /Volumes/RPI-RP2
+<pre spellcheck="false">cp 0x05_float.uf2 /Volumes/RPI-RP2
 </pre>
 
 <p>Then we need to locate the USB drive so you can do the following.</p>
@@ -2823,7 +2836,6 @@ make
 40.500000
 40.500000
 40.500000
-
 40.500000
 </pre>
 
@@ -2871,7 +2883,7 @@ make
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 11 - float","level":"1.7.11","depth":2,"next":{"title":"Part 12 - Debugging float","level":"1.7.12","depth":2,"path":"pages/part-12-debugging-float.md","ref":"pages/part-12-debugging-float.md","articles":[]},"previous":{"title":"Part 10 - Hacking int","level":"1.7.10","depth":2,"path":"pages/part-10-hacking-int.md","ref":"pages/part-10-hacking-int.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-11-float.md","mtime":"2021-04-14T09:10:44.357Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-14T09:11:24.003Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 11 - float","level":"1.7.11","depth":2,"next":{"title":"Part 12 - Debugging float","level":"1.7.12","depth":2,"path":"pages/part-12-debugging-float.md","ref":"pages/part-12-debugging-float.md","articles":[]},"previous":{"title":"Part 10 - Hacking int","level":"1.7.10","depth":2,"path":"pages/part-10-hacking-int.md","ref":"pages/part-10-hacking-int.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-11-float.md","mtime":"2021-04-17T12:27:01.070Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-17T12:27:39.725Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

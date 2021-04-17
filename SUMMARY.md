@@ -196,3 +196,4 @@
 	* [Part 11 - float](pages/part-11-float.md)
 	* [Part 12 - Debugging float](pages/part-12-debugging-float.md)
 	* [Part 13 - Hacking float](pages/part-13-hacking-float.md)
+	* [Part 14 - double](pages/part-14-double.md)

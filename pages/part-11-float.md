@@ -48,7 +48,7 @@ pico_add_extra_outputs(0x05_float)
 target_link_libraries(0x05_float pico_stdlib)
 </pre>
 
-Next we need to copy the&nbsp;__pico\_sdk\_import.cmake__&nbsp;file from the external folder in the&nbsp;__pico-sdk__&nbsp;installation to the&nbsp;__0x04\_int__&nbsp;project folder.
+Next we need to copy the&nbsp;__pico\_sdk\_import.cmake__&nbsp;file from the external folder in the&nbsp;__pico-sdk__&nbsp;installation to the&nbsp;__0x05\_float__&nbsp;project folder.
 
 <pre spellcheck="false">cp ../pico-sdk/external/pico_sdk_import.cmake .
 </pre>
@@ -64,7 +64,7 @@ make
 
 Then simply copy the&nbsp;__.uf2__&nbsp;file to the drive.
 
-<pre spellcheck="false">cp 0x04_int.uf2 /Volumes/RPI-RP2
+<pre spellcheck="false">cp 0x05_float.uf2 /Volumes/RPI-RP2
 </pre>
 
 Then we need to locate the USB drive so you can do the following.
@@ -101,7 +101,6 @@ You should see a an&nbsp;_40.5_&nbsp;being printed every second.
 40.500000
 40.500000
 40.500000
-
 40.500000
 </pre>
 
