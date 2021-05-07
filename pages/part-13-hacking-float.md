@@ -73,7 +73,7 @@ Needs to be...
 <pre spellcheck="false">0x0000f03f
 </pre>
 
-Therefore we need to change the value at
+Therefore we need to change the value at the following.
 
 <pre spellcheck="false">wx 0x0000f03f @ 0x00000340
 </pre>

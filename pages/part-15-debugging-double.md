@@ -50,7 +50,6 @@ We see the format specifier in&nbsp;_\[0x0000033c\]._
 The double is at&nbsp;_\[0x00000340\]_.
 
 <pre spellcheck="false">:&gt; pff @ [0x00000340]
-
 0x00004000 = 9.32830524e-09
 </pre>
 
@@ -172,14 +171,12 @@ What is happening is that these values are now in R2 and R3 respectively.
 0x71c71c72
 
 p/x $r3
-
 0x4044471c
 </pre>
 
 In ARM 32 Assembly the arguments to the functions are passed in r0-r3 and if you need more args they are put on the stack. In our case r0 has our format modifier.
 
 <pre spellcheck="false">x/s $r0
-
 0x10007070:	"%.16f\n"
 </pre>
 
@@ -194,4 +191,4 @@ p/x *0x20041f00
 
 This is another piece going into the printf wrapper in order to properly print the string to the STDOUT.
 
-In our next lesson we will hack dynamically and statically.
+In our next lesson we will hack statically.

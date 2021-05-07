@@ -24,9 +24,9 @@ __bit 29 - C = Carry Flag__
 
 __bit 28 - V = Overflow Flag__
 
-We see the __CPSR__ at __10 hex__. __10 hex__ in binary is __0001__.
+We see the __CPSR__ at __10 hex__. __10 hex__ in binary is __00010000__.
 
-Therefore if the value in binary was __0001__ of bit 31, 30, 29 and 28 (__NZCV__) that would mean:
+Therefore if the value in binary was __00010000__ of bit 31, 30, 29 and 28 (__NZCV__) that would mean:
 
 __Negative Flag NOT Set__
 
