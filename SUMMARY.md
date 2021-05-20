@@ -199,3 +199,4 @@
 	* [Part 14 - double](pages/part-14-double.md)
 	* [Part 15 - Debugging double](pages/part-15-debugging-double.md)
 	* [Part 16 - Hacking double](pages/part-16-hacking-double.md)
+	* [Part 17 - "ABSOLUTE POWER CORRUPTS ABSOLUTELY!", The Tragic Tale Of Input...](pages/part-17-absolute-power-corrupts-absolutely!-the-tragic-tale-of-input.md)
