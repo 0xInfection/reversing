@@ -200,3 +200,4 @@
 	* [Part 15 - Debugging double](pages/part-15-debugging-double.md)
 	* [Part 16 - Hacking double](pages/part-16-hacking-double.md)
 	* [Part 17 - "ABSOLUTE POWER CORRUPTS ABSOLUTELY!", The Tragic Tale Of Input...](pages/part-17-absolute-power-corrupts-absolutely!-the-tragic-tale-of-input.md)
+	* [Part 18 - "FOR 800 YEARS HAVE I TRAINED JEDI!", The FORCE That IS Input...](pages/part-18-for-800-years-have-i-trained-jedi!-the-force-that-is-input.md)
