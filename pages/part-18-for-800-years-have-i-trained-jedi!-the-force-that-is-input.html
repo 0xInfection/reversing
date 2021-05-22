@@ -2796,7 +2796,7 @@
                                 
                                 <h2 id="part-18---for-800-years-have-i-trained-jedi-the-force-that-is-input">Part 18 - &quot;FOR 800 YEARS HAVE I TRAINED JEDI!&quot;, The FORCE That IS Input...</h2>
 <p>&quot;The year is 2021 and seven months, the average price of a gallon of gas within the United States is $7.51 a gallon. Four other U.S. Pipelines were compromised with Ransomware and the Five Eyes discovered a compromised network within one of the water supplies within a major metropolitan U.S. City.&quot;</p>
-<p>&quot;Intelligence sources have located the HQ of the &apos;Dark Eyes&apos; organization behind the malware attacks and have Pico Microcontroller as the controller inside a drone which is gearing up to strike this facility and knock out their communications to avoid the attack on our water supply.&quot;</p>
+<p>&quot;Intelligence sources have located the HQ of the &apos;Dark Eyes&apos; organization behind the malware attacks and utilize a Pico Microcontroller as the controller inside a drone which is gearing up to strike this facility and knock out their communications to avoid the attack on our water supply.&quot;</p>
 <p>&quot;The attack coordinates are &apos;61.013693050912785, 99.19670587477269&apos; to which the Drone Operator enters in, &apos;61.013693050912785, 9e.19670587477269&apos;, which is &apos;Mir Mines, Russia&apos;. They launch the drone and it detonates at, &apos;61.013693050912785, 9.19670587477269&apos;, which is &apos;Nord-Aurdal Municipality, Norway&apos;.&quot;</p>
 <p>&quot;Panic ensues however DHS was able to secure the water supply network before Ransomware was able to encrypt their network and within twelve hours the network was fully secured.&quot;</p>
 <p>Ok...</p>
@@ -2814,7 +2814,7 @@
 #define BACKSPACE 0x08
 #define DEL 0x7f
 
-void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STRING_SIZE, int* p_counter)
+void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STRING_SIZE)
 {
   *p_usb_char = &apos;\0&apos;;
   *p_usb_char = getchar_timeout_us(0);
@@ -2835,15 +2835,14 @@ void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STR
     {
       if(*p_usb_char == PERIOD)
         period = strchr(p_usb_string, &apos;.&apos;);
-      if(period == NULL)
+      if(period == NULL) 
       {
-        if(*p_counter &lt; *p_USB_STRING_SIZE-1)
+        if(strlen(p_usb_string) &lt; *p_USB_STRING_SIZE)
         {
           putchar(*p_usb_char);
           strncat(p_usb_string, p_usb_char, 1);
         }
         *p_usb_char = &apos;\0&apos;;
-        *p_counter++;
       }
       else
         break;
@@ -2853,41 +2852,34 @@ void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STR
   { 
     while(*p_usb_char &gt;= ZERO &amp;&amp; *p_usb_char &lt;= NINE)
     {
-      if(*p_counter &lt; *p_USB_STRING_SIZE-1)
+      if(strlen(p_usb_string) &lt; *p_USB_STRING_SIZE)
       {
         putchar(*p_usb_char);
         strncat(p_usb_string, p_usb_char, 1);
       }
       *p_usb_char = &apos;\0&apos;;
-      *p_counter++;
     }
   }
   else if(type == &apos;s&apos;)
   { 
     while(*p_usb_char &gt;= CAPITAL_A &amp;&amp; *p_usb_char &lt;= LOWER_CASE_Z)
     {
-      if(*p_counter &lt; *p_USB_STRING_SIZE-1)
+      if(strlen(p_usb_string) &lt; *p_USB_STRING_SIZE)
       {
         putchar(*p_usb_char);
         strncat(p_usb_string, p_usb_char, 1);
       }
       *p_usb_char = &apos;\0&apos;;
-      *p_counter++;
     }
   }
-}
-
-void flush_input(char* p_usb_string)
-{
-  p_usb_string[0] = &apos;\0&apos;;
 }
 </pre>
 
 <p>Today we are going to go over exactly what this function is actually doing.</p>
-<pre spellcheck="false">void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STRING_SIZE, int* p_counter)
+<pre spellcheck="false">void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STRING_SIZE)
 </pre>
 
-<p>We begin with the function header. We first are taking a <em>char</em> of <em>type</em> where in our example we will use <em>&apos;f&apos;</em> for handling floating-point numbers. We then have a <em>char*</em> (pointer) <em>p_usb_char</em> which will be init to <em>&apos;\0&apos;</em> in <strong>main.c</strong>. We then have a char* p_usb_string which we will be init to <em>&apos;\0&apos;</em> in <strong>main.c</strong>. We then have a <em>const int*</em> <em>p_USB_STRING_SIZE</em> which will be init to <em>100</em> in <strong>main.c</strong>. Finally we have an <em>int* p_counter</em> which will be init to <em>0</em> in <strong>main.c</strong>.</p>
+<p>We begin with the function header. We first are taking a <em>char</em> of <em>type</em> where in our example we will use <em>&apos;f&apos;</em> for handling floating-point numbers. We then have a <em>char*</em> (pointer) <em>p_usb_char</em> which will be init to <em>&apos;\0&apos;</em> in <strong>main.c</strong>. We then have a char* p_usb_string which we will be init to <em>&apos;\0&apos;</em> in <strong>main.c</strong>. We then have a <em>const int*</em> <em>p_USB_STRING_SIZE</em> which will be init to <em>100</em> in <strong>main.c</strong>.</p>
 <p>We then create logic to properly handle a delete or backspace button.</p>
 <pre spellcheck="false">  if(*p_usb_char == BACKSPACE || *p_usb_char == DEL)
   {
@@ -2909,15 +2901,14 @@ void flush_input(char* p_usb_string)
     {
       if(*p_usb_char == PERIOD)
         period = strchr(p_usb_string, &apos;.&apos;);
-      if(period == NULL)
+      if(period == NULL) 
       {
-        if(*p_counter &lt; *p_USB_STRING_SIZE-1)
+        if(strlen(p_usb_string) &lt; *p_USB_STRING_SIZE)
         {
           putchar(*p_usb_char);
           strncat(p_usb_string, p_usb_char, 1);
         }
         *p_usb_char = &apos;\0&apos;;
-        *p_counter++;
       }
       else
         break;
@@ -2932,36 +2923,26 @@ void flush_input(char* p_usb_string)
   { 
     while(*p_usb_char &gt;= ZERO &amp;&amp; *p_usb_char &lt;= NINE)
     {
-      if(*p_counter &lt; *p_USB_STRING_SIZE-1)
+      if(strlen(p_usb_string) &lt; *p_USB_STRING_SIZE)
       {
         putchar(*p_usb_char);
         strncat(p_usb_string, p_usb_char, 1);
       }
       *p_usb_char = &apos;\0&apos;;
-      *p_counter++;
     }
   }
   else if(type == &apos;s&apos;)
   { 
     while(*p_usb_char &gt;= CAPITAL_A &amp;&amp; *p_usb_char &lt;= LOWER_CASE_Z)
     {
-      if(*p_counter &lt; *p_USB_STRING_SIZE-1)
+      if(strlen(p_usb_string) &lt; *p_USB_STRING_SIZE)
       {
         putchar(*p_usb_char);
         strncat(p_usb_string, p_usb_char, 1);
       }
       *p_usb_char = &apos;\0&apos;;
-      *p_counter++;
     }
   }
-}
-</pre>
-
-<p>Finally we have a function that properly handles flushing the input buffer.</p>
-<pre spellcheck="false">void flush_input(char* p_usb_string)
-{
-  p_usb_string[0] = &apos;\0&apos;;
-}
 </pre>
 
 <p>In our next lesson we will implement this in our Pico microcontroller.</p>
@@ -3004,7 +2985,7 @@ void flush_input(char* p_usb_string)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 18 - \"FOR 800 YEARS HAVE I TRAINED JEDI!\", The FORCE That IS Input...","level":"1.7.18","depth":2,"previous":{"title":"Part 17 - \"ABSOLUTE POWER CORRUPTS ABSOLUTELY!\", The Tragic Tale Of Input...","level":"1.7.17","depth":2,"path":"pages/part-17-absolute-power-corrupts-absolutely!-the-tragic-tale-of-input.md","ref":"pages/part-17-absolute-power-corrupts-absolutely!-the-tragic-tale-of-input.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-18-for-800-years-have-i-trained-jedi!-the-force-that-is-input.md","mtime":"2021-05-21T19:49:08.783Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-21T19:49:44.973Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 18 - \"FOR 800 YEARS HAVE I TRAINED JEDI!\", The FORCE That IS Input...","level":"1.7.18","depth":2,"previous":{"title":"Part 17 - \"ABSOLUTE POWER CORRUPTS ABSOLUTELY!\", The Tragic Tale Of Input...","level":"1.7.17","depth":2,"path":"pages/part-17-absolute-power-corrupts-absolutely!-the-tragic-tale-of-input.md","ref":"pages/part-17-absolute-power-corrupts-absolutely!-the-tragic-tale-of-input.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-18-for-800-years-have-i-trained-jedi!-the-force-that-is-input.md","mtime":"2021-05-22T19:57:09.758Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-22T19:57:47.718Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

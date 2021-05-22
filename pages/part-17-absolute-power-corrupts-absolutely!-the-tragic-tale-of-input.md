@@ -22,7 +22,7 @@ I have taken the liberty to construct a proper input function for your examinati
 #define BACKSPACE 0x08
 #define DEL 0x7f
 
-void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STRING_SIZE, int* p_counter)
+void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STRING_SIZE)
 {
   *p_usb_char = '\0';
   *p_usb_char = getchar_timeout_us(0);
@@ -43,15 +43,14 @@ void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STR
     {
       if(*p_usb_char == PERIOD)
         period = strchr(p_usb_string, '.');
-      if(period == NULL)
+      if(period == NULL) 
       {
-        if(*p_counter &lt; *p_USB_STRING_SIZE-1)
+        if(strlen(p_usb_string) &lt; *p_USB_STRING_SIZE)
         {
           putchar(*p_usb_char);
           strncat(p_usb_string, p_usb_char, 1);
         }
         *p_usb_char = '\0';
-        *p_counter++;
       }
       else
         break;
@@ -61,39 +60,32 @@ void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STR
   { 
     while(*p_usb_char &gt;= ZERO &amp;&amp; *p_usb_char &lt;= NINE)
     {
-      if(*p_counter &lt; *p_USB_STRING_SIZE-1)
+      if(strlen(p_usb_string) &lt; *p_USB_STRING_SIZE)
       {
         putchar(*p_usb_char);
         strncat(p_usb_string, p_usb_char, 1);
       }
       *p_usb_char = '\0';
-      *p_counter++;
     }
   }
   else if(type == 's')
   { 
     while(*p_usb_char &gt;= CAPITAL_A &amp;&amp; *p_usb_char &lt;= LOWER_CASE_Z)
     {
-      if(*p_counter &lt; *p_USB_STRING_SIZE-1)
+      if(strlen(p_usb_string) &lt; *p_USB_STRING_SIZE)
       {
         putchar(*p_usb_char);
         strncat(p_usb_string, p_usb_char, 1);
       }
       *p_usb_char = '\0';
-      *p_counter++;
     }
   }
-}
-
-void flush_input(char* p_usb_string)
-{
-  p_usb_string[0] = '\0';
 }
 </pre>
 
 <pre spellcheck="false"></pre>
 
- "Woah I thought we were taking it slow!" The time has come to properly start to understand how to be a Jedi when designing effective software. The TIME has come to take the time to properly digest a REAL input validation function.
+"Woah I thought we were taking it slow!" The time has come to properly start to understand how to be a Jedi when designing effective software. The TIME has come to take the time to properly digest a REAL input validation function.
 
 I want you to take the time and digest this function so that we can review it in the next lesson.
 
