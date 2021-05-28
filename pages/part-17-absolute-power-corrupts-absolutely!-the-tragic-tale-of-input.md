@@ -22,7 +22,7 @@ I have taken the liberty to construct a proper input function for your examinati
 #define BACKSPACE 0x08
 #define DEL 0x7f
 
-void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STRING_SIZE)
+void input_proc(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STRING_SIZE)
 {
   *p_usb_char = '\0';
   *p_usb_char = getchar_timeout_us(0);
@@ -82,8 +82,6 @@ void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STR
   }
 }
 </pre>
-
-<pre spellcheck="false"></pre>
 
 "Woah I thought we were taking it slow!" The time has come to properly start to understand how to be a Jedi when designing effective software. The TIME has come to take the time to properly digest a REAL input validation function.
 

@@ -26,7 +26,7 @@ Let's review our input function...
 #define BACKSPACE 0x08
 #define DEL 0x7f
 
-void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STRING_SIZE)
+void input_proc(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STRING_SIZE)
 {
   *p_usb_char = '\0';
   *p_usb_char = getchar_timeout_us(0);
@@ -89,7 +89,7 @@ void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STR
 
 Today we are going to go over exactly what this function is actually doing.
 
-<pre spellcheck="false">void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STRING_SIZE)
+<pre spellcheck="false">void input_proc(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STRING_SIZE)
 </pre>
 
 We begin with the function header. We first are taking a _char_ of _type_ where in our example we will use _'f'_ for handling floating-point numbers. We then have a _char\*_ (pointer) _p\_usb\_char_ which will be init to _'\\0'_ in __main.c__. We then have a char\* p\_usb\_string which we will be init to _'\\0'_ in __main.c__. We then have a _const int\*_ _p\_USB\_STRING\_SIZE_ which will be init to _100_ in __main.c__.

@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="part-19-input.html" />
+    
     
     <link rel="prev" href="part-17-absolute-power-corrupts-absolutely!-the-tragic-tale-of-input.html" />
     
@@ -2744,6 +2746,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7.19" data-path="part-19-input.html">
+            
+                <a href="part-19-input.html">
+            
+                    
+                    Part 19 - Input
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2814,7 +2829,7 @@
 #define BACKSPACE 0x08
 #define DEL 0x7f
 
-void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STRING_SIZE)
+void input_proc(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STRING_SIZE)
 {
   *p_usb_char = &apos;\0&apos;;
   *p_usb_char = getchar_timeout_us(0);
@@ -2876,7 +2891,7 @@ void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STR
 </pre>
 
 <p>Today we are going to go over exactly what this function is actually doing.</p>
-<pre spellcheck="false">void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STRING_SIZE)
+<pre spellcheck="false">void input_proc(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STRING_SIZE)
 </pre>
 
 <p>We begin with the function header. We first are taking a <em>char</em> of <em>type</em> where in our example we will use <em>&apos;f&apos;</em> for handling floating-point numbers. We then have a <em>char*</em> (pointer) <em>p_usb_char</em> which will be init to <em>&apos;\0&apos;</em> in <strong>main.c</strong>. We then have a char* p_usb_string which we will be init to <em>&apos;\0&apos;</em> in <strong>main.c</strong>. We then have a <em>const int*</em> <em>p_USB_STRING_SIZE</em> which will be init to <em>100</em> in <strong>main.c</strong>.</p>
@@ -2973,10 +2988,14 @@ void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STR
 
             
                 
-                <a href="part-17-absolute-power-corrupts-absolutely!-the-tragic-tale-of-input.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Part 17 - "ABSOLUTE POWER CORRUPTS ABSOLUTELY!", The Tragic Tale Of Input...">
+                <a href="part-17-absolute-power-corrupts-absolutely!-the-tragic-tale-of-input.html" class="navigation navigation-prev " aria-label="Previous page: Part 17 - "ABSOLUTE POWER CORRUPTS ABSOLUTELY!", The Tragic Tale Of Input...">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="part-19-input.html" class="navigation navigation-next " aria-label="Next page: Part 19 - Input">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -2985,7 +3004,7 @@ void input(char type, char* p_usb_char, char* p_usb_string, const int* p_USB_STR
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 18 - \"FOR 800 YEARS HAVE I TRAINED JEDI!\", The FORCE That IS Input...","level":"1.7.18","depth":2,"previous":{"title":"Part 17 - \"ABSOLUTE POWER CORRUPTS ABSOLUTELY!\", The Tragic Tale Of Input...","level":"1.7.17","depth":2,"path":"pages/part-17-absolute-power-corrupts-absolutely!-the-tragic-tale-of-input.md","ref":"pages/part-17-absolute-power-corrupts-absolutely!-the-tragic-tale-of-input.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-18-for-800-years-have-i-trained-jedi!-the-force-that-is-input.md","mtime":"2021-05-22T19:57:09.758Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-22T19:57:47.718Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 18 - \"FOR 800 YEARS HAVE I TRAINED JEDI!\", The FORCE That IS Input...","level":"1.7.18","depth":2,"next":{"title":"Part 19 - Input","level":"1.7.19","depth":2,"path":"pages/part-19-input.md","ref":"pages/part-19-input.md","articles":[]},"previous":{"title":"Part 17 - \"ABSOLUTE POWER CORRUPTS ABSOLUTELY!\", The Tragic Tale Of Input...","level":"1.7.17","depth":2,"path":"pages/part-17-absolute-power-corrupts-absolutely!-the-tragic-tale-of-input.md","ref":"pages/part-17-absolute-power-corrupts-absolutely!-the-tragic-tale-of-input.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-18-for-800-years-have-i-trained-jedi!-the-force-that-is-input.md","mtime":"2021-05-28T16:59:29.806Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-28T17:00:02.412Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
