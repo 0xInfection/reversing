@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="part-20-debugging-input.html" />
+    
     
     <link rel="prev" href="part-18-for-800-years-have-i-trained-jedi!-the-force-that-is-input.html" />
     
@@ -2757,6 +2759,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7.20" data-path="part-20-debugging-input.html">
+            
+                <a href="part-20-debugging-input.html">
+            
+                    
+                    Part 20 - Debugging Input
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2957,8 +2972,8 @@ include(pico_sdk_import.cmake)
 project(test_project C CXX ASM)
 set(CMAKE_C_STANDARD 11)&#xA0;
 set(CMAKE_CXX_STANDARD 17)&#xA0;
-set(CMAKE_C_FLAGS_RELEASE &quot;${CMAKE_C_FLAGS_RELEASE} -s&quot;)
-set(CMAKE_CXX_FLAGS_RELEASE &quot;${CMAKE_CXX_FLAGS_RELEASE} -s&quot;)
+set(CMAKE_C_FLAGS_RELEASE &quot;${CMAKE_C_FLAGS_RELEASE}&quot;)
+set(CMAKE_CXX_FLAGS_RELEASE &quot;${CMAKE_CXX_FLAGS_RELEASE}&quot;)
 pico_sdk_init()
 
 add_executable(main
@@ -2979,7 +2994,6 @@ add_custom_target(flash
 )
 </pre>
 
-<p>Here we add a <em>-s</em> flag as we are going to start stripping our binaries to make it more practical now that you have the basics of some reversing skills.</p>
 <p>Next we need to copy the&#xA0;<strong>pico_sdk_import.cmake</strong>&#xA0;file from the external folder in the&#xA0;<strong>pico-sdk</strong>&#xA0;installation to the&#xA0;<strong>0x07_input</strong>&#xA0;project folder.</p>
 <pre spellcheck="false">cp ../pico-sdk/external/pico_sdk_import.cmake .
 </pre>
@@ -3011,7 +3025,7 @@ make flash
 7.99999003902930420384802384082304820384028342340284923840238948230482938429034823948293849023849223
 </pre>
 
-<p>In our next lesson we will debug</p>
+<p>In our next lesson we will debug.</p>
 
                                 
                                 </section>
@@ -3039,10 +3053,14 @@ make flash
 
             
                 
-                <a href="part-18-for-800-years-have-i-trained-jedi!-the-force-that-is-input.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Part 18 - "FOR 800 YEARS HAVE I TRAINED JEDI!", The FORCE That IS Input...">
+                <a href="part-18-for-800-years-have-i-trained-jedi!-the-force-that-is-input.html" class="navigation navigation-prev " aria-label="Previous page: Part 18 - "FOR 800 YEARS HAVE I TRAINED JEDI!", The FORCE That IS Input...">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="part-20-debugging-input.html" class="navigation navigation-next " aria-label="Next page: Part 20 - Debugging Input">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -3051,7 +3069,7 @@ make flash
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 19 - Input","level":"1.7.19","depth":2,"previous":{"title":"Part 18 - \"FOR 800 YEARS HAVE I TRAINED JEDI!\", The FORCE That IS Input...","level":"1.7.18","depth":2,"path":"pages/part-18-for-800-years-have-i-trained-jedi!-the-force-that-is-input.md","ref":"pages/part-18-for-800-years-have-i-trained-jedi!-the-force-that-is-input.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-19-input.md","mtime":"2021-05-28T16:59:30.162Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-28T17:00:02.412Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 19 - Input","level":"1.7.19","depth":2,"next":{"title":"Part 20 - Debugging Input","level":"1.7.20","depth":2,"path":"pages/part-20-debugging-input.md","ref":"pages/part-20-debugging-input.md","articles":[]},"previous":{"title":"Part 18 - \"FOR 800 YEARS HAVE I TRAINED JEDI!\", The FORCE That IS Input...","level":"1.7.18","depth":2,"path":"pages/part-18-for-800-years-have-i-trained-jedi!-the-force-that-is-input.md","ref":"pages/part-18-for-800-years-have-i-trained-jedi!-the-force-that-is-input.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-19-input.md","mtime":"2021-06-04T20:36:13.938Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-04T20:36:55.108Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

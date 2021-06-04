@@ -162,8 +162,8 @@ include(pico_sdk_import.cmake)
 project(test_project C CXX ASM)
 set(CMAKE_C_STANDARD 11)&nbsp;
 set(CMAKE_CXX_STANDARD 17)&nbsp;
-set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -s")
-set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s")
+set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}")
 pico_sdk_init()
 
 add_executable(main
@@ -183,8 +183,6 @@ add_custom_target(flash
 &nbsp; &nbsp; DEPENDS main
 )
 </pre>
-
-Here we add a _-s_ flag as we are going to start stripping our binaries to make it more practical now that you have the basics of some reversing skills.
 
 Next we need to copy the&nbsp;__pico\_sdk\_import.cmake__&nbsp;file from the external folder in the&nbsp;__pico-sdk__&nbsp;installation to the&nbsp;__0x07\_input__&nbsp;project folder.
 
@@ -223,4 +221,4 @@ Boom! Now you will see you will ONLY be able to enter in numbers and ONLY ONE de
 7.99999003902930420384802384082304820384028342340284923840238948230482938429034823948293849023849223
 </pre>
 
-In our next lesson we will debug
+In our next lesson we will debug.

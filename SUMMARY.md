@@ -202,3 +202,4 @@
 	* [Part 17 - "ABSOLUTE POWER CORRUPTS ABSOLUTELY!", The Tragic Tale Of Input...](pages/part-17-absolute-power-corrupts-absolutely!-the-tragic-tale-of-input.md)
 	* [Part 18 - "FOR 800 YEARS HAVE I TRAINED JEDI!", The FORCE That IS Input...](pages/part-18-for-800-years-have-i-trained-jedi!-the-force-that-is-input.md)
 	* [Part 19 - Input](pages/part-19-input.md)
+	* [Part 20 - Debugging Input](pages/part-20-debugging-input.md)
