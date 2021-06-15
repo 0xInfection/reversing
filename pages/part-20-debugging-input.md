@@ -147,23 +147,23 @@ Let's seek to main.
 
 Let's go into visual mode by typing&nbsp;__V__&nbsp;and then&nbsp;__p__&nbsp;twice to get to a good debugger view.
 
-We first review main.
+We first review _main_.
 
 <div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1622836839312.jpg"/></div>
 
-We see our _stdio\_init\_all_ call which sets up IO and we see a _0x64_ into _r3_ which is our move of 100 decimal to set _USB\_STRING\_SIZE _and we set up our _usb\_char_ value and init to _0_ and finally _usb\_string_ and init to _0_. 
+We see our _stdio\_init\_all_ call which sets up IO and we see a _0x64_ into _r3_ which is our move of 100 decimal to set _USB\_STRING\_SIZE _and we set up our _usb\_char_ value and init to _0_ and finally _usb\_string_ and init to _0_.
 
-Lets look at our print\_proc function.
+Let's look at our _print\_proc_ function.
 
 <div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1622837104639.jpg"/></div>
 
-We first check to see if our pointer to usb\_char or _p\_usb\_char_ is equal to the _RETURN_ key or _0xd_ and if so branch. 
+We first check to see if our pointer to usb\_char or _p\_usb\_char_ is equal to the _RETURN_ key or _0xd_ and if so branch.
 
-We then iterate over _p\_usb\_string_ until we hit the null terminator and then call our _printf _function which as we can see here is a wrapper to the c printf function. 
+We then iterate over _p\_usb\_string_ until we hit the null terminator and then call our _printf _function which as we can see here is a wrapper to the c printf function.
 
 We finally _flush\_input_.
 
-Our input\_proc function is a bit more complex.
+Our _input\_proc_ function is a bit more complex.
 
 <div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1622837449377.jpg"/></div>
 
@@ -181,7 +181,7 @@ We then properly handle our _PERIOD_ logic to ensure only one _PERIOD _is entere
 
 We then then properly handle our loop.
 
-Finally we have our flush\_input function.
+Finally, we have our _flush\_input_ function.
 
 <div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="/imgs/1622837919869.jpg"/></div>
 
@@ -189,4 +189,6 @@ Here we simply flush the input buffer by setting _p\_usb\_string_ to a null char
 
 This was a larger debug session so please take your time and compare the assembly against the source so you can really grasp each paragraph as I cover it here.
 
-In our next lesson we will hack input!
+This brings us to the end of our initial learning journey. In this journey we took 197 steps together through several different architectures. It is your turn to take this training into practice and do great things!
+
+This book will be your reference guide as you encounter challenges however there is nothing you can't accomplish!

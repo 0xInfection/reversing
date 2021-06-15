@@ -2960,17 +2960,17 @@ int main()
 </pre>
 
 <p>Let&apos;s go into visual mode by typing&#xA0;<strong>V</strong>&#xA0;and then&#xA0;<strong>p</strong>&#xA0;twice to get to a good debugger view.</p>
-<p>We first review main.</p>
+<p>We first review <em>main</em>.</p>
 <div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1622836839312.jpg"></div>
 
-<p>We see our <em>stdio_init_all</em> call which sets up IO and we see a <em>0x64</em> into <em>r3</em> which is our move of 100 decimal to set <em>USB_STRING_SIZE _and we set up our _usb_char</em> value and init to <em>0</em> and finally <em>usb_string</em> and init to <em>0</em>. </p>
-<p>Lets look at our print_proc function.</p>
+<p>We see our <em>stdio_init_all</em> call which sets up IO and we see a <em>0x64</em> into <em>r3</em> which is our move of 100 decimal to set <em>USB_STRING_SIZE _and we set up our _usb_char</em> value and init to <em>0</em> and finally <em>usb_string</em> and init to <em>0</em>.</p>
+<p>Let&apos;s look at our <em>print_proc</em> function.</p>
 <div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1622837104639.jpg"></div>
 
-<p>We first check to see if our pointer to usb_char or <em>p_usb_char</em> is equal to the <em>RETURN</em> key or <em>0xd</em> and if so branch. </p>
-<p>We then iterate over <em>p_usb_string</em> until we hit the null terminator and then call our _printf _function which as we can see here is a wrapper to the c printf function. </p>
+<p>We first check to see if our pointer to usb_char or <em>p_usb_char</em> is equal to the <em>RETURN</em> key or <em>0xd</em> and if so branch.</p>
+<p>We then iterate over <em>p_usb_string</em> until we hit the null terminator and then call our _printf _function which as we can see here is a wrapper to the c printf function.</p>
 <p>We finally <em>flush_input</em>.</p>
-<p>Our input_proc function is a bit more complex.</p>
+<p>Our <em>input_proc</em> function is a bit more complex.</p>
 <div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1622837449377.jpg"></div>
 
 <p>Here we use the g<em>etchar_timeout_us</em> function and handle the <em>BACKSPACE</em> and <em>DELETE</em> keys.</p>
@@ -2983,12 +2983,13 @@ int main()
 <div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1622837842045.jpg"></div>
 
 <p>We then then properly handle our loop.</p>
-<p>Finally we have our flush_input function.</p>
+<p>Finally, we have our <em>flush_input</em> function.</p>
 <div class="slate-resizable-image-embed slate-image-embed__resize-full-width"><img src="../imgs/1622837919869.jpg"></div>
 
 <p>Here we simply flush the input buffer by setting <em>p_usb_string</em> to a null char.</p>
 <p>This was a larger debug session so please take your time and compare the assembly against the source so you can really grasp each paragraph as I cover it here.</p>
-<p>In our next lesson we will hack input!</p>
+<p>This brings us to the end of our initial learning journey. In this journey we took 197 steps together through several different architectures. It is your turn to take this training into practice and do great things!</p>
+<p>This book will be your reference guide as you encounter challenges however there is nothing you can&apos;t accomplish!</p>
 
                                 
                                 </section>
@@ -3028,7 +3029,7 @@ int main()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Part 20 - Debugging Input","level":"1.7.20","depth":2,"previous":{"title":"Part 19 - Input","level":"1.7.19","depth":2,"path":"pages/part-19-input.md","ref":"pages/part-19-input.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-20-debugging-input.md","mtime":"2021-06-04T20:36:16.170Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-04T20:36:55.108Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Part 20 - Debugging Input","level":"1.7.20","depth":2,"previous":{"title":"Part 19 - Input","level":"1.7.19","depth":2,"path":"pages/part-19-input.md","ref":"pages/part-19-input.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INTRO.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Reverse Engineering","language":"en","gitbook":"*","description":"A comprehensive reverse engineering tutorial covering x86, x64, 32-bit ARM & 64-bit ARM architectures."},"file":{"path":"pages/part-20-debugging-input.md","mtime":"2021-06-15T13:05:16.516Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-15T13:05:55.267Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

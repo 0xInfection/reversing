@@ -38,7 +38,7 @@ The sign flag is set to the most significant bit of the result which is the sign
 
 The overflow flag is used in signed integer arithmetic when a positive value is too big or a negative value is too small to be represented in the register.
 
-Control flags are utilized to control specific behavior in the processor. The DF flag which is the direction flag is used to control the way strings are handled bu the processor. When set, string instructions automatically decrement memory addresses to get the next byte in the string. When cleared, string instructions automatically increment memory addresses to get the next byte in the string.
+Control flags are utilized to control specific behavior in the processor. The DF flag which is the direction flag is used to control the way strings are handled by the processor. When set, string instructions automatically decrement memory addresses to get the next byte in the string. When cleared, string instructions automatically increment memory addresses to get the next byte in the string.
 
 System flags are used to control OS level operations which should NEVER be modified by any respective program or application.
 
