@@ -2,9 +2,9 @@
 
 There are two basic techniques that you can employ when analyzing malware. The first being static analysis and the other being dynamic analysis.
 
-Static analysis uses software tools to examine the executable without looking at the actual decompiled instructions in Assembly. We will not focus on this type of analysis as we are going to focus on actual disassembled binaries instead.
+Static analysis uses software tools to examine the executable without running the actual decompiled instructions in Assembly. We will not focus on this type of analysis here as we are going to focus on actual disassembled binaries instead however in future courses we will.
 
-Dynamic analysis uses disassemblers and debuggers to analyze malware binaries. The most popular tool in the market today is called IDA which is a multi-platform, multi-processor disassembler and debugger. There are other disassembler/debugger tools as well on the market today such as Hopper Disassembler, OllyDbg and many more.
+Dynamic analysis uses disassemblers and debuggers to analyze malware binaries while actually running them. The most popular tool in the market today is called IDA which is a multi-platform, multi-processor disassembler and debugger. There are other disassembler/debugger tools as well on the market today such as Hopper Disassembler, OllyDbg and many more.
 
 A disassembler will convert an executable binary written in Assembly, C, C++, etc into Assembly Language instructions that you can debug and manipulate.
 
